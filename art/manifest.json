@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "reference": "approved-concept.png",
+  "source": "User-approved second concept, generated in this task",
+  "generator": "Built-in image_gen",
+  "backgroundExtraction": "tools/prepare-art.ps1",
+  "grid": { "columns": 4, "rows": 2, "width": 1536, "height": 1024 },
+  "characters": ["HUSBAND", "WIFE"],
+  "anchor": "bottom-center",
+  "scale": { "HUSBAND": 0.97, "WIFE": 0.90 },
+  "atlases": [
+    { "file": "app/src/main/assets/art/poses-a.png", "poses": ["IDLE", "WALK", "EAT", "CLAW"] },
+    { "file": "app/src/main/assets/art/poses-b.png", "poses": ["REST", "SURPRISE", "HUG", "ANTIC"] }
+  ],
+  "promptSummary": "Isolated 4 by 2 full-body pose atlases from approved couple concept; husband row then wife row; preserve 2.75-head chibi identity, clothing and facial features, no labels or props, aligned feet; second atlas adds rest, surprise, open-arm affection and personal squat/crouch poses.",
+  "status": "Prototype poses, not final animation assets",
+  "knownIssues": ["Sparse frame loops", "Some clothing-detail drift", "Small residual background islands around glasses/hair", "Approximate prop hand anchors"],
+  "missing": ["Opposite walk stride", "Reach and handoff poses", "Chase and reconciliation transitions", "Blink and breathing frames", "Repair-specific poses", "Hug contact frames", "Per-pose hand sockets"]
+}

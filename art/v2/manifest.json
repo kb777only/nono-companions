@@ -1,0 +1,180 @@
+{
+  "version": 4,
+  "reference": "../approved-concept.png",
+  "generator": "Built-in image_gen",
+  "preparation": "tools/prepare-art-v2.ps1",
+  "characterIds": [
+    "HUSBAND",
+    "WIFE"
+  ],
+  "framesPerCharacter": 42,
+  "grid": {
+    "columns": 4,
+    "rows": 3,
+    "width": 1024,
+    "height": 1023
+  },
+  "anchor": "bottom-center; per-cell alpha bounds",
+  "atlasKinds": [
+    "motion",
+    "social",
+    "personal"
+  ],
+  "frameMap": {
+    "walk": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "idle": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "fall": [
+      8,
+      9
+    ],
+    "land": [
+      10,
+      11
+    ],
+    "dinosaur": [
+      12,
+      13,
+      14
+    ],
+    "smirk": [
+      15
+    ],
+    "affection": [
+      16,
+      17,
+      18
+    ],
+    "wink": [
+      19
+    ],
+    "reach": [
+      20,
+      21,
+      22
+    ],
+    "surprise": [
+      23
+    ],
+    "eat": [
+      24,
+      25,
+      26,
+      27
+    ],
+    "rest": [
+      28,
+      29,
+      30,
+      31
+    ],
+    "personal": [
+      32,
+      33,
+      34,
+      35
+    ]
+  },
+  "bubbleSkins": {
+    "file": "bubbles.png",
+    "columns": 1,
+    "rows": 2,
+    "roles": [
+      "HUSBAND",
+      "WIFE"
+    ]
+  },
+  "props": {
+    "file": "props.png",
+    "columns": 3,
+    "rows": 2,
+    "items": [
+      "COOKIE",
+      "BITTEN_COOKIE",
+      "SNACK_PACKET",
+      "WRENCH",
+      "PLUM_HEART",
+      "DINO_PLUSH"
+    ]
+  },
+  "language": "fr",
+  "joke": [
+    "dinsoauurr...",
+    "rawrrr"
+  ],
+  "notes": [
+    "Generated animation frames with some detail drift",
+    "Hand anchors approximate",
+    "Walk-phase differences are subtle",
+    "No background or text baked into runtime character frames"
+  ],
+  "kissAtlas": {
+    "file": "kiss.png",
+    "columns": 4,
+    "rows": 2,
+    "rowIdentities": [
+      "HUSBAND",
+      "WIFE"
+    ],
+    "frameIds": [
+      36,
+      37,
+      38,
+      39
+    ],
+    "anchor": "bottom-center; whole cell; forward lean, pucker, contact, blush"
+  },
+  "menus": {
+    "file": "menus.png",
+    "columns": 2,
+    "rows": 1,
+    "identities": [
+      "HUSBAND",
+      "WIFE"
+    ],
+    "nativeLabels": [
+      "Goûter / Chiper",
+      "Bisou",
+      "Rawrr",
+      "Dodo"
+    ]
+  },
+  "hearts": {
+    "source": "props.png cell 4",
+    "lifetimeMilliseconds": [
+      400,
+      900
+    ],
+    "spawnIntervalMilliseconds": 150,
+    "perFace": true
+  },
+  "parachuteAtlas": {
+    "file": "parachutes.png",
+    "columns": 3,
+    "rows": 2,
+    "rowIdentities": [
+      "HUSBAND",
+      "WIFE"
+    ],
+    "columnsMeaning": [
+      "canopy and cords",
+      "glide A",
+      "glide B"
+    ],
+    "poseFrameIds": [
+      40,
+      41
+    ],
+    "deployAfterMilliseconds": 650,
+    "descentCapPetHeightsPerSecond": 0.85
+  }
+}

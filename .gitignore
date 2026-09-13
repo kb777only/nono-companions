@@ -1,0 +1,15 @@
+.gradle/
+**/build/
+local.properties
+.android/
+
+# Local machine state, signing material and generated release bundles
+.idea/
+*.iml
+*.jks
+*.keystore
+.env
+.env.*
+delivery/*.apk
+delivery/*.zip
+docs/device*.png

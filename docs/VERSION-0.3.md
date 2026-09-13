@@ -1,0 +1,11 @@
+# Version 0.3 — kisses and character menus
+
+A stationary long press uses Android’s configured long-press duration and touch slop. Motion beyond the circular deadzone wins both before and after menu opening. Releasing a long press does not also trigger a tap. Display changes, screen-off, cancellation and dragging dismiss the menu. Each visible menu is 148 dp square, with French native button labels over generated role-specific art. Outside touches dismiss it without a full-screen input catcher; it also expires after eight seconds. There are no pause/hide items.
+
+Husband: Goûter, Bisou, Rawrr, Dodo. Wife: Chiper, Bisou, Rawrr, Dodo. Chiper starts a snack sequence with the husband owning the snack. User actions obey scene preconditions and cooldowns. Kisses use approach, lean/pucker, contact and blush stages with four newly generated frames for each spouse. Both must be settled on a common floor; sideways/upside-down gravity is handled by falling and deferred kissing. Dragging or losing support cancels the scene.
+
+During contact, each face spawns a tiny generated heart every 150 ms at independently randomized positions. Each heart lives for an independently sampled 400–900 ms, rises and fades. Expired particles are removed; interruption clears them immediately. Effects draw inside the existing character windows and do not create touch-blocking windows. Needs and relationship state remain persistent; particles and menus are transient.
+
+The art pack contains six 4×3 character atlases, the 4×2 kissing atlas (husband top row, wife bottom), two bubble skins, two menu skins and independent props. There are 40 pose/animation frames per character. The original approved concept and generated source files remain in art/. Some generated details and contact alignment still need artistic refinement; this is a working limited-frame animation set, not studio-quality motion.
+
+This update also retains version 0.2’s 72×104 dp character windows, French event dialogue, gravity-driven release/tilt motion, and battery-aware rendering. Gravity uses Android’s gravity sensor, with accelerometer fallback, rather than drifting integration of raw gyroscope readings. See VERSION-0.2.md for the sensor mapping and Android references.

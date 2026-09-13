@@ -1,0 +1,1 @@
+<resources><string name="context_description">Optional, local app awareness: NoNo reads only the foreground app identity to infer broad categories such as games or reading. It never reads screen text, passwords or fields, saves app history, sends screen content, taps, or types. Companions work without this access. You can revoke it in Android settings.</string></resources>
