@@ -1,6 +1,6 @@
 # NoNo Companions
 
-A private native Kotlin Android app for your two chibi companions, using the approved second concept sheet. Version 0.5 adds keyboard retreat/peeking and deliberate smooth quarter-turn orientation, retaining automatic parachutes and smaller companions, French dialogue, gravity/tilt reactions, generated speech and action-menu skins, and 44 pose/animation frames per spouse. Long-press a character for actions, including a coordinated kiss with floating hearts. See [the latest update](docs/VERSION-0.5.md).
+A private native Kotlin Android app for your two chibi companions, using the approved second concept sheet. Version 0.5.1 adds nearest-edge keyboard retreat/peeking (wife below husband when sharing a side) and deliberate smooth quarter-turn orientation, retaining automatic parachutes and smaller companions, French dialogue, gravity/tilt reactions, generated speech and action-menu skins, and 44 pose/animation frames per spouse. Long-press a character for actions, including a coordinated kiss with floating hearts. See [the latest update](docs/VERSION-0.5.md).
 
 ## Install
 

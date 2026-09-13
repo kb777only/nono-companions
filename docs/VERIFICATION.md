@@ -1,3 +1,13 @@
+# Version 0.5.1 verification — September 14, 2026
+
+- Debug build, 42 tests and lint passed; no test failures.
+- Five new tests cover nearest edge for either character, both shared sides, stable episode choice, narrow-height stacking bounds, and center-distance tie breaking.
+- APK SHA-256: A81A026EF33BF7D6778AEA8EC6D1D3A3A9902829FFC8C70B857A7BC979DDDB77
+- Existing generated peek sprites are mirrored for the chosen edge; no new artwork was needed.
+- Phone disconnected: no device test or installation.
+
+---
+
 # Version 0.5 verification — September 14, 2026
 
 - Final debug build, all **37 unit tests**, and Android lint passed. Lint: zero errors, six existing programmatic-view/absolute-gravity warnings.
@@ -61,4 +71,5 @@ Both transparent companions were visually verified on the device. A drag moved t
 Galaxy Z Fold folded/unfolded geometry and hinge occlusion, split-screen, keyboard avoidance across vendor apps, screen-off/relock restoration, permission revocation, boot and low-memory process restart, battery endurance, and long-running interaction variety. Unit tests of geometry/interruptions do not substitute for these hardware checks.
 
 The artwork is a prototype set of distinct poses and limited loops, not a complete polished animation set. Background extraction has visible small residual islands around some glasses/hair gaps. Precise hand contacts, stride cycles and in-between poses remain missing.
+
 

@@ -230,8 +230,8 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
         val peek=p.state==State.PEEKING
         val size=if(peek) OrientationSnap.extent(dp(38).toFloat(),dp(44).toFloat(),angle) else world.petWidth to world.petHeight
         val w=size.first.toInt(); val h=size.second.toInt()
-        val x=originX+(if(peek) { if(p.who==Who.HUSBAND) 0 else (world.width-w).toInt() } else p.x.toInt()).coerceIn(0,(world.width.toInt()-w).coerceAtLeast(0))
-        val y=originY+(p.y+(world.petHeight-h)/2).toInt().coerceIn(0,(world.height.toInt()-h).coerceAtLeast(0))
+        val x=originX+(if(peek) { if(p.hideLeft) 0 else (world.width-w).toInt() } else p.x.toInt()).coerceIn(0,(world.width.toInt()-w).coerceAtLeast(0))
+        val y=originY+(if(peek) world.peekTop(p.who,h.toFloat()) else p.y+(world.petHeight-h)/2).toInt().coerceIn(0,(world.height.toInt()-h).coerceAtLeast(0))
         val flags=if(world.keyboardOpen) lp.flags or WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE else lp.flags and WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE.inv()
         val alpha=if(world.keyboardOpen) .55f else 1f
         val changed=lp.x!=x || lp.y!=y || lp.width!=w || lp.height!=h || lp.flags!=flags || lp.alpha!=alpha

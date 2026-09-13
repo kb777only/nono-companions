@@ -13,7 +13,7 @@ data class Needs(var hunger: Float = 45f, var energy: Float = 75f, var affection
     fun bound() { hunger = safe(hunger); energy = safe(energy); affection = safe(affection); mischief = safe(mischief) }
     private fun safe(v: Float) = if (v.isFinite()) v.coerceIn(0f, 100f) else 50f
 }
-data class Pet(val who: Who, var x: Float, var y: Float, val needs: Needs = Needs(), var state: State = State.IDLE, var until: Long = 0, var target: Float = x, val motion: Motion=Motion(), var idleAccentUntil: Long=0, var nextAccent: Long=0, var facing: Int=1)
+data class Pet(val who: Who, var x: Float, var y: Float, val needs: Needs = Needs(), var state: State = State.IDLE, var until: Long = 0, var target: Float = x, val motion: Motion=Motion(), var idleAccentUntil: Long=0, var nextAccent: Long=0, var facing: Int=1, var hideLeft: Boolean=true, var peekAnchor: Float=.5f)
 data class Prop(val type: PropType, var owner: Who, val expires: Long)
 data class Bubble(val who: Who, val text: String, val until: Long)
 data class Interaction(val kind: Kind, val leader: Who, var stage: Int, var since: Long, val started: Long)
@@ -66,8 +66,20 @@ class World(private val random: Random = Random.Default) {
     fun keyboard(open: Boolean,now: Long) {
         if(open==keyboardOpen) return
         keyboardOpen=open; returningFromKeyboard=!open; held=null; interrupt(now,resetMotion=true)
-        if(open) pets.forEach { it.state=State.RETREATING }
+        if(open) pets.forEach {
+            it.hideLeft=it.x+petWidth/2<=width/2
+            it.peekAnchor=((it.y+petHeight/2)/height).coerceIn(0f,1f)
+            it.state=State.RETREATING
+        }
         else pets.forEach { it.state=State.WANDERING; it.motion.grounded=true; it.target=width*(if(it.who==Who.HUSBAND) .22f else .68f) }
+    }
+    /** Screen-space slots: when sharing an edge, she peeks just beneath him. */
+    fun peekTop(who: Who,headHeight: Float): Float {
+        val available=(height-headHeight).coerceAtLeast(0f)
+        if(pets[0].hideLeft!=pets[1].hideLeft) return (pet(who).peekAnchor*height-headHeight/2).coerceIn(0f,available)
+        val gap=minOf(headHeight*.85f,available)
+        val top=(pet(Who.HUSBAND).peekAnchor*height-headHeight/2).coerceIn(0f,(available-gap).coerceAtLeast(0f))
+        return top+if(who==Who.WIFE) gap else 0f
     }
     fun gravity(x: Float,y: Float,now: Long) {
         if(physics.setGravity(x,y)) { if(interaction!=null) interrupt(now); pets.forEach { it.motion.grounded=false } }
@@ -137,7 +149,7 @@ class World(private val random: Random = Random.Default) {
         last = now
         if(keyboardOpen) {
             pets.forEach { p ->
-                val target=if(p.who==Who.HUSBAND) 0f else (width-petWidth).coerceAtLeast(0f)
+                val target=if(p.hideLeft) 0f else (width-petWidth).coerceAtLeast(0f)
                 val step=petHeight*4*dt
                 p.facing=if(target<p.x) -1 else 1
                 p.x+=(target-p.x).coerceIn(-step,step)

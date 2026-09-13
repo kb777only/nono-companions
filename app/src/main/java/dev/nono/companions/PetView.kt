@@ -82,7 +82,7 @@ class PetView(context: Context, private val who: Who, private val art: Art) : Vi
         val hadHearts=hearts.isNotEmpty(); hearts=world.hearts.filter { it.who==who }; time=now
         if(hadHearts || hearts.isNotEmpty()) invalidate()
         val newFrame=player.frame(world.pose(who,now),now)
-        val left=world.facesLeft(who)
+        val left=if(newFrame>=42) !world.pet(who).hideLeft else world.facesLeft(who)
         if(newFrame!=frame || left!=facingLeft) { frame=newFrame; facingLeft=left; invalidate() }
     }
     fun nextFrameDelay(now: Long)=(player.nextFrameAt-now).coerceIn(40,1000)
@@ -94,7 +94,7 @@ class PetView(context: Context, private val who: Who, private val art: Art) : Vi
             val cw=art.peeking.width/2; val ch=art.peeking.height/2
             kissSource.set((frame-42)*cw,who.ordinal*ch,(frame-41)*cw,(who.ordinal+1)*ch)
             val w=38f*resources.displayMetrics.density; val h=44f*resources.displayMetrics.density
-            if(who==Who.WIFE) canvas.scale(-1f,1f)
+            if(facingLeft) canvas.scale(-1f,1f)
             destination.set(-w/2,-h/2,w/2,h/2)
             canvas.drawBitmap(art.peeking,kissSource,destination,paint)
             canvas.restore(); return
