@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "reference": "../approved-concept.png",
   "generator": "Built-in image_gen",
   "preparation": "tools/prepare-art-v2.ps1",
@@ -7,7 +7,7 @@
     "HUSBAND",
     "WIFE"
   ],
-  "framesPerCharacter": 42,
+  "framesPerCharacter": 44,
   "grid": {
     "columns": 4,
     "rows": 3,
@@ -176,5 +176,26 @@
     ],
     "deployAfterMilliseconds": 650,
     "descentCapPetHeightsPerSecond": 0.85
+  },
+  "peekingAtlas": {
+    "file": "peeking.png",
+    "columns": 2,
+    "rows": 2,
+    "rowIdentities": [
+      "HUSBAND",
+      "WIFE"
+    ],
+    "poseFrameIds": [
+      42,
+      43
+    ],
+    "columnsMeaning": [
+      "observing",
+      "blink"
+    ],
+    "displayDp": [
+      38,
+      44
+    ]
   }
 }

@@ -40,6 +40,10 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
     private var originX=0; private var originY=0
     private var geometry=""
     private var imeBottom=0
+    private val keyboardSignals=KeyboardSignals()
+    private val orientation=OrientationSnap()
+    private var bodyWidth=0f; private var bodyHeight=0f
+    private var usableForHeads=true
     private var savedAt=0L
     private var started=false
     private val receiver=object: BroadcastReceiver() {
@@ -55,9 +59,12 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
     override fun onCreate() {
         super.onCreate(); reference=java.lang.ref.WeakReference(this)
         wm=getSystemService(WindowManager::class.java); displays=getSystemService(DisplayManager::class.java); store=MoodStore(this); store.load(world)
-        tilt=TiltSensor(this,{ displays.getDisplay(android.view.Display.DEFAULT_DISPLAY)?.rotation ?: Surface.ROTATION_0 }) { vector ->
-            world.gravity(vector.x,vector.y,now())
-            if(screenOn && world.pets.any { it.state!=State.DRAGGED && !world.physics.supported(it,world.width,world.height,world.petWidth,world.petHeight) }) {
+        tilt=TiltSensor(this,{ displays.getDisplay(android.view.Display.DEFAULT_DISPLAY)?.rotation ?: Surface.ROTATION_0 }) { vector,reliable ->
+            val time=now()
+            val turning=orientation.sample(vector,reliable,time)
+            if(turning && world.interaction!=null) world.interrupt(time)
+            world.gravity(vector.x,vector.y,time)
+            if(screenOn && (turning || orientation.moving(time) || (!world.keyboardOpen && world.pets.any { it.state!=State.DRAGGED && !world.physics.supported(it,world.width,world.height,world.petWidth,world.petHeight) }))) {
                 handler.removeCallbacks(tick); handler.post(tick)
             }
         }
@@ -73,9 +80,13 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
                 val view=PetView(this,who,art); val lp=layout(dp(72),dp(104),false)
                 views[who]=view; params[who]=lp
                 touch(view,who)
-                view.setOnApplyWindowInsetsListener { _, insets -> val next=insets.getInsets(WindowInsets.Type.ime()).bottom; if(next!=imeBottom) { imeBottom=next; handler.post { bounds() } }; insets }
+                view.setOnApplyWindowInsetsListener { _, insets ->
+                    val next=if(insets.isVisible(WindowInsets.Type.ime())) insets.getInsets(WindowInsets.Type.ime()).bottom else 0
+                    if(next!=keyboardSignals.insetBottom) { keyboardSignals.insetBottom=next; handler.post { bounds() } }; insets
+                }
                 wm.addView(view,lp)
             }
+            ContextService.keyboard?.let { keyboardSignals.windowVisible=it.first; keyboardSignals.windowTop=it.second }
             bounds()
             world.pets.forEachIndexed { index,p -> p.x=world.width*(if(index==0) .16f else .60f); p.y=(world.height-world.petHeight-dp(45)).coerceAtLeast(0f) }
             bounds(force=true)
@@ -104,13 +115,13 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
             val locked=getSystemService(KeyguardManager::class.java).isKeyguardLocked
             if(locked) { world.held=null; gestureEpoch++; removeCanopies(); removeMenu(); tilt.stop(); views.values.forEach { it.visibility=View.GONE }; removeSpeech(); removeProp(); handler.postDelayed(this,2000); return }
             tilt.start()
-            views.values.forEach { it.visibility=View.VISIBLE }
-            val time=now(); world.tick(time)
+            views.values.forEach { it.visibility=if(usableForHeads) View.VISIBLE else View.GONE }
+            val time=now(); val angle=orientation.value(time)
+            val size=OrientationSnap.extent(bodyWidth,bodyHeight,angle)
+            world.footprint(size.first,size.second)
+            world.tick(time)
             try {
-                world.pets.forEach { p -> val lp=params.getValue(p.who); val x=originX+p.x.toInt(); val y=originY+p.y.toInt()
-                    if(lp.x!=x || lp.y!=y) { lp.x=x; lp.y=y; wm.updateViewLayout(views.getValue(p.who),lp) }
-                    views.getValue(p.who).update(world,time)
-                }
+                world.pets.forEach { p -> updatePetWindow(p,time,angle) }
                 if(menu==null) showSpeech() else { removeSpeech(); positionMenu(); menu?.let { wm.updateViewLayout(it,menuParams) } }
                 showProp(time)
                 showCanopies()
@@ -119,7 +130,7 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
             val falling=world.pets.any { !it.motion.grounded && it.state!=State.DRAGGED }
             val active=world.interaction!=null || world.pets.any { it.state in listOf(State.WANDERING,State.APPROACHING,State.RECOVERING,State.REACTING) }
             val idleDelay=views.values.minOfOrNull { it.nextFrameDelay(time) } ?: 1000
-            handler.postDelayed(this,if(falling || world.hearts.isNotEmpty()) 32 else if(active) 65 else idleDelay)
+            handler.postDelayed(this,if(world.returningFromKeyboard || orientation.moving(time) || world.pets.any { it.state==State.RETREATING } || (!world.keyboardOpen && falling) || world.hearts.isNotEmpty()) 32 else if(active) 65 else idleDelay)
         }
     }
     private fun touch(view: PetView,who: Who) {
@@ -128,7 +139,7 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
         var epoch=0
         val gesture=TouchHold(ViewConfiguration.get(this).scaledTouchSlop.toFloat(),ViewConfiguration.getLongPressTimeout().toLong())
         val hold=Runnable {
-            if(epoch==gestureEpoch && screenOn && gesture.hold(now())) {
+            if(epoch==gestureEpoch && screenOn && !world.keyboardOpen && gesture.hold(now())) {
                 view.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
                 showMenu(who)
             }
@@ -137,6 +148,7 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
         view.setOnTouchListener { _, event ->
             when(event.actionMasked) {
                 MotionEvent.ACTION_DOWN -> {
+                    if(world.keyboardOpen) return@setOnTouchListener true
                     removeMenu(); world.interrupt(now()); world.held=who; epoch=gestureEpoch
                     velocity?.recycle(); velocity=VelocityTracker.obtain(); sample(event)
                     downX=event.rawX; downY=event.rawY; originalX=world.pet(who).x; originalY=world.pet(who).y
@@ -194,15 +206,42 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
         val b=metrics.bounds
         val inset=metrics.windowInsets.getInsetsIgnoringVisibility(WindowInsets.Type.systemBars() or WindowInsets.Type.displayCutout())
         val w=b.width()-inset.left-inset.right
-        val h=b.height()-inset.top-maxOf(inset.bottom,imeBottom)
+        imeBottom=keyboardSignals.bottom(b.height())
+        val keyboardVisible=keyboardSignals.windowVisible ?: (imeBottom>0)
+        val h=(b.height()-inset.top-maxOf(inset.bottom,imeBottom)).coerceAtLeast(1)
+        usableForHeads=h>=dp(60)
         val pw=minOf(dp(72),w/3).coerceAtLeast(24); val ph=minOf(dp(104),h/3).coerceAtLeast(32)
-        val key="$w,$h,$pw,$ph,${inset.left},${inset.top}"
+        val key="$w,$h,$pw,$ph,${inset.left},${inset.top},$keyboardVisible"
         if(!force && key==geometry) return
         gestureEpoch++; world.held=null; removeCanopies(); removeMenu(); geometry=key; originX=inset.left; originY=inset.top
-        world.resize(w.toFloat(),h.toFloat(),pw.toFloat(),ph.toFloat(),now()); removeSpeech(); removeProp()
-        params.forEach { (who,lp) -> lp.width=pw; lp.height=ph; lp.x=originX+world.pet(who).x.toInt(); lp.y=originY+world.pet(who).y.toInt(); try { wm.updateViewLayout(views.getValue(who),lp) } catch(_: Exception) { stopSelf() } }
+        bodyWidth=pw.toFloat(); bodyHeight=ph.toFloat()
+        val size=OrientationSnap.extent(bodyWidth,bodyHeight,orientation.value(now()))
+        world.resize(w.toFloat(),h.toFloat(),size.first,size.second,now())
+        world.keyboard(keyboardVisible,now()); removeSpeech(); removeProp()
+        world.pets.forEach { updatePetWindow(it,now(),orientation.value(now())) }
+        handler.removeCallbacks(tick); if(started && screenOn) handler.post(tick)
     }
+    fun keyboardWindow(visible: Boolean?,top: Int?) {
+        keyboardSignals.windowVisible=visible; keyboardSignals.windowTop=top
+        if(::wm.isInitialized) bounds()
+    }
+    private fun updatePetWindow(p: Pet,time: Long,angle: Float) {
+        val lp=params.getValue(p.who); val view=views.getValue(p.who)
+        val peek=p.state==State.PEEKING
+        val size=if(peek) OrientationSnap.extent(dp(38).toFloat(),dp(44).toFloat(),angle) else world.petWidth to world.petHeight
+        val w=size.first.toInt(); val h=size.second.toInt()
+        val x=originX+(if(peek) { if(p.who==Who.HUSBAND) 0 else (world.width-w).toInt() } else p.x.toInt()).coerceIn(0,(world.width.toInt()-w).coerceAtLeast(0))
+        val y=originY+(p.y+(world.petHeight-h)/2).toInt().coerceIn(0,(world.height.toInt()-h).coerceAtLeast(0))
+        val flags=if(world.keyboardOpen) lp.flags or WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE else lp.flags and WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE.inv()
+        val alpha=if(world.keyboardOpen) .55f else 1f
+        val changed=lp.x!=x || lp.y!=y || lp.width!=w || lp.height!=h || lp.flags!=flags || lp.alpha!=alpha
+        lp.x=x; lp.y=y; lp.width=w; lp.height=h; lp.flags=flags; lp.alpha=alpha
+        view.orientation(bodyWidth,bodyHeight,angle); view.update(world,time)
+        if(changed) wm.updateViewLayout(view,lp)
+    }
+
     private fun showCanopies() {
+        if(world.keyboardOpen) { removeCanopies(); return }
         Who.entries.forEach { who ->
             val p=world.pet(who)
             if(p.state!=State.PARACHUTING) {
@@ -212,9 +251,15 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
                 val pair=existing ?: (ParachuteView(this,artwork.parachutes,who) to layout(dp(96),dp(90),true))
                 val lp=pair.second
                 lp.alpha=.55f // Two overlapping pass-through canopies stay below Android’s .8 obscuring limit.
-                val x=originX+(p.x+world.petWidth/2-lp.width/2).toInt().coerceIn(0,(world.width.toInt()-lp.width).coerceAtLeast(0))
-                val y=originY+(p.y+world.petHeight*.34f-lp.height).toInt().coerceIn(0,(world.height.toInt()-lp.height).coerceAtLeast(0))
-                val changed=lp.x!=x || lp.y!=y
+                val angle=orientation.value(now()); pair.first.orientation(angle)
+                val extent=OrientationSnap.extent(dp(96).toFloat(),dp(90).toFloat(),angle)
+                val w=extent.first.toInt(); val h=extent.second.toInt()
+                val radians=Math.toRadians(angle.toDouble())
+                val distance=bodyHeight*.16f+dp(45)
+                val x=originX+(p.x+world.petWidth/2+kotlin.math.sin(radians)*distance-w/2).toInt().coerceIn(0,(world.width.toInt()-w).coerceAtLeast(0))
+                val y=originY+(p.y+world.petHeight/2-kotlin.math.cos(radians)*distance-h/2).toInt().coerceIn(0,(world.height.toInt()-h).coerceAtLeast(0))
+                val changed=lp.x!=x || lp.y!=y || lp.width!=w || lp.height!=h
+                lp.width=w; lp.height=h
                 lp.x=x; lp.y=y
                 if(existing==null) { canopies[who]=pair; wm.addView(pair.first,lp) }
                 else if(changed) wm.updateViewLayout(pair.first,lp)
@@ -226,7 +271,7 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
         canopies.clear()
     }
     private fun showSpeech() {
-        if(world.pets.any { it.state==State.PARACHUTING }) { removeSpeech(); return }
+        if(world.keyboardOpen || world.pets.any { it.state==State.PARACHUTING }) { removeSpeech(); return }
         val bubble=world.bubble
         if(bubble==null) { removeSpeech(); return }
         if(spoken!=bubble) {
@@ -244,17 +289,25 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
     }
     private fun removeSpeech() { speech?.let { if(it.isAttachedToWindow) try { wm.removeView(it) } catch(_: Exception) {} }; speech=null; speechParams=null; spoken=null }
     private fun showProp(time: Long) {
+        if(world.keyboardOpen) { removeProp(); return }
         val prop=world.prop ?: run { removeProp(); return }
         val p=world.pet(prop.owner)
         val toLeft=world.facesLeft(prop.owner)
-        val targetX=originX+p.x+world.petWidth*(if(toLeft) .28f else .65f)-dp(14)
-        val targetY=originY+p.y+world.petHeight*(if(p.state==State.EATING) .36f else .56f)-dp(14)
+        val angle=orientation.value(time); val r=Math.toRadians(angle.toDouble())
+        val extent=OrientationSnap.extent(dp(22).toFloat(),dp(22).toFloat(),angle)
+        val localX=bodyWidth*((if(toLeft) .28f else .65f)-.5f)
+        val localY=bodyHeight*((if(p.state==State.EATING) .36f else .56f)-.5f)
+        val targetX=originX+p.x+world.petWidth/2+(localX*kotlin.math.cos(r)-localY*kotlin.math.sin(r)).toFloat()-extent.first/2
+        val targetY=originY+p.y+world.petHeight/2+(localX*kotlin.math.sin(r)+localY*kotlin.math.cos(r)).toFloat()-extent.second/2
         if(propView?.type!=prop.type) {
             removeProp(); val view=PropView(this,prop.type,artwork.props); val lp=layout(dp(22),dp(22),true)
             lp.x=targetX.toInt(); lp.y=targetY.toInt(); propView=view; propParams=lp; propOwner=prop.owner; propMovedAt=0
             wm.addView(view,lp)
         }
         val lp=propParams ?: return
+        propView?.orientation(angle)
+        val sizeChanged=lp.width!=extent.first.toInt() || lp.height!=extent.second.toInt()
+        lp.width=extent.first.toInt(); lp.height=extent.second.toInt()
         val scene=world.interaction
         propView?.setBitten(prop.type==PropType.COOKIE && scene!=null && (scene.stage>0 || time-scene.since>800))
         if(propOwner!=prop.owner) { propFromX=lp.x.toFloat(); propFromY=lp.y.toFloat(); propMovedAt=time; propOwner=prop.owner }
@@ -263,7 +316,7 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
         val y=if(fraction>=1) targetY else propFromY+(targetY-propFromY)*fraction-dp(12)*kotlin.math.sin(fraction*Math.PI).toFloat()
         val px=x.toInt().coerceIn(originX,(originX+world.width.toInt()-lp.width).coerceAtLeast(originX))
         val py=y.toInt().coerceIn(originY,(originY+world.height.toInt()-lp.height).coerceAtLeast(originY))
-        if(lp.x!=px || lp.y!=py) { lp.x=px; lp.y=py; wm.updateViewLayout(propView,lp) }
+        if(sizeChanged || lp.x!=px || lp.y!=py) { lp.x=px; lp.y=py; wm.updateViewLayout(propView,lp) }
     }
     private fun removeProp() { propView?.let { if(it.isAttachedToWindow) try { wm.removeView(it) } catch(_: Exception) {} }; propView=null; propParams=null; propOwner=null }
     fun contextSignal(signal: ContextSignal) { world.command(Command.Context(signal),now()) }

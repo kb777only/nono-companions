@@ -4,8 +4,8 @@ import kotlin.math.abs
 import kotlin.random.Random
 
 enum class Who { HUSBAND, WIFE; fun partner() = if (this == HUSBAND) WIFE else HUSBAND }
-enum class State { IDLE, OBSERVING, WANDERING, RESTING, FALLING, PARACHUTING, DRAGGED, RECOVERING, EATING, APPROACHING, SHARED, REACTING, EXERCISING, FIXING }
-enum class Pose(val frame: Int) { IDLE(4), WALK(0), EAT(24), CLAW(12), REST(28), SURPRISE(23), HUG(16), ANTIC(32), FALL(8), LAND(10), REACH(20), SMIRK(15), WINK(19), FIX(34), KISS_ENTER(36), KISS(38), KISS_AFTER(39), PARACHUTE(40) }
+enum class State { IDLE, RETREATING, PEEKING, OBSERVING, WANDERING, RESTING, FALLING, PARACHUTING, DRAGGED, RECOVERING, EATING, APPROACHING, SHARED, REACTING, EXERCISING, FIXING }
+enum class Pose(val frame: Int) { IDLE(4), WALK(0), EAT(24), CLAW(12), REST(28), SURPRISE(23), HUG(16), ANTIC(32), FALL(8), LAND(10), REACH(20), SMIRK(15), WINK(19), FIX(34), KISS_ENTER(36), KISS(38), KISS_AFTER(39), PARACHUTE(40), PEEK(42) }
 enum class Kind { SNACK, DINO, AFFECTION, PERSONAL, KISS }
 enum class ContextSignal { UNKNOWN, READING, GAME, MEDIA, WORK }
 enum class PropType { COOKIE, TOOL, DARK_HEART }
@@ -37,6 +37,8 @@ class World(private val random: Random = Random.Default) {
     val physics=GravityPhysics()
     val hearts=mutableListOf<KissHeart>()
     private var nextHeart=0L
+    var keyboardOpen=false; private set
+    var returningFromKeyboard=false; private set
     var held: Who?=null
     var prop: Prop? = null
     var bubble: Bubble? = null
@@ -48,19 +50,33 @@ class World(private val random: Random = Random.Default) {
     private var nextContext = 0L
     private var lastText = ""
     fun pet(who: Who) = pets[who.ordinal]
-    fun facesLeft(who: Who): Boolean { val p=pet(who); return if(p.state in listOf(State.WANDERING,State.APPROACHING)) p.facing<0 else pet(who.partner()).x<p.x }
+    fun facesLeft(who: Who): Boolean { val p=pet(who); return if(p.state in listOf(State.WANDERING,State.APPROACHING,State.RETREATING)) p.facing<0 else pet(who.partner()).x<p.x }
     fun resize(w: Float, h: Float, pw: Float, ph: Float, now: Long) {
         interrupt(now,resetMotion=true)
         width = w.coerceAtLeast(1f); height = h.coerceAtLeast(1f)
         petWidth = pw; petHeight = ph
         pets.forEach { clamp(it); it.target = it.x; it.motion.vx=0f; it.motion.vy=0f; it.motion.grounded=physics.supported(it,width,height,petWidth,petHeight) }
     }
+    fun footprint(pw: Float,ph: Float) {
+        if(pw==petWidth && ph==petHeight) return
+        val dx=(petWidth-pw)/2; val dy=(petHeight-ph)/2
+        petWidth=pw; petHeight=ph
+        pets.forEach { it.x+=dx; it.y+=dy; clamp(it) }
+    }
+    fun keyboard(open: Boolean,now: Long) {
+        if(open==keyboardOpen) return
+        keyboardOpen=open; returningFromKeyboard=!open; held=null; interrupt(now,resetMotion=true)
+        if(open) pets.forEach { it.state=State.RETREATING }
+        else pets.forEach { it.state=State.WANDERING; it.motion.grounded=true; it.target=width*(if(it.who==Who.HUSBAND) .22f else .68f) }
+    }
     fun gravity(x: Float,y: Float,now: Long) {
         if(physics.setGravity(x,y)) { if(interaction!=null) interrupt(now); pets.forEach { it.motion.grounded=false } }
     }
     private fun clamp(p: Pet) { p.x = p.x.coerceIn(0f, (width - petWidth).coerceAtLeast(0f)); p.y = p.y.coerceIn(0f, (height - petHeight).coerceAtLeast(0f)) }
     fun command(c: Command, now: Long) {
+        if(keyboardOpen) return
         if(c is Command.Drag && (!c.x.isFinite() || !c.y.isFinite())) return
+        if(c is Command.Drag || c is Command.Tap) returningFromKeyboard=false
         when(c) {
             is Command.Drag -> { interrupt(now); pet(c.who).apply { state = State.DRAGGED; motion.fallSince=-1; x = c.x; y = c.y; clamp(this) } }
             is Command.Release -> pet(c.who).apply { if (state == State.DRAGGED) { state = State.RECOVERING; until = now + 700; motion.vx=(if(c.vx.isFinite()) c.vx else 0f).coerceIn(-petHeight*5,petHeight*5); motion.vy=(if(c.vy.isFinite()) c.vy else 0f).coerceIn(-petHeight*5,petHeight*5); motion.grounded=false; motion.fallSince=now; say(who, if(who == Who.HUSBAND) "Chute calculée !" else "Rattrape-moi !", now) } }
@@ -76,6 +92,7 @@ class World(private val random: Random = Random.Default) {
     }
     /** Local menus share the same validated scene entry point as other command sources. */
     fun choose(who: Who,index: Int,now: Long): Boolean {
+        if(keyboardOpen) return false
         if(index !in 0..3 || pets.any { it.state==State.DRAGGED }) return false
         if(index==3) { command(Command.Rest(who),now); return true }
         val kind=listOf(Kind.SNACK,Kind.KISS,Kind.DINO)[index]
@@ -88,6 +105,7 @@ class World(private val random: Random = Random.Default) {
         return start(kind,if(index==0 && who==Who.WIFE) who.partner() else who,now)
     }
     fun start(kind: Kind, leader: Who, now: Long): Boolean {
+        if(keyboardOpen) return false
         // The grounded kissing poses need a common floor; retry after the phone is upright.
         if(kind==Kind.KISS && (physics.gravity.y<.7f || pets.any { abs(it.y-(height-petHeight))>1f })) return false
         if(interaction != null || pets.any { it.state == State.DRAGGED || it.state == State.RECOVERING || !physics.supported(it,width,height,petWidth,petHeight) } || now < (cooldowns[kind] ?: 0)) return false
@@ -117,6 +135,31 @@ class World(private val random: Random = Random.Default) {
     fun tick(now: Long) {
         val dt = if(last == 0L) 0f else ((now-last).coerceIn(0, 1000) / 1000f)
         last = now
+        if(keyboardOpen) {
+            pets.forEach { p ->
+                val target=if(p.who==Who.HUSBAND) 0f else (width-petWidth).coerceAtLeast(0f)
+                val step=petHeight*4*dt
+                p.facing=if(target<p.x) -1 else 1
+                p.x+=(target-p.x).coerceIn(-step,step)
+                p.y=p.y.coerceIn(0f,(height-petHeight).coerceAtLeast(0f))
+                p.motion.vx=0f; p.motion.vy=0f; p.motion.fallSince=-1
+                p.state=if(abs(p.x-target)<2) State.PEEKING else State.RETREATING
+            }
+            return
+        }
+        if(returningFromKeyboard) {
+            pets.forEach { p ->
+                val target=(width*(if(p.who==Who.HUSBAND) .22f else .68f)).coerceIn(0f,(width-petWidth).coerceAtLeast(0f))
+                p.facing=if(target<p.x) -1 else 1
+                p.x+=(target-p.x).coerceIn(-petHeight*2*dt,petHeight*2*dt)
+                physics.step(p,width,height,petWidth,petHeight,dt,now)
+                if(p.motion.grounded) p.state=State.WANDERING
+            }
+            if(pets.all { abs(it.x-(width*(if(it.who==Who.HUSBAND) .22f else .68f)).coerceIn(0f,(width-petWidth).coerceAtLeast(0f)))<2 }) {
+                returningFromKeyboard=false; pets.filter { it.motion.grounded }.forEach { it.state=State.IDLE }
+            }
+            return
+        }
         pets.forEach { p -> p.needs.apply { hunger += dt * .035f; energy += dt * if(p.state == State.RESTING) .12f else -.012f; bound() }
             if(p.state in listOf(State.RECOVERING, State.REACTING, State.OBSERVING, State.RESTING) && now >= p.until) p.state = State.IDLE
             if(p.state == State.WANDERING && interaction == null && p.motion.grounded) { move(p, p.target, p.y, dt); if(abs(p.x-p.target)<2) p.state = State.IDLE }
@@ -213,6 +256,8 @@ class World(private val random: Random = Random.Default) {
     }
     fun pose(who: Who,now: Long=last): Pose {
         val p = pet(who); val i = interaction
+        if(p.state==State.PEEKING) return Pose.PEEK
+        if(p.state==State.RETREATING) return Pose.WALK
         if(p.state==State.DRAGGED) return Pose.FALL
         if(p.state==State.PARACHUTING) return Pose.PARACHUTE
         if(i?.kind==Kind.KISS && i.stage>0) return when(i.stage) { 1 -> Pose.KISS_ENTER; 2 -> Pose.KISS; else -> Pose.KISS_AFTER }

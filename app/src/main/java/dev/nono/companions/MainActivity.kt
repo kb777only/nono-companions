@@ -28,8 +28,8 @@ class MainActivity : Activity() {
             startCompanions(); render()
         }
         if(allowed && enabled) { startCompanions(); text("Your companions are enabled. Android may stop them to protect battery or hide them on protected screens. Reopening this app restores them when allowed.") }
-        button("Optional app awareness") {
-            AlertDialog.Builder(this).setTitle("Local, optional app awareness").setMessage(getString(R.string.context_description)).setNegativeButton("Not now",null).setPositiveButton("Open Android settings") { _,_ -> startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)) }.show()
+        button("Optional app & keyboard awareness") {
+            AlertDialog.Builder(this).setTitle("Local, optional keyboard awareness").setMessage(getString(R.string.context_description)).setNegativeButton("Not now",null).setPositiveButton("Open Android settings") { _,_ -> startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)) }.show()
         }
         if(android.os.Build.VERSION.SDK_INT >= 33 && checkSelfPermission(android.Manifest.permission.POST_NOTIFICATIONS) != android.content.pm.PackageManager.PERMISSION_GRANTED) button("Allow service notification") { requestPermissions(arrayOf(android.Manifest.permission.POST_NOTIFICATIONS),7) }
         text("Everything stays on this phone. No account, internet access or screen-text collection. Android provides permission revocation and its active-app service controls. There is no floating toolbar or pause button.",15f)

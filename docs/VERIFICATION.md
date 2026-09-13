@@ -1,3 +1,15 @@
+# Version 0.5 verification — September 14, 2026
+
+- Final debug build, all **37 unit tests**, and Android lint passed. Lint: zero errors, six existing programmatic-view/absolute-gravity warnings.
+- APK SHA-256: `F1528111B2EE3857E6EDAA6C1F663D1C1FBA6F447E250DF91A1A1DE94E654131`.
+- Eight new tests verify tilt jitter rejection, 250 ms dwell, smooth quarter/half-turns, shortest-path wraparound, flat-device behavior, rotated footprints, keyboard scene interruption and quiet waiting, return movement, rapid keyboard/configuration changes, and metadata/inset fallback.
+- Generated open-eye/blinking peek artwork inspected and real alpha preparation completed. The runtime atlas and original generated source are included.
+- Accessibility implementation reviewed: only window metadata and app category are used; no root/node/text retrieval calls. Own overlay moves do not trigger repeated keyboard enumeration. Inset-only detection remains vendor dependent; the optional window-metadata capability is explained in onboarding.
+- **No device test or installation:** phone remains disconnected. Cross-app IME visibility on HyperOS/Samsung, actual rotation feel, peek placement, accessibility re-enable behavior and Fold layouts remain hardware checks.
+- Main and the release are published to the existing private repository. Release assets include the APK and full runtime art pack.
+
+---
+
 # Version 0.4 verification — September 14, 2026
 
 - Debug APK build, all **29 unit tests**, and Android lint passed. Lint: zero errors, six warnings (five programmatic custom-view constructors and intentional absolute overlay gravity).

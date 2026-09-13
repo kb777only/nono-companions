@@ -51,3 +51,5 @@ if($Only -eq '' -or $Only -eq 'kiss') { [ChromaAtlas]::Run((Join-Path $projectRo
 if($Only -eq '' -or $Only -eq 'menus') { [ChromaAtlas]::Run((Join-Path $projectRoot 'art/v2/menus-source.png'),(Join-Path $projectRoot 'app/src/main/assets/art/menus.png'),2,1,1024,512) }
 
 if($Only -eq '' -or $Only -eq 'parachutes') { [ChromaAtlas]::Run((Join-Path $projectRoot 'art/v2/parachutes-source.png'),(Join-Path $projectRoot 'app/src/main/assets/art/parachutes.png'),3,2,1536,1024) }
+
+if($Only -eq '' -or $Only -eq 'peeking') { [ChromaAtlas]::Run((Join-Path $projectRoot 'art/v2/peeking-source.png'),(Join-Path $projectRoot 'app/src/main/assets/art/peeking.png'),2,2,1024,1024) }
