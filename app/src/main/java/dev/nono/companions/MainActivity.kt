@@ -17,6 +17,7 @@ class MainActivity : Activity() {
         fun text(s: String, size: Float=17f) { column.addView(TextView(this).apply { text=s; textSize=size; setPadding(0,12,0,20) }) }
         fun button(s: String, action: () -> Unit) { column.addView(Button(this).apply { text=s; setOnClickListener { action() } }) }
         text("NoNo Companions",30f)
+        button("Menu développeur") { startActivity(Intent(this,DevActivity::class.java)) }
         text("A little love. A little chaos.\nAnd absolutely no safe snacks.",20f)
         text("Your two companions live over other apps. Tap either for a reaction; drag to move them. They take turns teasing, sharing snacks and keeping you company.")
         val allowed=Settings.canDrawOverlays(this)

@@ -17,6 +17,13 @@ class OrientationSnap {
         val next=normalize(round(degrees/90f)*90f)
         if(next!=candidate) { candidate=next; candidateAt=now; return false }
         if(next==target || now-candidateAt<250) return false
+        return turnTo(next,now)
+    }
+    fun turnTo(degrees: Float,now: Long): Boolean {
+        if(!degrees.isFinite()) return false
+        val next=normalize(round(degrees/90f)*90f)
+        if(next==target) return false
+        candidate=next; candidateAt=now
         from=value(now); target=next; started=now
         duration=if(abs(delta(from,target))>100) 650 else 450
         return true

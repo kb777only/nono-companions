@@ -23,19 +23,20 @@ class WeatherState {
     var temperature: Float?=null; private set
     var kind=WeatherKind.UNKNOWN; private set
     var hour=12; private set
-    fun update(reading: WeatherReading?,now: Long,localHour: Int, deviceHot: Boolean=false): Boolean {
+    fun update(reading: WeatherReading?,now: Long,localHour: Int, deviceHot: Boolean=false, kindOverride: WeatherKind?=null, tempOverride: Float?=null): Boolean {
         val old=outfit to raining
         this.deviceHot=deviceHot
         hour=localHour.coerceIn(0,23)
         val current=reading?.takeIf { it.fresh(now) }
-        temperature=current?.celsius; kind=current?.kind ?: WeatherKind.UNKNOWN
-        raining=current?.raining==true
+        temperature=tempOverride?.takeIf { it.isFinite() && it in -100f..70f } ?: current?.celsius; kind=kindOverride ?: current?.kind ?: WeatherKind.UNKNOWN
+        raining=if(kindOverride!=null) kindOverride in listOf(WeatherKind.RAIN,WeatherKind.STORM) else current?.raining==true
+        val celsius=temperature
         outfit=when {
             deviceHot -> Outfit.HOT
             hour>=22 || hour<7 -> Outfit.NIGHT
-            current==null -> Outfit.DEFAULT
-            current.celsius<12 || (outfit==Outfit.COLD && current.celsius<14) -> Outfit.COLD
-            current.celsius>=26 || (outfit==Outfit.HOT && current.celsius>=24) -> Outfit.HOT
+            celsius==null -> Outfit.DEFAULT
+            celsius<12 || (outfit==Outfit.COLD && celsius<14) -> Outfit.COLD
+            celsius>=26 || (outfit==Outfit.HOT && celsius>=24) -> Outfit.HOT
             else -> Outfit.DEFAULT
         }
         return old!=(outfit to raining)

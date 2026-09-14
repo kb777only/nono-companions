@@ -16,6 +16,37 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
     companion object { private var reference=java.lang.ref.WeakReference<CompanionService>(null); val live: CompanionService? get()=reference.get() }
     private val handler=Handler(Looper.getMainLooper())
     private val world=World()
+    private val devPrefs by lazy { getSharedPreferences("dev_overrides",MODE_PRIVATE) }
+    private var dev=DevOverrides(emptyMap<String,Int>())
+    private var actualBattery: Int?=null
+    private var actualGravity=GravityVector(0f,1f)
+    private var actualReliable=false
+    private var actualContext=ContextSignal.UNKNOWN
+    private val refreshDev=Runnable {
+        dev=DevOverrides(devPrefs.all)
+        applyEnvironment(now())
+        applyTilt(actualGravity,actualReliable)
+        bounds()
+        world.command(Command.Context(dev.context ?: actualContext),now())
+        handler.removeCallbacks(tick); if(started && screenOn) handler.post(tick)
+    }
+    private val devListener=SharedPreferences.OnSharedPreferenceChangeListener { _,_ ->
+        handler.removeCallbacks(refreshDev); handler.postDelayed(refreshDev,120)
+    }
+    private fun applyEnvironment(time: Long) {
+        world.environment(null,System.currentTimeMillis(),dev.hour(java.time.LocalTime.now().hour),time,dev.kind,dev.temperature)
+        world.batteryTemperature(dev.battery(actualBattery),time)
+        nextEnvironment=time+60_000
+    }
+    private fun applyTilt(vector: GravityVector,reliable: Boolean) {
+        val time=now(); val effective=dev.gravity ?: vector
+        val turning=dev.angle?.let { orientation.turnTo(it,time) } ?: orientation.sample(vector,reliable,time)
+        if(turning && world.interaction!=null) world.interrupt(time)
+        world.gravity(effective.x,effective.y,time)
+        if(screenOn && (turning || orientation.moving(time) || (!world.keyboardOpen && world.pets.any { it.state!=State.DRAGGED && !world.physics.supported(it,world.width,world.height,world.petWidth,world.petHeight) }))) {
+            handler.removeCallbacks(tick); if(started) handler.post(tick)
+        }
+    }
     private lateinit var wm: WindowManager
     private lateinit var store: MoodStore
     private lateinit var displays: DisplayManager
@@ -52,7 +83,8 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
         override fun onReceive(context: Context?, intent: Intent?) {
             when(intent?.action) {
                 Intent.ACTION_BATTERY_CHANGED -> {
-                    world.batteryTemperature(if(intent.hasExtra(BatteryManager.EXTRA_TEMPERATURE)) intent.getIntExtra(BatteryManager.EXTRA_TEMPERATURE,Int.MIN_VALUE) else null,now())
+                    actualBattery=if(intent.hasExtra(BatteryManager.EXTRA_TEMPERATURE)) intent.getIntExtra(BatteryManager.EXTRA_TEMPERATURE,Int.MIN_VALUE) else null
+                    world.batteryTemperature(dev.battery(actualBattery),now())
                     nextEnvironment=0L
                     if(started && screenOn) { handler.removeCallbacks(tick); handler.post(tick) }
                 }
@@ -65,16 +97,13 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
     private fun dp(v: Int)=(v*resources.displayMetrics.density).toInt()
     override fun onCreate() {
         super.onCreate(); reference=java.lang.ref.WeakReference(this)
+        dev=DevOverrides(devPrefs.all)
         wm=getSystemService(WindowManager::class.java); displays=getSystemService(DisplayManager::class.java); store=MoodStore(this); store.load(world)
         tilt=TiltSensor(this,{ displays.getDisplay(android.view.Display.DEFAULT_DISPLAY)?.rotation ?: Surface.ROTATION_0 }) { vector,reliable ->
-            val time=now()
-            val turning=orientation.sample(vector,reliable,time)
-            if(turning && world.interaction!=null) world.interrupt(time)
-            world.gravity(vector.x,vector.y,time)
-            if(screenOn && (turning || orientation.moving(time) || (!world.keyboardOpen && world.pets.any { it.state!=State.DRAGGED && !world.physics.supported(it,world.width,world.height,world.petWidth,world.petHeight) }))) {
-                handler.removeCallbacks(tick); handler.post(tick)
-            }
+            actualGravity=vector; actualReliable=reliable
+            applyTilt(vector,reliable)
         }
+
         val channel=NotificationChannel("companions","Companion presence",NotificationManager.IMPORTANCE_LOW).apply { description="Required notification while companions are present"; setShowBadge(false) }
         getSystemService(NotificationManager::class.java).createNotificationChannel(channel)
         val pending=PendingIntent.getActivity(this,0,Intent(this,MainActivity::class.java),PendingIntent.FLAG_IMMUTABLE)
@@ -101,6 +130,8 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
         val filter=IntentFilter().apply { addAction(Intent.ACTION_SCREEN_OFF); addAction(Intent.ACTION_SCREEN_ON); addAction(Intent.ACTION_USER_PRESENT); addAction(Intent.ACTION_BATTERY_CHANGED) }
         if(Build.VERSION.SDK_INT>=33) registerReceiver(receiver,filter,RECEIVER_NOT_EXPORTED) else registerReceiver(receiver,filter)
         displays.registerDisplayListener(this,handler); started=true
+        devPrefs.registerOnSharedPreferenceChangeListener(devListener)
+        applyEnvironment(now()); applyTilt(actualGravity,actualReliable)
         screenOn=getSystemService(PowerManager::class.java).isInteractive
         if(screenOn) { tilt.start(); handler.post(tick) }
     }
@@ -123,10 +154,11 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
             if(locked) { world.held=null; gestureEpoch++; removeRain(); removeCanopies(); removeMenu(); tilt.stop(); views.values.forEach { it.visibility=View.GONE }; removeSpeech(); removeProp(); handler.postDelayed(this,2000); return }
             tilt.start()
             views.values.forEach { it.visibility=if(usableForHeads) View.VISIBLE else View.GONE }
-            val time=now(); val angle=orientation.value(time)
+            val time=now()
+            if(dev.angle==null) orientation.sample(actualGravity,actualReliable,time)
+            val angle=orientation.value(time)
             if(time>=nextEnvironment) {
-                nextEnvironment=time+60_000
-                world.environment(null,System.currentTimeMillis(),java.time.LocalTime.now().hour,time)
+                applyEnvironment(time)
             }
             val size=OrientationSnap.extent(bodyWidth,bodyHeight,angle)
             world.footprint(size.first,size.second)
@@ -218,8 +250,8 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
         val b=metrics.bounds
         val inset=metrics.windowInsets.getInsetsIgnoringVisibility(WindowInsets.Type.systemBars() or WindowInsets.Type.displayCutout())
         val w=b.width()-inset.left-inset.right
-        imeBottom=keyboardSignals.bottom(b.height())
-        val keyboardVisible=keyboardSignals.windowVisible ?: (imeBottom>0)
+        imeBottom=dev.keyboard?.let { if(it) (b.height()*.40f).toInt() else 0 } ?: keyboardSignals.bottom(b.height())
+        val keyboardVisible=dev.keyboard ?: (keyboardSignals.windowVisible ?: (imeBottom>0))
         val h=(b.height()-inset.top-maxOf(inset.bottom,imeBottom)).coerceAtLeast(1)
         usableForHeads=h>=dp(60)
         val pw=minOf(dp(72),w/3).coerceAtLeast(24); val ph=minOf(dp(104),h/3).coerceAtLeast(32)
@@ -355,12 +387,13 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
         if(sizeChanged || lp.x!=px || lp.y!=py) { lp.x=px; lp.y=py; wm.updateViewLayout(propView,lp) }
     }
     private fun removeProp() { propView?.let { if(it.isAttachedToWindow) try { wm.removeView(it) } catch(_: Exception) {} }; propView=null; propParams=null; propOwner=null }
-    fun contextSignal(signal: ContextSignal) { world.command(Command.Context(signal),now()) }
+    fun contextSignal(signal: ContextSignal) { actualContext=signal; world.command(Command.Context(dev.context ?: signal),now()) }
     override fun onConfigurationChanged(newConfig: Configuration) { super.onConfigurationChanged(newConfig); bounds() }
     override fun onDisplayChanged(displayId: Int) { bounds() }
     override fun onDisplayAdded(displayId: Int) { bounds() }
     override fun onDisplayRemoved(displayId: Int) { bounds() }
     override fun onDestroy() {
+        devPrefs.unregisterOnSharedPreferenceChangeListener(devListener)
         handler.removeCallbacksAndMessages(null); if(::tilt.isInitialized) tilt.stop(); if(::store.isInitialized) store.save(world)
         removeRain(); removeCanopies(); removeMenu(); removeSpeech(); removeProp(); views.values.forEach { if(it.isAttachedToWindow) try { wm.removeView(it) } catch(_: Exception) {} }; views.clear()
         if(started) { unregisterReceiver(receiver); displays.unregisterDisplayListener(this) }

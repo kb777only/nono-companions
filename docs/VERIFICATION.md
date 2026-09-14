@@ -80,3 +80,10 @@ The artwork is a prototype set of distinct poses and limited loops, not a comple
 Offline debug build, 59 unit tests (zero failures/errors), and lint passed (zero errors, seven warnings). Final APK contains byte-identical cooling, cooling-props, cold/hot/night wardrobe and umbrella PNGs. Android APK signing verification passed. No INTERNET permission in packaged manifest. New processed atlases contain 38 nonempty cells with real alpha. No device/emulator test was performed because the phone is disconnected and no emulator is configured. Live weather remains unconnected pending Open-Meteo coordinate-sharing approval.
 
 APK SHA-256: `0C164B23E79F9CCA763F54C757B27C97F9A293F1B9A6D80ED3D80C22E9CDBD23`. See VERSION-0.6.md for behavior, art, privacy and limitations.
+
+
+## 0.7.0 — 2026-09-14
+
+Debug build passed; 68 tests passed with zero failures/errors. Lint: zero errors, 20 warnings (13 localization warnings in the French developer UI, plus seven existing custom-view/RTL warnings). APK signing verified. No device/emulator UI test: phone disconnected. New tests cover independent overrides, persistence decoding, current Auto inputs, precise French decimal input, invalid values, weather/temperature independence, heat priority, orientation easing/gravity and keyboard/context mappings.
+
+APK SHA-256: `dbcef45ad2f9f9181f448fbc18711d5d8cd3bc02ef578fc2bae4b207b95f8bd2`.

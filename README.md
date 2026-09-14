@@ -1,6 +1,6 @@
 # NoNo Companions
 
-A private native Kotlin Android app for your two chibi companions, using the approved second concept sheet. Version 0.6.0 adds local battery-heat awareness, light clothing, folding fans, independently spinning desk fans, sweat and a hood-up warm outfit for the husband. Night pyjamas follow the phone clock. Keyboard peeking, deliberate orientation, parachutes and coordinated kisses remain available. Live weather is prepared but disabled pending approval for town-coordinate sharing. See [this update](docs/VERSION-0.6.md).
+A private native Kotlin Android app for your two chibi companions, using the approved second concept sheet. Version 0.7.0 adds an in-app **Menu développeur** with independent Auto/Manual controls for weather, battery temperature, outdoor temperature, time, orientation, keyboard and app context. Manual previews work offline, with saved settings and a reset-to-Auto button. Existing heat reactions, fans, wardrobe, kisses, parachutes and keyboard peeking remain available. See [this update](docs/VERSION-0.7.md).
 
 ## Install
 

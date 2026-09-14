@@ -41,6 +41,8 @@ class World(private val random: Random = Random.Default) {
     private var environmentReading: WeatherReading?=null
     private var environmentWall=0L
     private var environmentHour=12
+    private var environmentKind: WeatherKind?=null
+    private var environmentTemp: Float?=null
     private var nextWeatherSpeech=0L
     val hearts=mutableListOf<KissHeart>()
     private var nextHeart=0L
@@ -308,9 +310,10 @@ class World(private val random: Random = Random.Default) {
         if(p.state==State.IDLE && now<p.idleAccentUntil) return if(who==Who.WIFE) Pose.WINK else Pose.SMIRK
         return Pose.IDLE
     }
-    fun environment(reading: WeatherReading?,wallTime: Long,hour: Int,now: Long) {
+    fun environment(reading: WeatherReading?,wallTime: Long,hour: Int,now: Long,kindOverride: WeatherKind?=null,tempOverride: Float?=null) {
+        environmentKind=kindOverride; environmentTemp=tempOverride
         environmentReading=reading; environmentWall=wallTime; environmentHour=hour
-        val changed=weather.update(reading,wallTime,hour,deviceHeat.hot)
+        val changed=weather.update(reading,wallTime,hour,deviceHeat.hot,environmentKind,environmentTemp)
         if(changed && !keyboardOpen && interaction==null && now>=nextWeatherSpeech) {
             nextWeatherSpeech=now+600_000
             say(Who.HUSBAND,weather.line(Who.HUSBAND),now)
@@ -318,7 +321,7 @@ class World(private val random: Random = Random.Default) {
     }
     fun batteryTemperature(tenths: Int?,now: Long) {
         val changed=deviceHeat.sample(tenths)
-        weather.update(environmentReading,environmentWall,environmentHour,deviceHeat.hot)
+        weather.update(environmentReading,environmentWall,environmentHour,deviceHeat.hot,environmentKind,environmentTemp)
         if(changed) {
             cooling.forEach { it.cancel(now) }
             if(deviceHeat.hot && interaction!=null) interrupt(now)
