@@ -93,4 +93,3 @@ def run():
         print(name, 'span',round(min(r['span'] for r in rr),1),round(max(r['span'] for r in rr),1))
 
 if __name__=='__main__': run()
-

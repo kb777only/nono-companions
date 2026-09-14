@@ -27,4 +27,3 @@ foreach($name in $data.hashes.PSObject.Properties.Name) {
  $g.Dispose();$pen.Dispose();$font.Dispose();$src.Dispose()
  $dst.Save((Join-Path $dir "$name.png"));$dst.Dispose()
 }
-
