@@ -94,3 +94,15 @@ APK SHA-256: `dbcef45ad2f9f9181f448fbc18711d5d8cd3bc02ef578fc2bae4b207b95f8bd2`.
 73 tests passed, zero failures/errors. Debug build and lint passed (zero errors, 19 warnings). APK signature verified; inspected packaged ContextService declaration/BIND_ACCESSIBILITY_SERVICE and its interactive-window/canRetrieveWindowContent metadata. All four packed rain atlases match workspace bytes; all 96 cells have nonempty RGBA content and transparent borders. Built-in generated artwork was visually inspected and rejected/corrected drafts excluded. No device/emulator test; the exact vendor service-list issue is not confirmed.
 
 APK SHA-256: `8ef112cbbbc2e9b53f1dd098b6913e3eaa9900a29f977cbd32eecc5e57b8fedc`.
+
+
+## v0.9.0 — 2026-09-14
+
+- `:app:assembleDebug :app:testDebugUnitTest :app:lintDebug --offline --no-daemon`: successful.
+- 80 unit tests, zero failures/errors/skips. New tests cover eight solo performances, run displacement/bounds, quiet choices, drag/keyboard/resize/heat/gravity interruptions, shared acknowledgment and completion for either leader, clip transitions and cooldowns.
+- Lint: zero errors, 20 warnings (including existing UI text/custom-view/RTL warnings). No device lint claim.
+- Both new 1024×1536 RGBA atlases visually inspected; all 32 cells are nonempty with transparent borders. Packaged atlas bytes equal the inspected runtime files.
+- APK metadata: dev.nono.companions, versionName 0.9.0, versionCode 10, min SDK 31. APK signature verification passed.
+- SHA-256: `2402ffb2b8b50b5b8be958c7b7fde4a443631e9971f10e3223adffd7e33235b9`.
+- ADB device list empty; emulator AVD list empty. No installation, animation playback, touch, keyboard or fold test on hardware/emulator was performed.
+- Full new idle art is for default outfits; seasonal and integrated rain art use compatible existing frame mappings. Live weather remains disabled.

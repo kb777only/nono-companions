@@ -4,9 +4,9 @@ import kotlin.math.abs
 import kotlin.random.Random
 
 enum class Who { HUSBAND, WIFE; fun partner() = if (this == HUSBAND) WIFE else HUSBAND }
-enum class State { IDLE, RETREATING, PEEKING, OBSERVING, WANDERING, RESTING, FALLING, PARACHUTING, DRAGGED, RECOVERING, EATING, APPROACHING, SHARED, REACTING, EXERCISING, FIXING, COOLING }
-enum class Pose(val frame: Int) { IDLE(4), WALK(0), EAT(24), CLAW(12), REST(28), SURPRISE(23), HUG(16), ANTIC(32), FALL(8), LAND(10), REACH(20), SMIRK(15), WINK(19), FIX(34), KISS_ENTER(36), KISS(38), KISS_AFTER(39), PARACHUTE(40), PEEK(42), FAN(44), PLACE_FAN(46), BREEZE(47) }
-enum class Kind { SNACK, DINO, AFFECTION, PERSONAL, KISS }
+enum class State { IDLE, RETREATING, PEEKING, OBSERVING, WANDERING, RESTING, FALLING, PARACHUTING, DRAGGED, RECOVERING, EATING, APPROACHING, SHARED, REACTING, EXERCISING, FIXING, COOLING, IDLE_ANTIC }
+enum class Pose(val frame: Int) { IDLE(4), WALK(0), EAT(24), CLAW(12), REST(28), SURPRISE(23), HUG(16), ANTIC(32), FALL(8), LAND(10), REACH(20), SMIRK(15), WINK(19), FIX(34), KISS_ENTER(36), KISS(38), KISS_AFTER(39), PARACHUTE(40), PEEK(42), FAN(44), PLACE_FAN(46), BREEZE(47), FEET(48), STRETCH(52), SIGNATURE(56), RUN(60) }
+enum class Kind { SNACK, DINO, AFFECTION, PERSONAL, KISS, FOOT_DUET, COPY_STRETCH, TAG }
 enum class ContextSignal { UNKNOWN, READING, GAME, MEDIA, WORK }
 enum class PropType { COOKIE, TOOL, DARK_HEART }
 data class Needs(var hunger: Float = 45f, var energy: Float = 75f, var affection: Float = 65f, var mischief: Float = 55f) {
@@ -22,6 +22,7 @@ sealed class Command {
     data class Drag(val who: Who, val x: Float, val y: Float) : Command()
     data class Release(val who: Who, val vx: Float=0f, val vy: Float=0f) : Command()
     data class Play(val kind: Kind, val leader: Who) : Command()
+    data class Idle(val who: Who, val antic: IdleAntic) : Command()
     data class Rest(val who: Who) : Command()
     data class Context(val signal: ContextSignal) : Command()
 }
@@ -37,6 +38,8 @@ class World(private val random: Random = Random.Default) {
     val physics=GravityPhysics()
     val weather=WeatherState()
     val deviceHeat=DeviceHeat()
+    val idleLife=Array(2) { IdleLife() }
+    val idleMoving get()=idleLife.any { it.performance?.antic==IdleAntic.RUN }
     val cooling=Array(2) { CoolingController() }
     private var environmentReading: WeatherReading?=null
     private var environmentWall=0L
@@ -59,7 +62,7 @@ class World(private val random: Random = Random.Default) {
     private var nextContext = 0L
     private var lastText = ""
     fun pet(who: Who) = pets[who.ordinal]
-    fun facesLeft(who: Who): Boolean { val p=pet(who); return if(p.state in listOf(State.WANDERING,State.APPROACHING,State.RETREATING)) p.facing<0 else pet(who.partner()).x<p.x }
+    fun facesLeft(who: Who): Boolean { val p=pet(who); return if(p.state in listOf(State.WANDERING,State.APPROACHING,State.RETREATING,State.IDLE_ANTIC) || (interaction?.kind==Kind.TAG && interaction?.stage==2)) p.facing<0 else pet(who.partner()).x<p.x }
     fun resize(w: Float, h: Float, pw: Float, ph: Float, now: Long) {
         interrupt(now,resetMotion=true)
         width = w.coerceAtLeast(1f); height = h.coerceAtLeast(1f)
@@ -91,7 +94,7 @@ class World(private val random: Random = Random.Default) {
         return top+if(who==Who.WIFE) gap else 0f
     }
     fun gravity(x: Float,y: Float,now: Long) {
-        if(physics.setGravity(x,y)) { if(interaction!=null) interrupt(now); pets.forEach { it.motion.grounded=false } }
+        if(physics.setGravity(x,y)) { if(interaction!=null || idleLife.any { it.performance!=null }) interrupt(now); pets.forEach { it.motion.grounded=false } }
     }
     private fun clamp(p: Pet) { p.x = p.x.coerceIn(0f, (width - petWidth).coerceAtLeast(0f)); p.y = p.y.coerceIn(0f, (height - petHeight).coerceAtLeast(0f)) }
     fun command(c: Command, now: Long) {
@@ -103,8 +106,9 @@ class World(private val random: Random = Random.Default) {
             is Command.Release -> pet(c.who).apply { if (state == State.DRAGGED) { state = State.RECOVERING; until = now + 700; motion.vx=(if(c.vx.isFinite()) c.vx else 0f).coerceIn(-petHeight*5,petHeight*5); motion.vy=(if(c.vy.isFinite()) c.vy else 0f).coerceIn(-petHeight*5,petHeight*5); motion.grounded=false; motion.fallSince=now; say(who, if(who == Who.HUSBAND) "Chute calculée !" else "Rattrape-moi !", now) } }
             is Command.Tap -> { if(pet(c.who).state != State.DRAGGED) { interrupt(now); pet(c.who).apply { state = State.REACTING; until = now + 2400; needs.affection += 2; needs.bound() }; say(c.who, if(c.who == Who.HUSBAND) listOf("Inspection du goûter ?", "Je gère.", "Encore faim…", "Un câlin, puis un biscuit ?")[random.nextInt(4)] else listOf("Qui, moi ?", "Il a l’air bon, ton goûter.", "Viens par ici.", "Bisou… et ton biscuit.")[random.nextInt(4)], now) } }
             is Command.Play -> start(c.kind, c.leader, now)
+            is Command.Idle -> startIdle(c.who,c.antic,now)
             is Command.Rest -> { interrupt(now); pet(c.who).apply { state=State.RESTING; until=now+18000 }; say(c.who,"Petite sieste…",now) }
-            is Command.Context -> if(now >= nextContext && interaction == null && c.signal != ContextSignal.UNKNOWN) {
+            is Command.Context -> if(now >= nextContext && interaction == null && idleLife.all { it.performance==null } && c.signal != ContextSignal.UNKNOWN) {
                 nextContext = now + 120000
                 pet(Who.HUSBAND).apply { state = State.OBSERVING; until = now + 3500 }
                 say(Who.HUSBAND, when(c.signal) { ContextSignal.GAME -> "Le joueur deux a faim."; ContextSignal.READING -> "Je lis avec toi."; ContextSignal.MEDIA -> "J’ai les provisions !"; else -> "Concentre-toi, je gère." }, now)
@@ -126,15 +130,19 @@ class World(private val random: Random = Random.Default) {
         return start(kind,if(index==0 && who==Who.WIFE) who.partner() else who,now)
     }
     fun start(kind: Kind, leader: Who, now: Long): Boolean {
-        if(keyboardOpen) return false
+        if(keyboardOpen || deviceHeat.hot || held!=null) return false
+        if(kind in listOf(Kind.FOOT_DUET,Kind.COPY_STRETCH,Kind.TAG) && (physics.gravity.y<.7f || width<petWidth*2.2f)) return false
+        if(kind==Kind.TAG && (weather.raining || weather.outfit==Outfit.NIGHT || pets.any { it.needs.energy<40 })) return false
         // The grounded kissing poses need a common floor; retry after the phone is upright.
         if(kind==Kind.KISS && (physics.gravity.y<.7f || pets.any { abs(it.y-(height-petHeight))>1f })) return false
         if(interaction != null || pets.any { it.state == State.DRAGGED || it.state == State.RECOVERING || !physics.supported(it,width,height,petWidth,petHeight) } || now < (cooldowns[kind] ?: 0)) return false
+        idleLife.forEach { it.cancel(now) }
         interaction = Interaction(kind, leader, 0, now, now)
         pets.forEach { it.state = State.SHARED }
         when(kind) {
             Kind.SNACK -> { prop = Prop(PropType.COOKIE, leader, now + 26000); pet(leader).state = State.EATING; say(leader, if(leader == Who.HUSBAND) "Enfin un goûter !" else "Celui-là est à moi…", now) }
             Kind.DINO -> { say(leader, "dinsoauurr...", now) }
+            Kind.FOOT_DUET, Kind.COPY_STRETCH, Kind.TAG -> { pet(leader).state=State.APPROACHING }
             Kind.AFFECTION, Kind.KISS -> { pet(leader).state = State.APPROACHING }
             Kind.PERSONAL -> {
                 pet(leader).state = if(leader == Who.HUSBAND) if(random.nextBoolean()) State.EXERCISING else State.FIXING else State.SHARED
@@ -147,6 +155,7 @@ class World(private val random: Random = Random.Default) {
         interaction?.let { cooldowns[it.kind] = now + 25000 }
         interaction = null; prop = null; bubble = null; hearts.clear()
         cooling.forEach { it.cancel(now) }
+        idleLife.forEach { it.cancel(now) }
         pets.forEach {
             if(resetMotion || it.state !in listOf(State.FALLING,State.PARACHUTING)) {
                 it.state=State.RECOVERING; it.until=now+900; it.motion.fallSince=-1
@@ -188,7 +197,7 @@ class World(private val random: Random = Random.Default) {
             if(held!=p.who) physics.step(p,width,height,petWidth,petHeight,dt,now)
             if(p.state==State.IDLE && now>=p.nextAccent) { p.idleAccentUntil=now+1300; p.nextAccent=now+random.nextLong(6000,14000) }
         }
-        if(held==null && interaction==null && pets.all { it.motion.grounded && it.state!=State.DRAGGED && it.state!=State.COOLING }) {
+        if(held==null && interaction==null && idleLife.all { it.performance==null } && pets.all { it.motion.grounded && it.state!=State.DRAGGED && it.state!=State.COOLING }) {
             val a=pets[0]; val b=pets[1]
             val vertical=abs(physics.gravity.x)>abs(physics.gravity.y)
             val separation=if(vertical) petHeight*.72f else petWidth*.72f
@@ -214,16 +223,53 @@ class World(private val random: Random = Random.Default) {
             if(controller.phase!=CoolingPhase.NONE) p.state=State.COOLING
             else if(p.state==State.COOLING) p.state=State.IDLE
         }
+        advanceIdles(now,dt)
         val joint = interaction
         if(joint != null) { if(pets.any { !it.motion.grounded }) interrupt(now) else advance(joint, now, dt) }
-        else if(!deviceHeat.hot && held==null && now >= nextChoice && pets.none { it.state == State.DRAGGED || it.state == State.RECOVERING || !it.motion.grounded }) {
+        else if(!deviceHeat.hot && held==null && now >= nextChoice && pets.none { it.state == State.DRAGGED || it.state == State.RECOVERING || it.state==State.IDLE_ANTIC || !it.motion.grounded }) {
             nextChoice = now + random.nextLong(9000, 19000)
             val p = pets[random.nextInt(2)]
             if(p.needs.energy < 30 || random.nextFloat() < .22f) { p.state = State.RESTING; p.until = now + 18000 }
+            else if(random.nextFloat() < .52f) {
+                val quiet=weather.raining || weather.outfit==Outfit.NIGHT
+                idleLife[p.who.ordinal].choose(p.needs,quiet,now,random)?.let { startIdle(p.who,it,now) }
+            }
             else if(random.nextFloat() < .3f) { p.state = State.WANDERING; p.target = random.nextFloat() * (width-petWidth).coerceAtLeast(0f) }
             else {
-                val weights = listOf(Kind.SNACK to (p.needs.hunger + pet(p.who.partner()).needs.mischief), Kind.DINO to 35f, Kind.AFFECTION to (p.needs.affection + bond*.2f), Kind.PERSONAL to 40f, Kind.KISS to (p.needs.affection*.45f)).filter { now >= (cooldowns[it.first] ?: 0) }
+                val weights = listOf(Kind.SNACK to (p.needs.hunger + pet(p.who.partner()).needs.mischief), Kind.DINO to 35f, Kind.AFFECTION to (p.needs.affection + bond*.2f), Kind.FOOT_DUET to 45f, Kind.COPY_STRETCH to 35f, Kind.TAG to (if(p.needs.energy>=40 && !weather.raining && weather.outfit!=Outfit.NIGHT) p.needs.mischief else 0f), Kind.PERSONAL to 25f, Kind.KISS to (p.needs.affection*.45f)).filter { now >= (cooldowns[it.first] ?: 0) }
                 if(weights.isNotEmpty()) { var pick = random.nextFloat()*weights.sumOf { it.second.toDouble() }.toFloat(); val kind = weights.firstOrNull { pick -= it.second; pick <= 0 }?.first ?: weights.last().first; start(kind,p.who,now) }
+            }
+        }
+    }
+    fun startIdle(who: Who, antic: IdleAntic, now: Long): Boolean {
+        val p=pet(who)
+        if(keyboardOpen || returningFromKeyboard || held!=null || deviceHeat.hot || interaction!=null || p.state!=State.IDLE || !p.motion.grounded) return false
+        if(antic.active && (p.needs.energy<40 || weather.raining || weather.outfit==Outfit.NIGHT)) return false
+        if(physics.gravity.y<.7f) return false
+        val far=(width-petWidth).coerceAtLeast(0f)
+        val destination=(p.x+if(p.x<far/2) petWidth*1.6f else -petWidth*1.6f).coerceIn(0f,far)
+        if(!idleLife[who.ordinal].start(antic,now,p.x,destination)) return false
+        p.state=State.IDLE_ANTIC
+        p.facing=if(pet(who.partner()).x<p.x) -1 else 1
+        nextChoice=now+antic.duration+random.nextLong(7000,13000)
+        return true
+    }
+    private fun advanceIdles(now: Long,dt: Float) {
+        pets.forEach { p ->
+            val controller=idleLife[p.who.ordinal]
+            val act=controller.performance ?: return@forEach
+            if(p.state!=State.IDLE_ANTIC || !p.motion.grounded || held!=null || deviceHeat.hot) {
+                controller.cancel(now)
+                if(p.state==State.IDLE_ANTIC) p.state=State.IDLE
+                return@forEach
+            }
+            val elapsed=now-act.started
+            if(elapsed>=act.antic.duration) {
+                controller.finish(now); p.state=State.IDLE
+                p.needs.energy+=if(act.antic==IdleAntic.RUN) -1.5f else .5f; p.needs.bound()
+            } else if(act.antic==IdleAntic.RUN && elapsed>=350 && elapsed<act.antic.duration-650) {
+                val target=if(elapsed<act.antic.duration/2) act.destination else act.origin
+                move(p,target,p.y,dt*1.8f)
             }
         }
     }
@@ -248,6 +294,23 @@ class World(private val random: Random = Random.Default) {
             return if(vertical) abs(mover.y-target.y)<=petHeight*1.05f && abs(mover.x-target.x)<8f else abs(mover.x-target.x) <= petWidth*1.05f && abs(mover.y-target.y) < 8f
         }
         when(i.kind) {
+            Kind.FOOT_DUET, Kind.COPY_STRETCH, Kind.TAG -> when(i.stage) {
+                0 -> if(approach(a,b)) { a.state=State.SHARED; stage() }
+                1 -> if(elapsed>=800) {
+                    a.target=if(a.x<b.x) 0f else width-petWidth
+                    stage()
+                }
+                2 -> {
+                    if(i.kind==Kind.TAG) {
+                        // A short out-and-back chase; both agree on direction and turn time.
+                        val target=if(elapsed<1700) a.target else width-petWidth-a.target
+                        move(a,target,a.y,dt*1.8f)
+                        if(elapsed>350) move(b,(a.x+if(target<a.x) petWidth*.9f else -petWidth*.9f).coerceIn(0f,width-petWidth),b.y,dt*1.65f)
+                    }
+                    if(elapsed>=if(i.kind==Kind.TAG) 3400 else 4300) { stage(); if(random.nextFloat()<.35f) say(b.who,if(i.kind==Kind.TAG) "Je t’ai eu !" else "Comme toi ♥",now) }
+                }
+                else -> if(elapsed>=1000) finish(now)
+            }
             Kind.KISS -> when(i.stage) {
                 0 -> {
                     a.state=State.APPROACHING
@@ -292,6 +355,13 @@ class World(private val random: Random = Random.Default) {
         if(i?.kind==Kind.KISS && i.stage>0) return when(i.stage) { 1 -> Pose.KISS_ENTER; 2 -> Pose.KISS; else -> Pose.KISS_AFTER }
         if(now<p.motion.landedUntil) return Pose.LAND
         if(!p.motion.grounded) return Pose.FALL
+        idleLife[who.ordinal].performance?.let { if(p.state==State.IDLE_ANTIC) return it.pose(now) }
+        if(i?.kind in listOf(Kind.FOOT_DUET,Kind.COPY_STRETCH,Kind.TAG) && i!=null && i.stage>0) {
+            if(i.stage==1) return if(who==i.leader) Pose.SIGNATURE else Pose.IDLE
+            if(i.stage>=3) return if(who==i.leader) Pose.SMIRK else Pose.WINK
+            if(who!=i.leader && now-i.since<if(i.kind==Kind.TAG) 350 else 650) return Pose.IDLE
+            return when(i.kind) { Kind.FOOT_DUET -> Pose.FEET; Kind.COPY_STRETCH -> Pose.STRETCH; else -> Pose.RUN }
+        }
         if(p.state in listOf(State.RECOVERING,State.REACTING)) return Pose.SURPRISE
         if(p.state in listOf(State.WANDERING,State.APPROACHING)) return Pose.WALK
         if(p.state==State.COOLING) return when(cooling[who.ordinal].phase) {
@@ -324,7 +394,7 @@ class World(private val random: Random = Random.Default) {
         weather.update(environmentReading,environmentWall,environmentHour,deviceHeat.hot,environmentKind,environmentTemp)
         if(changed) {
             cooling.forEach { it.cancel(now) }
-            if(deviceHeat.hot && interaction!=null) interrupt(now)
+            if(deviceHeat.hot && (interaction!=null || idleLife.any { it.performance!=null })) interrupt(now)
             if(!deviceHeat.hot) pets.filter { it.state==State.COOLING }.forEach { it.state=State.IDLE }
             if(deviceHeat.hot && !keyboardOpen) say(Who.HUSBAND,"Le téléphone chauffe… éventail prêt !",now)
         }

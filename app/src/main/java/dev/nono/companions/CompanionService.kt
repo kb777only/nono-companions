@@ -33,6 +33,16 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
     private val devListener=SharedPreferences.OnSharedPreferenceChangeListener { _,_ ->
         handler.removeCallbacks(refreshDev); handler.postDelayed(refreshDev,120)
     }
+    fun previewIdle(who: Who,antic: IdleAntic): Boolean {
+        val accepted=world.startIdle(who,antic,now())
+        if(accepted) { handler.removeCallbacks(tick); handler.post(tick) }
+        return accepted
+    }
+    fun previewShared(kind: Kind): Boolean {
+        val accepted=world.start(kind,Who.HUSBAND,now())
+        if(accepted) { handler.removeCallbacks(tick); handler.post(tick) }
+        return accepted
+    }
     private fun applyEnvironment(time: Long) {
         world.environment(null,System.currentTimeMillis(),dev.hour(java.time.LocalTime.now().hour),time,dev.kind,dev.temperature)
         world.batteryTemperature(dev.battery(actualBattery),time)
@@ -173,7 +183,7 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
             } catch(_: WindowManager.BadTokenException) { stopSelf(); return } catch(_: SecurityException) { stopSelf(); return } catch(_: IllegalArgumentException) { stopSelf(); return }
             if(time-savedAt > 60000) { store.save(world); savedAt=time }
             val falling=world.pets.any { !it.motion.grounded && it.state!=State.DRAGGED }
-            val active=world.interaction!=null || world.pets.any { it.state in listOf(State.WANDERING,State.APPROACHING,State.RECOVERING,State.REACTING) }
+            val active=world.idleMoving || world.interaction!=null || world.pets.any { it.state in listOf(State.WANDERING,State.APPROACHING,State.RECOVERING,State.REACTING) }
             val idleDelay=views.values.minOfOrNull { it.nextFrameDelay(time) } ?: 1000
             handler.postDelayed(this,if((world.weather.raining && !world.keyboardOpen) || world.returningFromKeyboard || orientation.moving(time) || world.pets.any { it.state==State.RETREATING } || (!world.keyboardOpen && falling) || world.hearts.isNotEmpty()) 32 else if(world.deviceHeat.hot && !world.keyboardOpen) 80 else if(active) 65 else idleDelay)
         }

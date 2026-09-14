@@ -87,6 +87,15 @@ class DevActivity : Activity() {
                 if(manual) prefs.edit().putInt(key.name,value).apply() else prefs.edit().remove(key.name).apply()
             }
         }
+        text("Petites animations",21f)
+        text("Essais ponctuels : attendez qu’ils soient posés et disponibles. La chaleur, le clavier et les interactions en cours gardent la priorité.",14f)
+        fun result(ok: Boolean) { Toast.makeText(this,if(ok) "C’est parti !" else "Pas maintenant : occupé, au repos ou en récupération.",Toast.LENGTH_SHORT).show() }
+        Who.entries.forEach { who -> IdleAntic.entries.forEach { antic ->
+            column.addView(Button(this).apply { text="${if(who==Who.HUSBAND) "Lui" else "Elle"} : ${antic.label(who)}"; setOnClickListener { result(CompanionService.live?.previewIdle(who,antic)==true) } })
+        } }
+        listOf(Kind.FOOT_DUET to "Pieds en duo",Kind.COPY_STRETCH to "Je t’imite",Kind.TAG to "Attrape-moi").forEach { (kind,label) ->
+            column.addView(Button(this).apply { text=label; setOnClickListener { result(CompanionService.live?.previewShared(kind)==true) } })
+        }
         text("Orientation : rotation et gravité des compagnons uniquement. Clavier simulé : hauteur de 40 % de l’écran. Les écrans verrouillés et protégés restent gérés par Android.",14f)
         column.addView(Button(this).apply { text="Retour aux compagnons"; setOnClickListener { finish() } })
         setContentView(ScrollView(this).apply {

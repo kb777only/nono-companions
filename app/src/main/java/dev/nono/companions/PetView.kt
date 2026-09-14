@@ -14,6 +14,10 @@ class AnimationPlayer {
     private var entered=0L
     var nextFrameAt=0L; private set
     private val clips=mapOf(
+        Pose.FEET to Clip(intArrayOf(48,49,50,49,50,51),longArrayOf(550,280,280,280,280,800),true),
+        Pose.STRETCH to Clip(intArrayOf(52,53,54,53,55,52),longArrayOf(400,750,850,400,850,500),false),
+        Pose.SIGNATURE to Clip(intArrayOf(56,57,58,59),longArrayOf(650,650,1000,1400),false),
+        Pose.RUN to Clip(intArrayOf(60,61,62,63),longArrayOf(150,150,150,150),true),
         Pose.FAN to Clip(intArrayOf(44,45),longArrayOf(320,320),true),
         Pose.PEEK to Clip(intArrayOf(42,43,42),longArrayOf(3500,140,1600),true),
         Pose.PARACHUTE to Clip(intArrayOf(40,41),longArrayOf(450,450),true),
@@ -56,6 +60,7 @@ class Art(context: Context) {
         for(y in 0 until ch) for(x in 0 until cw) if(Color.alpha(bitmap.getPixel(col*cw+x,row*ch+y)) > 40) { left=minOf(left,x); right=maxOf(right,x); top=minOf(top,y); bottom=maxOf(bottom,y) }
         if(right<=left) Rect(col*cw,row*ch,(col+1)*cw,(row+1)*ch) else Rect(col*cw+left,row*ch+top,col*cw+right+1,row*ch+bottom+1)
     } } }
+    val idle=Array(2) { who -> context.assets.open("art/${if(who==0) "husband" else "wife"}-idle.png").use { BitmapFactory.decodeStream(it) } }
     val cooling=context.assets.open("art/cooling.png").use { BitmapFactory.decodeStream(it) }
     val coolingProps=context.assets.open("art/cooling-props.png").use { BitmapFactory.decodeStream(it) }
     val wardrobe=Array(3) { index -> context.assets.open("art/weather-${listOf("cold","hot","night")[index]}.png").use { BitmapFactory.decodeStream(it) } }
@@ -122,7 +127,7 @@ class PetView(context: Context, private val who: Who, private val art: Art) : Vi
         val rainPose=umbrellaPose(raining,frame)
         val coolingFrame=frame in 44..47 && !rainPose
         val dressed=outfit!=Outfit.DEFAULT && !coolingFrame
-        val bitmap=if(rainPose) art.rain[outfit.ordinal] else if(coolingFrame) art.cooling else if(dressed) art.wardrobe[outfit.ordinal-1] else if(frame>=40) art.parachutes else if(frame>=36) art.kiss else art.atlases[who.ordinal][sheet]
+        val bitmap=if(rainPose) art.rain[outfit.ordinal] else if(coolingFrame) art.cooling else if(dressed) art.wardrobe[outfit.ordinal-1] else if(frame>=48) art.idle[who.ordinal] else if(frame>=40) art.parachutes else if(frame>=36) art.kiss else art.atlases[who.ordinal][sheet]
         if(rainPose) {
             val cellIndex=rainFrame(frame)+who.ordinal*12; val cw=bitmap.width/4; val ch=bitmap.height/6
             kissSource.set((cellIndex%4)*cw,(cellIndex/4)*ch,(cellIndex%4+1)*cw,(cellIndex/4+1)*ch)
@@ -135,11 +140,15 @@ class PetView(context: Context, private val who: Who, private val art: Art) : Vi
             val cellIndex=dressedFrame(frame)+who.ordinal*12; val cw=bitmap.width/4; val ch=bitmap.height/6
             kissSource.set((cellIndex%4)*cw,(cellIndex/4)*ch,(cellIndex%4+1)*cw,(cellIndex/4+1)*ch)
         }
+        else if(frame>=48) {
+            val index=frame-48; val cw=bitmap.width/4; val ch=bitmap.height/4
+            kissSource.set(index%4*cw,index/4*ch,(index%4+1)*cw,(index/4+1)*ch)
+        }
         else if(frame>=40) kissSource.set((frame-39)*bitmap.width/3,who.ordinal*bitmap.height/2,(frame-38)*bitmap.width/3,(who.ordinal+1)*bitmap.height/2)
         else if(frame>=36) kissSource.set((frame-36)*bitmap.width/4,who.ordinal*bitmap.height/2,(frame-35)*bitmap.width/4,(who.ordinal+1)*bitmap.height/2)
         val source=if(rainPose || dressed || frame>=36) kissSource else art.bounds[who.ordinal][sheet][cell]
         // Uniform scale uses original cell height, preserving seated/standing head scale.
-        val scale=if(rainPose) minOf(bodyWidth/ source.width(),bodyHeight/source.height()) else bodyHeight/(bitmap.height/(if(rainPose || dressed) 6f else if(frame>=36) 2f else 3f)) * if(who==Who.WIFE) .9f else .97f
+        val scale=if(rainPose) minOf(bodyWidth/ source.width(),bodyHeight/source.height()) else bodyHeight/(bitmap.height/(if(rainPose || dressed) 6f else if(frame>=48) 4f else if(frame>=36) 2f else 3f)) * if(who==Who.WIFE) .9f else .97f
         val dw=source.width()*scale; val dh=source.height()*scale
         val bottom=bodyHeight-2
         canvas.save()

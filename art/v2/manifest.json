@@ -287,5 +287,21 @@
     "flightPriority": "fall/land/parachute/peek override rain pose",
     "totalPoses": 96
   },
-  "retiredRuntimeUmbrella": "umbrellas.png no longer loaded; retained as historical art only"
+  "retiredRuntimeUmbrella": "umbrellas.png no longer loaded; retained as historical art only",
+  "idleLife": {
+    "atlases": [
+      "husband-idle.png",
+      "wife-idle.png"
+    ],
+    "layout": "4 columns x 4 rows per spouse, 1024x1536 RGBA",
+    "frames": {
+      "48-51": "feet",
+      "52-55": "stretch",
+      "56-59": "signature",
+      "60-63": "run"
+    },
+    "totalNewFrames": 32,
+    "seasonalAndRain": "reuse existing compatible wardrobe poses; full new idle frames currently default clothing only",
+    "preparation": "tools/prepare-idle.ps1"
+  }
 }

@@ -57,6 +57,10 @@ class WeatherState {
 
 /** Map existing action timing to consistent dressed poses, without changing the behavior controller. */
 fun dressedFrame(frame: Int): Int = when(frame) {
+    48,51 -> 9; 49,50 -> 6
+    52,55 -> 0; 53,54 -> 5
+    56 -> 0; 57,58 -> 10; 59 -> 1
+    60,62 -> 2; 61,63 -> 3
     0,2 -> 2; 1,3 -> 3
     5,6 -> 1
     8,9,10,11,23 -> 8

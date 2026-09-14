@@ -1,6 +1,6 @@
 # NoNo Companions
 
-A private native Kotlin Android app for your two chibi companions. Version 0.8.0 fixes canopy cleanup, hardens keyboard detection and adds Accessibility diagnostics. Rain now uses integrated character-and-umbrella poses for each outfit, with no standalone floating umbrella. The developer menu retains local Auto/Manual previews. See [this update](docs/VERSION-0.8.md).
+A private native Kotlin Android app for your two chibi companions. Version 0.9.0 adds four personal idle antics per spouse, 32 new animation frames, and three coordinated shared idle scenes. French preview buttons are available in the developer menu. See [this update](docs/VERSION-0.9.md).
 
 ## Install
 
@@ -15,6 +15,7 @@ If HyperOS or Samsung stops the app, review the app's background/battery setting
 ## Implemented
 
 - Two independently positioned overlay companions; separate, non-touchable bubbles and temporary props.
+- Four personal idle performances each, shared foot kicks, copycat stretches and a short chase.
 - Wandering, blinking, resting, tap reactions, gravity-driven falls/landings after drag, food and personal antics. Phone tilt changes the falling direction.
 - One coordinated controller for snack theft in either direction, notice/chase/sharing, dinosaur call-and-response (`dinsoauurr...` then `rawrrr`), and affection.
 - Ownership transfers animate the independent snack prop between its owners; interrupted scenes clean up their objects and participants.
@@ -25,7 +26,7 @@ If HyperOS or Samsung stops the app, review the app's background/battery setting
 
 ## Current limits
 
-- 44 original generated pose/animation frames per spouse, four new cooling poses and 12 poses per seasonal outfit with timed clips. Some walk phases are subtle, exact hand contacts are approximate, and there is some generated pose-to-pose detail drift. The approved concept remains the source of truth. This is not a claim of studio-quality animation.
+- 32 new default-outfit idle frames; seasonal and rain outfits reuse existing compatible poses. 44 original generated pose/animation frames per spouse, four new cooling poses and 12 poses per seasonal outfit with timed clips. Some walk phases are subtle, exact hand contacts are approximate, and there is some generated pose-to-pose detail drift. The approved concept remains the source of truth. This is not a claim of studio-quality animation.
 - Overlay touch targets are small rectangles, not exact alpha silhouettes. Transparent space within each rectangle also receives touches.
 - Fold-hinge avoidance is not implemented. Galaxy Z Fold hardware, split-screen and vendor keyboard-inset behavior need device verification; some devices do not deliver the keyboard insets to other-app overlays.
 - Accessibility categories can be unavailable or unspecified; autonomous behavior continues. No attempt is made to infer sensitive content.
