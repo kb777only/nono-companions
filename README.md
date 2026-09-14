@@ -1,6 +1,6 @@
 # NoNo Companions
 
-A private native Kotlin Android app for your two chibi companions, using the approved second concept sheet. Version 0.5.1 adds nearest-edge keyboard retreat/peeking (wife below husband when sharing a side) and deliberate smooth quarter-turn orientation, retaining automatic parachutes and smaller companions, French dialogue, gravity/tilt reactions, generated speech and action-menu skins, and 44 pose/animation frames per spouse. Long-press a character for actions, including a coordinated kiss with floating hearts. See [the latest update](docs/VERSION-0.5.md).
+A private native Kotlin Android app for your two chibi companions, using the approved second concept sheet. Version 0.6.0 adds local battery-heat awareness, light clothing, folding fans, independently spinning desk fans, sweat and a hood-up warm outfit for the husband. Night pyjamas follow the phone clock. Keyboard peeking, deliberate orientation, parachutes and coordinated kisses remain available. Live weather is prepared but disabled pending approval for town-coordinate sharing. See [this update](docs/VERSION-0.6.md).
 
 ## Install
 
@@ -25,7 +25,7 @@ If HyperOS or Samsung stops the app, review the app's background/battery setting
 
 ## Current limits
 
-- 44 generated pose/animation frames per spouse with timed clips. Some walk phases are subtle, exact hand contacts are approximate, and there is some generated pose-to-pose detail drift. The approved concept remains the source of truth. This is not a claim of studio-quality animation.
+- 44 original generated pose/animation frames per spouse, four new cooling poses and 12 poses per seasonal outfit with timed clips. Some walk phases are subtle, exact hand contacts are approximate, and there is some generated pose-to-pose detail drift. The approved concept remains the source of truth. This is not a claim of studio-quality animation.
 - Overlay touch targets are small rectangles, not exact alpha silhouettes. Transparent space within each rectangle also receives touches.
 - Fold-hinge avoidance is not implemented. Galaxy Z Fold hardware, split-screen and vendor keyboard-inset behavior need device verification; some devices do not deliver the keyboard insets to other-app overlays.
 - Accessibility categories can be unavailable or unspecified; autonomous behavior continues. No attempt is made to infer sensitive content.

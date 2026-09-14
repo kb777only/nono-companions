@@ -14,6 +14,7 @@ class AnimationPlayer {
     private var entered=0L
     var nextFrameAt=0L; private set
     private val clips=mapOf(
+        Pose.FAN to Clip(intArrayOf(44,45),longArrayOf(320,320),true),
         Pose.PEEK to Clip(intArrayOf(42,43,42),longArrayOf(3500,140,1600),true),
         Pose.PARACHUTE to Clip(intArrayOf(40,41),longArrayOf(450,450),true),
         Pose.KISS_ENTER to Clip(intArrayOf(36,37),longArrayOf(300,350),false),
@@ -55,6 +56,10 @@ class Art(context: Context) {
         for(y in 0 until ch) for(x in 0 until cw) if(Color.alpha(bitmap.getPixel(col*cw+x,row*ch+y)) > 40) { left=minOf(left,x); right=maxOf(right,x); top=minOf(top,y); bottom=maxOf(bottom,y) }
         if(right<=left) Rect(col*cw,row*ch,(col+1)*cw,(row+1)*ch) else Rect(col*cw+left,row*ch+top,col*cw+right+1,row*ch+bottom+1)
     } } }
+    val cooling=context.assets.open("art/cooling.png").use { BitmapFactory.decodeStream(it) }
+    val coolingProps=context.assets.open("art/cooling-props.png").use { BitmapFactory.decodeStream(it) }
+    val wardrobe=Array(3) { index -> context.assets.open("art/weather-${listOf("cold","hot","night")[index]}.png").use { BitmapFactory.decodeStream(it) } }
+    val umbrellas=context.assets.open("art/umbrellas.png").use { BitmapFactory.decodeStream(it) }
     val peeking=context.assets.open("art/peeking.png").use { BitmapFactory.decodeStream(it) }
     val parachutes=context.assets.open("art/parachutes.png").use { BitmapFactory.decodeStream(it) }
     val kiss=context.assets.open("art/kiss.png").use { BitmapFactory.decodeStream(it) }
@@ -74,15 +79,25 @@ class PetView(context: Context, private val who: Who, private val art: Art) : Vi
     fun orientation(width: Float,height: Float,degrees: Float) {
         if(bodyWidth!=width || bodyHeight!=height || angle!=degrees) { bodyWidth=width; bodyHeight=height; angle=degrees; invalidate() }
     }
+    private var hot=false
+    private var coolingPhase=CoolingPhase.NONE
+    private var coolingElapsed=0L
+    private val coolingArt=CoolingArt(art.coolingProps)
+    private var outfit=Outfit.DEFAULT
     private var frame=4
     private var facingLeft=false
     private var hearts=emptyList<KissHeart>()
     private var time=0L
     fun update(world: World, now: Long) {
+        if(hot || world.deviceHeat.hot) invalidate()
+        hot=world.deviceHeat.hot
+        coolingPhase=world.cooling[who.ordinal].phase
+        coolingElapsed=world.cooling[who.ordinal].elapsed(now)
         val hadHearts=hearts.isNotEmpty(); hearts=world.hearts.filter { it.who==who }; time=now
         if(hadHearts || hearts.isNotEmpty()) invalidate()
+        if(outfit!=world.weather.outfit) { outfit=world.weather.outfit; invalidate() }
         val newFrame=player.frame(world.pose(who,now),now)
-        val left=if(newFrame>=42) !world.pet(who).hideLeft else world.facesLeft(who)
+        val left=if(newFrame in 42..43) !world.pet(who).hideLeft else world.facesLeft(who)
         if(newFrame!=frame || left!=facingLeft) { frame=newFrame; facingLeft=left; invalidate() }
     }
     fun nextFrameDelay(now: Long)=(player.nextFrameAt-now).coerceIn(40,1000)
@@ -90,7 +105,7 @@ class PetView(context: Context, private val who: Who, private val art: Art) : Vi
         canvas.save()
         canvas.translate(width/2f,height/2f)
         canvas.rotate(angle)
-        if(frame>=42) {
+        if(frame in 42..43) {
             val cw=art.peeking.width/2; val ch=art.peeking.height/2
             kissSource.set((frame-42)*cw,who.ordinal*ch,(frame-41)*cw,(who.ordinal+1)*ch)
             val w=38f*resources.displayMetrics.density; val h=44f*resources.displayMetrics.density
@@ -101,12 +116,22 @@ class PetView(context: Context, private val who: Who, private val art: Art) : Vi
         }
         canvas.translate(-bodyWidth/2,-bodyHeight/2)
         val sheet=frame/12; val cell=frame%12
-        val bitmap=if(frame>=40) art.parachutes else if(frame>=36) art.kiss else art.atlases[who.ordinal][sheet]
-        if(frame>=40) kissSource.set((frame-39)*bitmap.width/3,who.ordinal*bitmap.height/2,(frame-38)*bitmap.width/3,(who.ordinal+1)*bitmap.height/2)
+        val coolingFrame=frame in 44..47
+        val dressed=outfit!=Outfit.DEFAULT && !coolingFrame
+        val bitmap=if(coolingFrame) art.cooling else if(dressed) art.wardrobe[outfit.ordinal-1] else if(frame>=40) art.parachutes else if(frame>=36) art.kiss else art.atlases[who.ordinal][sheet]
+        if(coolingFrame) {
+            val cw=bitmap.width/4; val ch=bitmap.height/2
+            kissSource.set((frame-44)*cw,who.ordinal*ch,(frame-43)*cw,(who.ordinal+1)*ch)
+        }
+        else if(dressed) {
+            val cellIndex=dressedFrame(frame)+who.ordinal*12; val cw=bitmap.width/4; val ch=bitmap.height/6
+            kissSource.set((cellIndex%4)*cw,(cellIndex/4)*ch,(cellIndex%4+1)*cw,(cellIndex/4+1)*ch)
+        }
+        else if(frame>=40) kissSource.set((frame-39)*bitmap.width/3,who.ordinal*bitmap.height/2,(frame-38)*bitmap.width/3,(who.ordinal+1)*bitmap.height/2)
         else if(frame>=36) kissSource.set((frame-36)*bitmap.width/4,who.ordinal*bitmap.height/2,(frame-35)*bitmap.width/4,(who.ordinal+1)*bitmap.height/2)
-        val source=if(frame>=36) kissSource else art.bounds[who.ordinal][sheet][cell]
+        val source=if(dressed || frame>=36) kissSource else art.bounds[who.ordinal][sheet][cell]
         // Uniform scale uses original cell height, preserving seated/standing head scale.
-        val scale=bodyHeight/(bitmap.height/(if(frame>=36) 2f else 3f)) * if(who==Who.WIFE) .9f else .97f
+        val scale=bodyHeight/(bitmap.height/(if(dressed) 6f else if(frame>=36) 2f else 3f)) * if(who==Who.WIFE) .9f else .97f
         val dw=source.width()*scale; val dh=source.height()*scale
         val bottom=bodyHeight-2
         canvas.save()
@@ -115,6 +140,7 @@ class PetView(context: Context, private val who: Who, private val art: Art) : Vi
         destination.set((bodyWidth-dw)/2,bottom-dh,(bodyWidth+dw)/2,bottom)
         canvas.drawBitmap(bitmap,source,destination,paint)
         canvas.restore()
+        coolingArt.draw(canvas,who,coolingPhase,time,bodyWidth,bodyHeight,facingLeft,hot,frame==45,coolingElapsed)
         for(heart in hearts) {
             val progress=heart.progress(time)
             val size=bodyWidth*.12f

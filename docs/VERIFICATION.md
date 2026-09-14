@@ -73,3 +73,10 @@ Galaxy Z Fold folded/unfolded geometry and hinge occlusion, split-screen, keyboa
 The artwork is a prototype set of distinct poses and limited loops, not a complete polished animation set. Background extraction has visible small residual islands around some glasses/hair gaps. Precise hand contacts, stride cycles and in-between poses remain missing.
 
 
+
+
+## 0.6.0 — 2026-09-14
+
+Offline debug build, 59 unit tests (zero failures/errors), and lint passed (zero errors, seven warnings). Final APK contains byte-identical cooling, cooling-props, cold/hot/night wardrobe and umbrella PNGs. Android APK signing verification passed. No INTERNET permission in packaged manifest. New processed atlases contain 38 nonempty cells with real alpha. No device/emulator test was performed because the phone is disconnected and no emulator is configured. Live weather remains unconnected pending Open-Meteo coordinate-sharing approval.
+
+APK SHA-256: `0C164B23E79F9CCA763F54C757B27C97F9A293F1B9A6D80ED3D80C22E9CDBD23`. See VERSION-0.6.md for behavior, art, privacy and limitations.

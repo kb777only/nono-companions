@@ -32,7 +32,9 @@ class MainActivity : Activity() {
             AlertDialog.Builder(this).setTitle("Local, optional keyboard awareness").setMessage(getString(R.string.context_description)).setNegativeButton("Not now",null).setPositiveButton("Open Android settings") { _,_ -> startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)) }.show()
         }
         if(android.os.Build.VERSION.SDK_INT >= 33 && checkSelfPermission(android.Manifest.permission.POST_NOTIFICATIONS) != android.content.pm.PackageManager.PERMISSION_GRANTED) button("Allow service notification") { requestPermissions(arrayOf(android.Manifest.permission.POST_NOTIFICATIONS),7) }
-        text("Everything stays on this phone. No account, internet access or screen-text collection. Android provides permission revocation and its active-app service controls. There is no floating toolbar or pause button.",15f)
+        text("Température de la batterie : utilisée localement. Au-dessus de 43 °C, tenue légère, éventails et ventilateurs ; retour à la normale à 42 °C. Ces animations ne refroidissent pas réellement le téléphone.",15f)
+        text("Pyjama de 22 h à 7 h, sauf si la batterie chauffe. Météo en direct non activée dans cette version : autorisation de partage de la ville encore en attente.",14f)
+        text("Companion moods and screen context stay on this phone. Live weather is not enabled in this build; no town or coordinates are sent. No accounts, remote commands or screen-text collection. Android provides permission revocation and its active-app service controls. There is no floating toolbar or pause button.",15f)
         text("If Samsung or HyperOS stops the companions, review this app’s battery/background settings. Exact options vary by phone. Screen-off and locked time stays quiet.",15f)
         setContentView(ScrollView(this).apply {
             addView(column)

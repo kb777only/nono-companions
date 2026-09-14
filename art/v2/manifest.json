@@ -197,5 +197,68 @@
       38,
       44
     ]
-  }
+  },
+  "weatherWardrobe": {
+    "files": [
+      "weather-cold.png",
+      "weather-hot.png",
+      "weather-night.png"
+    ],
+    "columns": 4,
+    "rows": 6,
+    "characterRows": {
+      "HUSBAND": [
+        0,
+        1,
+        2
+      ],
+      "WIFE": [
+        3,
+        4,
+        5
+      ]
+    },
+    "posesPerOutfitPerCharacter": 12,
+    "poseOrder": [
+      "idle",
+      "blink",
+      "walk A",
+      "walk B",
+      "eat",
+      "dinosaur claw",
+      "rest",
+      "kiss",
+      "fall",
+      "parachute",
+      "reach",
+      "work"
+    ],
+    "note": "Existing 44-frame action timing maps to these 12 dressed poses. Keyboard-peek heads retain original cuffs."
+  },
+  "umbrellas": {
+    "file": "umbrellas.png",
+    "columns": 2,
+    "rows": 1,
+    "characters": [
+      "HUSBAND",
+      "WIFE"
+    ],
+    "background": "native alpha preserved"
+  },
+  "cooling": {
+    "poses": "cooling.png",
+    "layout": "4 columns x 2 rows; husband top, wife bottom",
+    "frames": {
+      "44": "fanning wrist low",
+      "45": "fanning wrist raised",
+      "46": "kneeling place/switch fan",
+      "47": "seated enjoying breeze"
+    },
+    "props": "cooling-props.png",
+    "propLayout": "2 columns (husband,wife) x 3 rows (folding fan, transparent housing, independent rotor)",
+    "anchor": "full-cell baseline, same rendering scale as wardrobe; props drawn independently in character window",
+    "thermalSignal": "ACTION_BATTERY_CHANGED EXTRA_TEMPERATURE / 10.0; battery Celsius, not CPU or skin",
+    "threshold": "enter >43, exit <=42; overrides weather and night"
+  },
+  "coldHoodCorrection": "All 12 husband cold poses now cream hoodie with hood up and no scarf. Wife unchanged."
 }

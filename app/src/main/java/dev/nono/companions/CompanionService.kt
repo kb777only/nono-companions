@@ -20,6 +20,8 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
     private lateinit var store: MoodStore
     private lateinit var displays: DisplayManager
     private lateinit var tilt: TiltSensor
+    private var nextEnvironment=0L
+    private val rainViews=mutableMapOf<Who,Pair<RainView,WindowManager.LayoutParams>>()
     private val views=mutableMapOf<Who,PetView>()
     private val params=mutableMapOf<Who,WindowManager.LayoutParams>()
     private var menu: ActionMenu?=null
@@ -49,7 +51,12 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
     private val receiver=object: BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             when(intent?.action) {
-                Intent.ACTION_SCREEN_OFF -> { screenOn=false; tilt.stop(); handler.removeCallbacks(tick); world.held=null; gestureEpoch++; world.interrupt(now(),resetMotion=true); store.save(world); removeCanopies(); removeMenu(); removeSpeech(); removeProp(); views.values.forEach { it.visibility=View.GONE } }
+                Intent.ACTION_BATTERY_CHANGED -> {
+                    world.batteryTemperature(if(intent.hasExtra(BatteryManager.EXTRA_TEMPERATURE)) intent.getIntExtra(BatteryManager.EXTRA_TEMPERATURE,Int.MIN_VALUE) else null,now())
+                    nextEnvironment=0L
+                    if(started && screenOn) { handler.removeCallbacks(tick); handler.post(tick) }
+                }
+                Intent.ACTION_SCREEN_OFF -> { screenOn=false; tilt.stop(); handler.removeCallbacks(tick); world.held=null; gestureEpoch++; world.interrupt(now(),resetMotion=true); store.save(world); removeRain(); removeCanopies(); removeMenu(); removeSpeech(); removeProp(); views.values.forEach { it.visibility=View.GONE } }
                 Intent.ACTION_SCREEN_ON,Intent.ACTION_USER_PRESENT -> { screenOn=true; tilt.start(); world.resetClock(); handler.removeCallbacks(tick); handler.post(tick) }
             }
         }
@@ -91,7 +98,7 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
             world.pets.forEachIndexed { index,p -> p.x=world.width*(if(index==0) .16f else .60f); p.y=(world.height-world.petHeight-dp(45)).coerceAtLeast(0f) }
             bounds(force=true)
         } catch(_: Exception) { stopSelf(); return }
-        val filter=IntentFilter().apply { addAction(Intent.ACTION_SCREEN_OFF); addAction(Intent.ACTION_SCREEN_ON); addAction(Intent.ACTION_USER_PRESENT) }
+        val filter=IntentFilter().apply { addAction(Intent.ACTION_SCREEN_OFF); addAction(Intent.ACTION_SCREEN_ON); addAction(Intent.ACTION_USER_PRESENT); addAction(Intent.ACTION_BATTERY_CHANGED) }
         if(Build.VERSION.SDK_INT>=33) registerReceiver(receiver,filter,RECEIVER_NOT_EXPORTED) else registerReceiver(receiver,filter)
         displays.registerDisplayListener(this,handler); started=true
         screenOn=getSystemService(PowerManager::class.java).isInteractive
@@ -113,10 +120,14 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
             if(!screenOn) return
             if(!Settings.canDrawOverlays(this@CompanionService)) { store.save(world); stopSelf(); return }
             val locked=getSystemService(KeyguardManager::class.java).isKeyguardLocked
-            if(locked) { world.held=null; gestureEpoch++; removeCanopies(); removeMenu(); tilt.stop(); views.values.forEach { it.visibility=View.GONE }; removeSpeech(); removeProp(); handler.postDelayed(this,2000); return }
+            if(locked) { world.held=null; gestureEpoch++; removeRain(); removeCanopies(); removeMenu(); tilt.stop(); views.values.forEach { it.visibility=View.GONE }; removeSpeech(); removeProp(); handler.postDelayed(this,2000); return }
             tilt.start()
             views.values.forEach { it.visibility=if(usableForHeads) View.VISIBLE else View.GONE }
             val time=now(); val angle=orientation.value(time)
+            if(time>=nextEnvironment) {
+                nextEnvironment=time+60_000
+                world.environment(null,System.currentTimeMillis(),java.time.LocalTime.now().hour,time)
+            }
             val size=OrientationSnap.extent(bodyWidth,bodyHeight,angle)
             world.footprint(size.first,size.second)
             world.tick(time)
@@ -125,12 +136,13 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
                 if(menu==null) showSpeech() else { removeSpeech(); positionMenu(); menu?.let { wm.updateViewLayout(it,menuParams) } }
                 showProp(time)
                 showCanopies()
+                showRain(time,angle)
             } catch(_: WindowManager.BadTokenException) { stopSelf(); return } catch(_: SecurityException) { stopSelf(); return } catch(_: IllegalArgumentException) { stopSelf(); return }
             if(time-savedAt > 60000) { store.save(world); savedAt=time }
             val falling=world.pets.any { !it.motion.grounded && it.state!=State.DRAGGED }
             val active=world.interaction!=null || world.pets.any { it.state in listOf(State.WANDERING,State.APPROACHING,State.RECOVERING,State.REACTING) }
             val idleDelay=views.values.minOfOrNull { it.nextFrameDelay(time) } ?: 1000
-            handler.postDelayed(this,if(world.returningFromKeyboard || orientation.moving(time) || world.pets.any { it.state==State.RETREATING } || (!world.keyboardOpen && falling) || world.hearts.isNotEmpty()) 32 else if(active) 65 else idleDelay)
+            handler.postDelayed(this,if((world.weather.raining && !world.keyboardOpen) || world.returningFromKeyboard || orientation.moving(time) || world.pets.any { it.state==State.RETREATING } || (!world.keyboardOpen && falling) || world.hearts.isNotEmpty()) 32 else if(world.deviceHeat.hot && !world.keyboardOpen) 80 else if(active) 65 else idleDelay)
         }
     }
     private fun touch(view: PetView,who: Who) {
@@ -213,7 +225,7 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
         val pw=minOf(dp(72),w/3).coerceAtLeast(24); val ph=minOf(dp(104),h/3).coerceAtLeast(32)
         val key="$w,$h,$pw,$ph,${inset.left},${inset.top},$keyboardVisible"
         if(!force && key==geometry) return
-        gestureEpoch++; world.held=null; removeCanopies(); removeMenu(); geometry=key; originX=inset.left; originY=inset.top
+        gestureEpoch++; world.held=null; removeRain(); removeCanopies(); removeMenu(); geometry=key; originX=inset.left; originY=inset.top
         bodyWidth=pw.toFloat(); bodyHeight=ph.toFloat()
         val size=OrientationSnap.extent(bodyWidth,bodyHeight,orientation.value(now()))
         world.resize(w.toFloat(),h.toFloat(),size.first,size.second,now())
@@ -240,6 +252,28 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
         if(changed) wm.updateViewLayout(view,lp)
     }
 
+    private fun showRain(time: Long,angle: Float) {
+        if(!world.weather.raining || world.keyboardOpen || !usableForHeads) { removeRain(); return }
+        Who.entries.forEach { who ->
+            val p=world.pet(who)
+            val existing=rainViews[who]
+            val pair=existing ?: (RainView(this,who,artwork.umbrellas) to layout(dp(160),dp(260),true))
+            val size=OrientationSnap.extent(dp(160).toFloat(),dp(260).toFloat(),angle)
+            val lp=pair.second; lp.alpha=.30f
+            val w=size.first.toInt(); val h=size.second.toInt()
+            val x=originX+(p.x+world.petWidth/2-w/2).toInt()
+            val y=originY+(p.y+world.petHeight/2-h/2).toInt()
+            val changed=lp.x!=x || lp.y!=y || lp.width!=w || lp.height!=h
+            lp.x=x; lp.y=y; lp.width=w; lp.height=h
+            pair.first.update(p,time,angle)
+            if(existing==null) { rainViews[who]=pair; wm.addView(pair.first,lp) }
+            else if(changed) wm.updateViewLayout(pair.first,lp)
+        }
+    }
+    private fun removeRain() {
+        rainViews.values.forEach { it.first.particles.clear(); if(it.first.isAttachedToWindow) try { wm.removeView(it.first) } catch(_: Exception) {} }
+        rainViews.clear()
+    }
     private fun showCanopies() {
         if(world.keyboardOpen) { removeCanopies(); return }
         Who.entries.forEach { who ->
@@ -250,7 +284,7 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
                 val existing=canopies[who]
                 val pair=existing ?: (ParachuteView(this,artwork.parachutes,who) to layout(dp(96),dp(90),true))
                 val lp=pair.second
-                lp.alpha=.55f // Two overlapping pass-through canopies stay below Android’s .8 obscuring limit.
+                lp.alpha=if(world.weather.raining) .30f else .55f // Two overlapping pass-through canopies stay below Android’s .8 obscuring limit.
                 val angle=orientation.value(now()); pair.first.orientation(angle)
                 val extent=OrientationSnap.extent(dp(96).toFloat(),dp(90).toFloat(),angle)
                 val w=extent.first.toInt(); val h=extent.second.toInt()
@@ -271,7 +305,7 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
         canopies.clear()
     }
     private fun showSpeech() {
-        if(world.keyboardOpen || world.pets.any { it.state==State.PARACHUTING }) { removeSpeech(); return }
+        if(world.weather.raining || world.keyboardOpen || world.pets.any { it.state==State.PARACHUTING }) { removeSpeech(); return }
         val bubble=world.bubble
         if(bubble==null) { removeSpeech(); return }
         if(spoken!=bubble) {
@@ -306,7 +340,9 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
         }
         val lp=propParams ?: return
         propView?.orientation(angle)
-        val sizeChanged=lp.width!=extent.first.toInt() || lp.height!=extent.second.toInt()
+        val propAlpha=if(world.weather.raining) .30f else .75f
+        val sizeChanged=lp.width!=extent.first.toInt() || lp.height!=extent.second.toInt() || lp.alpha!=propAlpha
+        lp.alpha=propAlpha
         lp.width=extent.first.toInt(); lp.height=extent.second.toInt()
         val scene=world.interaction
         propView?.setBitten(prop.type==PropType.COOKIE && scene!=null && (scene.stage>0 || time-scene.since>800))
@@ -326,7 +362,7 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
     override fun onDisplayRemoved(displayId: Int) { bounds() }
     override fun onDestroy() {
         handler.removeCallbacksAndMessages(null); if(::tilt.isInitialized) tilt.stop(); if(::store.isInitialized) store.save(world)
-        removeCanopies(); removeMenu(); removeSpeech(); removeProp(); views.values.forEach { if(it.isAttachedToWindow) try { wm.removeView(it) } catch(_: Exception) {} }; views.clear()
+        removeRain(); removeCanopies(); removeMenu(); removeSpeech(); removeProp(); views.values.forEach { if(it.isAttachedToWindow) try { wm.removeView(it) } catch(_: Exception) {} }; views.clear()
         if(started) { unregisterReceiver(receiver); displays.unregisterDisplayListener(this) }
         reference.clear(); super.onDestroy()
     }

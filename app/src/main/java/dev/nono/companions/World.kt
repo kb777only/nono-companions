@@ -4,8 +4,8 @@ import kotlin.math.abs
 import kotlin.random.Random
 
 enum class Who { HUSBAND, WIFE; fun partner() = if (this == HUSBAND) WIFE else HUSBAND }
-enum class State { IDLE, RETREATING, PEEKING, OBSERVING, WANDERING, RESTING, FALLING, PARACHUTING, DRAGGED, RECOVERING, EATING, APPROACHING, SHARED, REACTING, EXERCISING, FIXING }
-enum class Pose(val frame: Int) { IDLE(4), WALK(0), EAT(24), CLAW(12), REST(28), SURPRISE(23), HUG(16), ANTIC(32), FALL(8), LAND(10), REACH(20), SMIRK(15), WINK(19), FIX(34), KISS_ENTER(36), KISS(38), KISS_AFTER(39), PARACHUTE(40), PEEK(42) }
+enum class State { IDLE, RETREATING, PEEKING, OBSERVING, WANDERING, RESTING, FALLING, PARACHUTING, DRAGGED, RECOVERING, EATING, APPROACHING, SHARED, REACTING, EXERCISING, FIXING, COOLING }
+enum class Pose(val frame: Int) { IDLE(4), WALK(0), EAT(24), CLAW(12), REST(28), SURPRISE(23), HUG(16), ANTIC(32), FALL(8), LAND(10), REACH(20), SMIRK(15), WINK(19), FIX(34), KISS_ENTER(36), KISS(38), KISS_AFTER(39), PARACHUTE(40), PEEK(42), FAN(44), PLACE_FAN(46), BREEZE(47) }
 enum class Kind { SNACK, DINO, AFFECTION, PERSONAL, KISS }
 enum class ContextSignal { UNKNOWN, READING, GAME, MEDIA, WORK }
 enum class PropType { COOKIE, TOOL, DARK_HEART }
@@ -35,6 +35,13 @@ class World(private val random: Random = Random.Default) {
     var petHeight = 150f; private set
     var bond = 25f
     val physics=GravityPhysics()
+    val weather=WeatherState()
+    val deviceHeat=DeviceHeat()
+    val cooling=Array(2) { CoolingController() }
+    private var environmentReading: WeatherReading?=null
+    private var environmentWall=0L
+    private var environmentHour=12
+    private var nextWeatherSpeech=0L
     val hearts=mutableListOf<KissHeart>()
     private var nextHeart=0L
     var keyboardOpen=false; private set
@@ -137,6 +144,7 @@ class World(private val random: Random = Random.Default) {
     fun interrupt(now: Long, resetMotion: Boolean=false) {
         interaction?.let { cooldowns[it.kind] = now + 25000 }
         interaction = null; prop = null; bubble = null; hearts.clear()
+        cooling.forEach { it.cancel(now) }
         pets.forEach {
             if(resetMotion || it.state !in listOf(State.FALLING,State.PARACHUTING)) {
                 it.state=State.RECOVERING; it.until=now+900; it.motion.fallSince=-1
@@ -178,7 +186,7 @@ class World(private val random: Random = Random.Default) {
             if(held!=p.who) physics.step(p,width,height,petWidth,petHeight,dt,now)
             if(p.state==State.IDLE && now>=p.nextAccent) { p.idleAccentUntil=now+1300; p.nextAccent=now+random.nextLong(6000,14000) }
         }
-        if(held==null && interaction==null && pets.all { it.motion.grounded && it.state!=State.DRAGGED }) {
+        if(held==null && interaction==null && pets.all { it.motion.grounded && it.state!=State.DRAGGED && it.state!=State.COOLING }) {
             val a=pets[0]; val b=pets[1]
             val vertical=abs(physics.gravity.x)>abs(physics.gravity.y)
             val separation=if(vertical) petHeight*.72f else petWidth*.72f
@@ -197,9 +205,16 @@ class World(private val random: Random = Random.Default) {
         }
         bubble?.let { if(now >= it.until) bubble = null }
         prop?.let { if(now >= it.expires) prop = null }
+        pets.forEach { p ->
+            val controller=cooling[p.who.ordinal]
+            val eligible=held==null && interaction==null && p.motion.grounded && p.state in listOf(State.IDLE,State.COOLING)
+            controller.tick(deviceHeat.hot,eligible,now)
+            if(controller.phase!=CoolingPhase.NONE) p.state=State.COOLING
+            else if(p.state==State.COOLING) p.state=State.IDLE
+        }
         val joint = interaction
         if(joint != null) { if(pets.any { !it.motion.grounded }) interrupt(now) else advance(joint, now, dt) }
-        else if(held==null && now >= nextChoice && pets.none { it.state == State.DRAGGED || it.state == State.RECOVERING || !it.motion.grounded }) {
+        else if(!deviceHeat.hot && held==null && now >= nextChoice && pets.none { it.state == State.DRAGGED || it.state == State.RECOVERING || !it.motion.grounded }) {
             nextChoice = now + random.nextLong(9000, 19000)
             val p = pets[random.nextInt(2)]
             if(p.needs.energy < 30 || random.nextFloat() < .22f) { p.state = State.RESTING; p.until = now + 18000 }
@@ -277,6 +292,12 @@ class World(private val random: Random = Random.Default) {
         if(!p.motion.grounded) return Pose.FALL
         if(p.state in listOf(State.RECOVERING,State.REACTING)) return Pose.SURPRISE
         if(p.state in listOf(State.WANDERING,State.APPROACHING)) return Pose.WALK
+        if(p.state==State.COOLING) return when(cooling[who.ordinal].phase) {
+            CoolingPhase.FANNING -> Pose.FAN
+            CoolingPhase.PLACING,CoolingPhase.SWITCHING -> Pose.PLACE_FAN
+            CoolingPhase.BREEZE -> Pose.BREEZE
+            else -> Pose.REST
+        }
         if(p.state == State.EATING) return Pose.EAT
         if(p.state == State.RESTING) return Pose.REST
         if(i?.kind == Kind.DINO && (i.leader == who || i.stage > 0)) return Pose.CLAW
@@ -286,6 +307,24 @@ class World(private val random: Random = Random.Default) {
         if(i?.kind == Kind.PERSONAL && i.stage>0 && i.leader!=who) return Pose.WINK
         if(p.state==State.IDLE && now<p.idleAccentUntil) return if(who==Who.WIFE) Pose.WINK else Pose.SMIRK
         return Pose.IDLE
+    }
+    fun environment(reading: WeatherReading?,wallTime: Long,hour: Int,now: Long) {
+        environmentReading=reading; environmentWall=wallTime; environmentHour=hour
+        val changed=weather.update(reading,wallTime,hour,deviceHeat.hot)
+        if(changed && !keyboardOpen && interaction==null && now>=nextWeatherSpeech) {
+            nextWeatherSpeech=now+600_000
+            say(Who.HUSBAND,weather.line(Who.HUSBAND),now)
+        }
+    }
+    fun batteryTemperature(tenths: Int?,now: Long) {
+        val changed=deviceHeat.sample(tenths)
+        weather.update(environmentReading,environmentWall,environmentHour,deviceHeat.hot)
+        if(changed) {
+            cooling.forEach { it.cancel(now) }
+            if(deviceHeat.hot && interaction!=null) interrupt(now)
+            if(!deviceHeat.hot) pets.filter { it.state==State.COOLING }.forEach { it.state=State.IDLE }
+            if(deviceHeat.hot && !keyboardOpen) say(Who.HUSBAND,"Le téléphone chauffe… éventail prêt !",now)
+        }
     }
     fun restoreElapsed(seconds: Long) { val hours = seconds.coerceIn(0, 8*3600)/3600f; pets.forEach { it.needs.hunger += hours*3; it.needs.energy += hours*4; it.needs.bound() }; bond = if(bond.isFinite()) bond.coerceIn(0f,100f) else 25f }
     fun resetClock() { last = 0 }

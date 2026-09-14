@@ -53,3 +53,10 @@ if($Only -eq '' -or $Only -eq 'menus') { [ChromaAtlas]::Run((Join-Path $projectR
 if($Only -eq '' -or $Only -eq 'parachutes') { [ChromaAtlas]::Run((Join-Path $projectRoot 'art/v2/parachutes-source.png'),(Join-Path $projectRoot 'app/src/main/assets/art/parachutes.png'),3,2,1536,1024) }
 
 if($Only -eq '' -or $Only -eq 'peeking') { [ChromaAtlas]::Run((Join-Path $projectRoot 'art/v2/peeking-source.png'),(Join-Path $projectRoot 'app/src/main/assets/art/peeking.png'),2,2,1024,1024) }
+foreach($season in @('cold','hot','night')) {
+ if($Only -eq '' -or $Only -eq "weather-$season") { [ChromaAtlas]::Run((Join-Path $projectRoot "art/v2/weather-$season-source.png"),(Join-Path $projectRoot "app/src/main/assets/art/weather-$season.png"),4,6,1024,1536) }
+}
+if($Only -eq '' -or $Only -eq 'umbrellas') { Copy-Item (Join-Path $projectRoot 'art/v2/umbrellas-source.png') (Join-Path $projectRoot 'app/src/main/assets/art/umbrellas.png') -Force }
+
+if($Only -eq "" -or $Only -eq "cooling") { [ChromaAtlas]::Run((Join-Path $projectRoot "art/v2/cooling-source.png"),(Join-Path $projectRoot "app/src/main/assets/art/cooling.png"),4,2,1536,1024) }
+if($Only -eq "" -or $Only -eq "cooling-props") { [ChromaAtlas]::Run((Join-Path $projectRoot "art/v2/cooling-props-source.png"),(Join-Path $projectRoot "app/src/main/assets/art/cooling-props.png"),2,3,1024,1536) }
