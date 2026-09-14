@@ -1,6 +1,6 @@
 # NoNo Companions
 
-A private native Kotlin Android app for your two chibi companions. Version 0.9.1 corrects character scale across all 296 character frames, removes clipping and neighbouring-frame fragments, and keeps scale fixed through outfit, keyboard and rotation changes. See [this update](docs/VERSION-0.9.1.md).
+A private native Kotlin Android app for your two chibi companions. Version 0.10.0 aligns raindrop collisions with the visible umbrella and adds complete seasonal and umbrella animation sets for both spouses. See [this update](docs/VERSION-0.10.md).
 
 ## Install
 
@@ -26,7 +26,8 @@ If HyperOS or Samsung stops the app, review the app's background/battery setting
 
 ## Current limits
 
-- 32 new default-outfit idle frames; seasonal and rain outfits reuse existing compatible poses. 44 original generated pose/animation frames per spouse, four new cooling poses and 12 poses per seasonal outfit with timed clips. Some walk phases are subtle, exact hand contacts are approximate, and there is some generated pose-to-pose detail drift. The approved concept remains the source of truth. This is not a claim of studio-quality animation.
+- 752 new seasonal and umbrella frames cover regular animation clips. Parachutes, keyboard peeking and cooling actions retain specialized existing artwork. Some walk phases are subtle, hand contacts are approximate, and generated poses retain detail variation.
+- Automatic live weather is disabled; use the developer menu's manual weather and temperature controls. Snow selects warm clothing, rain/storm selects integrated umbrellas, and night/device heat retain priority.
 - Overlay touch targets are small rectangles, not exact alpha silhouettes. Transparent space within each rectangle also receives touches.
 - Fold-hinge avoidance is not implemented. Galaxy Z Fold hardware, split-screen and vendor keyboard-inset behavior need device verification; some devices do not deliver the keyboard insets to other-app overlays.
 - Accessibility categories can be unavailable or unspecified; autonomous behavior continues. No attempt is made to infer sensitive content.

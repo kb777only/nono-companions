@@ -34,6 +34,7 @@ class WeatherState {
         outfit=when {
             deviceHot -> Outfit.HOT
             hour>=22 || hour<7 -> Outfit.NIGHT
+            kind==WeatherKind.SNOW -> Outfit.COLD
             celsius==null -> Outfit.DEFAULT
             celsius<12 || (outfit==Outfit.COLD && celsius<14) -> Outfit.COLD
             celsius>=26 || (outfit==Outfit.HOT && celsius>=24) -> Outfit.HOT

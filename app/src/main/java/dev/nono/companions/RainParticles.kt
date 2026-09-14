@@ -9,6 +9,7 @@ data class WaterDrop(var x: Float,var y: Float,var vx: Float,var vy: Float,val b
 /** Character-local coordinates, translated against movement so foot droplets remain behind. */
 class RainParticles(private val random: Random=Random.Default) {
     var canopyTop=.30f; var canopyRadius=.48f
+    var canopySurface: RainSurface?=null
     val drops=mutableListOf<WaterDrop>()
     private var last=0L; private var spawn=0L; private var step=0L
     fun clear() { drops.clear(); last=0; spawn=0; step=0 }
@@ -37,6 +38,7 @@ class RainParticles(private val random: Random=Random.Default) {
         }
     }
     fun surface(x: Float,umbrella: Boolean): Float? {
+        if(umbrella && canopySurface!=null) return canopySurface?.at(x)
         val dx=x-.5f
         if(umbrella && abs(dx)<canopyRadius) return canopyTop+.16f*(dx/canopyRadius).pow(2)
         if(abs(dx)<.32f) return .23f-.21f*sqrt(1-(dx/.32f).pow(2))

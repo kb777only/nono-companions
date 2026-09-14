@@ -47,10 +47,22 @@ class AnimationPlayer {
         return clip.frames.last()
     }
 }
-class Art(context: Context) {
+class Art(private val context: Context) {
     val geometry=context.assets.open("art/character-measures.csv").reader().use { CharacterGeometry(it) }
-    val characterBitmaps=geometry.measures.values.map { it.asset }.distinct().associateWith { name ->
-        context.assets.open("art/calibrated/$name.png").use { BitmapFactory.decodeStream(it) }
+    private val characterBitmaps=object: android.util.LruCache<String,Bitmap>(6) {
+        override fun create(name: String): Bitmap = context.assets.open("art/calibrated/$name.png").use { BitmapFactory.decodeStream(it) }
+    }
+    fun characterBitmap(name: String): Bitmap=characterBitmaps.get(name)
+    private val rainProfiles=mutableMapOf<String,FloatArray>()
+    fun rainProfile(m: SpriteMeasure): FloatArray=rainProfiles.getOrPut("${m.asset}:${m.index}") {
+        val bitmap=characterBitmap(m.asset)
+        FloatArray(129) { i ->
+            val x=(i*(m.width-1)/128f).toInt()
+            // Ignore isolated antialias pixels and the small tip above the canopy.
+            val limit=(m.faceY-m.faceSpan*.25f).toInt().coerceIn(3,m.height)
+            val y=(0 until limit-2).firstOrNull { yy -> (0..2).all { Color.alpha(bitmap.getPixel(m.x+x,m.y+yy+it))>96 } }
+            y?.div(m.height.toFloat()) ?: Float.NaN
+        }
     }
     val coolingProps=context.assets.open("art/cooling-props.png").use { BitmapFactory.decodeStream(it) }
     val parachutes=context.assets.open("art/parachutes.png").use { BitmapFactory.decodeStream(it) }
@@ -100,7 +112,10 @@ class PetView(context: Context, private val who: Who, private val art: Art) : Vi
     private fun changed() { invalidate(); overflow.invalidate() }
     private fun measure()=art.geometry.select(who,frame,outfit,raining)
     private fun placement()=measure().placement(bodyHeight/104f,frame in 42..43)
-    fun rainSurface(): Pair<Float,Float> { val p=placement(); return (p.top+bodyHeight/2)/bodyHeight to p.width/bodyWidth/2 }
+    fun rainSurface(): RainSurface {
+        val m=measure(); val p=placement()
+        return RainSurface((p.left+bodyWidth/2)/bodyWidth,(p.top+bodyHeight/2)/bodyHeight,p.width/bodyWidth,p.height/bodyHeight,art.rainProfile(m),facingLeft)
+    }
     fun contentBounds(degrees: Float)=placement().bounds(degrees,facingLeft)
     fun facePosition(): Pair<Float,Float> { val p=placement(); return (if(facingLeft) -p.faceX else p.faceX) to p.faceY }
     override fun onDraw(canvas: Canvas) { drawLayer(canvas,width,height,false) }
@@ -113,7 +128,7 @@ class PetView(context: Context, private val who: Who, private val art: Art) : Vi
             canvas.clipOutRect(-kotlin.math.ceil(core.first/2),-kotlin.math.ceil(core.second/2),kotlin.math.ceil(core.first/2),kotlin.math.ceil(core.second/2))
         }
         canvas.rotate(angle)
-        val m=measure(); val p=placement(); val bitmap=art.characterBitmaps.getValue(m.asset)
+        val m=measure(); val p=placement(); val bitmap=art.characterBitmap(m.asset)
         kissSource.set(m.x,m.y,m.x+m.width,m.y+m.height)
         destination.set(p.left,p.top,p.left+p.width,p.top+p.height)
         canvas.save(); if(facingLeft) canvas.scale(-1f,1f)

@@ -24,7 +24,7 @@ class CharacterGeometryTest {
                 assertTrue("${m.asset}:${m.index} top ${p.top}",p.top>=-120*density && p.top+p.height<=120*density)
             }
         }
-        assertEquals(296,visited.size); assertEquals(g.measures.keys,visited)
+        assertEquals(910,visited.size); assertEquals(g.measures.keys,visited)
     }
     @Test fun everyIntermediateRotationPreservesScaleAndFitsTheDrawingSurface() {
         val g=geometry()
@@ -51,6 +51,16 @@ class CharacterGeometryTest {
             val reference=g.select(who,4,Outfit.DEFAULT,false).referenceSpan
             for(m in g.measures.values.filter { it.referenceSpan==reference }) {
                 assertEquals(reference,m.placement(peek=m.asset=="peeking").scale*m.faceSpan,.00001f)
+            }
+        }
+    }
+    @Test fun seasonalAndRainClipsHaveDistinctFrameAssetsInsteadOfCollapsedFallbacks() {
+        val g=geometry()
+        for(who in Who.entries) for(outfit in Outfit.entries) for(rain in listOf(false,true)) {
+            for(sequence in listOf(0..3,4..7,12..14,16..18,20..22,24..27,28..31,32..35,36..39,48..51,52..55,56..59,60..63)) {
+                val selected=sequence.map { g.select(who,it,outfit,rain) }
+                assertEquals(sequence.count(),selected.map { "${it.asset}:${it.index}" }.toSet().size)
+                if(rain || outfit!=Outfit.DEFAULT) assertTrue(selected.all { it.asset.startsWith("w10-") })
             }
         }
     }

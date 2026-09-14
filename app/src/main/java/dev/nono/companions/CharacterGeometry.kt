@@ -31,6 +31,8 @@ class CharacterGeometry(reader: Reader) {
         require(frame in 0..63)
         val pair=when {
             frame in 42..43 -> "peeking" to who.ordinal*2+frame-42
+            frame !in 40..47 && umbrellaPose(rain,frame) -> "w10-${who.name.lowercase()}-rain-${outfit.name.lowercase()}" to frame
+            frame !in 40..47 && outfit!=Outfit.DEFAULT -> "w10-${who.name.lowercase()}-${outfit.name.lowercase()}" to frame
             umbrellaPose(rain,frame) -> "rain-${outfit.name.lowercase()}" to who.ordinal*12+rainFrame(frame)
             frame in 44..47 -> "cooling" to who.ordinal*4+frame-44
             outfit!=Outfit.DEFAULT -> "weather-${outfit.name.lowercase()}" to who.ordinal*12+dressedFrame(frame)

@@ -1,0 +1,6414 @@
+{
+  "version": "0.10.0",
+  "frames": 910,
+  "atlases": 33,
+  "failures": [],
+  "scope": "Packaged asset integrity, alpha crop margins, calibrated drawing bounds. Runtime routes/rotation/density are covered by CharacterGeometryTest. Perceived scale also requires visual review.",
+  "assetHashes": {
+    "w10-husband-cold": "384c4d4e1b512af2e01bfa42bd6711cd28abf269824c0774e8f31f37e61649c4",
+    "wife-idle": "967d51595b8ec3edad34f490bd76a41e38f76238856498cfa6b5fe62ee49117d",
+    "w10-wife-rain-night": "56a23b0aba0a115e056d95b80e9ad67e70be44d06f9d153a7ab539975b03d39d",
+    "w10-husband-hot": "4b4b24d7ea74e9e2e8e92869d2826b0a45325baade4b92e45e960eccbeb05bed",
+    "w10-wife-rain-default": "467bf4345244baad9b8afb753a2e63f457e51f07a3d91e0237ad0f429370dc4b",
+    "rain-cold": "e4b8b38484e5e620f8c52a9ec3fa9cc520a2291359c3601a469d1368c7180e38",
+    "wife-motion": "a728b0f00331b941906425f44983512d97cbf67e3bbc61ebe69c644524bc0a7e",
+    "husband-idle": "f37bf107521381781b1b695a6081257c545737e34c04f7aed1b6b14177c81b99",
+    "w10-wife-hot": "86fe30b5c141ab1f5ad1600b6c8d334b0387dd97c4a78650105bab09857f47ea",
+    "rain-hot": "93180c75dc9b7d14faad9a7353d523034e14dcee9aa20ec2b9ad2bb8901bd5c8",
+    "husband-social": "6d5a600ef6b211ecfcc4ba3b376bcb70206e8e3261f2b57a7ec5999d28767023",
+    "husband-motion": "f3495d968113e25f719941a58a6468891ab8efbfce68535a1a34266c70aeb109",
+    "w10-husband-rain-hot": "0870b17bcad7c737ea07238702b08dd3156f8c8226e5081d5ab5648c1bf169a6",
+    "weather-cold": "49569a8aa752f1d536a04ef7769f0989ecb332e8bbd19647aa738092d68fb559",
+    "parachutes": "3848965d10e11ae1678484093d71a7bccd1cdbe2843e4cc32152fc447adbb7e4",
+    "cooling": "b7e9ba6c34962c9134bb9b3fceb506cc4a12220efe41b1888fec174bf120fb45",
+    "kiss": "297449446269ed7dbb5283f7c7bcbb0541c3fc88eb94ec1fb6ce918718ce3d41",
+    "weather-night": "78b37acab3614be7d335d590afa8207026b4d6437cd33ca755fa60cae6b297ae",
+    "w10-husband-night": "2dd84b12bbaba180c49490e7affdd621f5639d1eb5b7e2cd11c5f8684161c721",
+    "w10-wife-rain-hot": "2be6de3e6e722ef611c56db228a88209e3f98e13f58319b72d557a004270ce00",
+    "w10-husband-rain-cold": "6c61603333278c9f25a046f717c507ae6129b153165d7494f1136ce9c0dced94",
+    "rain-default": "e652514b0596ae16f3390604b58c561c6313d999a2b2cb1f0bee37a15c0aeb28",
+    "w10-wife-cold": "322accca8c584671a2da96baa6fec8f3ccad42258d95d9291e0d637495063660",
+    "weather-hot": "4920fae43c371947336633939e934fe585bf107cbe575161a8e8144d7ed366cc",
+    "husband-personal": "6a76a9b4ae304cad83418b4e51a259a17ea65c1d4aa6df8bb8037b8559541c3c",
+    "rain-night": "afa5a93ef2c41b3b68e6c21f46de3bf5c207b0480c9195004bc4b6deb1f9e402",
+    "w10-husband-rain-night": "8da761ef710c74d0cac78d665054a88f0db2cda3fe6a0287ef293f0ef7fb108d",
+    "w10-wife-rain-cold": "43ba7b7073311e9072f71c36d91c97446fbb85c28ecbc4aef3430fa2b4d9e5b1",
+    "w10-wife-night": "15a97e462ce97b917f4fd74b3fac4a70c701ad6a2b80ee675337e868439f4fb7",
+    "w10-husband-rain-default": "9a286cf6880727faed1c1882a01aa3743b12c6850a9ffa61515494ae045aa4f6",
+    "peeking": "4fa69e7ba82dfa25a094e035a04595b28bcaca1d79dd400b507ca56eb9d60781",
+    "wife-personal": "a4e643a23b8e60affb5e06d9590b55d4ca8348a805ac7de1f9a885923b9297b4",
+    "wife-social": "415dbb6e3b114a4710a12b9ac54fa264edc69a636cd26054ec035fd1ab39837b"
+  },
+  "measurements": [
+    {
+      "frame": "husband-motion:0",
+      "scale": 0.30167087148860444,
+      "widthDp": 57.619136454323446,
+      "heightDp": 98.64637497677366,
+      "topDp": -48.64637497677366
+    },
+    {
+      "frame": "husband-motion:1",
+      "scale": 0.3086718484040813,
+      "widthDp": 50.313511289865254,
+      "heightDp": 100.62702257973051,
+      "topDp": -50.62702257973051
+    },
+    {
+      "frame": "husband-motion:2",
+      "scale": 0.3099869202430739,
+      "widthDp": 52.69777644132256,
+      "heightDp": 101.05573599924209,
+      "topDp": -51.05573599924209
+    },
+    {
+      "frame": "husband-motion:3",
+      "scale": 0.2978161920529435,
+      "widthDp": 55.69162791390044,
+      "heightDp": 97.38589480131253,
+      "topDp": -47.38589480131253
+    },
+    {
+      "frame": "husband-motion:4",
+      "scale": 0.29583577712609976,
+      "widthDp": 44.07953079178886,
+      "heightDp": 97.03413489736073,
+      "topDp": -47.03413489736073
+    },
+    {
+      "frame": "husband-motion:5",
+      "scale": 0.2939709800904658,
+      "widthDp": 43.21373407329847,
+      "heightDp": 96.42248146967277,
+      "topDp": -46.422481469672775
+    },
+    {
+      "frame": "husband-motion:6",
+      "scale": 0.29030672226412735,
+      "widthDp": 42.38478145056259,
+      "heightDp": 95.22060490263377,
+      "topDp": -45.22060490263377
+    },
+    {
+      "frame": "husband-motion:7",
+      "scale": 0.29714183662708865,
+      "widthDp": 45.165559167317475,
+      "heightDp": 97.16538057705799,
+      "topDp": -47.16538057705799
+    },
+    {
+      "frame": "husband-motion:8",
+      "scale": 0.30315572784937994,
+      "widthDp": 73.9699975952487,
+      "heightDp": 77.91102205729065,
+      "topDp": -27.91102205729065
+    },
+    {
+      "frame": "husband-motion:9",
+      "scale": 0.29861171159821265,
+      "widthDp": 71.06958736037461,
+      "heightDp": 83.61127924749954,
+      "topDp": -33.61127924749954
+    },
+    {
+      "frame": "husband-motion:10",
+      "scale": 0.2864676340336487,
+      "widthDp": 66.4604910958065,
+      "heightDp": 74.48158484874867,
+      "topDp": -24.481584848748668
+    },
+    {
+      "frame": "husband-motion:11",
+      "scale": 0.33582739290162444,
+      "widthDp": 58.76979375778428,
+      "heightDp": 104.44231919240521,
+      "topDp": -54.44231919240521
+    },
+    {
+      "frame": "husband-social:0",
+      "scale": 0.30999246013621856,
+      "widthDp": 49.90878608193119,
+      "heightDp": 100.74754954427104,
+      "topDp": -50.74754954427104
+    },
+    {
+      "frame": "husband-social:1",
+      "scale": 0.3008025355087955,
+      "widthDp": 63.46933499235585,
+      "heightDp": 99.26483671790251,
+      "topDp": -49.26483671790251
+    },
+    {
+      "frame": "husband-social:2",
+      "scale": 0.30559827750679036,
+      "widthDp": 69.37080899404141,
+      "heightDp": 99.62503846721366,
+      "topDp": -49.625038467213656
+    },
+    {
+      "frame": "husband-social:3",
+      "scale": 0.30941689854260795,
+      "widthDp": 48.57845307118945,
+      "heightDp": 101.1793258234328,
+      "topDp": -51.179325823432805
+    },
+    {
+      "frame": "husband-social:4",
+      "scale": 0.30631378336467996,
+      "widthDp": 68.920601257053,
+      "heightDp": 99.85829337688567,
+      "topDp": -49.85829337688567
+    },
+    {
+      "frame": "husband-social:5",
+      "scale": 0.29749368698207557,
+      "widthDp": 70.5060038147519,
+      "heightDp": 97.87542301710286,
+      "topDp": -47.87542301710286
+    },
+    {
+      "frame": "husband-social:6",
+      "scale": 0.292703746892411,
+      "widthDp": 67.61456553214694,
+      "heightDp": 94.83601399314117,
+      "topDp": -44.836013993141165
+    },
+    {
+      "frame": "husband-social:7",
+      "scale": 0.298777979720555,
+      "widthDp": 48.70081069445046,
+      "heightDp": 98.29795532806259,
+      "topDp": -48.297955328062585
+    },
+    {
+      "frame": "husband-social:8",
+      "scale": 0.3050766343240773,
+      "widthDp": 73.21839223777854,
+      "heightDp": 96.7092930807325,
+      "topDp": -46.70929308073249
+    },
+    {
+      "frame": "husband-social:9",
+      "scale": 0.3045253202337373,
+      "widthDp": 70.95439961446078,
+      "heightDp": 95.92547587362725,
+      "topDp": -45.92547587362725
+    },
+    {
+      "frame": "husband-social:10",
+      "scale": 0.3112889498437868,
+      "widthDp": 51.36267672422482,
+      "heightDp": 100.54633079954314,
+      "topDp": -50.54633079954314
+    },
+    {
+      "frame": "husband-social:11",
+      "scale": 0.30313120043378183,
+      "widthDp": 62.44502728935906,
+      "heightDp": 97.91137774011153,
+      "topDp": -47.91137774011153
+    },
+    {
+      "frame": "husband-personal:0",
+      "scale": 0.26032851036110866,
+      "widthDp": 46.59880335463845,
+      "heightDp": 91.63563564711025,
+      "topDp": -41.63563564711025
+    },
+    {
+      "frame": "husband-personal:1",
+      "scale": 0.25506362642197306,
+      "widthDp": 44.381070997423315,
+      "heightDp": 89.78239650053452,
+      "topDp": -39.78239650053452
+    },
+    {
+      "frame": "husband-personal:2",
+      "scale": 0.2663323800923067,
+      "widthDp": 42.08051605458446,
+      "heightDp": 93.74899779249196,
+      "topDp": -43.74899779249196
+    },
+    {
+      "frame": "husband-personal:3",
+      "scale": 0.2684811640036997,
+      "widthDp": 43.49394856859935,
+      "heightDp": 94.2368885652986,
+      "topDp": -44.2368885652986
+    },
+    {
+      "frame": "husband-personal:4",
+      "scale": 0.27297089651857903,
+      "widthDp": 49.134761373344226,
+      "heightDp": 76.70482192172071,
+      "topDp": -26.704821921720708
+    },
+    {
+      "frame": "husband-personal:5",
+      "scale": 0.2786357166813939,
+      "widthDp": 50.15442900265091,
+      "heightDp": 77.73936495410891,
+      "topDp": -27.739364954108908
+    },
+    {
+      "frame": "husband-personal:6",
+      "scale": 0.2780946836109837,
+      "widthDp": 49.77894836636609,
+      "heightDp": 77.31032204385347,
+      "topDp": -27.310322043853475
+    },
+    {
+      "frame": "husband-personal:7",
+      "scale": 0.2831442947419754,
+      "widthDp": 67.10519785384817,
+      "heightDp": 80.12983541197903,
+      "topDp": -30.12983541197903
+    },
+    {
+      "frame": "husband-personal:8",
+      "scale": 0.2921246271167399,
+      "widthDp": 58.71705005046472,
+      "heightDp": 94.06412993159026,
+      "topDp": -44.06412993159026
+    },
+    {
+      "frame": "husband-personal:9",
+      "scale": 0.28601450976618803,
+      "widthDp": 59.49101803136711,
+      "heightDp": 84.37428038102547,
+      "topDp": -34.37428038102547
+    },
+    {
+      "frame": "husband-personal:10",
+      "scale": 0.2935835291624694,
+      "widthDp": 59.89103994914375,
+      "heightDp": 92.47881168617785,
+      "topDp": -42.47881168617785
+    },
+    {
+      "frame": "husband-personal:11",
+      "scale": 0.2872917018719937,
+      "widthDp": 55.73459016316678,
+      "heightDp": 89.34771928219004,
+      "topDp": -39.34771928219004
+    },
+    {
+      "frame": "kiss:0",
+      "scale": 0.29731872361637596,
+      "widthDp": 57.977151105193315,
+      "heightDp": 95.43931028085669,
+      "topDp": -45.43931028085669
+    },
+    {
+      "frame": "kiss:1",
+      "scale": 0.30618484856149886,
+      "widthDp": 58.17512122668478,
+      "heightDp": 97.67296669111813,
+      "topDp": -47.672966691118134
+    },
+    {
+      "frame": "kiss:2",
+      "scale": 0.307745839824398,
+      "widthDp": 57.54847204716243,
+      "heightDp": 98.47866874380736,
+      "topDp": -48.47866874380736
+    },
+    {
+      "frame": "kiss:3",
+      "scale": 0.30468506970898146,
+      "widthDp": 50.57772157169092,
+      "heightDp": 98.10859244629204,
+      "topDp": -48.108592446292036
+    },
+    {
+      "frame": "parachutes:1",
+      "scale": 0.18579246819023962,
+      "widthDp": 69.67217557133986,
+      "heightDp": 88.43721485855406,
+      "topDp": -38.43721485855406
+    },
+    {
+      "frame": "parachutes:2",
+      "scale": 0.18186768838577683,
+      "widthDp": 65.29050013049388,
+      "heightDp": 87.29649042517288,
+      "topDp": -37.29649042517288
+    },
+    {
+      "frame": "peeking:0",
+      "scale": 0.10278365439869316,
+      "widthDp": 40.70232714188249,
+      "heightDp": 50.158423346562266,
+      "topDp": -25.079211673281133
+    },
+    {
+      "frame": "peeking:1",
+      "scale": 0.10365247858832474,
+      "widthDp": 40.94272904238827,
+      "heightDp": 50.58240955110247,
+      "topDp": -25.291204775551236
+    },
+    {
+      "frame": "cooling:0",
+      "scale": 0.2008330365542945,
+      "widthDp": 41.974104639847546,
+      "heightDp": 92.18236377842118,
+      "topDp": -42.18236377842118
+    },
+    {
+      "frame": "cooling:1",
+      "scale": 0.2081793325786815,
+      "widthDp": 53.29390914014246,
+      "heightDp": 95.34613432103612,
+      "topDp": -45.34613432103612
+    },
+    {
+      "frame": "cooling:2",
+      "scale": 0.19596164163305535,
+      "widthDp": 54.67329801562244,
+      "heightDp": 76.62100187852464,
+      "topDp": -26.621001878524638
+    },
+    {
+      "frame": "cooling:3",
+      "scale": 0.19627294192357203,
+      "widthDp": 61.23715788015447,
+      "heightDp": 74.58371793095738,
+      "topDp": -24.583717930957377
+    },
+    {
+      "frame": "husband-idle:0",
+      "scale": 0.2936267022048264,
+      "widthDp": 59.60622054757976,
+      "heightDp": 75.75568916884521,
+      "topDp": -25.75568916884521
+    },
+    {
+      "frame": "husband-idle:1",
+      "scale": 0.3013284814383572,
+      "widthDp": 60.265696287671446,
+      "heightDp": 79.85204758116467,
+      "topDp": -29.85204758116467
+    },
+    {
+      "frame": "husband-idle:2",
+      "scale": 0.2999696911971155,
+      "widthDp": 59.69396854822598,
+      "heightDp": 79.19199847603849,
+      "topDp": -29.191998476038492
+    },
+    {
+      "frame": "husband-idle:3",
+      "scale": 0.29323667906369033,
+      "widthDp": 54.24878562678271,
+      "heightDp": 76.24153655655948,
+      "topDp": -26.24153655655948
+    },
+    {
+      "frame": "husband-idle:4",
+      "scale": 0.32563793212284037,
+      "widthDp": 52.75334500390014,
+      "heightDp": 101.27339689020336,
+      "topDp": -51.27339689020336
+    },
+    {
+      "frame": "husband-idle:5",
+      "scale": 0.347126118335123,
+      "widthDp": 61.09419682698165,
+      "heightDp": 107.60909668388814,
+      "topDp": -57.60909668388814
+    },
+    {
+      "frame": "husband-idle:6",
+      "scale": 0.3545896326037263,
+      "widthDp": 66.30826129689682,
+      "heightDp": 106.37688978111788,
+      "topDp": -56.37688978111788
+    },
+    {
+      "frame": "husband-idle:7",
+      "scale": 0.3533958696634317,
+      "widthDp": 64.31804827874457,
+      "heightDp": 107.43234437768325,
+      "topDp": -57.43234437768325
+    },
+    {
+      "frame": "husband-idle:8",
+      "scale": 0.3022673715858848,
+      "widthDp": 47.7582447105698,
+      "heightDp": 101.2595694812714,
+      "topDp": -51.2595694812714
+    },
+    {
+      "frame": "husband-idle:9",
+      "scale": 0.3072566297175932,
+      "widthDp": 51.311857162838066,
+      "heightDp": 102.93097095539373,
+      "topDp": -52.93097095539373
+    },
+    {
+      "frame": "husband-idle:10",
+      "scale": 0.30040689239150853,
+      "widthDp": 54.07324063047154,
+      "heightDp": 100.63630895115536,
+      "topDp": -50.63630895115536
+    },
+    {
+      "frame": "husband-idle:11",
+      "scale": 0.2990251176676897,
+      "widthDp": 50.53524488583956,
+      "heightDp": 101.07048977167912,
+      "topDp": -51.07048977167912
+    },
+    {
+      "frame": "husband-idle:12",
+      "scale": 0.31220801283418115,
+      "widthDp": 56.82185833582097,
+      "heightDp": 99.28214808126961,
+      "topDp": -49.28214808126961
+    },
+    {
+      "frame": "husband-idle:13",
+      "scale": 0.3048352229697468,
+      "widthDp": 54.26066968861493,
+      "heightDp": 96.02309523547024,
+      "topDp": -46.02309523547024
+    },
+    {
+      "frame": "husband-idle:14",
+      "scale": 0.30891928102714916,
+      "widthDp": 53.44303561769681,
+      "heightDp": 98.23633136663344,
+      "topDp": -48.236331366633436
+    },
+    {
+      "frame": "husband-idle:15",
+      "scale": 0.3072148650596448,
+      "widthDp": 52.84095679025891,
+      "heightDp": 96.77268249378811,
+      "topDp": -46.77268249378811
+    },
+    {
+      "frame": "w10-husband-rain-default:0",
+      "scale": 0.6566168018409407,
+      "widthDp": 81.42048342827665,
+      "heightDp": 109.6550059074371,
+      "topDp": -59.6550059074371
+    },
+    {
+      "frame": "w10-husband-rain-default:1",
+      "scale": 0.6566168018409407,
+      "widthDp": 82.0771002301176,
+      "heightDp": 109.6550059074371,
+      "topDp": -59.6550059074371
+    },
+    {
+      "frame": "w10-husband-rain-default:2",
+      "scale": 0.6566168018409407,
+      "widthDp": 82.0771002301176,
+      "heightDp": 109.6550059074371,
+      "topDp": -59.6550059074371
+    },
+    {
+      "frame": "w10-husband-rain-default:3",
+      "scale": 0.6566168018409407,
+      "widthDp": 82.73371703195853,
+      "heightDp": 109.6550059074371,
+      "topDp": -59.6550059074371
+    },
+    {
+      "frame": "w10-husband-rain-default:4",
+      "scale": 0.6566168018409407,
+      "widthDp": 82.0771002301176,
+      "heightDp": 108.34177230375522,
+      "topDp": -58.34177230375522
+    },
+    {
+      "frame": "w10-husband-rain-default:5",
+      "scale": 0.6566168018409407,
+      "widthDp": 84.04695063564041,
+      "heightDp": 108.34177230375522,
+      "topDp": -58.34177230375522
+    },
+    {
+      "frame": "w10-husband-rain-default:6",
+      "scale": 0.6566168018409407,
+      "widthDp": 83.39033383379947,
+      "heightDp": 107.68515550191428,
+      "topDp": -57.68515550191428
+    },
+    {
+      "frame": "w10-husband-rain-default:7",
+      "scale": 0.6566168018409407,
+      "widthDp": 80.10724982459477,
+      "heightDp": 108.34177230375522,
+      "topDp": -58.34177230375522
+    },
+    {
+      "frame": "w10-husband-rain-default:12",
+      "scale": 0.6566168018409407,
+      "widthDp": 82.0771002301176,
+      "heightDp": 116.22117392584651,
+      "topDp": -66.22117392584651
+    },
+    {
+      "frame": "w10-husband-rain-default:13",
+      "scale": 0.6566168018409407,
+      "widthDp": 81.42048342827665,
+      "heightDp": 115.56455712400557,
+      "topDp": -65.56455712400557
+    },
+    {
+      "frame": "w10-husband-rain-default:14",
+      "scale": 0.6566168018409407,
+      "widthDp": 81.42048342827665,
+      "heightDp": 112.9380899166418,
+      "topDp": -62.9380899166418
+    },
+    {
+      "frame": "w10-husband-rain-default:15",
+      "scale": 0.6566168018409407,
+      "widthDp": 80.10724982459477,
+      "heightDp": 115.56455712400557,
+      "topDp": -65.56455712400557
+    },
+    {
+      "frame": "w10-husband-rain-default:16",
+      "scale": 0.6566168018409407,
+      "widthDp": 78.13739941907195,
+      "heightDp": 109.6550059074371,
+      "topDp": -59.6550059074371
+    },
+    {
+      "frame": "w10-husband-rain-default:17",
+      "scale": 0.6566168018409407,
+      "widthDp": 78.13739941907195,
+      "heightDp": 108.99838910559616,
+      "topDp": -58.99838910559616
+    },
+    {
+      "frame": "w10-husband-rain-default:18",
+      "scale": 0.6566168018409407,
+      "widthDp": 78.13739941907195,
+      "heightDp": 107.02853870007334,
+      "topDp": -57.02853870007334
+    },
+    {
+      "frame": "w10-husband-rain-default:19",
+      "scale": 0.6566168018409407,
+      "widthDp": 80.76386662643571,
+      "heightDp": 109.6550059074371,
+      "topDp": -59.6550059074371
+    },
+    {
+      "frame": "w10-husband-rain-default:20",
+      "scale": 0.6566168018409407,
+      "widthDp": 80.76386662643571,
+      "heightDp": 107.68515550191428,
+      "topDp": -57.68515550191428
+    },
+    {
+      "frame": "w10-husband-rain-default:21",
+      "scale": 0.6566168018409407,
+      "widthDp": 79.45063302275383,
+      "heightDp": 107.68515550191428,
+      "topDp": -57.68515550191428
+    },
+    {
+      "frame": "w10-husband-rain-default:22",
+      "scale": 0.6566168018409407,
+      "widthDp": 78.7940162209129,
+      "heightDp": 108.99838910559616,
+      "topDp": -58.99838910559616
+    },
+    {
+      "frame": "w10-husband-rain-default:23",
+      "scale": 0.6566168018409407,
+      "widthDp": 79.45063302275383,
+      "heightDp": 108.34177230375522,
+      "topDp": -58.34177230375522
+    },
+    {
+      "frame": "w10-husband-rain-default:24",
+      "scale": 0.6566168018409407,
+      "widthDp": 78.13739941907195,
+      "heightDp": 106.3719218982324,
+      "topDp": -56.3719218982324
+    },
+    {
+      "frame": "w10-husband-rain-default:25",
+      "scale": 0.6566168018409407,
+      "widthDp": 80.10724982459477,
+      "heightDp": 107.02853870007334,
+      "topDp": -57.02853870007334
+    },
+    {
+      "frame": "w10-husband-rain-default:26",
+      "scale": 0.6566168018409407,
+      "widthDp": 79.45063302275383,
+      "heightDp": 107.02853870007334,
+      "topDp": -57.02853870007334
+    },
+    {
+      "frame": "w10-husband-rain-default:27",
+      "scale": 0.6566168018409407,
+      "widthDp": 81.42048342827665,
+      "heightDp": 108.99838910559616,
+      "topDp": -58.99838910559616
+    },
+    {
+      "frame": "w10-husband-rain-default:28",
+      "scale": 0.6566168018409407,
+      "widthDp": 82.0771002301176,
+      "heightDp": 103.0888378890277,
+      "topDp": -53.0888378890277
+    },
+    {
+      "frame": "w10-husband-rain-default:29",
+      "scale": 0.6566168018409407,
+      "widthDp": 82.73371703195853,
+      "heightDp": 101.7756042853458,
+      "topDp": -51.77560428534581
+    },
+    {
+      "frame": "w10-husband-rain-default:30",
+      "scale": 0.6566168018409407,
+      "widthDp": 78.7940162209129,
+      "heightDp": 102.43222108718676,
+      "topDp": -52.43222108718676
+    },
+    {
+      "frame": "w10-husband-rain-default:31",
+      "scale": 0.6566168018409407,
+      "widthDp": 78.7940162209129,
+      "heightDp": 102.43222108718676,
+      "topDp": -52.43222108718676
+    },
+    {
+      "frame": "w10-husband-rain-default:32",
+      "scale": 0.6566168018409407,
+      "widthDp": 80.76386662643571,
+      "heightDp": 103.0888378890277,
+      "topDp": -53.0888378890277
+    },
+    {
+      "frame": "w10-husband-rain-default:33",
+      "scale": 0.6566168018409407,
+      "widthDp": 80.76386662643571,
+      "heightDp": 101.11898748350487,
+      "topDp": -51.11898748350487
+    },
+    {
+      "frame": "w10-husband-rain-default:34",
+      "scale": 0.6566168018409407,
+      "widthDp": 81.42048342827665,
+      "heightDp": 103.0888378890277,
+      "topDp": -53.0888378890277
+    },
+    {
+      "frame": "w10-husband-rain-default:35",
+      "scale": 0.6566168018409407,
+      "widthDp": 80.76386662643571,
+      "heightDp": 101.11898748350487,
+      "topDp": -51.11898748350487
+    },
+    {
+      "frame": "w10-husband-rain-default:36",
+      "scale": 0.6566168018409407,
+      "widthDp": 81.42048342827665,
+      "heightDp": 104.40207149270958,
+      "topDp": -54.40207149270958
+    },
+    {
+      "frame": "w10-husband-rain-default:37",
+      "scale": 0.6566168018409407,
+      "widthDp": 80.76386662643571,
+      "heightDp": 105.05868829455052,
+      "topDp": -55.05868829455052
+    },
+    {
+      "frame": "w10-husband-rain-default:38",
+      "scale": 0.6566168018409407,
+      "widthDp": 78.13739941907195,
+      "heightDp": 103.74545469086864,
+      "topDp": -53.74545469086864
+    },
+    {
+      "frame": "w10-husband-rain-default:39",
+      "scale": 0.6566168018409407,
+      "widthDp": 76.82416581539006,
+      "heightDp": 101.7756042853458,
+      "topDp": -51.77560428534581
+    },
+    {
+      "frame": "rain-default:5",
+      "scale": 0.40586342322591373,
+      "widthDp": 84.82545545421597,
+      "heightDp": 96.59549472776747,
+      "topDp": -46.59549472776747
+    },
+    {
+      "frame": "rain-default:11",
+      "scale": 0.43576466205252495,
+      "widthDp": 89.76752038282014,
+      "heightDp": 100.66163693413327,
+      "topDp": -50.66163693413327
+    },
+    {
+      "frame": "rain-default:9",
+      "scale": 0.42046710197230946,
+      "widthDp": 86.19575590432343,
+      "heightDp": 92.50276243390809,
+      "topDp": -42.50276243390809
+    },
+    {
+      "frame": "w10-husband-rain-default:48",
+      "scale": 0.6566168018409407,
+      "widthDp": 80.76386662643571,
+      "heightDp": 95.86605306877735,
+      "topDp": -45.86605306877735
+    },
+    {
+      "frame": "w10-husband-rain-default:49",
+      "scale": 0.6566168018409407,
+      "widthDp": 81.42048342827665,
+      "heightDp": 97.83590347430017,
+      "topDp": -47.83590347430017
+    },
+    {
+      "frame": "w10-husband-rain-default:50",
+      "scale": 0.6566168018409407,
+      "widthDp": 79.45063302275383,
+      "heightDp": 97.17928667245923,
+      "topDp": -47.17928667245923
+    },
+    {
+      "frame": "w10-husband-rain-default:51",
+      "scale": 0.6566168018409407,
+      "widthDp": 80.76386662643571,
+      "heightDp": 97.83590347430017,
+      "topDp": -47.83590347430017
+    },
+    {
+      "frame": "w10-husband-rain-default:52",
+      "scale": 0.6566168018409407,
+      "widthDp": 81.42048342827665,
+      "heightDp": 110.31162270927804,
+      "topDp": -60.31162270927804
+    },
+    {
+      "frame": "w10-husband-rain-default:53",
+      "scale": 0.6566168018409407,
+      "widthDp": 81.42048342827665,
+      "heightDp": 110.96823951111898,
+      "topDp": -60.96823951111898
+    },
+    {
+      "frame": "w10-husband-rain-default:54",
+      "scale": 0.6566168018409407,
+      "widthDp": 78.7940162209129,
+      "heightDp": 110.31162270927804,
+      "topDp": -60.31162270927804
+    },
+    {
+      "frame": "w10-husband-rain-default:55",
+      "scale": 0.6566168018409407,
+      "widthDp": 79.45063302275383,
+      "heightDp": 111.62485631295992,
+      "topDp": -61.62485631295992
+    },
+    {
+      "frame": "w10-husband-rain-default:56",
+      "scale": 0.6566168018409407,
+      "widthDp": 82.73371703195853,
+      "heightDp": 112.9380899166418,
+      "topDp": -62.9380899166418
+    },
+    {
+      "frame": "w10-husband-rain-default:57",
+      "scale": 0.6566168018409407,
+      "widthDp": 82.73371703195853,
+      "heightDp": 114.2513235203237,
+      "topDp": -64.2513235203237
+    },
+    {
+      "frame": "w10-husband-rain-default:58",
+      "scale": 0.6566168018409407,
+      "widthDp": 76.82416581539006,
+      "heightDp": 112.28147311480086,
+      "topDp": -62.28147311480086
+    },
+    {
+      "frame": "w10-husband-rain-default:59",
+      "scale": 0.6566168018409407,
+      "widthDp": 81.42048342827665,
+      "heightDp": 113.59470671848274,
+      "topDp": -63.59470671848274
+    },
+    {
+      "frame": "w10-husband-rain-default:60",
+      "scale": 0.6566168018409407,
+      "widthDp": 80.76386662643571,
+      "heightDp": 114.2513235203237,
+      "topDp": -64.2513235203237
+    },
+    {
+      "frame": "w10-husband-rain-default:61",
+      "scale": 0.6566168018409407,
+      "widthDp": 80.10724982459477,
+      "heightDp": 111.62485631295992,
+      "topDp": -61.62485631295992
+    },
+    {
+      "frame": "w10-husband-rain-default:62",
+      "scale": 0.6566168018409407,
+      "widthDp": 80.10724982459477,
+      "heightDp": 113.59470671848274,
+      "topDp": -63.59470671848274
+    },
+    {
+      "frame": "w10-husband-rain-default:63",
+      "scale": 0.6566168018409407,
+      "widthDp": 79.45063302275383,
+      "heightDp": 112.28147311480086,
+      "topDp": -62.28147311480086
+    },
+    {
+      "frame": "w10-husband-cold:0",
+      "scale": 0.6924953346806062,
+      "widthDp": 54.70713143976789,
+      "heightDp": 87.25441216975638,
+      "topDp": -37.25441216975638
+    },
+    {
+      "frame": "w10-husband-cold:1",
+      "scale": 0.6924953346806062,
+      "widthDp": 51.93715010104547,
+      "heightDp": 88.6394028391176,
+      "topDp": -38.639402839117594
+    },
+    {
+      "frame": "w10-husband-cold:2",
+      "scale": 0.6924953346806062,
+      "widthDp": 49.16716876232304,
+      "heightDp": 88.6394028391176,
+      "topDp": -38.639402839117594
+    },
+    {
+      "frame": "w10-husband-cold:3",
+      "scale": 0.6924953346806062,
+      "widthDp": 52.62964543572607,
+      "heightDp": 87.946907504437,
+      "topDp": -37.94690750443699
+    },
+    {
+      "frame": "w10-husband-cold:4",
+      "scale": 0.6924953346806062,
+      "widthDp": 45.012196754239405,
+      "heightDp": 86.56191683507578,
+      "topDp": -36.56191683507578
+    },
+    {
+      "frame": "w10-husband-cold:5",
+      "scale": 0.6924953346806062,
+      "widthDp": 44.3197014195588,
+      "heightDp": 87.25441216975638,
+      "topDp": -37.25441216975638
+    },
+    {
+      "frame": "w10-husband-cold:6",
+      "scale": 0.6924953346806062,
+      "widthDp": 44.3197014195588,
+      "heightDp": 83.79193549635335,
+      "topDp": -33.79193549635335
+    },
+    {
+      "frame": "w10-husband-cold:7",
+      "scale": 0.6924953346806062,
+      "widthDp": 44.3197014195588,
+      "heightDp": 86.56191683507578,
+      "topDp": -36.56191683507578
+    },
+    {
+      "frame": "w10-husband-cold:8",
+      "scale": 0.6924953346806062,
+      "widthDp": 69.24953346806062,
+      "heightDp": 72.71201014146365,
+      "topDp": -22.71201014146365
+    },
+    {
+      "frame": "w10-husband-cold:9",
+      "scale": 0.6924953346806062,
+      "widthDp": 69.24953346806062,
+      "heightDp": 74.78949614550547,
+      "topDp": -24.789496145505467
+    },
+    {
+      "frame": "w10-husband-cold:10",
+      "scale": 0.6924953346806062,
+      "widthDp": 66.4795521293382,
+      "heightDp": 71.32701947210244,
+      "topDp": -21.327019472102435
+    },
+    {
+      "frame": "w10-husband-cold:11",
+      "scale": 0.6924953346806062,
+      "widthDp": 50.55215943168425,
+      "heightDp": 92.79437484720123,
+      "topDp": -42.794374847201226
+    },
+    {
+      "frame": "w10-husband-cold:12",
+      "scale": 0.6924953346806062,
+      "widthDp": 46.39718742360061,
+      "heightDp": 89.3318981737982,
+      "topDp": -39.331898173798194
+    },
+    {
+      "frame": "w10-husband-cold:13",
+      "scale": 0.6924953346806062,
+      "widthDp": 59.55459878253213,
+      "heightDp": 89.3318981737982,
+      "topDp": -39.331898173798194
+    },
+    {
+      "frame": "w10-husband-cold:14",
+      "scale": 0.6924953346806062,
+      "widthDp": 62.324580121254556,
+      "heightDp": 88.6394028391176,
+      "topDp": -38.639402839117594
+    },
+    {
+      "frame": "w10-husband-cold:15",
+      "scale": 0.6924953346806062,
+      "widthDp": 47.08968275828122,
+      "heightDp": 90.71688884315941,
+      "topDp": -40.71688884315941
+    },
+    {
+      "frame": "w10-husband-cold:16",
+      "scale": 0.6924953346806062,
+      "widthDp": 65.78705679465759,
+      "heightDp": 87.946907504437,
+      "topDp": -37.94690750443699
+    },
+    {
+      "frame": "w10-husband-cold:17",
+      "scale": 0.6924953346806062,
+      "widthDp": 68.55703813338002,
+      "heightDp": 87.946907504437,
+      "topDp": -37.94690750443699
+    },
+    {
+      "frame": "w10-husband-cold:18",
+      "scale": 0.6924953346806062,
+      "widthDp": 65.78705679465759,
+      "heightDp": 86.56191683507578,
+      "topDp": -36.56191683507578
+    },
+    {
+      "frame": "w10-husband-cold:19",
+      "scale": 0.6924953346806062,
+      "widthDp": 50.55215943168425,
+      "heightDp": 89.3318981737982,
+      "topDp": -39.331898173798194
+    },
+    {
+      "frame": "w10-husband-cold:20",
+      "scale": 0.6924953346806062,
+      "widthDp": 68.55703813338002,
+      "heightDp": 87.946907504437,
+      "topDp": -37.94690750443699
+    },
+    {
+      "frame": "w10-husband-cold:21",
+      "scale": 0.6924953346806062,
+      "widthDp": 65.78705679465759,
+      "heightDp": 87.946907504437,
+      "topDp": -37.94690750443699
+    },
+    {
+      "frame": "w10-husband-cold:22",
+      "scale": 0.6924953346806062,
+      "widthDp": 48.474673427642436,
+      "heightDp": 90.02439350847881,
+      "topDp": -40.02439350847881
+    },
+    {
+      "frame": "w10-husband-cold:23",
+      "scale": 0.6924953346806062,
+      "widthDp": 63.70957079061577,
+      "heightDp": 89.3318981737982,
+      "topDp": -39.331898173798194
+    },
+    {
+      "frame": "w10-husband-cold:24",
+      "scale": 0.6924953346806062,
+      "widthDp": 49.859664097003645,
+      "heightDp": 83.79193549635335,
+      "topDp": -33.79193549635335
+    },
+    {
+      "frame": "w10-husband-cold:25",
+      "scale": 0.6924953346806062,
+      "widthDp": 49.859664097003645,
+      "heightDp": 83.79193549635335,
+      "topDp": -33.79193549635335
+    },
+    {
+      "frame": "w10-husband-cold:26",
+      "scale": 0.6924953346806062,
+      "widthDp": 47.78217809296183,
+      "heightDp": 86.56191683507578,
+      "topDp": -36.56191683507578
+    },
+    {
+      "frame": "w10-husband-cold:27",
+      "scale": 0.6924953346806062,
+      "widthDp": 49.16716876232304,
+      "heightDp": 85.86942150039516,
+      "topDp": -35.86942150039516
+    },
+    {
+      "frame": "w10-husband-cold:28",
+      "scale": 0.6924953346806062,
+      "widthDp": 54.014636105087284,
+      "heightDp": 72.01951480678305,
+      "topDp": -22.01951480678305
+    },
+    {
+      "frame": "w10-husband-cold:29",
+      "scale": 0.6924953346806062,
+      "widthDp": 55.39962677444849,
+      "heightDp": 72.71201014146365,
+      "topDp": -22.71201014146365
+    },
+    {
+      "frame": "w10-husband-cold:30",
+      "scale": 0.6924953346806062,
+      "widthDp": 54.014636105087284,
+      "heightDp": 72.71201014146365,
+      "topDp": -22.71201014146365
+    },
+    {
+      "frame": "w10-husband-cold:31",
+      "scale": 0.6924953346806062,
+      "widthDp": 68.55703813338002,
+      "heightDp": 73.40450547614425,
+      "topDp": -23.40450547614425
+    },
+    {
+      "frame": "w10-husband-cold:32",
+      "scale": 0.6924953346806062,
+      "widthDp": 59.55459878253213,
+      "heightDp": 84.48443083103396,
+      "topDp": -34.48443083103396
+    },
+    {
+      "frame": "w10-husband-cold:33",
+      "scale": 0.6924953346806062,
+      "widthDp": 60.24709411721274,
+      "heightDp": 78.2519728189085,
+      "topDp": -28.2519728189085
+    },
+    {
+      "frame": "w10-husband-cold:34",
+      "scale": 0.6924953346806062,
+      "widthDp": 57.477112778490316,
+      "heightDp": 83.09944016167275,
+      "topDp": -33.099440161672746
+    },
+    {
+      "frame": "w10-husband-cold:35",
+      "scale": 0.6924953346806062,
+      "widthDp": 54.70713143976789,
+      "heightDp": 83.09944016167275,
+      "topDp": -33.099440161672746
+    },
+    {
+      "frame": "w10-husband-cold:36",
+      "scale": 0.6924953346806062,
+      "widthDp": 58.16960811317092,
+      "heightDp": 86.56191683507578,
+      "topDp": -36.56191683507578
+    },
+    {
+      "frame": "w10-husband-cold:37",
+      "scale": 0.6924953346806062,
+      "widthDp": 58.16960811317092,
+      "heightDp": 87.25441216975638,
+      "topDp": -37.25441216975638
+    },
+    {
+      "frame": "w10-husband-cold:38",
+      "scale": 0.6924953346806062,
+      "widthDp": 54.014636105087284,
+      "heightDp": 86.56191683507578,
+      "topDp": -36.56191683507578
+    },
+    {
+      "frame": "w10-husband-cold:39",
+      "scale": 0.6924953346806062,
+      "widthDp": 53.322140770406676,
+      "heightDp": 86.56191683507578,
+      "topDp": -36.56191683507578
+    },
+    {
+      "frame": "weather-cold:9",
+      "scale": 0.34084096744373543,
+      "widthDp": 62.71473800964732,
+      "heightDp": 80.7793092841653,
+      "topDp": -30.779309284165294
+    },
+    {
+      "frame": "w10-husband-cold:48",
+      "scale": 0.6924953346806062,
+      "widthDp": 59.55459878253213,
+      "heightDp": 71.32701947210244,
+      "topDp": -21.327019472102435
+    },
+    {
+      "frame": "w10-husband-cold:49",
+      "scale": 0.6924953346806062,
+      "widthDp": 59.55459878253213,
+      "heightDp": 74.78949614550547,
+      "topDp": -24.789496145505467
+    },
+    {
+      "frame": "w10-husband-cold:50",
+      "scale": 0.6924953346806062,
+      "widthDp": 58.16960811317092,
+      "heightDp": 73.40450547614425,
+      "topDp": -23.40450547614425
+    },
+    {
+      "frame": "w10-husband-cold:51",
+      "scale": 0.6924953346806062,
+      "widthDp": 51.93715010104547,
+      "heightDp": 72.71201014146365,
+      "topDp": -22.71201014146365
+    },
+    {
+      "frame": "w10-husband-cold:52",
+      "scale": 0.6924953346806062,
+      "widthDp": 55.39962677444849,
+      "heightDp": 91.40938417784002,
+      "topDp": -41.409384177840025
+    },
+    {
+      "frame": "w10-husband-cold:53",
+      "scale": 0.6924953346806062,
+      "widthDp": 65.78705679465759,
+      "heightDp": 98.33433752464607,
+      "topDp": -48.334337524646074
+    },
+    {
+      "frame": "w10-husband-cold:54",
+      "scale": 0.6924953346806062,
+      "widthDp": 66.4795521293382,
+      "heightDp": 96.25685152060426,
+      "topDp": -46.25685152060426
+    },
+    {
+      "frame": "w10-husband-cold:55",
+      "scale": 0.6924953346806062,
+      "widthDp": 60.93958945189335,
+      "heightDp": 96.94934685528487,
+      "topDp": -46.94934685528487
+    },
+    {
+      "frame": "w10-husband-cold:56",
+      "scale": 0.6924953346806062,
+      "widthDp": 53.322140770406676,
+      "heightDp": 93.48687018188184,
+      "topDp": -43.48687018188184
+    },
+    {
+      "frame": "w10-husband-cold:57",
+      "scale": 0.6924953346806062,
+      "widthDp": 56.0921221091291,
+      "heightDp": 93.48687018188184,
+      "topDp": -43.48687018188184
+    },
+    {
+      "frame": "w10-husband-cold:58",
+      "scale": 0.6924953346806062,
+      "widthDp": 58.16960811317092,
+      "heightDp": 92.10187951252063,
+      "topDp": -42.101879512520625
+    },
+    {
+      "frame": "w10-husband-cold:59",
+      "scale": 0.6924953346806062,
+      "widthDp": 54.70713143976789,
+      "heightDp": 92.79437484720123,
+      "topDp": -42.794374847201226
+    },
+    {
+      "frame": "w10-husband-cold:60",
+      "scale": 0.6924953346806062,
+      "widthDp": 54.70713143976789,
+      "heightDp": 94.17936551656244,
+      "topDp": -44.17936551656244
+    },
+    {
+      "frame": "w10-husband-cold:61",
+      "scale": 0.6924953346806062,
+      "widthDp": 53.322140770406676,
+      "heightDp": 90.71688884315941,
+      "topDp": -40.71688884315941
+    },
+    {
+      "frame": "w10-husband-cold:62",
+      "scale": 0.6924953346806062,
+      "widthDp": 55.39962677444849,
+      "heightDp": 92.10187951252063,
+      "topDp": -42.101879512520625
+    },
+    {
+      "frame": "w10-husband-cold:63",
+      "scale": 0.6924953346806062,
+      "widthDp": 53.322140770406676,
+      "heightDp": 92.10187951252063,
+      "topDp": -42.101879512520625
+    },
+    {
+      "frame": "w10-husband-rain-cold:0",
+      "scale": 0.6131094856252522,
+      "widthDp": 73.57313827503027,
+      "heightDp": 98.09751770004036,
+      "topDp": -48.097517700040356
+    },
+    {
+      "frame": "w10-husband-rain-cold:1",
+      "scale": 0.6131094856252522,
+      "widthDp": 73.57313827503027,
+      "heightDp": 98.71062718566562,
+      "topDp": -48.710627185665615
+    },
+    {
+      "frame": "w10-husband-rain-cold:2",
+      "scale": 0.6131094856252522,
+      "widthDp": 74.18624776065552,
+      "heightDp": 99.93684615691612,
+      "topDp": -49.93684615691612
+    },
+    {
+      "frame": "w10-husband-rain-cold:3",
+      "scale": 0.6131094856252522,
+      "widthDp": 74.79935724628078,
+      "heightDp": 99.32373667129086,
+      "topDp": -49.32373667129086
+    },
+    {
+      "frame": "w10-husband-rain-cold:4",
+      "scale": 0.6131094856252522,
+      "widthDp": 75.41246673190602,
+      "heightDp": 98.71062718566562,
+      "topDp": -48.710627185665615
+    },
+    {
+      "frame": "w10-husband-rain-cold:5",
+      "scale": 0.6131094856252522,
+      "widthDp": 75.41246673190602,
+      "heightDp": 99.32373667129086,
+      "topDp": -49.32373667129086
+    },
+    {
+      "frame": "w10-husband-rain-cold:6",
+      "scale": 0.6131094856252522,
+      "widthDp": 74.79935724628078,
+      "heightDp": 99.32373667129086,
+      "topDp": -49.32373667129086
+    },
+    {
+      "frame": "w10-husband-rain-cold:7",
+      "scale": 0.6131094856252522,
+      "widthDp": 74.79935724628078,
+      "heightDp": 98.71062718566562,
+      "topDp": -48.710627185665615
+    },
+    {
+      "frame": "w10-husband-rain-cold:12",
+      "scale": 0.6131094856252522,
+      "widthDp": 73.57313827503027,
+      "heightDp": 101.77617461379187,
+      "topDp": -51.776174613791866
+    },
+    {
+      "frame": "w10-husband-rain-cold:13",
+      "scale": 0.6131094856252522,
+      "widthDp": 76.02557621753128,
+      "heightDp": 103.00239358504238,
+      "topDp": -53.002393585042384
+    },
+    {
+      "frame": "w10-husband-rain-cold:14",
+      "scale": 0.6131094856252522,
+      "widthDp": 74.18624776065552,
+      "heightDp": 101.77617461379187,
+      "topDp": -51.776174613791866
+    },
+    {
+      "frame": "w10-husband-rain-cold:15",
+      "scale": 0.6131094856252522,
+      "widthDp": 73.57313827503027,
+      "heightDp": 100.54995564254136,
+      "topDp": -50.54995564254136
+    },
+    {
+      "frame": "w10-husband-rain-cold:16",
+      "scale": 0.6131094856252522,
+      "widthDp": 74.18624776065552,
+      "heightDp": 103.00239358504238,
+      "topDp": -53.002393585042384
+    },
+    {
+      "frame": "w10-husband-rain-cold:17",
+      "scale": 0.6131094856252522,
+      "widthDp": 74.79935724628078,
+      "heightDp": 101.77617461379187,
+      "topDp": -51.776174613791866
+    },
+    {
+      "frame": "w10-husband-rain-cold:18",
+      "scale": 0.6131094856252522,
+      "widthDp": 75.41246673190602,
+      "heightDp": 101.77617461379187,
+      "topDp": -51.776174613791866
+    },
+    {
+      "frame": "w10-husband-rain-cold:19",
+      "scale": 0.6131094856252522,
+      "widthDp": 74.79935724628078,
+      "heightDp": 103.00239358504238,
+      "topDp": -53.002393585042384
+    },
+    {
+      "frame": "w10-husband-rain-cold:20",
+      "scale": 0.6131094856252522,
+      "widthDp": 74.79935724628078,
+      "heightDp": 101.16306512816662,
+      "topDp": -51.16306512816662
+    },
+    {
+      "frame": "w10-husband-rain-cold:21",
+      "scale": 0.6131094856252522,
+      "widthDp": 76.02557621753128,
+      "heightDp": 100.54995564254136,
+      "topDp": -50.54995564254136
+    },
+    {
+      "frame": "w10-husband-rain-cold:22",
+      "scale": 0.6131094856252522,
+      "widthDp": 74.18624776065552,
+      "heightDp": 101.16306512816662,
+      "topDp": -51.16306512816662
+    },
+    {
+      "frame": "w10-husband-rain-cold:23",
+      "scale": 0.6131094856252522,
+      "widthDp": 76.02557621753128,
+      "heightDp": 100.54995564254136,
+      "topDp": -50.54995564254136
+    },
+    {
+      "frame": "w10-husband-rain-cold:24",
+      "scale": 0.6131094856252522,
+      "widthDp": 74.18624776065552,
+      "heightDp": 100.54995564254136,
+      "topDp": -50.54995564254136
+    },
+    {
+      "frame": "w10-husband-rain-cold:25",
+      "scale": 0.6131094856252522,
+      "widthDp": 76.02557621753128,
+      "heightDp": 99.32373667129086,
+      "topDp": -49.32373667129086
+    },
+    {
+      "frame": "w10-husband-rain-cold:26",
+      "scale": 0.6131094856252522,
+      "widthDp": 74.18624776065552,
+      "heightDp": 99.32373667129086,
+      "topDp": -49.32373667129086
+    },
+    {
+      "frame": "w10-husband-rain-cold:27",
+      "scale": 0.6131094856252522,
+      "widthDp": 76.02557621753128,
+      "heightDp": 101.16306512816662,
+      "topDp": -51.16306512816662
+    },
+    {
+      "frame": "w10-husband-rain-cold:28",
+      "scale": 0.6131094856252522,
+      "widthDp": 76.63868570315653,
+      "heightDp": 91.96642284378784,
+      "topDp": -41.96642284378784
+    },
+    {
+      "frame": "w10-husband-rain-cold:29",
+      "scale": 0.6131094856252522,
+      "widthDp": 77.86490467440703,
+      "heightDp": 91.96642284378784,
+      "topDp": -41.96642284378784
+    },
+    {
+      "frame": "w10-husband-rain-cold:30",
+      "scale": 0.6131094856252522,
+      "widthDp": 76.63868570315653,
+      "heightDp": 92.57953232941308,
+      "topDp": -42.579532329413084
+    },
+    {
+      "frame": "w10-husband-rain-cold:31",
+      "scale": 0.6131094856252522,
+      "widthDp": 74.18624776065552,
+      "heightDp": 96.25818924316461,
+      "topDp": -46.25818924316461
+    },
+    {
+      "frame": "w10-husband-rain-cold:32",
+      "scale": 0.6131094856252522,
+      "widthDp": 73.57313827503027,
+      "heightDp": 96.25818924316461,
+      "topDp": -46.25818924316461
+    },
+    {
+      "frame": "w10-husband-rain-cold:33",
+      "scale": 0.6131094856252522,
+      "widthDp": 74.18624776065552,
+      "heightDp": 93.80575130066359,
+      "topDp": -43.80575130066359
+    },
+    {
+      "frame": "w10-husband-rain-cold:34",
+      "scale": 0.6131094856252522,
+      "widthDp": 73.57313827503027,
+      "heightDp": 91.35331335816258,
+      "topDp": -41.35331335816258
+    },
+    {
+      "frame": "w10-husband-rain-cold:35",
+      "scale": 0.6131094856252522,
+      "widthDp": 71.73380981815451,
+      "heightDp": 89.51398490128683,
+      "topDp": -39.51398490128683
+    },
+    {
+      "frame": "w10-husband-rain-cold:36",
+      "scale": 0.6131094856252522,
+      "widthDp": 73.57313827503027,
+      "heightDp": 93.80575130066359,
+      "topDp": -43.80575130066359
+    },
+    {
+      "frame": "w10-husband-rain-cold:37",
+      "scale": 0.6131094856252522,
+      "widthDp": 74.79935724628078,
+      "heightDp": 96.25818924316461,
+      "topDp": -46.25818924316461
+    },
+    {
+      "frame": "w10-husband-rain-cold:38",
+      "scale": 0.6131094856252522,
+      "widthDp": 72.96002878940502,
+      "heightDp": 97.48440821441511,
+      "topDp": -47.48440821441511
+    },
+    {
+      "frame": "w10-husband-rain-cold:39",
+      "scale": 0.6131094856252522,
+      "widthDp": 73.57313827503027,
+      "heightDp": 95.64507975753935,
+      "topDp": -45.64507975753935
+    },
+    {
+      "frame": "rain-cold:5",
+      "scale": 0.43826592026978856,
+      "widthDp": 91.15931141611603,
+      "heightDp": 104.30728902420968,
+      "topDp": -54.30728902420968
+    },
+    {
+      "frame": "rain-cold:11",
+      "scale": 0.43670137770452927,
+      "widthDp": 89.96048380713303,
+      "heightDp": 100.87801824974626,
+      "topDp": -50.87801824974626
+    },
+    {
+      "frame": "rain-cold:9",
+      "scale": 0.4218193805361317,
+      "widthDp": 86.05115362937087,
+      "heightDp": 92.80026371794898,
+      "topDp": -42.80026371794898
+    },
+    {
+      "frame": "w10-husband-rain-cold:48",
+      "scale": 0.6131094856252522,
+      "widthDp": 74.79935724628078,
+      "heightDp": 86.44843747316057,
+      "topDp": -36.44843747316057
+    },
+    {
+      "frame": "w10-husband-rain-cold:49",
+      "scale": 0.6131094856252522,
+      "widthDp": 74.79935724628078,
+      "heightDp": 87.67465644441107,
+      "topDp": -37.67465644441107
+    },
+    {
+      "frame": "w10-husband-rain-cold:50",
+      "scale": 0.6131094856252522,
+      "widthDp": 74.18624776065552,
+      "heightDp": 86.44843747316057,
+      "topDp": -36.44843747316057
+    },
+    {
+      "frame": "w10-husband-rain-cold:51",
+      "scale": 0.6131094856252522,
+      "widthDp": 74.18624776065552,
+      "heightDp": 80.9304521025333,
+      "topDp": -30.930452102533295
+    },
+    {
+      "frame": "w10-husband-rain-cold:52",
+      "scale": 0.6131094856252522,
+      "widthDp": 78.47801416003229,
+      "heightDp": 102.38928409941713,
+      "topDp": -52.389284099417125
+    },
+    {
+      "frame": "w10-husband-rain-cold:53",
+      "scale": 0.6131094856252522,
+      "widthDp": 74.79935724628078,
+      "heightDp": 101.77617461379187,
+      "topDp": -51.776174613791866
+    },
+    {
+      "frame": "w10-husband-rain-cold:54",
+      "scale": 0.6131094856252522,
+      "widthDp": 74.18624776065552,
+      "heightDp": 103.00239358504238,
+      "topDp": -53.002393585042384
+    },
+    {
+      "frame": "w10-husband-rain-cold:55",
+      "scale": 0.6131094856252522,
+      "widthDp": 72.96002878940502,
+      "heightDp": 99.32373667129086,
+      "topDp": -49.32373667129086
+    },
+    {
+      "frame": "w10-husband-rain-cold:56",
+      "scale": 0.6131094856252522,
+      "widthDp": 68.055152904403,
+      "heightDp": 95.64507975753935,
+      "topDp": -45.64507975753935
+    },
+    {
+      "frame": "w10-husband-rain-cold:57",
+      "scale": 0.6131094856252522,
+      "widthDp": 68.66826239002825,
+      "heightDp": 95.64507975753935,
+      "topDp": -45.64507975753935
+    },
+    {
+      "frame": "w10-husband-rain-cold:58",
+      "scale": 0.6131094856252522,
+      "widthDp": 69.89448136127875,
+      "heightDp": 96.25818924316461,
+      "topDp": -46.25818924316461
+    },
+    {
+      "frame": "w10-husband-rain-cold:59",
+      "scale": 0.6131094856252522,
+      "widthDp": 73.57313827503027,
+      "heightDp": 98.09751770004036,
+      "topDp": -48.097517700040356
+    },
+    {
+      "frame": "w10-husband-rain-cold:60",
+      "scale": 0.6131094856252522,
+      "widthDp": 71.73380981815451,
+      "heightDp": 95.64507975753935,
+      "topDp": -45.64507975753935
+    },
+    {
+      "frame": "w10-husband-rain-cold:61",
+      "scale": 0.6131094856252522,
+      "widthDp": 74.18624776065552,
+      "heightDp": 95.0319702719141,
+      "topDp": -45.031970271914105
+    },
+    {
+      "frame": "w10-husband-rain-cold:62",
+      "scale": 0.6131094856252522,
+      "widthDp": 71.12070033252927,
+      "heightDp": 97.48440821441511,
+      "topDp": -47.48440821441511
+    },
+    {
+      "frame": "w10-husband-rain-cold:63",
+      "scale": 0.6131094856252522,
+      "widthDp": 73.57313827503027,
+      "heightDp": 96.25818924316461,
+      "topDp": -46.25818924316461
+    },
+    {
+      "frame": "w10-husband-hot:0",
+      "scale": 0.6607704247241275,
+      "widthDp": 52.8616339779302,
+      "heightDp": 87.22169606358483,
+      "topDp": -37.22169606358483
+    },
+    {
+      "frame": "w10-husband-hot:1",
+      "scale": 0.6607704247241275,
+      "widthDp": 48.236241004861306,
+      "heightDp": 89.20400733775722,
+      "topDp": -39.20400733775722
+    },
+    {
+      "frame": "w10-husband-hot:2",
+      "scale": 0.6607704247241275,
+      "widthDp": 48.89701142958543,
+      "heightDp": 89.20400733775722,
+      "topDp": -39.20400733775722
+    },
+    {
+      "frame": "w10-husband-hot:3",
+      "scale": 0.6607704247241275,
+      "widthDp": 51.54009312848194,
+      "heightDp": 87.22169606358483,
+      "topDp": -37.22169606358483
+    },
+    {
+      "frame": "w10-husband-hot:4",
+      "scale": 0.6607704247241275,
+      "widthDp": 42.95007760706829,
+      "heightDp": 87.22169606358483,
+      "topDp": -37.22169606358483
+    },
+    {
+      "frame": "w10-husband-hot:5",
+      "scale": 0.6607704247241275,
+      "widthDp": 43.610848031792415,
+      "heightDp": 86.56092563886071,
+      "topDp": -36.56092563886071
+    },
+    {
+      "frame": "w10-husband-hot:6",
+      "scale": 0.6607704247241275,
+      "widthDp": 42.28930718234416,
+      "heightDp": 85.23938478941245,
+      "topDp": -35.239384789412455
+    },
+    {
+      "frame": "w10-husband-hot:7",
+      "scale": 0.6607704247241275,
+      "widthDp": 42.28930718234416,
+      "heightDp": 86.56092563886071,
+      "topDp": -36.56092563886071
+    },
+    {
+      "frame": "w10-husband-hot:8",
+      "scale": 0.6607704247241275,
+      "widthDp": 68.72012417130927,
+      "heightDp": 70.70243544548164,
+      "topDp": -20.70243544548164
+    },
+    {
+      "frame": "w10-husband-hot:9",
+      "scale": 0.6607704247241275,
+      "widthDp": 66.07704247241276,
+      "heightDp": 73.34551714437815,
+      "topDp": -23.34551714437815
+    },
+    {
+      "frame": "w10-husband-hot:10",
+      "scale": 0.6607704247241275,
+      "widthDp": 62.77319034879211,
+      "heightDp": 65.41627204768862,
+      "topDp": -15.416272047688622
+    },
+    {
+      "frame": "w10-husband-hot:11",
+      "scale": 0.6607704247241275,
+      "widthDp": 50.21855227903369,
+      "heightDp": 89.86477776248134,
+      "topDp": -39.86477776248134
+    },
+    {
+      "frame": "w10-husband-hot:12",
+      "scale": 0.6607704247241275,
+      "widthDp": 48.89701142958543,
+      "heightDp": 87.22169606358483,
+      "topDp": -37.22169606358483
+    },
+    {
+      "frame": "w10-husband-hot:13",
+      "scale": 0.6607704247241275,
+      "widthDp": 58.80856780044735,
+      "heightDp": 87.22169606358483,
+      "topDp": -37.22169606358483
+    },
+    {
+      "frame": "w10-husband-hot:14",
+      "scale": 0.6607704247241275,
+      "widthDp": 64.09473119824037,
+      "heightDp": 86.56092563886071,
+      "topDp": -36.56092563886071
+    },
+    {
+      "frame": "w10-husband-hot:15",
+      "scale": 0.6607704247241275,
+      "widthDp": 44.93238888124067,
+      "heightDp": 87.88246648830896,
+      "topDp": -37.882466488308964
+    },
+    {
+      "frame": "w10-husband-hot:16",
+      "scale": 0.6607704247241275,
+      "widthDp": 62.77319034879211,
+      "heightDp": 85.90015521413657,
+      "topDp": -35.900155214136575
+    },
+    {
+      "frame": "w10-husband-hot:17",
+      "scale": 0.6607704247241275,
+      "widthDp": 64.7555016229645,
+      "heightDp": 84.57861436468832,
+      "topDp": -34.57861436468832
+    },
+    {
+      "frame": "w10-husband-hot:18",
+      "scale": 0.6607704247241275,
+      "widthDp": 62.112419924067986,
+      "heightDp": 83.25707351524007,
+      "topDp": -33.257073515240066
+    },
+    {
+      "frame": "w10-husband-hot:19",
+      "scale": 0.6607704247241275,
+      "widthDp": 46.253929730688924,
+      "heightDp": 85.23938478941245,
+      "topDp": -35.239384789412455
+    },
+    {
+      "frame": "w10-husband-hot:20",
+      "scale": 0.6607704247241275,
+      "widthDp": 67.39858332186101,
+      "heightDp": 83.25707351524007,
+      "topDp": -33.257073515240066
+    },
+    {
+      "frame": "w10-husband-hot:21",
+      "scale": 0.6607704247241275,
+      "widthDp": 64.7555016229645,
+      "heightDp": 83.91784393996419,
+      "topDp": -33.917843939964186
+    },
+    {
+      "frame": "w10-husband-hot:22",
+      "scale": 0.6607704247241275,
+      "widthDp": 48.89701142958543,
+      "heightDp": 86.56092563886071,
+      "topDp": -36.56092563886071
+    },
+    {
+      "frame": "w10-husband-hot:23",
+      "scale": 0.6607704247241275,
+      "widthDp": 56.82625652627497,
+      "heightDp": 84.57861436468832,
+      "topDp": -34.57861436468832
+    },
+    {
+      "frame": "w10-husband-hot:24",
+      "scale": 0.6607704247241275,
+      "widthDp": 46.253929730688924,
+      "heightDp": 82.59630309051593,
+      "topDp": -32.59630309051593
+    },
+    {
+      "frame": "w10-husband-hot:25",
+      "scale": 0.6607704247241275,
+      "widthDp": 44.27161845651654,
+      "heightDp": 80.61399181634356,
+      "topDp": -30.613991816343557
+    },
+    {
+      "frame": "w10-husband-hot:26",
+      "scale": 0.6607704247241275,
+      "widthDp": 41.62853675762003,
+      "heightDp": 83.25707351524007,
+      "topDp": -33.257073515240066
+    },
+    {
+      "frame": "w10-husband-hot:27",
+      "scale": 0.6607704247241275,
+      "widthDp": 42.28930718234416,
+      "heightDp": 84.57861436468832,
+      "topDp": -34.57861436468832
+    },
+    {
+      "frame": "w10-husband-hot:28",
+      "scale": 0.6607704247241275,
+      "widthDp": 49.55778185430956,
+      "heightDp": 68.72012417130927,
+      "topDp": -18.720124171309266
+    },
+    {
+      "frame": "w10-husband-hot:29",
+      "scale": 0.6607704247241275,
+      "widthDp": 48.89701142958543,
+      "heightDp": 70.04166502075752,
+      "topDp": -20.04166502075752
+    },
+    {
+      "frame": "w10-husband-hot:30",
+      "scale": 0.6607704247241275,
+      "widthDp": 48.89701142958543,
+      "heightDp": 68.72012417130927,
+      "topDp": -18.720124171309266
+    },
+    {
+      "frame": "w10-husband-hot:31",
+      "scale": 0.6607704247241275,
+      "widthDp": 62.112419924067986,
+      "heightDp": 70.70243544548164,
+      "topDp": -20.70243544548164
+    },
+    {
+      "frame": "w10-husband-hot:32",
+      "scale": 0.6607704247241275,
+      "widthDp": 54.18317482737846,
+      "heightDp": 80.61399181634356,
+      "topDp": -30.613991816343557
+    },
+    {
+      "frame": "w10-husband-hot:33",
+      "scale": 0.6607704247241275,
+      "widthDp": 56.16548610155084,
+      "heightDp": 72.68474671965403,
+      "topDp": -22.68474671965403
+    },
+    {
+      "frame": "w10-husband-hot:34",
+      "scale": 0.6607704247241275,
+      "widthDp": 54.18317482737846,
+      "heightDp": 79.2924509668953,
+      "topDp": -29.292450966895302
+    },
+    {
+      "frame": "w10-husband-hot:35",
+      "scale": 0.6607704247241275,
+      "widthDp": 50.879322703757815,
+      "heightDp": 77.31013969272291,
+      "topDp": -27.310139692722913
+    },
+    {
+      "frame": "w10-husband-hot:36",
+      "scale": 0.6607704247241275,
+      "widthDp": 52.20086355320607,
+      "heightDp": 81.27476224106768,
+      "topDp": -31.274762241067677
+    },
+    {
+      "frame": "w10-husband-hot:37",
+      "scale": 0.6607704247241275,
+      "widthDp": 51.54009312848194,
+      "heightDp": 83.91784393996419,
+      "topDp": -33.917843939964186
+    },
+    {
+      "frame": "w10-husband-hot:38",
+      "scale": 0.6607704247241275,
+      "widthDp": 50.21855227903369,
+      "heightDp": 83.25707351524007,
+      "topDp": -33.257073515240066
+    },
+    {
+      "frame": "w10-husband-hot:39",
+      "scale": 0.6607704247241275,
+      "widthDp": 44.93238888124067,
+      "heightDp": 84.57861436468832,
+      "topDp": -34.57861436468832
+    },
+    {
+      "frame": "weather-hot:9",
+      "scale": 0.31740490994515624,
+      "widthDp": 51.73700032106047,
+      "heightDp": 76.1771783868375,
+      "topDp": -26.177178386837497
+    },
+    {
+      "frame": "w10-husband-hot:48",
+      "scale": 0.6607704247241275,
+      "widthDp": 54.843945252102586,
+      "heightDp": 68.72012417130927,
+      "topDp": -18.720124171309266
+    },
+    {
+      "frame": "w10-husband-hot:49",
+      "scale": 0.6607704247241275,
+      "widthDp": 56.82625652627497,
+      "heightDp": 71.36320587020577,
+      "topDp": -21.363205870205775
+    },
+    {
+      "frame": "w10-husband-hot:50",
+      "scale": 0.6607704247241275,
+      "widthDp": 55.50471567682671,
+      "heightDp": 70.70243544548164,
+      "topDp": -20.70243544548164
+    },
+    {
+      "frame": "w10-husband-hot:51",
+      "scale": 0.6607704247241275,
+      "widthDp": 50.21855227903369,
+      "heightDp": 68.05935374658513,
+      "topDp": -18.05935374658513
+    },
+    {
+      "frame": "w10-husband-hot:52",
+      "scale": 0.6607704247241275,
+      "widthDp": 50.21855227903369,
+      "heightDp": 88.54323691303308,
+      "topDp": -38.543236913033084
+    },
+    {
+      "frame": "w10-husband-hot:53",
+      "scale": 0.6607704247241275,
+      "widthDp": 56.82625652627497,
+      "heightDp": 91.84708903665373,
+      "topDp": -41.84708903665373
+    },
+    {
+      "frame": "w10-husband-hot:54",
+      "scale": 0.6607704247241275,
+      "widthDp": 60.130108649895604,
+      "heightDp": 91.84708903665373,
+      "topDp": -41.84708903665373
+    },
+    {
+      "frame": "w10-husband-hot:55",
+      "scale": 0.6607704247241275,
+      "widthDp": 56.82625652627497,
+      "heightDp": 91.84708903665373,
+      "topDp": -41.84708903665373
+    },
+    {
+      "frame": "w10-husband-hot:56",
+      "scale": 0.6607704247241275,
+      "widthDp": 47.57547058013718,
+      "heightDp": 89.20400733775722,
+      "topDp": -39.20400733775722
+    },
+    {
+      "frame": "w10-husband-hot:57",
+      "scale": 0.6607704247241275,
+      "widthDp": 48.236241004861306,
+      "heightDp": 89.20400733775722,
+      "topDp": -39.20400733775722
+    },
+    {
+      "frame": "w10-husband-hot:58",
+      "scale": 0.6607704247241275,
+      "widthDp": 51.54009312848194,
+      "heightDp": 87.88246648830896,
+      "topDp": -37.882466488308964
+    },
+    {
+      "frame": "w10-husband-hot:59",
+      "scale": 0.6607704247241275,
+      "widthDp": 47.57547058013718,
+      "heightDp": 87.22169606358483,
+      "topDp": -37.22169606358483
+    },
+    {
+      "frame": "w10-husband-hot:60",
+      "scale": 0.6607704247241275,
+      "widthDp": 52.20086355320607,
+      "heightDp": 86.56092563886071,
+      "topDp": -36.56092563886071
+    },
+    {
+      "frame": "w10-husband-hot:61",
+      "scale": 0.6607704247241275,
+      "widthDp": 50.21855227903369,
+      "heightDp": 82.59630309051593,
+      "topDp": -32.59630309051593
+    },
+    {
+      "frame": "w10-husband-hot:62",
+      "scale": 0.6607704247241275,
+      "widthDp": 50.879322703757815,
+      "heightDp": 84.57861436468832,
+      "topDp": -34.57861436468832
+    },
+    {
+      "frame": "w10-husband-hot:63",
+      "scale": 0.6607704247241275,
+      "widthDp": 48.89701142958543,
+      "heightDp": 83.25707351524007,
+      "topDp": -33.257073515240066
+    },
+    {
+      "frame": "w10-husband-rain-hot:0",
+      "scale": 0.6590487159218332,
+      "widthDp": 83.69918692207283,
+      "heightDp": 114.67447657039898,
+      "topDp": -64.67447657039898
+    },
+    {
+      "frame": "w10-husband-rain-hot:1",
+      "scale": 0.6590487159218332,
+      "widthDp": 84.35823563799465,
+      "heightDp": 112.69733042263348,
+      "topDp": -62.697330422633485
+    },
+    {
+      "frame": "w10-husband-rain-hot:2",
+      "scale": 0.6590487159218332,
+      "widthDp": 83.69918692207283,
+      "heightDp": 112.69733042263348,
+      "topDp": -62.697330422633485
+    },
+    {
+      "frame": "w10-husband-rain-hot:3",
+      "scale": 0.6590487159218332,
+      "widthDp": 81.72204077430732,
+      "heightDp": 112.69733042263348,
+      "topDp": -62.697330422633485
+    },
+    {
+      "frame": "w10-husband-rain-hot:4",
+      "scale": 0.6590487159218332,
+      "widthDp": 83.69918692207283,
+      "heightDp": 112.03828170671164,
+      "topDp": -62.03828170671164
+    },
+    {
+      "frame": "w10-husband-rain-hot:5",
+      "scale": 0.6590487159218332,
+      "widthDp": 83.04013820615098,
+      "heightDp": 112.69733042263348,
+      "topDp": -62.697330422633485
+    },
+    {
+      "frame": "w10-husband-rain-hot:6",
+      "scale": 0.6590487159218332,
+      "widthDp": 83.04013820615098,
+      "heightDp": 112.69733042263348,
+      "topDp": -62.697330422633485
+    },
+    {
+      "frame": "w10-husband-rain-hot:7",
+      "scale": 0.6590487159218332,
+      "widthDp": 83.04013820615098,
+      "heightDp": 112.69733042263348,
+      "topDp": -62.697330422633485
+    },
+    {
+      "frame": "w10-husband-rain-hot:12",
+      "scale": 0.6590487159218332,
+      "widthDp": 85.01728435391648,
+      "heightDp": 110.06113555894615,
+      "topDp": -60.06113555894615
+    },
+    {
+      "frame": "w10-husband-rain-hot:13",
+      "scale": 0.6590487159218332,
+      "widthDp": 86.33538178576015,
+      "heightDp": 110.06113555894615,
+      "topDp": -60.06113555894615
+    },
+    {
+      "frame": "w10-husband-rain-hot:14",
+      "scale": 0.6590487159218332,
+      "widthDp": 83.04013820615098,
+      "heightDp": 106.76589197933698,
+      "topDp": -56.765891979336985
+    },
+    {
+      "frame": "w10-husband-rain-hot:15",
+      "scale": 0.6590487159218332,
+      "widthDp": 83.04013820615098,
+      "heightDp": 108.74303812710248,
+      "topDp": -58.74303812710248
+    },
+    {
+      "frame": "w10-husband-rain-hot:16",
+      "scale": 0.6590487159218332,
+      "widthDp": 81.72204077430732,
+      "heightDp": 106.76589197933698,
+      "topDp": -56.765891979336985
+    },
+    {
+      "frame": "w10-husband-rain-hot:17",
+      "scale": 0.6590487159218332,
+      "widthDp": 85.67633306983832,
+      "heightDp": 107.42494069525881,
+      "topDp": -57.42494069525881
+    },
+    {
+      "frame": "w10-husband-rain-hot:18",
+      "scale": 0.6590487159218332,
+      "widthDp": 85.01728435391648,
+      "heightDp": 106.76589197933698,
+      "topDp": -56.765891979336985
+    },
+    {
+      "frame": "w10-husband-rain-hot:19",
+      "scale": 0.6590487159218332,
+      "widthDp": 83.69918692207283,
+      "heightDp": 108.74303812710248,
+      "topDp": -58.74303812710248
+    },
+    {
+      "frame": "w10-husband-rain-hot:20",
+      "scale": 0.6590487159218332,
+      "widthDp": 85.67633306983832,
+      "heightDp": 108.08398941118065,
+      "topDp": -58.08398941118065
+    },
+    {
+      "frame": "w10-husband-rain-hot:21",
+      "scale": 0.6590487159218332,
+      "widthDp": 84.35823563799465,
+      "heightDp": 109.40208684302432,
+      "topDp": -59.40208684302432
+    },
+    {
+      "frame": "w10-husband-rain-hot:22",
+      "scale": 0.6590487159218332,
+      "widthDp": 83.69918692207283,
+      "heightDp": 108.74303812710248,
+      "topDp": -58.74303812710248
+    },
+    {
+      "frame": "w10-husband-rain-hot:23",
+      "scale": 0.6590487159218332,
+      "widthDp": 85.01728435391648,
+      "heightDp": 108.08398941118065,
+      "topDp": -58.08398941118065
+    },
+    {
+      "frame": "w10-husband-rain-hot:24",
+      "scale": 0.6590487159218332,
+      "widthDp": 83.04013820615098,
+      "heightDp": 112.03828170671164,
+      "topDp": -62.03828170671164
+    },
+    {
+      "frame": "w10-husband-rain-hot:25",
+      "scale": 0.6590487159218332,
+      "widthDp": 86.33538178576015,
+      "heightDp": 109.40208684302432,
+      "topDp": -59.40208684302432
+    },
+    {
+      "frame": "w10-husband-rain-hot:26",
+      "scale": 0.6590487159218332,
+      "widthDp": 85.67633306983832,
+      "heightDp": 112.03828170671164,
+      "topDp": -62.03828170671164
+    },
+    {
+      "frame": "w10-husband-rain-hot:27",
+      "scale": 0.6590487159218332,
+      "widthDp": 85.01728435391648,
+      "heightDp": 112.03828170671164,
+      "topDp": -62.03828170671164
+    },
+    {
+      "frame": "w10-husband-rain-hot:28",
+      "scale": 0.6590487159218332,
+      "widthDp": 85.67633306983832,
+      "heightDp": 92.26682022905665,
+      "topDp": -42.26682022905665
+    },
+    {
+      "frame": "w10-husband-rain-hot:29",
+      "scale": 0.6590487159218332,
+      "widthDp": 83.69918692207283,
+      "heightDp": 92.92586894497849,
+      "topDp": -42.92586894497849
+    },
+    {
+      "frame": "w10-husband-rain-hot:30",
+      "scale": 0.6590487159218332,
+      "widthDp": 83.69918692207283,
+      "heightDp": 94.24396637682216,
+      "topDp": -44.24396637682216
+    },
+    {
+      "frame": "w10-husband-rain-hot:31",
+      "scale": 0.6590487159218332,
+      "widthDp": 86.99443050168199,
+      "heightDp": 93.58491766090032,
+      "topDp": -43.58491766090032
+    },
+    {
+      "frame": "w10-husband-rain-hot:32",
+      "scale": 0.6590487159218332,
+      "widthDp": 83.04013820615098,
+      "heightDp": 101.49350225196231,
+      "topDp": -51.49350225196231
+    },
+    {
+      "frame": "w10-husband-rain-hot:33",
+      "scale": 0.6590487159218332,
+      "widthDp": 84.35823563799465,
+      "heightDp": 98.85730738827499,
+      "topDp": -48.85730738827499
+    },
+    {
+      "frame": "w10-husband-rain-hot:34",
+      "scale": 0.6590487159218332,
+      "widthDp": 85.67633306983832,
+      "heightDp": 103.47064839972782,
+      "topDp": -53.47064839972782
+    },
+    {
+      "frame": "w10-husband-rain-hot:35",
+      "scale": 0.6590487159218332,
+      "widthDp": 85.67633306983832,
+      "heightDp": 103.47064839972782,
+      "topDp": -53.47064839972782
+    },
+    {
+      "frame": "w10-husband-rain-hot:36",
+      "scale": 0.6590487159218332,
+      "widthDp": 85.67633306983832,
+      "heightDp": 106.10684326341514,
+      "topDp": -56.10684326341514
+    },
+    {
+      "frame": "w10-husband-rain-hot:37",
+      "scale": 0.6590487159218332,
+      "widthDp": 85.01728435391648,
+      "heightDp": 106.76589197933698,
+      "topDp": -56.765891979336985
+    },
+    {
+      "frame": "w10-husband-rain-hot:38",
+      "scale": 0.6590487159218332,
+      "widthDp": 83.69918692207283,
+      "heightDp": 104.78874583157149,
+      "topDp": -54.78874583157149
+    },
+    {
+      "frame": "w10-husband-rain-hot:39",
+      "scale": 0.6590487159218332,
+      "widthDp": 79.74489462654182,
+      "heightDp": 104.78874583157149,
+      "topDp": -54.78874583157149
+    },
+    {
+      "frame": "rain-hot:5",
+      "scale": 0.4112939030347545,
+      "widthDp": 85.9604257342637,
+      "heightDp": 97.88794892227158,
+      "topDp": -47.887948922271576
+    },
+    {
+      "frame": "rain-hot:11",
+      "scale": 0.41336300873741705,
+      "widthDp": 85.15277979990792,
+      "heightDp": 95.48685501834333,
+      "topDp": -45.486855018343334
+    },
+    {
+      "frame": "rain-hot:9",
+      "scale": 0.4205160585304948,
+      "widthDp": 85.78527594022094,
+      "heightDp": 92.09301681817836,
+      "topDp": -42.093016818178356
+    },
+    {
+      "frame": "w10-husband-rain-hot:48",
+      "scale": 0.6590487159218332,
+      "widthDp": 83.69918692207283,
+      "heightDp": 94.90301509274398,
+      "topDp": -44.903015092743985
+    },
+    {
+      "frame": "w10-husband-rain-hot:49",
+      "scale": 0.6590487159218332,
+      "widthDp": 85.67633306983832,
+      "heightDp": 98.85730738827499,
+      "topDp": -48.85730738827499
+    },
+    {
+      "frame": "w10-husband-rain-hot:50",
+      "scale": 0.6590487159218332,
+      "widthDp": 83.04013820615098,
+      "heightDp": 95.56206380866581,
+      "topDp": -45.56206380866581
+    },
+    {
+      "frame": "w10-husband-rain-hot:51",
+      "scale": 0.6590487159218332,
+      "widthDp": 85.67633306983832,
+      "heightDp": 96.22111252458765,
+      "topDp": -46.22111252458765
+    },
+    {
+      "frame": "w10-husband-rain-hot:52",
+      "scale": 0.6590487159218332,
+      "widthDp": 78.42679719469815,
+      "heightDp": 104.78874583157149,
+      "topDp": -54.78874583157149
+    },
+    {
+      "frame": "w10-husband-rain-hot:53",
+      "scale": 0.6590487159218332,
+      "widthDp": 79.74489462654182,
+      "heightDp": 108.08398941118065,
+      "topDp": -58.08398941118065
+    },
+    {
+      "frame": "w10-husband-rain-hot:54",
+      "scale": 0.6590487159218332,
+      "widthDp": 83.69918692207283,
+      "heightDp": 106.76589197933698,
+      "topDp": -56.765891979336985
+    },
+    {
+      "frame": "w10-husband-rain-hot:55",
+      "scale": 0.6590487159218332,
+      "widthDp": 84.35823563799465,
+      "heightDp": 108.08398941118065,
+      "topDp": -58.08398941118065
+    },
+    {
+      "frame": "w10-husband-rain-hot:56",
+      "scale": 0.6590487159218332,
+      "widthDp": 81.72204077430732,
+      "heightDp": 103.47064839972782,
+      "topDp": -53.47064839972782
+    },
+    {
+      "frame": "w10-husband-rain-hot:57",
+      "scale": 0.6590487159218332,
+      "widthDp": 81.72204077430732,
+      "heightDp": 106.76589197933698,
+      "topDp": -56.765891979336985
+    },
+    {
+      "frame": "w10-husband-rain-hot:58",
+      "scale": 0.6590487159218332,
+      "widthDp": 80.40394334246365,
+      "heightDp": 105.44779454749332,
+      "topDp": -55.44779454749332
+    },
+    {
+      "frame": "w10-husband-rain-hot:59",
+      "scale": 0.6590487159218332,
+      "widthDp": 81.06299205838549,
+      "heightDp": 106.76589197933698,
+      "topDp": -56.765891979336985
+    },
+    {
+      "frame": "w10-husband-rain-hot:60",
+      "scale": 0.6590487159218332,
+      "widthDp": 83.04013820615098,
+      "heightDp": 106.10684326341514,
+      "topDp": -56.10684326341514
+    },
+    {
+      "frame": "w10-husband-rain-hot:61",
+      "scale": 0.6590487159218332,
+      "widthDp": 83.69918692207283,
+      "heightDp": 106.10684326341514,
+      "topDp": -56.10684326341514
+    },
+    {
+      "frame": "w10-husband-rain-hot:62",
+      "scale": 0.6590487159218332,
+      "widthDp": 82.38108949022916,
+      "heightDp": 104.78874583157149,
+      "topDp": -54.78874583157149
+    },
+    {
+      "frame": "w10-husband-rain-hot:63",
+      "scale": 0.6590487159218332,
+      "widthDp": 83.69918692207283,
+      "heightDp": 106.76589197933698,
+      "topDp": -56.765891979336985
+    },
+    {
+      "frame": "w10-husband-night:0",
+      "scale": 0.7167483055611256,
+      "widthDp": 50.889129694839916,
+      "heightDp": 86.72654497289619,
+      "topDp": -36.72654497289619
+    },
+    {
+      "frame": "w10-husband-night:1",
+      "scale": 0.7167483055611256,
+      "widthDp": 46.58863986147316,
+      "heightDp": 87.44329327845732,
+      "topDp": -37.44329327845732
+    },
+    {
+      "frame": "w10-husband-night:2",
+      "scale": 0.7167483055611256,
+      "widthDp": 46.58863986147316,
+      "heightDp": 88.16004158401844,
+      "topDp": -38.160041584018444
+    },
+    {
+      "frame": "w10-husband-night:3",
+      "scale": 0.7167483055611256,
+      "widthDp": 49.455633083717665,
+      "heightDp": 85.29304836177394,
+      "topDp": -35.29304836177394
+    },
+    {
+      "frame": "w10-husband-night:4",
+      "scale": 0.7167483055611256,
+      "widthDp": 40.854653416984156,
+      "heightDp": 85.29304836177394,
+      "topDp": -35.29304836177394
+    },
+    {
+      "frame": "w10-husband-night:5",
+      "scale": 0.7167483055611256,
+      "widthDp": 40.13790511142303,
+      "heightDp": 85.29304836177394,
+      "topDp": -35.29304836177394
+    },
+    {
+      "frame": "w10-husband-night:6",
+      "scale": 0.7167483055611256,
+      "widthDp": 40.854653416984156,
+      "heightDp": 83.85955175065169,
+      "topDp": -33.85955175065169
+    },
+    {
+      "frame": "w10-husband-night:7",
+      "scale": 0.7167483055611256,
+      "widthDp": 40.854653416984156,
+      "heightDp": 85.29304836177394,
+      "topDp": -35.29304836177394
+    },
+    {
+      "frame": "w10-husband-night:8",
+      "scale": 0.7167483055611256,
+      "widthDp": 65.94084411162355,
+      "heightDp": 70.2413339449903,
+      "topDp": -20.241333944990302
+    },
+    {
+      "frame": "w10-husband-night:9",
+      "scale": 0.7167483055611256,
+      "widthDp": 63.07385088937905,
+      "heightDp": 73.1083271672348,
+      "topDp": -23.108327167234805
+    },
+    {
+      "frame": "w10-husband-night:10",
+      "scale": 0.7167483055611256,
+      "widthDp": 62.35710258381793,
+      "heightDp": 64.5073475005013,
+      "topDp": -14.507347500501297
+    },
+    {
+      "frame": "w10-husband-night:11",
+      "scale": 0.7167483055611256,
+      "widthDp": 48.02213647259541,
+      "heightDp": 89.5935381951407,
+      "topDp": -39.593538195140695
+    },
+    {
+      "frame": "w10-husband-night:12",
+      "scale": 0.7167483055611256,
+      "widthDp": 48.73888477815654,
+      "heightDp": 86.72654497289619,
+      "topDp": -36.72654497289619
+    },
+    {
+      "frame": "w10-husband-night:13",
+      "scale": 0.7167483055611256,
+      "widthDp": 59.490109361573424,
+      "heightDp": 86.72654497289619,
+      "topDp": -36.72654497289619
+    },
+    {
+      "frame": "w10-husband-night:14",
+      "scale": 0.7167483055611256,
+      "widthDp": 63.07385088937905,
+      "heightDp": 84.57630005621282,
+      "topDp": -34.576300056212816
+    },
+    {
+      "frame": "w10-husband-night:15",
+      "scale": 0.7167483055611256,
+      "widthDp": 45.871891555912036,
+      "heightDp": 86.00979666733507,
+      "topDp": -36.00979666733507
+    },
+    {
+      "frame": "w10-husband-night:16",
+      "scale": 0.7167483055611256,
+      "widthDp": 62.35710258381793,
+      "heightDp": 87.44329327845732,
+      "topDp": -37.44329327845732
+    },
+    {
+      "frame": "w10-husband-night:17",
+      "scale": 0.7167483055611256,
+      "widthDp": 63.07385088937905,
+      "heightDp": 85.29304836177394,
+      "topDp": -35.29304836177394
+    },
+    {
+      "frame": "w10-husband-night:18",
+      "scale": 0.7167483055611256,
+      "widthDp": 62.35710258381793,
+      "heightDp": 82.42605513952944,
+      "topDp": -32.42605513952944
+    },
+    {
+      "frame": "w10-husband-night:19",
+      "scale": 0.7167483055611256,
+      "widthDp": 47.30538816703429,
+      "heightDp": 85.29304836177394,
+      "topDp": -35.29304836177394
+    },
+    {
+      "frame": "w10-husband-night:20",
+      "scale": 0.7167483055611256,
+      "widthDp": 64.5073475005013,
+      "heightDp": 83.14280344509056,
+      "topDp": -33.142803445090564
+    },
+    {
+      "frame": "w10-husband-night:21",
+      "scale": 0.7167483055611256,
+      "widthDp": 64.5073475005013,
+      "heightDp": 82.42605513952944,
+      "topDp": -32.42605513952944
+    },
+    {
+      "frame": "w10-husband-night:22",
+      "scale": 0.7167483055611256,
+      "widthDp": 48.73888477815654,
+      "heightDp": 86.72654497289619,
+      "topDp": -36.72654497289619
+    },
+    {
+      "frame": "w10-husband-night:23",
+      "scale": 0.7167483055611256,
+      "widthDp": 56.62311613932892,
+      "heightDp": 84.57630005621282,
+      "topDp": -34.576300056212816
+    },
+    {
+      "frame": "w10-husband-night:24",
+      "scale": 0.7167483055611256,
+      "widthDp": 43.00489833366753,
+      "heightDp": 82.42605513952944,
+      "topDp": -32.42605513952944
+    },
+    {
+      "frame": "w10-husband-night:25",
+      "scale": 0.7167483055611256,
+      "widthDp": 40.854653416984156,
+      "heightDp": 81.70930683396831,
+      "topDp": -31.709306833968313
+    },
+    {
+      "frame": "w10-husband-night:26",
+      "scale": 0.7167483055611256,
+      "widthDp": 40.854653416984156,
+      "heightDp": 83.85955175065169,
+      "topDp": -33.85955175065169
+    },
+    {
+      "frame": "w10-husband-night:27",
+      "scale": 0.7167483055611256,
+      "widthDp": 41.57140172254528,
+      "heightDp": 84.57630005621282,
+      "topDp": -34.576300056212816
+    },
+    {
+      "frame": "w10-husband-night:28",
+      "scale": 0.7167483055611256,
+      "widthDp": 47.30538816703429,
+      "heightDp": 70.2413339449903,
+      "topDp": -20.241333944990302
+    },
+    {
+      "frame": "w10-husband-night:29",
+      "scale": 0.7167483055611256,
+      "widthDp": 47.30538816703429,
+      "heightDp": 70.95808225055143,
+      "topDp": -20.958082250551428
+    },
+    {
+      "frame": "w10-husband-night:30",
+      "scale": 0.7167483055611256,
+      "widthDp": 47.30538816703429,
+      "heightDp": 70.2413339449903,
+      "topDp": -20.241333944990302
+    },
+    {
+      "frame": "w10-husband-night:31",
+      "scale": 0.7167483055611256,
+      "widthDp": 61.6403542782568,
+      "heightDp": 72.39157886167368,
+      "topDp": -22.39157886167368
+    },
+    {
+      "frame": "w10-husband-night:32",
+      "scale": 0.7167483055611256,
+      "widthDp": 53.75612291708442,
+      "heightDp": 83.14280344509056,
+      "topDp": -33.142803445090564
+    },
+    {
+      "frame": "w10-husband-night:33",
+      "scale": 0.7167483055611256,
+      "widthDp": 53.75612291708442,
+      "heightDp": 74.54182377835706,
+      "topDp": -24.541823778357056
+    },
+    {
+      "frame": "w10-husband-night:34",
+      "scale": 0.7167483055611256,
+      "widthDp": 55.18961952820667,
+      "heightDp": 81.70930683396831,
+      "topDp": -31.709306833968313
+    },
+    {
+      "frame": "w10-husband-night:35",
+      "scale": 0.7167483055611256,
+      "widthDp": 53.03937461152329,
+      "heightDp": 80.99255852840719,
+      "topDp": -30.992558528407187
+    },
+    {
+      "frame": "w10-husband-night:36",
+      "scale": 0.7167483055611256,
+      "widthDp": 51.60587800040104,
+      "heightDp": 84.57630005621282,
+      "topDp": -34.576300056212816
+    },
+    {
+      "frame": "w10-husband-night:37",
+      "scale": 0.7167483055611256,
+      "widthDp": 50.889129694839916,
+      "heightDp": 85.29304836177394,
+      "topDp": -35.29304836177394
+    },
+    {
+      "frame": "w10-husband-night:38",
+      "scale": 0.7167483055611256,
+      "widthDp": 50.889129694839916,
+      "heightDp": 86.72654497289619,
+      "topDp": -36.72654497289619
+    },
+    {
+      "frame": "w10-husband-night:39",
+      "scale": 0.7167483055611256,
+      "widthDp": 45.871891555912036,
+      "heightDp": 86.72654497289619,
+      "topDp": -36.72654497289619
+    },
+    {
+      "frame": "weather-night:9",
+      "scale": 0.30727245276805565,
+      "widthDp": 45.476323009672235,
+      "heightDp": 70.97993658942086,
+      "topDp": -20.97993658942086
+    },
+    {
+      "frame": "w10-husband-night:48",
+      "scale": 0.7167483055611256,
+      "widthDp": 56.62311613932892,
+      "heightDp": 67.3743407227458,
+      "topDp": -17.3743407227458
+    },
+    {
+      "frame": "w10-husband-night:49",
+      "scale": 0.7167483055611256,
+      "widthDp": 58.7733610560123,
+      "heightDp": 70.95808225055143,
+      "topDp": -20.958082250551428
+    },
+    {
+      "frame": "w10-husband-night:50",
+      "scale": 0.7167483055611256,
+      "widthDp": 56.62311613932892,
+      "heightDp": 70.95808225055143,
+      "topDp": -20.958082250551428
+    },
+    {
+      "frame": "w10-husband-night:51",
+      "scale": 0.7167483055611256,
+      "widthDp": 50.889129694839916,
+      "heightDp": 69.52458563942918,
+      "topDp": -19.524585639429176
+    },
+    {
+      "frame": "w10-husband-night:52",
+      "scale": 0.7167483055611256,
+      "widthDp": 49.455633083717665,
+      "heightDp": 89.5935381951407,
+      "topDp": -39.593538195140695
+    },
+    {
+      "frame": "w10-husband-night:53",
+      "scale": 0.7167483055611256,
+      "widthDp": 57.33986444489005,
+      "heightDp": 93.89402802850745,
+      "topDp": -43.89402802850745
+    },
+    {
+      "frame": "w10-husband-night:54",
+      "scale": 0.7167483055611256,
+      "widthDp": 60.20685766713455,
+      "heightDp": 93.89402802850745,
+      "topDp": -43.89402802850745
+    },
+    {
+      "frame": "w10-husband-night:55",
+      "scale": 0.7167483055611256,
+      "widthDp": 59.490109361573424,
+      "heightDp": 93.89402802850745,
+      "topDp": -43.89402802850745
+    },
+    {
+      "frame": "w10-husband-night:56",
+      "scale": 0.7167483055611256,
+      "widthDp": 47.30538816703429,
+      "heightDp": 89.5935381951407,
+      "topDp": -39.593538195140695
+    },
+    {
+      "frame": "w10-husband-night:57",
+      "scale": 0.7167483055611256,
+      "widthDp": 48.73888477815654,
+      "heightDp": 90.31028650070182,
+      "topDp": -40.31028650070182
+    },
+    {
+      "frame": "w10-husband-night:58",
+      "scale": 0.7167483055611256,
+      "widthDp": 50.17238138927879,
+      "heightDp": 88.87678988957957,
+      "topDp": -38.87678988957957
+    },
+    {
+      "frame": "w10-husband-night:59",
+      "scale": 0.7167483055611256,
+      "widthDp": 48.02213647259541,
+      "heightDp": 89.5935381951407,
+      "topDp": -39.593538195140695
+    },
+    {
+      "frame": "w10-husband-night:60",
+      "scale": 0.7167483055611256,
+      "widthDp": 52.32262630596217,
+      "heightDp": 87.44329327845732,
+      "topDp": -37.44329327845732
+    },
+    {
+      "frame": "w10-husband-night:61",
+      "scale": 0.7167483055611256,
+      "widthDp": 50.17238138927879,
+      "heightDp": 85.29304836177394,
+      "topDp": -35.29304836177394
+    },
+    {
+      "frame": "w10-husband-night:62",
+      "scale": 0.7167483055611256,
+      "widthDp": 49.455633083717665,
+      "heightDp": 86.00979666733507,
+      "topDp": -36.00979666733507
+    },
+    {
+      "frame": "w10-husband-night:63",
+      "scale": 0.7167483055611256,
+      "widthDp": 48.73888477815654,
+      "heightDp": 85.29304836177394,
+      "topDp": -35.29304836177394
+    },
+    {
+      "frame": "w10-husband-rain-night:0",
+      "scale": 0.6791278491409409,
+      "widthDp": 76.06231910378538,
+      "heightDp": 115.45173435395996,
+      "topDp": -65.45173435395996
+    },
+    {
+      "frame": "w10-husband-rain-night:1",
+      "scale": 0.6791278491409409,
+      "widthDp": 76.06231910378538,
+      "heightDp": 114.77260650481902,
+      "topDp": -64.77260650481902
+    },
+    {
+      "frame": "w10-husband-rain-night:2",
+      "scale": 0.6791278491409409,
+      "widthDp": 77.42057480206726,
+      "heightDp": 114.77260650481902,
+      "topDp": -64.77260650481902
+    },
+    {
+      "frame": "w10-husband-rain-night:3",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.0997026512082,
+      "heightDp": 115.45173435395996,
+      "topDp": -65.45173435395996
+    },
+    {
+      "frame": "w10-husband-rain-night:4",
+      "scale": 0.6791278491409409,
+      "widthDp": 77.42057480206726,
+      "heightDp": 115.45173435395996,
+      "topDp": -65.45173435395996
+    },
+    {
+      "frame": "w10-husband-rain-night:5",
+      "scale": 0.6791278491409409,
+      "widthDp": 75.38319125464444,
+      "heightDp": 113.41435080653713,
+      "topDp": -63.41435080653713
+    },
+    {
+      "frame": "w10-husband-rain-night:6",
+      "scale": 0.6791278491409409,
+      "widthDp": 77.42057480206726,
+      "heightDp": 113.41435080653713,
+      "topDp": -63.41435080653713
+    },
+    {
+      "frame": "w10-husband-rain-night:7",
+      "scale": 0.6791278491409409,
+      "widthDp": 76.74144695292632,
+      "heightDp": 114.09347865567807,
+      "topDp": -64.09347865567807
+    },
+    {
+      "frame": "w10-husband-rain-night:12",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.0997026512082,
+      "heightDp": 114.09347865567807,
+      "topDp": -64.09347865567807
+    },
+    {
+      "frame": "w10-husband-rain-night:13",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.77883050034914,
+      "heightDp": 112.73522295739619,
+      "topDp": -62.73522295739619
+    },
+    {
+      "frame": "w10-husband-rain-night:14",
+      "scale": 0.6791278491409409,
+      "widthDp": 76.74144695292632,
+      "heightDp": 111.37696725911431,
+      "topDp": -61.37696725911431
+    },
+    {
+      "frame": "w10-husband-rain-night:15",
+      "scale": 0.6791278491409409,
+      "widthDp": 77.42057480206726,
+      "heightDp": 112.73522295739619,
+      "topDp": -62.73522295739619
+    },
+    {
+      "frame": "w10-husband-rain-night:16",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.77883050034914,
+      "heightDp": 110.01871156083243,
+      "topDp": -60.01871156083243
+    },
+    {
+      "frame": "w10-husband-rain-night:17",
+      "scale": 0.6791278491409409,
+      "widthDp": 77.42057480206726,
+      "heightDp": 108.66045586255055,
+      "topDp": -58.66045586255055
+    },
+    {
+      "frame": "w10-husband-rain-night:18",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.0997026512082,
+      "heightDp": 108.66045586255055,
+      "topDp": -58.66045586255055
+    },
+    {
+      "frame": "w10-husband-rain-night:19",
+      "scale": 0.6791278491409409,
+      "widthDp": 77.42057480206726,
+      "heightDp": 109.33958371169149,
+      "topDp": -59.33958371169149
+    },
+    {
+      "frame": "w10-husband-rain-night:20",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.0997026512082,
+      "heightDp": 111.37696725911431,
+      "topDp": -61.37696725911431
+    },
+    {
+      "frame": "w10-husband-rain-night:21",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.77883050034914,
+      "heightDp": 110.01871156083243,
+      "topDp": -60.01871156083243
+    },
+    {
+      "frame": "w10-husband-rain-night:22",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.0997026512082,
+      "heightDp": 111.37696725911431,
+      "topDp": -61.37696725911431
+    },
+    {
+      "frame": "w10-husband-rain-night:23",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.0997026512082,
+      "heightDp": 111.37696725911431,
+      "topDp": -61.37696725911431
+    },
+    {
+      "frame": "w10-husband-rain-night:24",
+      "scale": 0.6791278491409409,
+      "widthDp": 76.74144695292632,
+      "heightDp": 105.94394446598679,
+      "topDp": -55.94394446598679
+    },
+    {
+      "frame": "w10-husband-rain-night:25",
+      "scale": 0.6791278491409409,
+      "widthDp": 76.74144695292632,
+      "heightDp": 103.90656091856397,
+      "topDp": -53.90656091856397
+    },
+    {
+      "frame": "w10-husband-rain-night:26",
+      "scale": 0.6791278491409409,
+      "widthDp": 77.42057480206726,
+      "heightDp": 105.94394446598679,
+      "topDp": -55.94394446598679
+    },
+    {
+      "frame": "w10-husband-rain-night:27",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.0997026512082,
+      "heightDp": 106.62307231512773,
+      "topDp": -56.62307231512773
+    },
+    {
+      "frame": "w10-husband-rain-night:28",
+      "scale": 0.6791278491409409,
+      "widthDp": 76.74144695292632,
+      "heightDp": 94.3987710305908,
+      "topDp": -44.398771030590794
+    },
+    {
+      "frame": "w10-husband-rain-night:29",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.0997026512082,
+      "heightDp": 95.07789887973173,
+      "topDp": -45.077898879731734
+    },
+    {
+      "frame": "w10-husband-rain-night:30",
+      "scale": 0.6791278491409409,
+      "widthDp": 77.42057480206726,
+      "heightDp": 101.1900495220002,
+      "topDp": -51.190049522000194
+    },
+    {
+      "frame": "w10-husband-rain-night:31",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.0997026512082,
+      "heightDp": 101.86917737114113,
+      "topDp": -51.869177371141134
+    },
+    {
+      "frame": "w10-husband-rain-night:32",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.0997026512082,
+      "heightDp": 105.26481661684585,
+      "topDp": -55.26481661684585
+    },
+    {
+      "frame": "w10-husband-rain-night:33",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.0997026512082,
+      "heightDp": 104.58568876770491,
+      "topDp": -54.58568876770491
+    },
+    {
+      "frame": "w10-husband-rain-night:34",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.77883050034914,
+      "heightDp": 103.22743306942303,
+      "topDp": -53.22743306942303
+    },
+    {
+      "frame": "w10-husband-rain-night:35",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.77883050034914,
+      "heightDp": 103.22743306942303,
+      "topDp": -53.22743306942303
+    },
+    {
+      "frame": "w10-husband-rain-night:36",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.0997026512082,
+      "heightDp": 107.30220016426867,
+      "topDp": -57.30220016426867
+    },
+    {
+      "frame": "w10-husband-rain-night:37",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.77883050034914,
+      "heightDp": 107.30220016426867,
+      "topDp": -57.30220016426867
+    },
+    {
+      "frame": "w10-husband-rain-night:38",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.0997026512082,
+      "heightDp": 106.62307231512773,
+      "topDp": -56.62307231512773
+    },
+    {
+      "frame": "w10-husband-rain-night:39",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.77883050034914,
+      "heightDp": 105.94394446598679,
+      "topDp": -55.94394446598679
+    },
+    {
+      "frame": "rain-night:5",
+      "scale": 0.4059753865662198,
+      "widthDp": 84.84885579233993,
+      "heightDp": 97.02811738932652,
+      "topDp": -47.028117389326525
+    },
+    {
+      "frame": "rain-night:11",
+      "scale": 0.4239700360714,
+      "widthDp": 87.3378274307084,
+      "heightDp": 98.7850184046362,
+      "topDp": -48.785018404636205
+    },
+    {
+      "frame": "rain-night:9",
+      "scale": 0.4184702493083072,
+      "widthDp": 85.36793085889467,
+      "heightDp": 92.48192509713589,
+      "topDp": -42.481925097135885
+    },
+    {
+      "frame": "w10-husband-rain-night:48",
+      "scale": 0.6791278491409409,
+      "widthDp": 80.81621404777196,
+      "heightDp": 100.51092167285925,
+      "topDp": -50.510921672859254
+    },
+    {
+      "frame": "w10-husband-rain-night:49",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.77883050034914,
+      "heightDp": 99.83179382371831,
+      "topDp": -49.831793823718314
+    },
+    {
+      "frame": "w10-husband-rain-night:50",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.77883050034914,
+      "heightDp": 99.15266597457737,
+      "topDp": -49.152665974577374
+    },
+    {
+      "frame": "w10-husband-rain-night:51",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.0997026512082,
+      "heightDp": 99.15266597457737,
+      "topDp": -49.152665974577374
+    },
+    {
+      "frame": "w10-husband-rain-night:52",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.0997026512082,
+      "heightDp": 108.66045586255055,
+      "topDp": -58.66045586255055
+    },
+    {
+      "frame": "w10-husband-rain-night:53",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.0997026512082,
+      "heightDp": 110.01871156083243,
+      "topDp": -60.01871156083243
+    },
+    {
+      "frame": "w10-husband-rain-night:54",
+      "scale": 0.6791278491409409,
+      "widthDp": 73.34580770722162,
+      "heightDp": 111.37696725911431,
+      "topDp": -61.37696725911431
+    },
+    {
+      "frame": "w10-husband-rain-night:55",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.0997026512082,
+      "heightDp": 109.33958371169149,
+      "topDp": -59.33958371169149
+    },
+    {
+      "frame": "w10-husband-rain-night:56",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.0997026512082,
+      "heightDp": 110.01871156083243,
+      "topDp": -60.01871156083243
+    },
+    {
+      "frame": "w10-husband-rain-night:57",
+      "scale": 0.6791278491409409,
+      "widthDp": 76.74144695292632,
+      "heightDp": 108.66045586255055,
+      "topDp": -58.66045586255055
+    },
+    {
+      "frame": "w10-husband-rain-night:58",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.0997026512082,
+      "heightDp": 109.33958371169149,
+      "topDp": -59.33958371169149
+    },
+    {
+      "frame": "w10-husband-rain-night:59",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.77883050034914,
+      "heightDp": 109.33958371169149,
+      "topDp": -59.33958371169149
+    },
+    {
+      "frame": "w10-husband-rain-night:60",
+      "scale": 0.6791278491409409,
+      "widthDp": 77.42057480206726,
+      "heightDp": 109.33958371169149,
+      "topDp": -59.33958371169149
+    },
+    {
+      "frame": "w10-husband-rain-night:61",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.0997026512082,
+      "heightDp": 110.01871156083243,
+      "topDp": -60.01871156083243
+    },
+    {
+      "frame": "w10-husband-rain-night:62",
+      "scale": 0.6791278491409409,
+      "widthDp": 78.0997026512082,
+      "heightDp": 110.69783940997337,
+      "topDp": -60.69783940997337
+    },
+    {
+      "frame": "w10-husband-rain-night:63",
+      "scale": 0.6791278491409409,
+      "widthDp": 77.42057480206726,
+      "heightDp": 109.33958371169149,
+      "topDp": -59.33958371169149
+    },
+    {
+      "frame": "wife-motion:0",
+      "scale": 0.2689169821274009,
+      "widthDp": 52.438811514843174,
+      "heightDp": 88.74260410204229,
+      "topDp": -38.74260410204229
+    },
+    {
+      "frame": "wife-motion:1",
+      "scale": 0.26888671534910974,
+      "widthDp": 51.89513606237818,
+      "heightDp": 88.73261606520622,
+      "topDp": -38.732616065206216
+    },
+    {
+      "frame": "wife-motion:2",
+      "scale": 0.26940934130340893,
+      "widthDp": 52.53482155416474,
+      "heightDp": 88.90508263012495,
+      "topDp": -38.90508263012495
+    },
+    {
+      "frame": "wife-motion:3",
+      "scale": 0.26890089012191043,
+      "widthDp": 51.091169123162985,
+      "heightDp": 88.73729374023044,
+      "topDp": -38.73729374023044
+    },
+    {
+      "frame": "wife-motion:4",
+      "scale": 0.2744868035190616,
+      "widthDp": 53.25043988269795,
+      "heightDp": 94.69794721407624,
+      "topDp": -44.69794721407624
+    },
+    {
+      "frame": "wife-motion:5",
+      "scale": 0.2773818124257383,
+      "widthDp": 53.81207161059323,
+      "heightDp": 95.41934347445397,
+      "topDp": -45.41934347445397
+    },
+    {
+      "frame": "wife-motion:6",
+      "scale": 0.2830414389605302,
+      "widthDp": 54.626997719382324,
+      "heightDp": 97.64929644138292,
+      "topDp": -47.649296441382916
+    },
+    {
+      "frame": "wife-motion:7",
+      "scale": 0.27680019792374166,
+      "widthDp": 53.42243819928214,
+      "heightDp": 95.21926808576713,
+      "topDp": -45.219268085767126
+    },
+    {
+      "frame": "wife-motion:8",
+      "scale": 0.2970830109049886,
+      "widthDp": 72.78533767172222,
+      "heightDp": 92.09573338054648,
+      "topDp": -42.09573338054648
+    },
+    {
+      "frame": "wife-motion:9",
+      "scale": 0.2979333327318652,
+      "widthDp": 75.67506651389375,
+      "heightDp": 88.1882664886321,
+      "topDp": -38.188266488632095
+    },
+    {
+      "frame": "wife-motion:10",
+      "scale": 0.3186905209081094,
+      "widthDp": 74.8922724134057,
+      "heightDp": 89.23334585427064,
+      "topDp": -39.23334585427064
+    },
+    {
+      "frame": "wife-motion:11",
+      "scale": 0.2738782949538942,
+      "widthDp": 52.0368760412399,
+      "heightDp": 88.73656756506172,
+      "topDp": -38.73656756506172
+    },
+    {
+      "frame": "wife-social:0",
+      "scale": 0.2920576492351715,
+      "widthDp": 51.98626156386053,
+      "heightDp": 96.96313954607695,
+      "topDp": -46.963139546076945
+    },
+    {
+      "frame": "wife-social:1",
+      "scale": 0.2905233692566685,
+      "widthDp": 55.780486897280355,
+      "heightDp": 96.16323522395727,
+      "topDp": -46.16323522395727
+    },
+    {
+      "frame": "wife-social:2",
+      "scale": 0.2544168237996413,
+      "widthDp": 57.498202178718934,
+      "heightDp": 82.93988455868306,
+      "topDp": -32.93988455868306
+    },
+    {
+      "frame": "wife-social:3",
+      "scale": 0.2884419949481777,
+      "widthDp": 53.36176906541287,
+      "heightDp": 94.60897434300227,
+      "topDp": -44.608974343002274
+    },
+    {
+      "frame": "wife-social:4",
+      "scale": 0.29691973147827516,
+      "widthDp": 61.75930414748123,
+      "heightDp": 96.7958324619177,
+      "topDp": -46.7958324619177
+    },
+    {
+      "frame": "wife-social:5",
+      "scale": 0.2952498849520237,
+      "widthDp": 68.20272342391748,
+      "heightDp": 96.25146249435973,
+      "topDp": -46.25146249435973
+    },
+    {
+      "frame": "wife-social:6",
+      "scale": 0.3252954197662849,
+      "widthDp": 70.91440150905011,
+      "heightDp": 106.04630684380888,
+      "topDp": -56.04630684380888
+    },
+    {
+      "frame": "wife-social:7",
+      "scale": 0.31400131576872503,
+      "widthDp": 56.52023683837051,
+      "heightDp": 101.73642630906691,
+      "topDp": -51.736426309066914
+    },
+    {
+      "frame": "wife-social:8",
+      "scale": 0.2989145734320583,
+      "widthDp": 66.35903530191695,
+      "heightDp": 98.94072380601129,
+      "topDp": -48.94072380601129
+    },
+    {
+      "frame": "wife-social:9",
+      "scale": 0.29600621111645475,
+      "widthDp": 60.97727948998968,
+      "heightDp": 97.68204966843007,
+      "topDp": -47.68204966843007
+    },
+    {
+      "frame": "wife-social:10",
+      "scale": 0.30574273691729803,
+      "widthDp": 54.11646443436175,
+      "heightDp": 102.11807413037754,
+      "topDp": -52.118074130377536
+    },
+    {
+      "frame": "wife-social:11",
+      "scale": 0.2884704165494828,
+      "widthDp": 57.98255372644604,
+      "heightDp": 95.77217829442829,
+      "topDp": -45.77217829442829
+    },
+    {
+      "frame": "wife-personal:0",
+      "scale": 0.2841094472619742,
+      "widthDp": 51.139700507155354,
+      "heightDp": 94.89255538549938,
+      "topDp": -44.89255538549938
+    },
+    {
+      "frame": "wife-personal:1",
+      "scale": 0.29304656307707994,
+      "widthDp": 50.99010197541191,
+      "heightDp": 97.8775520677447,
+      "topDp": -47.8775520677447
+    },
+    {
+      "frame": "wife-personal:2",
+      "scale": 0.28137075365910724,
+      "widthDp": 48.39576962936645,
+      "heightDp": 93.97783172214181,
+      "topDp": -43.977831722141815
+    },
+    {
+      "frame": "wife-personal:3",
+      "scale": 0.28902206129155605,
+      "widthDp": 50.578860726022306,
+      "heightDp": 96.82239053267128,
+      "topDp": -46.82239053267128
+    },
+    {
+      "frame": "wife-personal:4",
+      "scale": 0.27616184545918,
+      "widthDp": 57.44166385550944,
+      "heightDp": 78.98228780132548,
+      "topDp": -28.982287801325484
+    },
+    {
+      "frame": "wife-personal:5",
+      "scale": 0.27682274693339837,
+      "widthDp": 57.57913136214686,
+      "heightDp": 79.44812836988532,
+      "topDp": -29.448128369885325
+    },
+    {
+      "frame": "wife-personal:6",
+      "scale": 0.2771694537120842,
+      "widthDp": 57.65124637211351,
+      "heightDp": 79.82480266908024,
+      "topDp": -29.824802669080242
+    },
+    {
+      "frame": "wife-personal:7",
+      "scale": 0.2678966268067381,
+      "widthDp": 56.794084883028475,
+      "heightDp": 79.29740153479447,
+      "topDp": -29.297401534794474
+    },
+    {
+      "frame": "wife-personal:8",
+      "scale": 0.2758293288656003,
+      "widthDp": 51.580084497867254,
+      "heightDp": 91.8511665122449,
+      "topDp": -41.8511665122449
+    },
+    {
+      "frame": "wife-personal:9",
+      "scale": 0.2659084770548352,
+      "widthDp": 48.39534282398001,
+      "heightDp": 88.81343133631496,
+      "topDp": -38.81343133631496
+    },
+    {
+      "frame": "wife-personal:10",
+      "scale": 0.2915295391053923,
+      "widthDp": 58.597437360183854,
+      "heightDp": 100.28616145225496,
+      "topDp": -50.28616145225496
+    },
+    {
+      "frame": "wife-personal:11",
+      "scale": 0.2975695346162782,
+      "widthDp": 50.5868208847673,
+      "heightDp": 102.3639199079997,
+      "topDp": -52.3639199079997
+    },
+    {
+      "frame": "kiss:4",
+      "scale": 0.27883686641894856,
+      "widthDp": 58.5557419479792,
+      "heightDp": 92.85267651750986,
+      "topDp": -42.85267651750986
+    },
+    {
+      "frame": "kiss:5",
+      "scale": 0.27841799225644803,
+      "widthDp": 57.91094238934119,
+      "heightDp": 92.7131914213972,
+      "topDp": -42.7131914213972
+    },
+    {
+      "frame": "kiss:6",
+      "scale": 0.2797390094223377,
+      "widthDp": 57.34649693157923,
+      "heightDp": 93.15309013763846,
+      "topDp": -43.15309013763846
+    },
+    {
+      "frame": "kiss:7",
+      "scale": 0.2989137832457634,
+      "widthDp": 54.40230855072894,
+      "heightDp": 99.53828982083921,
+      "topDp": -49.53828982083921
+    },
+    {
+      "frame": "parachutes:4",
+      "scale": 0.1821690971083118,
+      "widthDp": 74.32499162019121,
+      "heightDp": 90.17370306861434,
+      "topDp": -40.173703068614344
+    },
+    {
+      "frame": "parachutes:5",
+      "scale": 0.18974674965311694,
+      "widthDp": 70.20629737165326,
+      "heightDp": 94.30413457759911,
+      "topDp": -44.304134577599115
+    },
+    {
+      "frame": "peeking:2",
+      "scale": 0.11642676419488289,
+      "widthDp": 53.090604472866595,
+      "heightDp": 58.679089154220975,
+      "topDp": -29.339544577110487
+    },
+    {
+      "frame": "peeking:3",
+      "scale": 0.1215064447162917,
+      "widthDp": 55.40693879062901,
+      "heightDp": 61.23924813701102,
+      "topDp": -30.61962406850551
+    },
+    {
+      "frame": "cooling:4",
+      "scale": 0.17748033168099944,
+      "widthDp": 46.85480756378385,
+      "heightDp": 82.35087389998374,
+      "topDp": -32.35087389998374
+    },
+    {
+      "frame": "cooling:5",
+      "scale": 0.1779325919039832,
+      "widthDp": 53.91357534690691,
+      "heightDp": 81.67105968392829,
+      "topDp": -31.67105968392829
+    },
+    {
+      "frame": "cooling:6",
+      "scale": 0.19298520406151753,
+      "widthDp": 56.54466479002464,
+      "heightDp": 77.19408162460701,
+      "topDp": -27.19408162460701
+    },
+    {
+      "frame": "cooling:7",
+      "scale": 0.17932440085539708,
+      "widthDp": 54.87326666175151,
+      "heightDp": 71.01246273873724,
+      "topDp": -21.01246273873724
+    },
+    {
+      "frame": "wife-idle:0",
+      "scale": 0.31898766118159444,
+      "widthDp": 60.60765562450295,
+      "heightDp": 79.42792763421701,
+      "topDp": -29.427927634217014
+    },
+    {
+      "frame": "wife-idle:1",
+      "scale": 0.31898766118159444,
+      "widthDp": 54.86587772323424,
+      "heightDp": 80.70387827894339,
+      "topDp": -30.703878278943392
+    },
+    {
+      "frame": "wife-idle:2",
+      "scale": 0.31898766118159444,
+      "widthDp": 55.822840706779026,
+      "heightDp": 81.02286594012499,
+      "topDp": -31.022865940124987
+    },
+    {
+      "frame": "wife-idle:3",
+      "scale": 0.31898766118159444,
+      "widthDp": 57.098791351505405,
+      "heightDp": 78.47096465067223,
+      "topDp": -28.47096465067223
+    },
+    {
+      "frame": "wife-idle:4",
+      "scale": 0.3306579414687259,
+      "widthDp": 55.88119210821468,
+      "heightDp": 109.77843656761699,
+      "topDp": -59.77843656761699
+    },
+    {
+      "frame": "wife-idle:5",
+      "scale": 0.3306579414687259,
+      "widthDp": 62.16369299612047,
+      "heightDp": 111.43172627496062,
+      "topDp": -61.431726274960624
+    },
+    {
+      "frame": "wife-idle:6",
+      "scale": 0.3306579414687259,
+      "widthDp": 59.18777152290193,
+      "heightDp": 105.81054126999229,
+      "topDp": -55.810541269992285
+    },
+    {
+      "frame": "wife-idle:7",
+      "scale": 0.3306579414687259,
+      "widthDp": 57.86513975702703,
+      "heightDp": 106.80251509439847,
+      "topDp": -56.80251509439847
+    },
+    {
+      "frame": "wife-idle:8",
+      "scale": 0.3306579414687259,
+      "widthDp": 54.558560342339774,
+      "heightDp": 108.78646274321082,
+      "topDp": -58.78646274321082
+    },
+    {
+      "frame": "wife-idle:9",
+      "scale": 0.3306579414687259,
+      "widthDp": 55.550534166745955,
+      "heightDp": 109.77843656761699,
+      "topDp": -59.77843656761699
+    },
+    {
+      "frame": "wife-idle:10",
+      "scale": 0.3306579414687259,
+      "widthDp": 59.51842946437066,
+      "heightDp": 108.45580480174209,
+      "topDp": -58.45580480174209
+    },
+    {
+      "frame": "wife-idle:11",
+      "scale": 0.3306579414687259,
+      "widthDp": 55.550534166745955,
+      "heightDp": 109.77843656761699,
+      "topDp": -59.77843656761699
+    },
+    {
+      "frame": "wife-idle:12",
+      "scale": 0.3306579414687259,
+      "widthDp": 59.18777152290193,
+      "heightDp": 93.57619743564943,
+      "topDp": -43.57619743564943
+    },
+    {
+      "frame": "wife-idle:13",
+      "scale": 0.3306579414687259,
+      "widthDp": 60.17974534730811,
+      "heightDp": 91.59224978683707,
+      "topDp": -41.59224978683707
+    },
+    {
+      "frame": "wife-idle:14",
+      "scale": 0.3306579414687259,
+      "widthDp": 55.88119210821468,
+      "heightDp": 93.90685537711816,
+      "topDp": -43.90685537711816
+    },
+    {
+      "frame": "wife-idle:15",
+      "scale": 0.3306579414687259,
+      "widthDp": 58.19579769849576,
+      "heightDp": 90.93093390389963,
+      "topDp": -40.93093390389963
+    },
+    {
+      "frame": "w10-wife-rain-default:0",
+      "scale": 0.7230386986782807,
+      "widthDp": 83.14945034800229,
+      "heightDp": 107.73276610306382,
+      "topDp": -57.732766103063824
+    },
+    {
+      "frame": "w10-wife-rain-default:1",
+      "scale": 0.7230386986782807,
+      "widthDp": 83.14945034800229,
+      "heightDp": 109.1788435004204,
+      "topDp": -59.1788435004204
+    },
+    {
+      "frame": "w10-wife-rain-default:2",
+      "scale": 0.7230386986782807,
+      "widthDp": 84.59552774535885,
+      "heightDp": 109.1788435004204,
+      "topDp": -59.1788435004204
+    },
+    {
+      "frame": "w10-wife-rain-default:3",
+      "scale": 0.7230386986782807,
+      "widthDp": 83.87248904668057,
+      "heightDp": 108.45580480174212,
+      "topDp": -58.45580480174212
+    },
+    {
+      "frame": "w10-wife-rain-default:4",
+      "scale": 0.7230386986782807,
+      "widthDp": 88.21072123875025,
+      "heightDp": 110.62492089777696,
+      "topDp": -60.62492089777696
+    },
+    {
+      "frame": "w10-wife-rain-default:5",
+      "scale": 0.7230386986782807,
+      "widthDp": 86.76464384139369,
+      "heightDp": 109.90188219909868,
+      "topDp": -59.90188219909868
+    },
+    {
+      "frame": "w10-wife-rain-default:6",
+      "scale": 0.7230386986782807,
+      "widthDp": 86.76464384139369,
+      "heightDp": 109.90188219909868,
+      "topDp": -59.90188219909868
+    },
+    {
+      "frame": "w10-wife-rain-default:7",
+      "scale": 0.7230386986782807,
+      "widthDp": 86.76464384139369,
+      "heightDp": 110.62492089777696,
+      "topDp": -60.62492089777696
+    },
+    {
+      "frame": "w10-wife-rain-default:12",
+      "scale": 0.7230386986782807,
+      "widthDp": 86.76464384139369,
+      "heightDp": 114.96315308984664,
+      "topDp": -64.96315308984664
+    },
+    {
+      "frame": "w10-wife-rain-default:13",
+      "scale": 0.7230386986782807,
+      "widthDp": 86.04160514271541,
+      "heightDp": 114.96315308984664,
+      "topDp": -64.96315308984664
+    },
+    {
+      "frame": "w10-wife-rain-default:14",
+      "scale": 0.7230386986782807,
+      "widthDp": 85.31856644403713,
+      "heightDp": 114.24011439116836,
+      "topDp": -64.24011439116836
+    },
+    {
+      "frame": "w10-wife-rain-default:15",
+      "scale": 0.7230386986782807,
+      "widthDp": 86.04160514271541,
+      "heightDp": 117.13226918588148,
+      "topDp": -67.13226918588148
+    },
+    {
+      "frame": "w10-wife-rain-default:16",
+      "scale": 0.7230386986782807,
+      "widthDp": 86.76464384139369,
+      "heightDp": 117.13226918588148,
+      "topDp": -67.13226918588148
+    },
+    {
+      "frame": "w10-wife-rain-default:17",
+      "scale": 0.7230386986782807,
+      "widthDp": 86.76464384139369,
+      "heightDp": 117.85530788455976,
+      "topDp": -67.85530788455976
+    },
+    {
+      "frame": "w10-wife-rain-default:18",
+      "scale": 0.7230386986782807,
+      "widthDp": 89.65679863610681,
+      "heightDp": 119.30138528191632,
+      "topDp": -69.30138528191632
+    },
+    {
+      "frame": "w10-wife-rain-default:19",
+      "scale": 0.7230386986782807,
+      "widthDp": 85.31856644403713,
+      "heightDp": 117.85530788455976,
+      "topDp": -67.85530788455976
+    },
+    {
+      "frame": "w10-wife-rain-default:20",
+      "scale": 0.7230386986782807,
+      "widthDp": 87.48768254007197,
+      "heightDp": 117.13226918588148,
+      "topDp": -67.13226918588148
+    },
+    {
+      "frame": "w10-wife-rain-default:21",
+      "scale": 0.7230386986782807,
+      "widthDp": 86.04160514271541,
+      "heightDp": 117.13226918588148,
+      "topDp": -67.13226918588148
+    },
+    {
+      "frame": "w10-wife-rain-default:22",
+      "scale": 0.7230386986782807,
+      "widthDp": 86.76464384139369,
+      "heightDp": 117.13226918588148,
+      "topDp": -67.13226918588148
+    },
+    {
+      "frame": "w10-wife-rain-default:23",
+      "scale": 0.7230386986782807,
+      "widthDp": 84.59552774535885,
+      "heightDp": 116.4092304872032,
+      "topDp": -66.4092304872032
+    },
+    {
+      "frame": "w10-wife-rain-default:24",
+      "scale": 0.7230386986782807,
+      "widthDp": 86.76464384139369,
+      "heightDp": 119.30138528191632,
+      "topDp": -69.30138528191632
+    },
+    {
+      "frame": "w10-wife-rain-default:25",
+      "scale": 0.7230386986782807,
+      "widthDp": 86.04160514271541,
+      "heightDp": 118.57834658323804,
+      "topDp": -68.57834658323804
+    },
+    {
+      "frame": "w10-wife-rain-default:26",
+      "scale": 0.7230386986782807,
+      "widthDp": 83.14945034800229,
+      "heightDp": 117.85530788455976,
+      "topDp": -67.85530788455976
+    },
+    {
+      "frame": "w10-wife-rain-default:27",
+      "scale": 0.7230386986782807,
+      "widthDp": 83.87248904668057,
+      "heightDp": 119.30138528191632,
+      "topDp": -69.30138528191632
+    },
+    {
+      "frame": "w10-wife-rain-default:28",
+      "scale": 0.7230386986782807,
+      "widthDp": 86.04160514271541,
+      "heightDp": 102.67149521231586,
+      "topDp": -52.67149521231586
+    },
+    {
+      "frame": "w10-wife-rain-default:29",
+      "scale": 0.7230386986782807,
+      "widthDp": 85.31856644403713,
+      "heightDp": 102.67149521231586,
+      "topDp": -52.67149521231586
+    },
+    {
+      "frame": "w10-wife-rain-default:30",
+      "scale": 0.7230386986782807,
+      "widthDp": 86.04160514271541,
+      "heightDp": 104.8406113083507,
+      "topDp": -54.8406113083507
+    },
+    {
+      "frame": "w10-wife-rain-default:31",
+      "scale": 0.7230386986782807,
+      "widthDp": 87.48768254007197,
+      "heightDp": 110.62492089777696,
+      "topDp": -60.62492089777696
+    },
+    {
+      "frame": "w10-wife-rain-default:32",
+      "scale": 0.7230386986782807,
+      "widthDp": 84.59552774535885,
+      "heightDp": 114.24011439116836,
+      "topDp": -64.24011439116836
+    },
+    {
+      "frame": "w10-wife-rain-default:33",
+      "scale": 0.7230386986782807,
+      "widthDp": 86.04160514271541,
+      "heightDp": 113.51707569249008,
+      "topDp": -63.51707569249008
+    },
+    {
+      "frame": "w10-wife-rain-default:34",
+      "scale": 0.7230386986782807,
+      "widthDp": 86.04160514271541,
+      "heightDp": 117.13226918588148,
+      "topDp": -67.13226918588148
+    },
+    {
+      "frame": "w10-wife-rain-default:35",
+      "scale": 0.7230386986782807,
+      "widthDp": 83.87248904668057,
+      "heightDp": 117.13226918588148,
+      "topDp": -67.13226918588148
+    },
+    {
+      "frame": "w10-wife-rain-default:36",
+      "scale": 0.7230386986782807,
+      "widthDp": 88.21072123875025,
+      "heightDp": 116.4092304872032,
+      "topDp": -66.4092304872032
+    },
+    {
+      "frame": "w10-wife-rain-default:37",
+      "scale": 0.7230386986782807,
+      "widthDp": 90.3798373347851,
+      "heightDp": 116.4092304872032,
+      "topDp": -66.4092304872032
+    },
+    {
+      "frame": "w10-wife-rain-default:38",
+      "scale": 0.7230386986782807,
+      "widthDp": 86.76464384139369,
+      "heightDp": 115.68619178852492,
+      "topDp": -65.68619178852492
+    },
+    {
+      "frame": "w10-wife-rain-default:39",
+      "scale": 0.7230386986782807,
+      "widthDp": 88.93375993742853,
+      "heightDp": 116.4092304872032,
+      "topDp": -66.4092304872032
+    },
+    {
+      "frame": "rain-default:17",
+      "scale": 0.4075570868777389,
+      "widthDp": 86.80965950495839,
+      "heightDp": 96.59102959002412,
+      "topDp": -46.59102959002412
+    },
+    {
+      "frame": "rain-default:23",
+      "scale": 0.437114730932375,
+      "widthDp": 92.23120822673113,
+      "heightDp": 103.59619123097288,
+      "topDp": -53.59619123097288
+    },
+    {
+      "frame": "rain-default:21",
+      "scale": 0.42866819774559295,
+      "widthDp": 92.59233071304807,
+      "heightDp": 101.16569466795994,
+      "topDp": -51.16569466795994
+    },
+    {
+      "frame": "w10-wife-rain-default:48",
+      "scale": 0.7230386986782807,
+      "widthDp": 80.25729555328917,
+      "heightDp": 101.2254178149593,
+      "topDp": -51.2254178149593
+    },
+    {
+      "frame": "w10-wife-rain-default:49",
+      "scale": 0.7230386986782807,
+      "widthDp": 84.59552774535885,
+      "heightDp": 99.77934041760274,
+      "topDp": -49.77934041760274
+    },
+    {
+      "frame": "w10-wife-rain-default:50",
+      "scale": 0.7230386986782807,
+      "widthDp": 84.59552774535885,
+      "heightDp": 99.77934041760274,
+      "topDp": -49.77934041760274
+    },
+    {
+      "frame": "w10-wife-rain-default:51",
+      "scale": 0.7230386986782807,
+      "widthDp": 87.48768254007197,
+      "heightDp": 100.50237911628102,
+      "topDp": -50.50237911628102
+    },
+    {
+      "frame": "w10-wife-rain-default:52",
+      "scale": 0.7230386986782807,
+      "widthDp": 88.93375993742853,
+      "heightDp": 118.57834658323804,
+      "topDp": -68.57834658323804
+    },
+    {
+      "frame": "w10-wife-rain-default:53",
+      "scale": 0.7230386986782807,
+      "widthDp": 87.48768254007197,
+      "heightDp": 117.85530788455976,
+      "topDp": -67.85530788455976
+    },
+    {
+      "frame": "w10-wife-rain-default:54",
+      "scale": 0.7230386986782807,
+      "widthDp": 85.31856644403713,
+      "heightDp": 117.13226918588148,
+      "topDp": -67.13226918588148
+    },
+    {
+      "frame": "w10-wife-rain-default:55",
+      "scale": 0.7230386986782807,
+      "widthDp": 87.48768254007197,
+      "heightDp": 118.57834658323804,
+      "topDp": -68.57834658323804
+    },
+    {
+      "frame": "w10-wife-rain-default:56",
+      "scale": 0.7230386986782807,
+      "widthDp": 85.31856644403713,
+      "heightDp": 122.19354007662945,
+      "topDp": -72.19354007662945
+    },
+    {
+      "frame": "w10-wife-rain-default:57",
+      "scale": 0.7230386986782807,
+      "widthDp": 86.04160514271541,
+      "heightDp": 121.47050137795117,
+      "topDp": -71.47050137795117
+    },
+    {
+      "frame": "w10-wife-rain-default:58",
+      "scale": 0.7230386986782807,
+      "widthDp": 83.87248904668057,
+      "heightDp": 121.47050137795117,
+      "topDp": -71.47050137795117
+    },
+    {
+      "frame": "w10-wife-rain-default:59",
+      "scale": 0.7230386986782807,
+      "widthDp": 83.87248904668057,
+      "heightDp": 118.57834658323804,
+      "topDp": -68.57834658323804
+    },
+    {
+      "frame": "w10-wife-rain-default:60",
+      "scale": 0.7230386986782807,
+      "widthDp": 88.93375993742853,
+      "heightDp": 117.85530788455976,
+      "topDp": -67.85530788455976
+    },
+    {
+      "frame": "w10-wife-rain-default:61",
+      "scale": 0.7230386986782807,
+      "widthDp": 88.93375993742853,
+      "heightDp": 118.57834658323804,
+      "topDp": -68.57834658323804
+    },
+    {
+      "frame": "w10-wife-rain-default:62",
+      "scale": 0.7230386986782807,
+      "widthDp": 85.31856644403713,
+      "heightDp": 117.13226918588148,
+      "topDp": -67.13226918588148
+    },
+    {
+      "frame": "w10-wife-rain-default:63",
+      "scale": 0.7230386986782807,
+      "widthDp": 90.3798373347851,
+      "heightDp": 118.57834658323804,
+      "topDp": -68.57834658323804
+    },
+    {
+      "frame": "w10-wife-cold:0",
+      "scale": 0.7296864983981937,
+      "widthDp": 51.80774138627175,
+      "heightDp": 88.29206630618144,
+      "topDp": -38.29206630618144
+    },
+    {
+      "frame": "w10-wife-cold:1",
+      "scale": 0.7296864983981937,
+      "widthDp": 52.537427884669945,
+      "heightDp": 89.02175280457962,
+      "topDp": -39.02175280457962
+    },
+    {
+      "frame": "w10-wife-cold:2",
+      "scale": 0.7296864983981937,
+      "widthDp": 52.537427884669945,
+      "heightDp": 88.29206630618144,
+      "topDp": -38.29206630618144
+    },
+    {
+      "frame": "w10-wife-cold:3",
+      "scale": 0.7296864983981937,
+      "widthDp": 51.078054887873556,
+      "heightDp": 87.56237980778324,
+      "topDp": -37.562379807783245
+    },
+    {
+      "frame": "w10-wife-cold:4",
+      "scale": 0.7296864983981937,
+      "widthDp": 53.99680088146633,
+      "heightDp": 93.39987179496879,
+      "topDp": -43.39987179496879
+    },
+    {
+      "frame": "w10-wife-cold:5",
+      "scale": 0.7296864983981937,
+      "widthDp": 54.72648737986452,
+      "heightDp": 93.39987179496879,
+      "topDp": -43.39987179496879
+    },
+    {
+      "frame": "w10-wife-cold:6",
+      "scale": 0.7296864983981937,
+      "widthDp": 54.72648737986452,
+      "heightDp": 94.85924479176518,
+      "topDp": -44.85924479176518
+    },
+    {
+      "frame": "w10-wife-cold:7",
+      "scale": 0.7296864983981937,
+      "widthDp": 54.72648737986452,
+      "heightDp": 93.39987179496879,
+      "topDp": -43.39987179496879
+    },
+    {
+      "frame": "w10-wife-cold:8",
+      "scale": 0.7296864983981937,
+      "widthDp": 71.50927684302297,
+      "heightDp": 87.56237980778324,
+      "topDp": -37.562379807783245
+    },
+    {
+      "frame": "w10-wife-cold:9",
+      "scale": 0.7296864983981937,
+      "widthDp": 76.61708233181034,
+      "heightDp": 83.18426081739408,
+      "topDp": -33.184260817394076
+    },
+    {
+      "frame": "w10-wife-cold:10",
+      "scale": 0.7296864983981937,
+      "widthDp": 71.50927684302297,
+      "heightDp": 84.64363381419047,
+      "topDp": -34.643633814190466
+    },
+    {
+      "frame": "w10-wife-cold:11",
+      "scale": 0.7296864983981937,
+      "widthDp": 48.88899539267898,
+      "heightDp": 85.37332031258866,
+      "topDp": -35.37332031258866
+    },
+    {
+      "frame": "w10-wife-cold:12",
+      "scale": 0.7296864983981937,
+      "widthDp": 51.078054887873556,
+      "heightDp": 91.2108122997742,
+      "topDp": -41.210812299774204
+    },
+    {
+      "frame": "w10-wife-cold:13",
+      "scale": 0.7296864983981937,
+      "widthDp": 56.91554687505911,
+      "heightDp": 90.48112580137601,
+      "topDp": -40.48112580137601
+    },
+    {
+      "frame": "w10-wife-cold:14",
+      "scale": 0.7296864983981937,
+      "widthDp": 59.83429286865188,
+      "heightDp": 81.72488782059769,
+      "topDp": -31.724887820597687
+    },
+    {
+      "frame": "w10-wife-cold:15",
+      "scale": 0.7296864983981937,
+      "widthDp": 52.537427884669945,
+      "heightDp": 90.48112580137601,
+      "topDp": -40.48112580137601
+    },
+    {
+      "frame": "w10-wife-cold:16",
+      "scale": 0.7296864983981937,
+      "widthDp": 59.104606370253684,
+      "heightDp": 91.2108122997742,
+      "topDp": -41.210812299774204
+    },
+    {
+      "frame": "w10-wife-cold:17",
+      "scale": 0.7296864983981937,
+      "widthDp": 69.3202173478284,
+      "heightDp": 91.2108122997742,
+      "topDp": -41.210812299774204
+    },
+    {
+      "frame": "w10-wife-cold:18",
+      "scale": 0.7296864983981937,
+      "widthDp": 66.40147135423562,
+      "heightDp": 97.77799078535796,
+      "topDp": -47.77799078535796
+    },
+    {
+      "frame": "w10-wife-cold:19",
+      "scale": 0.7296864983981937,
+      "widthDp": 54.72648737986452,
+      "heightDp": 95.58893129016337,
+      "topDp": -45.58893129016337
+    },
+    {
+      "frame": "w10-wife-cold:20",
+      "scale": 0.7296864983981937,
+      "widthDp": 67.86084435103201,
+      "heightDp": 93.39987179496879,
+      "topDp": -43.39987179496879
+    },
+    {
+      "frame": "w10-wife-cold:21",
+      "scale": 0.7296864983981937,
+      "widthDp": 60.563979367050074,
+      "heightDp": 91.9404987981724,
+      "topDp": -41.9404987981724
+    },
+    {
+      "frame": "w10-wife-cold:22",
+      "scale": 0.7296864983981937,
+      "widthDp": 53.26711438306814,
+      "heightDp": 96.31861778856157,
+      "topDp": -46.31861778856157
+    },
+    {
+      "frame": "w10-wife-cold:23",
+      "scale": 0.7296864983981937,
+      "widthDp": 56.91554687505911,
+      "heightDp": 91.9404987981724,
+      "topDp": -41.9404987981724
+    },
+    {
+      "frame": "w10-wife-cold:24",
+      "scale": 0.7296864983981937,
+      "widthDp": 51.078054887873556,
+      "heightDp": 91.9404987981724,
+      "topDp": -41.9404987981724
+    },
+    {
+      "frame": "w10-wife-cold:25",
+      "scale": 0.7296864983981937,
+      "widthDp": 51.078054887873556,
+      "heightDp": 92.6701852965706,
+      "topDp": -42.670185296570594
+    },
+    {
+      "frame": "w10-wife-cold:26",
+      "scale": 0.7296864983981937,
+      "widthDp": 48.159308894280784,
+      "heightDp": 90.48112580137601,
+      "topDp": -40.48112580137601
+    },
+    {
+      "frame": "w10-wife-cold:27",
+      "scale": 0.7296864983981937,
+      "widthDp": 49.618681891077166,
+      "heightDp": 93.39987179496879,
+      "topDp": -43.39987179496879
+    },
+    {
+      "frame": "w10-wife-cold:28",
+      "scale": 0.7296864983981937,
+      "widthDp": 57.6452333734573,
+      "heightDp": 76.61708233181034,
+      "topDp": -26.617082331810337
+    },
+    {
+      "frame": "w10-wife-cold:29",
+      "scale": 0.7296864983981937,
+      "widthDp": 57.6452333734573,
+      "heightDp": 78.07645532860673,
+      "topDp": -28.076455328606727
+    },
+    {
+      "frame": "w10-wife-cold:30",
+      "scale": 0.7296864983981937,
+      "widthDp": 58.3749198718555,
+      "heightDp": 78.07645532860673,
+      "topDp": -28.076455328606727
+    },
+    {
+      "frame": "w10-wife-cold:31",
+      "scale": 0.7296864983981937,
+      "widthDp": 58.3749198718555,
+      "heightDp": 77.34676883020853,
+      "topDp": -27.346768830208532
+    },
+    {
+      "frame": "w10-wife-cold:32",
+      "scale": 0.7296864983981937,
+      "widthDp": 50.34836838947536,
+      "heightDp": 89.75143930297781,
+      "topDp": -39.751439302977815
+    },
+    {
+      "frame": "w10-wife-cold:33",
+      "scale": 0.7296864983981937,
+      "widthDp": 51.078054887873556,
+      "heightDp": 88.29206630618144,
+      "topDp": -38.29206630618144
+    },
+    {
+      "frame": "w10-wife-cold:34",
+      "scale": 0.7296864983981937,
+      "widthDp": 59.104606370253684,
+      "heightDp": 97.04830428695976,
+      "topDp": -47.04830428695976
+    },
+    {
+      "frame": "w10-wife-cold:35",
+      "scale": 0.7296864983981937,
+      "widthDp": 50.34836838947536,
+      "heightDp": 97.77799078535796,
+      "topDp": -47.77799078535796
+    },
+    {
+      "frame": "w10-wife-cold:36",
+      "scale": 0.7296864983981937,
+      "widthDp": 57.6452333734573,
+      "heightDp": 89.75143930297781,
+      "topDp": -39.751439302977815
+    },
+    {
+      "frame": "w10-wife-cold:37",
+      "scale": 0.7296864983981937,
+      "widthDp": 58.3749198718555,
+      "heightDp": 89.75143930297781,
+      "topDp": -39.751439302977815
+    },
+    {
+      "frame": "w10-wife-cold:38",
+      "scale": 0.7296864983981937,
+      "widthDp": 57.6452333734573,
+      "heightDp": 90.48112580137601,
+      "topDp": -40.48112580137601
+    },
+    {
+      "frame": "w10-wife-cold:39",
+      "scale": 0.7296864983981937,
+      "widthDp": 54.72648737986452,
+      "heightDp": 95.58893129016337,
+      "topDp": -45.58893129016337
+    },
+    {
+      "frame": "weather-cold:21",
+      "scale": 0.3431125038001655,
+      "widthDp": 68.96561326383326,
+      "heightDp": 77.88653836263757,
+      "topDp": -27.886538362637566
+    },
+    {
+      "frame": "w10-wife-cold:48",
+      "scale": 0.7296864983981937,
+      "widthDp": 57.6452333734573,
+      "heightDp": 75.88739583341214,
+      "topDp": -25.887395833412143
+    },
+    {
+      "frame": "w10-wife-cold:49",
+      "scale": 0.7296864983981937,
+      "widthDp": 52.537427884669945,
+      "heightDp": 78.07645532860673,
+      "topDp": -28.076455328606727
+    },
+    {
+      "frame": "w10-wife-cold:50",
+      "scale": 0.7296864983981937,
+      "widthDp": 53.26711438306814,
+      "heightDp": 76.61708233181034,
+      "topDp": -26.617082331810337
+    },
+    {
+      "frame": "w10-wife-cold:51",
+      "scale": 0.7296864983981937,
+      "widthDp": 54.72648737986452,
+      "heightDp": 75.15770933501395,
+      "topDp": -25.157709335013948
+    },
+    {
+      "frame": "w10-wife-cold:52",
+      "scale": 0.7296864983981937,
+      "widthDp": 53.99680088146633,
+      "heightDp": 100.69673677895072,
+      "topDp": -50.69673677895072
+    },
+    {
+      "frame": "w10-wife-cold:53",
+      "scale": 0.7296864983981937,
+      "widthDp": 62.02335236384646,
+      "heightDp": 102.15610977574711,
+      "topDp": -52.15610977574711
+    },
+    {
+      "frame": "w10-wife-cold:54",
+      "scale": 0.7296864983981937,
+      "widthDp": 58.3749198718555,
+      "heightDp": 97.77799078535796,
+      "topDp": -47.77799078535796
+    },
+    {
+      "frame": "w10-wife-cold:55",
+      "scale": 0.7296864983981937,
+      "widthDp": 55.45617387826272,
+      "heightDp": 98.50767728375614,
+      "topDp": -48.50767728375614
+    },
+    {
+      "frame": "w10-wife-cold:56",
+      "scale": 0.7296864983981937,
+      "widthDp": 53.26711438306814,
+      "heightDp": 99.96705028055253,
+      "topDp": -49.96705028055253
+    },
+    {
+      "frame": "w10-wife-cold:57",
+      "scale": 0.7296864983981937,
+      "widthDp": 53.26711438306814,
+      "heightDp": 100.69673677895072,
+      "topDp": -50.69673677895072
+    },
+    {
+      "frame": "w10-wife-cold:58",
+      "scale": 0.7296864983981937,
+      "widthDp": 57.6452333734573,
+      "heightDp": 99.23736378215433,
+      "topDp": -49.23736378215433
+    },
+    {
+      "frame": "w10-wife-cold:59",
+      "scale": 0.7296864983981937,
+      "widthDp": 53.26711438306814,
+      "heightDp": 100.69673677895072,
+      "topDp": -50.69673677895072
+    },
+    {
+      "frame": "w10-wife-cold:60",
+      "scale": 0.7296864983981937,
+      "widthDp": 56.91554687505911,
+      "heightDp": 84.64363381419047,
+      "topDp": -34.643633814190466
+    },
+    {
+      "frame": "w10-wife-cold:61",
+      "scale": 0.7296864983981937,
+      "widthDp": 58.3749198718555,
+      "heightDp": 83.91394731579227,
+      "topDp": -33.91394731579227
+    },
+    {
+      "frame": "w10-wife-cold:62",
+      "scale": 0.7296864983981937,
+      "widthDp": 53.26711438306814,
+      "heightDp": 85.37332031258866,
+      "topDp": -35.37332031258866
+    },
+    {
+      "frame": "w10-wife-cold:63",
+      "scale": 0.7296864983981937,
+      "widthDp": 56.91554687505911,
+      "heightDp": 82.45457431899588,
+      "topDp": -32.45457431899588
+    },
+    {
+      "frame": "w10-wife-rain-cold:0",
+      "scale": 0.7044879681657438,
+      "widthDp": 85.94753211622074,
+      "heightDp": 114.1270508428505,
+      "topDp": -64.1270508428505
+    },
+    {
+      "frame": "w10-wife-rain-cold:1",
+      "scale": 0.7044879681657438,
+      "widthDp": 88.76548398888372,
+      "heightDp": 114.83153881101623,
+      "topDp": -64.83153881101623
+    },
+    {
+      "frame": "w10-wife-rain-cold:2",
+      "scale": 0.7044879681657438,
+      "widthDp": 87.35650805255223,
+      "heightDp": 114.1270508428505,
+      "topDp": -64.1270508428505
+    },
+    {
+      "frame": "w10-wife-rain-cold:3",
+      "scale": 0.7044879681657438,
+      "widthDp": 87.35650805255223,
+      "heightDp": 114.83153881101623,
+      "topDp": -64.83153881101623
+    },
+    {
+      "frame": "w10-wife-rain-cold:4",
+      "scale": 0.7044879681657438,
+      "widthDp": 88.06099602071797,
+      "heightDp": 115.53602677918198,
+      "topDp": -65.53602677918198
+    },
+    {
+      "frame": "w10-wife-rain-cold:5",
+      "scale": 0.7044879681657438,
+      "widthDp": 89.46997195704945,
+      "heightDp": 114.1270508428505,
+      "topDp": -64.1270508428505
+    },
+    {
+      "frame": "w10-wife-rain-cold:6",
+      "scale": 0.7044879681657438,
+      "widthDp": 90.1744599252152,
+      "heightDp": 114.1270508428505,
+      "topDp": -64.1270508428505
+    },
+    {
+      "frame": "w10-wife-rain-cold:7",
+      "scale": 0.7044879681657438,
+      "widthDp": 88.76548398888372,
+      "heightDp": 114.83153881101623,
+      "topDp": -64.83153881101623
+    },
+    {
+      "frame": "w10-wife-rain-cold:12",
+      "scale": 0.7044879681657438,
+      "widthDp": 91.58343586154669,
+      "heightDp": 119.76295458817644,
+      "topDp": -69.76295458817644
+    },
+    {
+      "frame": "w10-wife-rain-cold:13",
+      "scale": 0.7044879681657438,
+      "widthDp": 89.46997195704945,
+      "heightDp": 121.17193052450793,
+      "topDp": -71.17193052450793
+    },
+    {
+      "frame": "w10-wife-rain-cold:14",
+      "scale": 0.7044879681657438,
+      "widthDp": 86.65202008438648,
+      "heightDp": 120.46744255634219,
+      "topDp": -70.46744255634219
+    },
+    {
+      "frame": "w10-wife-rain-cold:15",
+      "scale": 0.7044879681657438,
+      "widthDp": 88.06099602071797,
+      "heightDp": 119.05846662001069,
+      "topDp": -69.05846662001069
+    },
+    {
+      "frame": "w10-wife-rain-cold:16",
+      "scale": 0.7044879681657438,
+      "widthDp": 90.87894789338095,
+      "heightDp": 121.17193052450793,
+      "topDp": -71.17193052450793
+    },
+    {
+      "frame": "w10-wife-rain-cold:17",
+      "scale": 0.7044879681657438,
+      "widthDp": 90.1744599252152,
+      "heightDp": 121.17193052450793,
+      "topDp": -71.17193052450793
+    },
+    {
+      "frame": "w10-wife-rain-cold:18",
+      "scale": 0.7044879681657438,
+      "widthDp": 92.28792382971244,
+      "heightDp": 119.76295458817644,
+      "topDp": -69.76295458817644
+    },
+    {
+      "frame": "w10-wife-rain-cold:19",
+      "scale": 0.7044879681657438,
+      "widthDp": 90.87894789338095,
+      "heightDp": 119.76295458817644,
+      "topDp": -69.76295458817644
+    },
+    {
+      "frame": "w10-wife-rain-cold:20",
+      "scale": 0.7044879681657438,
+      "widthDp": 91.58343586154669,
+      "heightDp": 119.05846662001069,
+      "topDp": -69.05846662001069
+    },
+    {
+      "frame": "w10-wife-rain-cold:21",
+      "scale": 0.7044879681657438,
+      "widthDp": 90.87894789338095,
+      "heightDp": 120.46744255634219,
+      "topDp": -70.46744255634219
+    },
+    {
+      "frame": "w10-wife-rain-cold:22",
+      "scale": 0.7044879681657438,
+      "widthDp": 90.87894789338095,
+      "heightDp": 120.46744255634219,
+      "topDp": -70.46744255634219
+    },
+    {
+      "frame": "w10-wife-rain-cold:23",
+      "scale": 0.7044879681657438,
+      "widthDp": 89.46997195704945,
+      "heightDp": 119.76295458817644,
+      "topDp": -69.76295458817644
+    },
+    {
+      "frame": "w10-wife-rain-cold:24",
+      "scale": 0.7044879681657438,
+      "widthDp": 88.76548398888372,
+      "heightDp": 119.05846662001069,
+      "topDp": -69.05846662001069
+    },
+    {
+      "frame": "w10-wife-rain-cold:25",
+      "scale": 0.7044879681657438,
+      "widthDp": 90.87894789338095,
+      "heightDp": 119.76295458817644,
+      "topDp": -69.76295458817644
+    },
+    {
+      "frame": "w10-wife-rain-cold:26",
+      "scale": 0.7044879681657438,
+      "widthDp": 90.87894789338095,
+      "heightDp": 119.05846662001069,
+      "topDp": -69.05846662001069
+    },
+    {
+      "frame": "w10-wife-rain-cold:27",
+      "scale": 0.7044879681657438,
+      "widthDp": 90.87894789338095,
+      "heightDp": 119.76295458817644,
+      "topDp": -69.76295458817644
+    },
+    {
+      "frame": "w10-wife-rain-cold:28",
+      "scale": 0.7044879681657438,
+      "widthDp": 90.87894789338095,
+      "heightDp": 114.83153881101623,
+      "topDp": -64.83153881101623
+    },
+    {
+      "frame": "w10-wife-rain-cold:29",
+      "scale": 0.7044879681657438,
+      "widthDp": 92.28792382971244,
+      "heightDp": 114.83153881101623,
+      "topDp": -64.83153881101623
+    },
+    {
+      "frame": "w10-wife-rain-cold:30",
+      "scale": 0.7044879681657438,
+      "widthDp": 90.87894789338095,
+      "heightDp": 114.83153881101623,
+      "topDp": -64.83153881101623
+    },
+    {
+      "frame": "w10-wife-rain-cold:31",
+      "scale": 0.7044879681657438,
+      "widthDp": 90.87894789338095,
+      "heightDp": 114.83153881101623,
+      "topDp": -64.83153881101623
+    },
+    {
+      "frame": "w10-wife-rain-cold:32",
+      "scale": 0.7044879681657438,
+      "widthDp": 90.1744599252152,
+      "heightDp": 121.87641849267368,
+      "topDp": -71.87641849267368
+    },
+    {
+      "frame": "w10-wife-rain-cold:33",
+      "scale": 0.7044879681657438,
+      "widthDp": 90.1744599252152,
+      "heightDp": 120.46744255634219,
+      "topDp": -70.46744255634219
+    },
+    {
+      "frame": "w10-wife-rain-cold:34",
+      "scale": 0.7044879681657438,
+      "widthDp": 90.1744599252152,
+      "heightDp": 119.76295458817644,
+      "topDp": -69.76295458817644
+    },
+    {
+      "frame": "w10-wife-rain-cold:35",
+      "scale": 0.7044879681657438,
+      "widthDp": 90.87894789338095,
+      "heightDp": 120.46744255634219,
+      "topDp": -70.46744255634219
+    },
+    {
+      "frame": "w10-wife-rain-cold:36",
+      "scale": 0.7044879681657438,
+      "widthDp": 90.87894789338095,
+      "heightDp": 121.17193052450793,
+      "topDp": -71.17193052450793
+    },
+    {
+      "frame": "w10-wife-rain-cold:37",
+      "scale": 0.7044879681657438,
+      "widthDp": 92.28792382971244,
+      "heightDp": 121.17193052450793,
+      "topDp": -71.17193052450793
+    },
+    {
+      "frame": "w10-wife-rain-cold:38",
+      "scale": 0.7044879681657438,
+      "widthDp": 89.46997195704945,
+      "heightDp": 120.46744255634219,
+      "topDp": -70.46744255634219
+    },
+    {
+      "frame": "w10-wife-rain-cold:39",
+      "scale": 0.7044879681657438,
+      "widthDp": 90.1744599252152,
+      "heightDp": 120.46744255634219,
+      "topDp": -70.46744255634219
+    },
+    {
+      "frame": "rain-cold:17",
+      "scale": 0.42098306633067073,
+      "widthDp": 89.2484100621022,
+      "heightDp": 100.19396978669964,
+      "topDp": -50.19396978669964
+    },
+    {
+      "frame": "rain-cold:23",
+      "scale": 0.43809706416248567,
+      "widthDp": 92.00038347412199,
+      "heightDp": 103.8290042065091,
+      "topDp": -53.8290042065091
+    },
+    {
+      "frame": "rain-cold:21",
+      "scale": 0.4281939855330019,
+      "widthDp": 91.63351290406241,
+      "heightDp": 101.05378058578846,
+      "topDp": -51.05378058578846
+    },
+    {
+      "frame": "w10-wife-rain-cold:48",
+      "scale": 0.7044879681657438,
+      "widthDp": 89.46997195704945,
+      "heightDp": 112.718074906519,
+      "topDp": -62.71807490651901
+    },
+    {
+      "frame": "w10-wife-rain-cold:49",
+      "scale": 0.7044879681657438,
+      "widthDp": 90.87894789338095,
+      "heightDp": 112.01358693835326,
+      "topDp": -62.01358693835326
+    },
+    {
+      "frame": "w10-wife-rain-cold:50",
+      "scale": 0.7044879681657438,
+      "widthDp": 88.76548398888372,
+      "heightDp": 110.60461100202177,
+      "topDp": -60.60461100202177
+    },
+    {
+      "frame": "w10-wife-rain-cold:51",
+      "scale": 0.7044879681657438,
+      "widthDp": 90.87894789338095,
+      "heightDp": 111.30909897018752,
+      "topDp": -61.30909897018752
+    },
+    {
+      "frame": "w10-wife-rain-cold:52",
+      "scale": 0.7044879681657438,
+      "widthDp": 91.58343586154669,
+      "heightDp": 116.94500271551347,
+      "topDp": -66.94500271551347
+    },
+    {
+      "frame": "w10-wife-rain-cold:53",
+      "scale": 0.7044879681657438,
+      "widthDp": 88.06099602071797,
+      "heightDp": 121.17193052450793,
+      "topDp": -71.17193052450793
+    },
+    {
+      "frame": "w10-wife-rain-cold:54",
+      "scale": 0.7044879681657438,
+      "widthDp": 93.69689976604393,
+      "heightDp": 117.6494906836792,
+      "topDp": -67.6494906836792
+    },
+    {
+      "frame": "w10-wife-rain-cold:55",
+      "scale": 0.7044879681657438,
+      "widthDp": 87.35650805255223,
+      "heightDp": 121.17193052450793,
+      "topDp": -71.17193052450793
+    },
+    {
+      "frame": "w10-wife-rain-cold:56",
+      "scale": 0.7044879681657438,
+      "widthDp": 88.76548398888372,
+      "heightDp": 126.10334630166814,
+      "topDp": -76.10334630166814
+    },
+    {
+      "frame": "w10-wife-rain-cold:57",
+      "scale": 0.7044879681657438,
+      "widthDp": 90.1744599252152,
+      "heightDp": 123.9898823971709,
+      "topDp": -73.9898823971709
+    },
+    {
+      "frame": "w10-wife-rain-cold:58",
+      "scale": 0.7044879681657438,
+      "widthDp": 89.46997195704945,
+      "heightDp": 122.58090646083942,
+      "topDp": -72.58090646083942
+    },
+    {
+      "frame": "w10-wife-rain-cold:59",
+      "scale": 0.7044879681657438,
+      "widthDp": 90.1744599252152,
+      "heightDp": 123.28539442900517,
+      "topDp": -73.28539442900517
+    },
+    {
+      "frame": "w10-wife-rain-cold:60",
+      "scale": 0.7044879681657438,
+      "widthDp": 90.1744599252152,
+      "heightDp": 117.6494906836792,
+      "topDp": -67.6494906836792
+    },
+    {
+      "frame": "w10-wife-rain-cold:61",
+      "scale": 0.7044879681657438,
+      "widthDp": 93.69689976604393,
+      "heightDp": 120.46744255634219,
+      "topDp": -70.46744255634219
+    },
+    {
+      "frame": "w10-wife-rain-cold:62",
+      "scale": 0.7044879681657438,
+      "widthDp": 88.76548398888372,
+      "heightDp": 119.76295458817644,
+      "topDp": -69.76295458817644
+    },
+    {
+      "frame": "w10-wife-rain-cold:63",
+      "scale": 0.7044879681657438,
+      "widthDp": 88.06099602071797,
+      "heightDp": 118.35397865184495,
+      "topDp": -68.35397865184495
+    },
+    {
+      "frame": "w10-wife-hot:0",
+      "scale": 0.6411126353482349,
+      "widthDp": 46.160109745072916,
+      "heightDp": 75.01017833574349,
+      "topDp": -25.01017833574349
+    },
+    {
+      "frame": "w10-wife-hot:1",
+      "scale": 0.6411126353482349,
+      "widthDp": 46.160109745072916,
+      "heightDp": 76.29240360643996,
+      "topDp": -26.29240360643996
+    },
+    {
+      "frame": "w10-wife-hot:2",
+      "scale": 0.6411126353482349,
+      "widthDp": 44.877884474376444,
+      "heightDp": 74.36906570039525,
+      "topDp": -24.369065700395254
+    },
+    {
+      "frame": "w10-wife-hot:3",
+      "scale": 0.6411126353482349,
+      "widthDp": 45.51899710972468,
+      "heightDp": 75.01017833574349,
+      "topDp": -25.01017833574349
+    },
+    {
+      "frame": "w10-wife-hot:4",
+      "scale": 0.6411126353482349,
+      "widthDp": 46.80122238042115,
+      "heightDp": 78.21574151248466,
+      "topDp": -28.215741512484655
+    },
+    {
+      "frame": "w10-wife-hot:5",
+      "scale": 0.6411126353482349,
+      "widthDp": 46.80122238042115,
+      "heightDp": 78.85685414783289,
+      "topDp": -28.85685414783289
+    },
+    {
+      "frame": "w10-wife-hot:6",
+      "scale": 0.6411126353482349,
+      "widthDp": 46.80122238042115,
+      "heightDp": 79.49796678318113,
+      "topDp": -29.497966783181127
+    },
+    {
+      "frame": "w10-wife-hot:7",
+      "scale": 0.6411126353482349,
+      "widthDp": 46.80122238042115,
+      "heightDp": 78.85685414783289,
+      "topDp": -28.85685414783289
+    },
+    {
+      "frame": "w10-wife-hot:8",
+      "scale": 0.6411126353482349,
+      "widthDp": 58.98236245203761,
+      "heightDp": 75.65129097109173,
+      "topDp": -25.651290971091726
+    },
+    {
+      "frame": "w10-wife-hot:9",
+      "scale": 0.6411126353482349,
+      "widthDp": 66.0346014408682,
+      "heightDp": 74.36906570039525,
+      "topDp": -24.369065700395254
+    },
+    {
+      "frame": "w10-wife-hot:10",
+      "scale": 0.6411126353482349,
+      "widthDp": 62.82903826412702,
+      "heightDp": 74.36906570039525,
+      "topDp": -24.369065700395254
+    },
+    {
+      "frame": "w10-wife-hot:11",
+      "scale": 0.6411126353482349,
+      "widthDp": 45.51899710972468,
+      "heightDp": 76.29240360643996,
+      "topDp": -26.29240360643996
+    },
+    {
+      "frame": "w10-wife-hot:12",
+      "scale": 0.6411126353482349,
+      "widthDp": 46.80122238042115,
+      "heightDp": 80.7801920538776,
+      "topDp": -30.7801920538776
+    },
+    {
+      "frame": "w10-wife-hot:13",
+      "scale": 0.6411126353482349,
+      "widthDp": 50.006785557162324,
+      "heightDp": 81.42130468922583,
+      "topDp": -31.421304689225835
+    },
+    {
+      "frame": "w10-wife-hot:14",
+      "scale": 0.6411126353482349,
+      "widthDp": 51.289010827858796,
+      "heightDp": 71.16350252365407,
+      "topDp": -21.163502523654074
+    },
+    {
+      "frame": "w10-wife-hot:15",
+      "scale": 0.6411126353482349,
+      "widthDp": 46.160109745072916,
+      "heightDp": 79.49796678318113,
+      "topDp": -29.497966783181127
+    },
+    {
+      "frame": "w10-wife-hot:16",
+      "scale": 0.6411126353482349,
+      "widthDp": 50.64789819251056,
+      "heightDp": 80.13907941852936,
+      "topDp": -30.139079418529363
+    },
+    {
+      "frame": "w10-wife-hot:17",
+      "scale": 0.6411126353482349,
+      "widthDp": 61.54681299343055,
+      "heightDp": 79.49796678318113,
+      "topDp": -29.497966783181127
+    },
+    {
+      "frame": "w10-wife-hot:18",
+      "scale": 0.6411126353482349,
+      "widthDp": 59.62347508738585,
+      "heightDp": 85.26798050131525,
+      "topDp": -35.26798050131525
+    },
+    {
+      "frame": "w10-wife-hot:19",
+      "scale": 0.6411126353482349,
+      "widthDp": 47.44233501576939,
+      "heightDp": 83.34464259527054,
+      "topDp": -33.34464259527054
+    },
+    {
+      "frame": "w10-wife-hot:20",
+      "scale": 0.6411126353482349,
+      "widthDp": 59.62347508738585,
+      "heightDp": 81.42130468922583,
+      "topDp": -31.421304689225835
+    },
+    {
+      "frame": "w10-wife-hot:21",
+      "scale": 0.6411126353482349,
+      "widthDp": 54.49457400459997,
+      "heightDp": 80.13907941852936,
+      "topDp": -30.139079418529363
+    },
+    {
+      "frame": "w10-wife-hot:22",
+      "scale": 0.6411126353482349,
+      "widthDp": 46.80122238042115,
+      "heightDp": 83.34464259527054,
+      "topDp": -33.34464259527054
+    },
+    {
+      "frame": "w10-wife-hot:23",
+      "scale": 0.6411126353482349,
+      "widthDp": 51.93012346320703,
+      "heightDp": 78.85685414783289,
+      "topDp": -28.85685414783289
+    },
+    {
+      "frame": "w10-wife-hot:24",
+      "scale": 0.6411126353482349,
+      "widthDp": 44.877884474376444,
+      "heightDp": 82.06241732457407,
+      "topDp": -32.06241732457407
+    },
+    {
+      "frame": "w10-wife-hot:25",
+      "scale": 0.6411126353482349,
+      "widthDp": 46.160109745072916,
+      "heightDp": 83.34464259527054,
+      "topDp": -33.34464259527054
+    },
+    {
+      "frame": "w10-wife-hot:26",
+      "scale": 0.6411126353482349,
+      "widthDp": 45.51899710972468,
+      "heightDp": 82.06241732457407,
+      "topDp": -32.06241732457407
+    },
+    {
+      "frame": "w10-wife-hot:27",
+      "scale": 0.6411126353482349,
+      "widthDp": 46.160109745072916,
+      "heightDp": 83.98575523061878,
+      "topDp": -33.98575523061878
+    },
+    {
+      "frame": "w10-wife-hot:28",
+      "scale": 0.6411126353482349,
+      "widthDp": 48.72456028646585,
+      "heightDp": 68.59905198226113,
+      "topDp": -18.59905198226113
+    },
+    {
+      "frame": "w10-wife-hot:29",
+      "scale": 0.6411126353482349,
+      "widthDp": 48.083447651117616,
+      "heightDp": 70.52238988830584,
+      "topDp": -20.522389888305838
+    },
+    {
+      "frame": "w10-wife-hot:30",
+      "scale": 0.6411126353482349,
+      "widthDp": 49.36567292181409,
+      "heightDp": 70.52238988830584,
+      "topDp": -20.522389888305838
+    },
+    {
+      "frame": "w10-wife-hot:31",
+      "scale": 0.6411126353482349,
+      "widthDp": 51.289010827858796,
+      "heightDp": 70.52238988830584,
+      "topDp": -20.522389888305838
+    },
+    {
+      "frame": "w10-wife-hot:32",
+      "scale": 0.6411126353482349,
+      "widthDp": 45.51899710972468,
+      "heightDp": 79.49796678318113,
+      "topDp": -29.497966783181127
+    },
+    {
+      "frame": "w10-wife-hot:33",
+      "scale": 0.6411126353482349,
+      "widthDp": 45.51899710972468,
+      "heightDp": 76.29240360643996,
+      "topDp": -26.29240360643996
+    },
+    {
+      "frame": "w10-wife-hot:34",
+      "scale": 0.6411126353482349,
+      "widthDp": 53.85346136925173,
+      "heightDp": 85.26798050131525,
+      "topDp": -35.26798050131525
+    },
+    {
+      "frame": "w10-wife-hot:35",
+      "scale": 0.6411126353482349,
+      "widthDp": 46.80122238042115,
+      "heightDp": 87.19131840735994,
+      "topDp": -37.191318407359944
+    },
+    {
+      "frame": "w10-wife-hot:36",
+      "scale": 0.6411126353482349,
+      "widthDp": 52.57123609855526,
+      "heightDp": 80.13907941852936,
+      "topDp": -30.139079418529363
+    },
+    {
+      "frame": "w10-wife-hot:37",
+      "scale": 0.6411126353482349,
+      "widthDp": 53.2123487339035,
+      "heightDp": 78.85685414783289,
+      "topDp": -28.85685414783289
+    },
+    {
+      "frame": "w10-wife-hot:38",
+      "scale": 0.6411126353482349,
+      "widthDp": 51.93012346320703,
+      "heightDp": 79.49796678318113,
+      "topDp": -29.497966783181127
+    },
+    {
+      "frame": "w10-wife-hot:39",
+      "scale": 0.6411126353482349,
+      "widthDp": 48.72456028646585,
+      "heightDp": 84.62686786596701,
+      "topDp": -34.626867865967014
+    },
+    {
+      "frame": "weather-hot:21",
+      "scale": 0.3015009134332485,
+      "widthDp": 55.47616807171772,
+      "heightDp": 66.93320278218116,
+      "topDp": -16.933202782181155
+    },
+    {
+      "frame": "w10-wife-hot:48",
+      "scale": 0.6411126353482349,
+      "widthDp": 49.36567292181409,
+      "heightDp": 66.67571407621644,
+      "topDp": -16.675714076216437
+    },
+    {
+      "frame": "w10-wife-hot:49",
+      "scale": 0.6411126353482349,
+      "widthDp": 48.083447651117616,
+      "heightDp": 68.59905198226113,
+      "topDp": -18.59905198226113
+    },
+    {
+      "frame": "w10-wife-hot:50",
+      "scale": 0.6411126353482349,
+      "widthDp": 49.36567292181409,
+      "heightDp": 66.67571407621644,
+      "topDp": -16.675714076216437
+    },
+    {
+      "frame": "w10-wife-hot:51",
+      "scale": 0.6411126353482349,
+      "widthDp": 50.64789819251056,
+      "heightDp": 66.67571407621644,
+      "topDp": -16.675714076216437
+    },
+    {
+      "frame": "w10-wife-hot:52",
+      "scale": 0.6411126353482349,
+      "widthDp": 48.083447651117616,
+      "heightDp": 87.83243104270818,
+      "topDp": -37.83243104270818
+    },
+    {
+      "frame": "w10-wife-hot:53",
+      "scale": 0.6411126353482349,
+      "widthDp": 57.059024545992905,
+      "heightDp": 88.47354367805642,
+      "topDp": -38.473543678056416
+    },
+    {
+      "frame": "w10-wife-hot:54",
+      "scale": 0.6411126353482349,
+      "widthDp": 49.36567292181409,
+      "heightDp": 84.62686786596701,
+      "topDp": -34.626867865967014
+    },
+    {
+      "frame": "w10-wife-hot:55",
+      "scale": 0.6411126353482349,
+      "widthDp": 49.36567292181409,
+      "heightDp": 85.26798050131525,
+      "topDp": -35.26798050131525
+    },
+    {
+      "frame": "w10-wife-hot:56",
+      "scale": 0.6411126353482349,
+      "widthDp": 46.80122238042115,
+      "heightDp": 87.83243104270818,
+      "topDp": -37.83243104270818
+    },
+    {
+      "frame": "w10-wife-hot:57",
+      "scale": 0.6411126353482349,
+      "widthDp": 48.083447651117616,
+      "heightDp": 88.47354367805642,
+      "topDp": -38.473543678056416
+    },
+    {
+      "frame": "w10-wife-hot:58",
+      "scale": 0.6411126353482349,
+      "widthDp": 50.64789819251056,
+      "heightDp": 86.55020577201172,
+      "topDp": -36.55020577201172
+    },
+    {
+      "frame": "w10-wife-hot:59",
+      "scale": 0.6411126353482349,
+      "widthDp": 48.72456028646585,
+      "heightDp": 87.19131840735994,
+      "topDp": -37.191318407359944
+    },
+    {
+      "frame": "w10-wife-hot:60",
+      "scale": 0.6411126353482349,
+      "widthDp": 51.93012346320703,
+      "heightDp": 76.9335162417882,
+      "topDp": -26.933516241788197
+    },
+    {
+      "frame": "w10-wife-hot:61",
+      "scale": 0.6411126353482349,
+      "widthDp": 51.289010827858796,
+      "heightDp": 76.29240360643996,
+      "topDp": -26.29240360643996
+    },
+    {
+      "frame": "w10-wife-hot:62",
+      "scale": 0.6411126353482349,
+      "widthDp": 49.36567292181409,
+      "heightDp": 76.29240360643996,
+      "topDp": -26.29240360643996
+    },
+    {
+      "frame": "w10-wife-hot:63",
+      "scale": 0.6411126353482349,
+      "widthDp": 54.49457400459997,
+      "heightDp": 76.29240360643996,
+      "topDp": -26.29240360643996
+    },
+    {
+      "frame": "w10-wife-rain-hot:0",
+      "scale": 0.6597068418597452,
+      "widthDp": 85.10218259990712,
+      "heightDp": 103.57397417197998,
+      "topDp": -53.573974171979984
+    },
+    {
+      "frame": "w10-wife-rain-hot:1",
+      "scale": 0.6597068418597452,
+      "widthDp": 85.76188944176687,
+      "heightDp": 103.57397417197998,
+      "topDp": -53.573974171979984
+    },
+    {
+      "frame": "w10-wife-rain-hot:2",
+      "scale": 0.6597068418597452,
+      "widthDp": 85.10218259990712,
+      "heightDp": 103.57397417197998,
+      "topDp": -53.573974171979984
+    },
+    {
+      "frame": "w10-wife-rain-hot:3",
+      "scale": 0.6597068418597452,
+      "widthDp": 85.10218259990712,
+      "heightDp": 103.57397417197998,
+      "topDp": -53.573974171979984
+    },
+    {
+      "frame": "w10-wife-rain-hot:4",
+      "scale": 0.6597068418597452,
+      "widthDp": 86.42159628362661,
+      "heightDp": 104.23368101383973,
+      "topDp": -54.23368101383973
+    },
+    {
+      "frame": "w10-wife-rain-hot:5",
+      "scale": 0.6597068418597452,
+      "widthDp": 90.37983733478508,
+      "heightDp": 106.87250838127872,
+      "topDp": -56.87250838127872
+    },
+    {
+      "frame": "w10-wife-rain-hot:6",
+      "scale": 0.6597068418597452,
+      "widthDp": 87.7410099673461,
+      "heightDp": 104.89338785569947,
+      "topDp": -54.89338785569947
+    },
+    {
+      "frame": "w10-wife-rain-hot:7",
+      "scale": 0.6597068418597452,
+      "widthDp": 86.42159628362661,
+      "heightDp": 103.57397417197998,
+      "topDp": -53.573974171979984
+    },
+    {
+      "frame": "w10-wife-rain-hot:12",
+      "scale": 0.6597068418597452,
+      "widthDp": 88.40071680920585,
+      "heightDp": 108.19192206499821,
+      "topDp": -58.19192206499821
+    },
+    {
+      "frame": "w10-wife-rain-hot:13",
+      "scale": 0.6597068418597452,
+      "widthDp": 88.40071680920585,
+      "heightDp": 110.83074943243719,
+      "topDp": -60.83074943243719
+    },
+    {
+      "frame": "w10-wife-rain-hot:14",
+      "scale": 0.6597068418597452,
+      "widthDp": 81.14394154874866,
+      "heightDp": 90.37983733478508,
+      "topDp": -40.37983733478508
+    },
+    {
+      "frame": "w10-wife-rain-hot:15",
+      "scale": 0.6597068418597452,
+      "widthDp": 85.76188944176687,
+      "heightDp": 106.21280153941898,
+      "topDp": -56.212801539418976
+    },
+    {
+      "frame": "w10-wife-rain-hot:16",
+      "scale": 0.6597068418597452,
+      "widthDp": 89.72013049292534,
+      "heightDp": 111.49045627429693,
+      "topDp": -61.49045627429693
+    },
+    {
+      "frame": "w10-wife-rain-hot:17",
+      "scale": 0.6597068418597452,
+      "widthDp": 90.37983733478508,
+      "heightDp": 110.17104259057744,
+      "topDp": -60.17104259057744
+    },
+    {
+      "frame": "w10-wife-rain-hot:18",
+      "scale": 0.6597068418597452,
+      "widthDp": 88.40071680920585,
+      "heightDp": 112.80986995801642,
+      "topDp": -62.80986995801642
+    },
+    {
+      "frame": "w10-wife-rain-hot:19",
+      "scale": 0.6597068418597452,
+      "widthDp": 87.08130312548636,
+      "heightDp": 108.85162890685795,
+      "topDp": -58.851628906857954
+    },
+    {
+      "frame": "w10-wife-rain-hot:20",
+      "scale": 0.6597068418597452,
+      "widthDp": 89.72013049292534,
+      "heightDp": 108.85162890685795,
+      "topDp": -58.851628906857954
+    },
+    {
+      "frame": "w10-wife-rain-hot:21",
+      "scale": 0.6597068418597452,
+      "widthDp": 91.03954417664482,
+      "heightDp": 111.49045627429693,
+      "topDp": -61.49045627429693
+    },
+    {
+      "frame": "w10-wife-rain-hot:22",
+      "scale": 0.6597068418597452,
+      "widthDp": 91.03954417664482,
+      "heightDp": 111.49045627429693,
+      "topDp": -61.49045627429693
+    },
+    {
+      "frame": "w10-wife-rain-hot:23",
+      "scale": 0.6597068418597452,
+      "widthDp": 87.7410099673461,
+      "heightDp": 106.21280153941898,
+      "topDp": -56.212801539418976
+    },
+    {
+      "frame": "w10-wife-rain-hot:24",
+      "scale": 0.6597068418597452,
+      "widthDp": 87.7410099673461,
+      "heightDp": 108.85162890685795,
+      "topDp": -58.851628906857954
+    },
+    {
+      "frame": "w10-wife-rain-hot:25",
+      "scale": 0.6597068418597452,
+      "widthDp": 91.69925101850458,
+      "heightDp": 111.49045627429693,
+      "topDp": -61.49045627429693
+    },
+    {
+      "frame": "w10-wife-rain-hot:26",
+      "scale": 0.6597068418597452,
+      "widthDp": 90.37983733478508,
+      "heightDp": 110.83074943243719,
+      "topDp": -60.83074943243719
+    },
+    {
+      "frame": "w10-wife-rain-hot:27",
+      "scale": 0.6597068418597452,
+      "widthDp": 89.06042365106559,
+      "heightDp": 106.87250838127872,
+      "topDp": -56.87250838127872
+    },
+    {
+      "frame": "w10-wife-rain-hot:28",
+      "scale": 0.6597068418597452,
+      "widthDp": 90.37983733478508,
+      "heightDp": 93.01866470222407,
+      "topDp": -43.01866470222407
+    },
+    {
+      "frame": "w10-wife-rain-hot:29",
+      "scale": 0.6597068418597452,
+      "widthDp": 89.72013049292534,
+      "heightDp": 94.33807838594356,
+      "topDp": -44.33807838594356
+    },
+    {
+      "frame": "w10-wife-rain-hot:30",
+      "scale": 0.6597068418597452,
+      "widthDp": 85.10218259990712,
+      "heightDp": 97.63661259524228,
+      "topDp": -47.63661259524228
+    },
+    {
+      "frame": "w10-wife-rain-hot:31",
+      "scale": 0.6597068418597452,
+      "widthDp": 87.7410099673461,
+      "heightDp": 98.29631943710203,
+      "topDp": -48.29631943710203
+    },
+    {
+      "frame": "w10-wife-rain-hot:32",
+      "scale": 0.6597068418597452,
+      "widthDp": 89.72013049292534,
+      "heightDp": 104.89338785569947,
+      "topDp": -54.89338785569947
+    },
+    {
+      "frame": "w10-wife-rain-hot:33",
+      "scale": 0.6597068418597452,
+      "widthDp": 90.37983733478508,
+      "heightDp": 106.21280153941898,
+      "topDp": -56.212801539418976
+    },
+    {
+      "frame": "w10-wife-rain-hot:34",
+      "scale": 0.6597068418597452,
+      "widthDp": 87.08130312548636,
+      "heightDp": 108.19192206499821,
+      "topDp": -58.19192206499821
+    },
+    {
+      "frame": "w10-wife-rain-hot:35",
+      "scale": 0.6597068418597452,
+      "widthDp": 89.72013049292534,
+      "heightDp": 110.83074943243719,
+      "topDp": -60.83074943243719
+    },
+    {
+      "frame": "w10-wife-rain-hot:36",
+      "scale": 0.6597068418597452,
+      "widthDp": 85.10218259990712,
+      "heightDp": 104.89338785569947,
+      "topDp": -54.89338785569947
+    },
+    {
+      "frame": "w10-wife-rain-hot:37",
+      "scale": 0.6597068418597452,
+      "widthDp": 87.7410099673461,
+      "heightDp": 106.87250838127872,
+      "topDp": -56.87250838127872
+    },
+    {
+      "frame": "w10-wife-rain-hot:38",
+      "scale": 0.6597068418597452,
+      "widthDp": 85.76188944176687,
+      "heightDp": 107.53221522313846,
+      "topDp": -57.532215223138465
+    },
+    {
+      "frame": "w10-wife-rain-hot:39",
+      "scale": 0.6597068418597452,
+      "widthDp": 87.08130312548636,
+      "heightDp": 105.55309469755923,
+      "topDp": -55.55309469755923
+    },
+    {
+      "frame": "rain-hot:17",
+      "scale": 0.41032706550606884,
+      "widthDp": 87.39966495279266,
+      "heightDp": 97.65784159044439,
+      "topDp": -47.65784159044439
+    },
+    {
+      "frame": "rain-hot:23",
+      "scale": 0.4377653326283101,
+      "widthDp": 91.93071985194511,
+      "heightDp": 103.75038383290949,
+      "topDp": -53.75038383290949
+    },
+    {
+      "frame": "rain-hot:21",
+      "scale": 0.42351256527388104,
+      "widthDp": 91.05520153388443,
+      "heightDp": 99.94896540463593,
+      "topDp": -49.94896540463593
+    },
+    {
+      "frame": "w10-wife-rain-hot:48",
+      "scale": 0.6597068418597452,
+      "widthDp": 86.42159628362661,
+      "heightDp": 93.67837154408382,
+      "topDp": -43.67837154408382
+    },
+    {
+      "frame": "w10-wife-rain-hot:49",
+      "scale": 0.6597068418597452,
+      "widthDp": 88.40071680920585,
+      "heightDp": 92.35895786036433,
+      "topDp": -42.35895786036433
+    },
+    {
+      "frame": "w10-wife-rain-hot:50",
+      "scale": 0.6597068418597452,
+      "widthDp": 87.7410099673461,
+      "heightDp": 93.67837154408382,
+      "topDp": -43.67837154408382
+    },
+    {
+      "frame": "w10-wife-rain-hot:51",
+      "scale": 0.6597068418597452,
+      "widthDp": 89.06042365106559,
+      "heightDp": 94.9977852278033,
+      "topDp": -44.997785227803305
+    },
+    {
+      "frame": "w10-wife-rain-hot:52",
+      "scale": 0.6597068418597452,
+      "widthDp": 87.7410099673461,
+      "heightDp": 98.95602627896177,
+      "topDp": -48.95602627896177
+    },
+    {
+      "frame": "w10-wife-rain-hot:53",
+      "scale": 0.6597068418597452,
+      "widthDp": 90.37983733478508,
+      "heightDp": 104.89338785569947,
+      "topDp": -54.89338785569947
+    },
+    {
+      "frame": "w10-wife-rain-hot:54",
+      "scale": 0.6597068418597452,
+      "widthDp": 86.42159628362661,
+      "heightDp": 103.57397417197998,
+      "topDp": -53.573974171979984
+    },
+    {
+      "frame": "w10-wife-rain-hot:55",
+      "scale": 0.6597068418597452,
+      "widthDp": 87.7410099673461,
+      "heightDp": 102.2545604882605,
+      "topDp": -52.254560488260495
+    },
+    {
+      "frame": "w10-wife-rain-hot:56",
+      "scale": 0.6597068418597452,
+      "widthDp": 88.40071680920585,
+      "heightDp": 107.53221522313846,
+      "topDp": -57.532215223138465
+    },
+    {
+      "frame": "w10-wife-rain-hot:57",
+      "scale": 0.6597068418597452,
+      "widthDp": 85.76188944176687,
+      "heightDp": 106.87250838127872,
+      "topDp": -56.87250838127872
+    },
+    {
+      "frame": "w10-wife-rain-hot:58",
+      "scale": 0.6597068418597452,
+      "widthDp": 85.76188944176687,
+      "heightDp": 104.89338785569947,
+      "topDp": -54.89338785569947
+    },
+    {
+      "frame": "w10-wife-rain-hot:59",
+      "scale": 0.6597068418597452,
+      "widthDp": 88.40071680920585,
+      "heightDp": 108.19192206499821,
+      "topDp": -58.19192206499821
+    },
+    {
+      "frame": "w10-wife-rain-hot:60",
+      "scale": 0.6597068418597452,
+      "widthDp": 87.08130312548636,
+      "heightDp": 103.57397417197998,
+      "topDp": -53.573974171979984
+    },
+    {
+      "frame": "w10-wife-rain-hot:61",
+      "scale": 0.6597068418597452,
+      "widthDp": 87.08130312548636,
+      "heightDp": 103.57397417197998,
+      "topDp": -53.573974171979984
+    },
+    {
+      "frame": "w10-wife-rain-hot:62",
+      "scale": 0.6597068418597452,
+      "widthDp": 80.48423470688891,
+      "heightDp": 103.57397417197998,
+      "topDp": -53.573974171979984
+    },
+    {
+      "frame": "w10-wife-rain-hot:63",
+      "scale": 0.6597068418597452,
+      "widthDp": 84.44247575804738,
+      "heightDp": 103.57397417197998,
+      "topDp": -53.573974171979984
+    },
+    {
+      "frame": "w10-wife-night:0",
+      "scale": 0.6517776730873924,
+      "widthDp": 48.88332548155443,
+      "heightDp": 79.51687611666188,
+      "topDp": -29.516876116661876
+    },
+    {
+      "frame": "w10-wife-night:1",
+      "scale": 0.6517776730873924,
+      "widthDp": 48.23154780846704,
+      "heightDp": 79.51687611666188,
+      "topDp": -29.516876116661876
+    },
+    {
+      "frame": "w10-wife-night:2",
+      "scale": 0.6517776730873924,
+      "widthDp": 47.57977013537965,
+      "heightDp": 78.86509844357448,
+      "topDp": -28.86509844357448
+    },
+    {
+      "frame": "w10-wife-night:3",
+      "scale": 0.6517776730873924,
+      "widthDp": 47.57977013537965,
+      "heightDp": 78.86509844357448,
+      "topDp": -28.86509844357448
+    },
+    {
+      "frame": "w10-wife-night:4",
+      "scale": 0.6517776730873924,
+      "widthDp": 47.57977013537965,
+      "heightDp": 82.77576448209884,
+      "topDp": -32.775764482098836
+    },
+    {
+      "frame": "w10-wife-night:5",
+      "scale": 0.6517776730873924,
+      "widthDp": 48.23154780846704,
+      "heightDp": 82.12398680901144,
+      "topDp": -32.12398680901144
+    },
+    {
+      "frame": "w10-wife-night:6",
+      "scale": 0.6517776730873924,
+      "widthDp": 50.18688082772922,
+      "heightDp": 84.07931982827363,
+      "topDp": -34.079319828273626
+    },
+    {
+      "frame": "w10-wife-night:7",
+      "scale": 0.6517776730873924,
+      "widthDp": 48.88332548155443,
+      "heightDp": 82.77576448209884,
+      "topDp": -32.775764482098836
+    },
+    {
+      "frame": "w10-wife-night:8",
+      "scale": 0.6517776730873924,
+      "widthDp": 65.17776730873925,
+      "heightDp": 82.12398680901144,
+      "topDp": -32.12398680901144
+    },
+    {
+      "frame": "w10-wife-night:9",
+      "scale": 0.6517776730873924,
+      "widthDp": 71.04376636652577,
+      "heightDp": 79.51687611666188,
+      "topDp": -29.516876116661876
+    },
+    {
+      "frame": "w10-wife-night:10",
+      "scale": 0.6517776730873924,
+      "widthDp": 67.78487800108881,
+      "heightDp": 79.51687611666188,
+      "topDp": -29.516876116661876
+    },
+    {
+      "frame": "w10-wife-night:11",
+      "scale": 0.6517776730873924,
+      "widthDp": 48.23154780846704,
+      "heightDp": 80.82043146283667,
+      "topDp": -30.820431462836666
+    },
+    {
+      "frame": "w10-wife-night:12",
+      "scale": 0.6517776730873924,
+      "widthDp": 49.535103154641824,
+      "heightDp": 84.73109750136102,
+      "topDp": -34.73109750136102
+    },
+    {
+      "frame": "w10-wife-night:13",
+      "scale": 0.6517776730873924,
+      "widthDp": 53.44576919316618,
+      "heightDp": 85.38287517444842,
+      "topDp": -35.382875174448415
+    },
+    {
+      "frame": "w10-wife-night:14",
+      "scale": 0.6517776730873924,
+      "widthDp": 55.401102212428356,
+      "heightDp": 74.30265473196273,
+      "topDp": -24.302654731962733
+    },
+    {
+      "frame": "w10-wife-night:15",
+      "scale": 0.6517776730873924,
+      "widthDp": 48.23154780846704,
+      "heightDp": 82.77576448209884,
+      "topDp": -32.775764482098836
+    },
+    {
+      "frame": "w10-wife-night:16",
+      "scale": 0.6517776730873924,
+      "widthDp": 56.05287988551575,
+      "heightDp": 84.07931982827363,
+      "topDp": -34.079319828273626
+    },
+    {
+      "frame": "w10-wife-night:17",
+      "scale": 0.6517776730873924,
+      "widthDp": 65.82954498182663,
+      "heightDp": 84.07931982827363,
+      "topDp": -34.079319828273626
+    },
+    {
+      "frame": "w10-wife-night:18",
+      "scale": 0.6517776730873924,
+      "widthDp": 63.87421196256446,
+      "heightDp": 88.64176353988537,
+      "topDp": -38.641763539885375
+    },
+    {
+      "frame": "w10-wife-night:19",
+      "scale": 0.6517776730873924,
+      "widthDp": 50.83865850081661,
+      "heightDp": 86.0346528475358,
+      "topDp": -36.034652847535796
+    },
+    {
+      "frame": "w10-wife-night:20",
+      "scale": 0.6517776730873924,
+      "widthDp": 61.26710127021489,
+      "heightDp": 84.07931982827363,
+      "topDp": -34.079319828273626
+    },
+    {
+      "frame": "w10-wife-night:21",
+      "scale": 0.6517776730873924,
+      "widthDp": 57.35643523169053,
+      "heightDp": 83.42754215518623,
+      "topDp": -33.42754215518623
+    },
+    {
+      "frame": "w10-wife-night:22",
+      "scale": 0.6517776730873924,
+      "widthDp": 50.83865850081661,
+      "heightDp": 87.33820819371059,
+      "topDp": -37.338208193710585
+    },
+    {
+      "frame": "w10-wife-night:23",
+      "scale": 0.6517776730873924,
+      "widthDp": 52.142213846991396,
+      "heightDp": 80.82043146283667,
+      "topDp": -30.820431462836666
+    },
+    {
+      "frame": "w10-wife-night:24",
+      "scale": 0.6517776730873924,
+      "widthDp": 47.57977013537965,
+      "heightDp": 84.07931982827363,
+      "topDp": -34.079319828273626
+    },
+    {
+      "frame": "w10-wife-night:25",
+      "scale": 0.6517776730873924,
+      "widthDp": 46.92799246229225,
+      "heightDp": 84.73109750136102,
+      "topDp": -34.73109750136102
+    },
+    {
+      "frame": "w10-wife-night:26",
+      "scale": 0.6517776730873924,
+      "widthDp": 45.62443711611747,
+      "heightDp": 82.12398680901144,
+      "topDp": -32.12398680901144
+    },
+    {
+      "frame": "w10-wife-night:27",
+      "scale": 0.6517776730873924,
+      "widthDp": 47.57977013537965,
+      "heightDp": 84.73109750136102,
+      "topDp": -34.73109750136102
+    },
+    {
+      "frame": "w10-wife-night:28",
+      "scale": 0.6517776730873924,
+      "widthDp": 52.793991520078784,
+      "heightDp": 70.39198869343838,
+      "topDp": -20.39198869343838
+    },
+    {
+      "frame": "w10-wife-night:29",
+      "scale": 0.6517776730873924,
+      "widthDp": 54.09754686625357,
+      "heightDp": 70.39198869343838,
+      "topDp": -20.39198869343838
+    },
+    {
+      "frame": "w10-wife-night:30",
+      "scale": 0.6517776730873924,
+      "widthDp": 53.44576919316618,
+      "heightDp": 71.04376636652577,
+      "topDp": -21.043766366525773
+    },
+    {
+      "frame": "w10-wife-night:31",
+      "scale": 0.6517776730873924,
+      "widthDp": 56.05287988551575,
+      "heightDp": 71.69554403961317,
+      "topDp": -21.695544039613168
+    },
+    {
+      "frame": "w10-wife-night:32",
+      "scale": 0.6517776730873924,
+      "widthDp": 47.57977013537965,
+      "heightDp": 78.21332077048709,
+      "topDp": -28.213320770487087
+    },
+    {
+      "frame": "w10-wife-night:33",
+      "scale": 0.6517776730873924,
+      "widthDp": 45.62443711611747,
+      "heightDp": 76.90976542431231,
+      "topDp": -26.90976542431231
+    },
+    {
+      "frame": "w10-wife-night:34",
+      "scale": 0.6517776730873924,
+      "widthDp": 53.44576919316618,
+      "heightDp": 83.42754215518623,
+      "topDp": -33.42754215518623
+    },
+    {
+      "frame": "w10-wife-night:35",
+      "scale": 0.6517776730873924,
+      "widthDp": 46.92799246229225,
+      "heightDp": 85.38287517444842,
+      "topDp": -35.382875174448415
+    },
+    {
+      "frame": "w10-wife-night:36",
+      "scale": 0.6517776730873924,
+      "widthDp": 53.44576919316618,
+      "heightDp": 78.86509844357448,
+      "topDp": -28.86509844357448
+    },
+    {
+      "frame": "w10-wife-night:37",
+      "scale": 0.6517776730873924,
+      "widthDp": 56.05287988551575,
+      "heightDp": 79.51687611666188,
+      "topDp": -29.516876116661876
+    },
+    {
+      "frame": "w10-wife-night:38",
+      "scale": 0.6517776730873924,
+      "widthDp": 55.401102212428356,
+      "heightDp": 80.16865378974927,
+      "topDp": -30.16865378974927
+    },
+    {
+      "frame": "w10-wife-night:39",
+      "scale": 0.6517776730873924,
+      "widthDp": 48.88332548155443,
+      "heightDp": 84.73109750136102,
+      "topDp": -34.73109750136102
+    },
+    {
+      "frame": "weather-night:21",
+      "scale": 0.30696411753875025,
+      "widthDp": 50.95604351143254,
+      "heightDp": 71.21567526899005,
+      "topDp": -21.215675268990054
+    },
+    {
+      "frame": "w10-wife-night:48",
+      "scale": 0.6517776730873924,
+      "widthDp": 53.44576919316618,
+      "heightDp": 71.04376636652577,
+      "topDp": -21.043766366525773
+    },
+    {
+      "frame": "w10-wife-night:49",
+      "scale": 0.6517776730873924,
+      "widthDp": 50.83865850081661,
+      "heightDp": 71.69554403961317,
+      "topDp": -21.695544039613168
+    },
+    {
+      "frame": "w10-wife-night:50",
+      "scale": 0.6517776730873924,
+      "widthDp": 50.18688082772922,
+      "heightDp": 70.39198869343838,
+      "topDp": -20.39198869343838
+    },
+    {
+      "frame": "w10-wife-night:51",
+      "scale": 0.6517776730873924,
+      "widthDp": 52.142213846991396,
+      "heightDp": 69.74021102035098,
+      "topDp": -19.740211020350984
+    },
+    {
+      "frame": "w10-wife-night:52",
+      "scale": 0.6517776730873924,
+      "widthDp": 50.83865850081661,
+      "heightDp": 92.55242957840973,
+      "topDp": -42.55242957840973
+    },
+    {
+      "frame": "w10-wife-night:53",
+      "scale": 0.6517776730873924,
+      "widthDp": 59.31176825095271,
+      "heightDp": 93.20420725149712,
+      "topDp": -43.204207251497124
+    },
+    {
+      "frame": "w10-wife-night:54",
+      "scale": 0.6517776730873924,
+      "widthDp": 55.401102212428356,
+      "heightDp": 89.94531888606015,
+      "topDp": -39.94531888606015
+    },
+    {
+      "frame": "w10-wife-night:55",
+      "scale": 0.6517776730873924,
+      "widthDp": 52.142213846991396,
+      "heightDp": 91.24887423223494,
+      "topDp": -41.24887423223494
+    },
+    {
+      "frame": "w10-wife-night:56",
+      "scale": 0.6517776730873924,
+      "widthDp": 48.88332548155443,
+      "heightDp": 89.94531888606015,
+      "topDp": -39.94531888606015
+    },
+    {
+      "frame": "w10-wife-night:57",
+      "scale": 0.6517776730873924,
+      "widthDp": 48.88332548155443,
+      "heightDp": 90.59709655914754,
+      "topDp": -40.597096559147545
+    },
+    {
+      "frame": "w10-wife-night:58",
+      "scale": 0.6517776730873924,
+      "widthDp": 53.44576919316618,
+      "heightDp": 89.29354121297277,
+      "topDp": -39.29354121297277
+    },
+    {
+      "frame": "w10-wife-night:59",
+      "scale": 0.6517776730873924,
+      "widthDp": 49.535103154641824,
+      "heightDp": 90.59709655914754,
+      "topDp": -40.597096559147545
+    },
+    {
+      "frame": "w10-wife-night:60",
+      "scale": 0.6517776730873924,
+      "widthDp": 52.793991520078784,
+      "heightDp": 78.21332077048709,
+      "topDp": -28.213320770487087
+    },
+    {
+      "frame": "w10-wife-night:61",
+      "scale": 0.6517776730873924,
+      "widthDp": 56.05287988551575,
+      "heightDp": 77.56154309739969,
+      "topDp": -27.561543097399692
+    },
+    {
+      "frame": "w10-wife-night:62",
+      "scale": 0.6517776730873924,
+      "widthDp": 53.44576919316618,
+      "heightDp": 78.21332077048709,
+      "topDp": -28.213320770487087
+    },
+    {
+      "frame": "w10-wife-night:63",
+      "scale": 0.6517776730873924,
+      "widthDp": 55.401102212428356,
+      "heightDp": 76.25798775122492,
+      "topDp": -26.257987751224917
+    },
+    {
+      "frame": "w10-wife-rain-night:0",
+      "scale": 0.6131933351399802,
+      "widthDp": 75.42278022221757,
+      "heightDp": 103.62967363865666,
+      "topDp": -53.629673638656655
+    },
+    {
+      "frame": "w10-wife-rain-night:1",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.80958688707759,
+      "heightDp": 103.62967363865666,
+      "topDp": -53.629673638656655
+    },
+    {
+      "frame": "w10-wife-rain-night:2",
+      "scale": 0.6131933351399802,
+      "widthDp": 75.42278022221757,
+      "heightDp": 105.46925364407659,
+      "topDp": -55.46925364407659
+    },
+    {
+      "frame": "w10-wife-rain-night:3",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.1963935519376,
+      "heightDp": 104.85606030893662,
+      "topDp": -54.85606030893662
+    },
+    {
+      "frame": "w10-wife-rain-night:4",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.80958688707759,
+      "heightDp": 105.46925364407659,
+      "topDp": -55.46925364407659
+    },
+    {
+      "frame": "w10-wife-rain-night:5",
+      "scale": 0.6131933351399802,
+      "widthDp": 75.42278022221757,
+      "heightDp": 106.69564031435655,
+      "topDp": -56.69564031435655
+    },
+    {
+      "frame": "w10-wife-rain-night:6",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.80958688707759,
+      "heightDp": 105.46925364407659,
+      "topDp": -55.46925364407659
+    },
+    {
+      "frame": "w10-wife-rain-night:7",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.1963935519376,
+      "heightDp": 105.46925364407659,
+      "topDp": -55.46925364407659
+    },
+    {
+      "frame": "w10-wife-rain-night:12",
+      "scale": 0.6131933351399802,
+      "widthDp": 75.42278022221757,
+      "heightDp": 102.40328696837669,
+      "topDp": -52.40328696837669
+    },
+    {
+      "frame": "w10-wife-rain-night:13",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.1963935519376,
+      "heightDp": 100.56370696295676,
+      "topDp": -50.56370696295676
+    },
+    {
+      "frame": "w10-wife-rain-night:14",
+      "scale": 0.6131933351399802,
+      "widthDp": 72.97000688165764,
+      "heightDp": 96.2713536169769,
+      "topDp": -46.271353616976896
+    },
+    {
+      "frame": "w10-wife-rain-night:15",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.80958688707759,
+      "heightDp": 99.95051362781678,
+      "topDp": -49.950513627816775
+    },
+    {
+      "frame": "w10-wife-rain-night:16",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.80958688707759,
+      "heightDp": 103.62967363865666,
+      "topDp": -53.629673638656655
+    },
+    {
+      "frame": "w10-wife-rain-night:17",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.80958688707759,
+      "heightDp": 104.24286697379664,
+      "topDp": -54.24286697379664
+    },
+    {
+      "frame": "w10-wife-rain-night:18",
+      "scale": 0.6131933351399802,
+      "widthDp": 76.03597355735755,
+      "heightDp": 107.30883364949653,
+      "topDp": -57.308833649496535
+    },
+    {
+      "frame": "w10-wife-rain-night:19",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.1963935519376,
+      "heightDp": 102.40328696837669,
+      "topDp": -52.40328696837669
+    },
+    {
+      "frame": "w10-wife-rain-night:20",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.80958688707759,
+      "heightDp": 105.46925364407659,
+      "topDp": -55.46925364407659
+    },
+    {
+      "frame": "w10-wife-rain-night:21",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.1963935519376,
+      "heightDp": 104.85606030893662,
+      "topDp": -54.85606030893662
+    },
+    {
+      "frame": "w10-wife-rain-night:22",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.80958688707759,
+      "heightDp": 105.46925364407659,
+      "topDp": -55.46925364407659
+    },
+    {
+      "frame": "w10-wife-rain-night:23",
+      "scale": 0.6131933351399802,
+      "widthDp": 75.42278022221757,
+      "heightDp": 106.69564031435655,
+      "topDp": -56.69564031435655
+    },
+    {
+      "frame": "w10-wife-rain-night:24",
+      "scale": 0.6131933351399802,
+      "widthDp": 73.58320021679762,
+      "heightDp": 103.01648030351667,
+      "topDp": -53.01648030351667
+    },
+    {
+      "frame": "w10-wife-rain-night:25",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.1963935519376,
+      "heightDp": 102.40328696837669,
+      "topDp": -52.40328696837669
+    },
+    {
+      "frame": "w10-wife-rain-night:26",
+      "scale": 0.6131933351399802,
+      "widthDp": 72.97000688165764,
+      "heightDp": 99.95051362781678,
+      "topDp": -49.950513627816775
+    },
+    {
+      "frame": "w10-wife-rain-night:27",
+      "scale": 0.6131933351399802,
+      "widthDp": 73.58320021679762,
+      "heightDp": 102.40328696837669,
+      "topDp": -52.40328696837669
+    },
+    {
+      "frame": "w10-wife-rain-night:28",
+      "scale": 0.6131933351399802,
+      "widthDp": 77.2623602276375,
+      "heightDp": 95.65816028183691,
+      "topDp": -45.65816028183691
+    },
+    {
+      "frame": "w10-wife-rain-night:29",
+      "scale": 0.6131933351399802,
+      "widthDp": 76.64916689249752,
+      "heightDp": 96.2713536169769,
+      "topDp": -46.271353616976896
+    },
+    {
+      "frame": "w10-wife-rain-night:30",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.1963935519376,
+      "heightDp": 95.65816028183691,
+      "topDp": -45.65816028183691
+    },
+    {
+      "frame": "w10-wife-rain-night:31",
+      "scale": 0.6131933351399802,
+      "widthDp": 75.42278022221757,
+      "heightDp": 99.95051362781678,
+      "topDp": -49.950513627816775
+    },
+    {
+      "frame": "w10-wife-rain-night:32",
+      "scale": 0.6131933351399802,
+      "widthDp": 73.58320021679762,
+      "heightDp": 97.49774028725685,
+      "topDp": -47.497740287256846
+    },
+    {
+      "frame": "w10-wife-rain-night:33",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.80958688707759,
+      "heightDp": 99.3373202926768,
+      "topDp": -49.33732029267679
+    },
+    {
+      "frame": "w10-wife-rain-night:34",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.1963935519376,
+      "heightDp": 100.56370696295676,
+      "topDp": -50.56370696295676
+    },
+    {
+      "frame": "w10-wife-rain-night:35",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.1963935519376,
+      "heightDp": 101.17690029809674,
+      "topDp": -51.17690029809674
+    },
+    {
+      "frame": "w10-wife-rain-night:36",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.1963935519376,
+      "heightDp": 101.79009363323671,
+      "topDp": -51.79009363323671
+    },
+    {
+      "frame": "w10-wife-rain-night:37",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.80958688707759,
+      "heightDp": 98.11093362239683,
+      "topDp": -48.11093362239683
+    },
+    {
+      "frame": "w10-wife-rain-night:38",
+      "scale": 0.6131933351399802,
+      "widthDp": 71.74362021137769,
+      "heightDp": 95.65816028183691,
+      "topDp": -45.65816028183691
+    },
+    {
+      "frame": "w10-wife-rain-night:39",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.80958688707759,
+      "heightDp": 100.56370696295676,
+      "topDp": -50.56370696295676
+    },
+    {
+      "frame": "rain-night:17",
+      "scale": 0.3876271075716912,
+      "widthDp": 82.56457391277023,
+      "heightDp": 92.25525160206251,
+      "topDp": -42.255251602062515
+    },
+    {
+      "frame": "rain-night:23",
+      "scale": 0.4137196062575609,
+      "widthDp": 87.29483692034535,
+      "heightDp": 98.05154668304193,
+      "topDp": -48.051546683041934
+    },
+    {
+      "frame": "rain-night:21",
+      "scale": 0.40420387169966226,
+      "widthDp": 86.90383241542739,
+      "heightDp": 96.20052146451962,
+      "topDp": -46.200521464519625
+    },
+    {
+      "frame": "w10-wife-rain-night:48",
+      "scale": 0.6131933351399802,
+      "widthDp": 76.64916689249752,
+      "heightDp": 90.75261360071707,
+      "topDp": -40.75261360071707
+    },
+    {
+      "frame": "w10-wife-rain-night:49",
+      "scale": 0.6131933351399802,
+      "widthDp": 76.03597355735755,
+      "heightDp": 90.75261360071707,
+      "topDp": -40.75261360071707
+    },
+    {
+      "frame": "w10-wife-rain-night:50",
+      "scale": 0.6131933351399802,
+      "widthDp": 76.64916689249752,
+      "heightDp": 91.97900027099703,
+      "topDp": -41.979000270997034
+    },
+    {
+      "frame": "w10-wife-rain-night:51",
+      "scale": 0.6131933351399802,
+      "widthDp": 75.42278022221757,
+      "heightDp": 89.5262269304371,
+      "topDp": -39.526226930437105
+    },
+    {
+      "frame": "w10-wife-rain-night:52",
+      "scale": 0.6131933351399802,
+      "widthDp": 76.03597355735755,
+      "heightDp": 98.11093362239683,
+      "topDp": -48.11093362239683
+    },
+    {
+      "frame": "w10-wife-rain-night:53",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.1963935519376,
+      "heightDp": 98.72412695753681,
+      "topDp": -48.72412695753681
+    },
+    {
+      "frame": "w10-wife-rain-night:54",
+      "scale": 0.6131933351399802,
+      "widthDp": 75.42278022221757,
+      "heightDp": 96.88454695211688,
+      "topDp": -46.88454695211688
+    },
+    {
+      "frame": "w10-wife-rain-night:55",
+      "scale": 0.6131933351399802,
+      "widthDp": 76.03597355735755,
+      "heightDp": 99.3373202926768,
+      "topDp": -49.33732029267679
+    },
+    {
+      "frame": "w10-wife-rain-night:56",
+      "scale": 0.6131933351399802,
+      "widthDp": 76.03597355735755,
+      "heightDp": 103.01648030351667,
+      "topDp": -53.01648030351667
+    },
+    {
+      "frame": "w10-wife-rain-night:57",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.80958688707759,
+      "heightDp": 101.17690029809674,
+      "topDp": -51.17690029809674
+    },
+    {
+      "frame": "w10-wife-rain-night:58",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.1963935519376,
+      "heightDp": 100.56370696295676,
+      "topDp": -50.56370696295676
+    },
+    {
+      "frame": "w10-wife-rain-night:59",
+      "scale": 0.6131933351399802,
+      "widthDp": 72.97000688165764,
+      "heightDp": 98.72412695753681,
+      "topDp": -48.72412695753681
+    },
+    {
+      "frame": "w10-wife-rain-night:60",
+      "scale": 0.6131933351399802,
+      "widthDp": 74.1963935519376,
+      "heightDp": 90.75261360071707,
+      "topDp": -40.75261360071707
+    },
+    {
+      "frame": "w10-wife-rain-night:61",
+      "scale": 0.6131933351399802,
+      "widthDp": 73.58320021679762,
+      "heightDp": 93.20538694127698,
+      "topDp": -43.205386941276984
+    },
+    {
+      "frame": "w10-wife-rain-night:62",
+      "scale": 0.6131933351399802,
+      "widthDp": 72.97000688165764,
+      "heightDp": 92.59219360613702,
+      "topDp": -42.592193606137016
+    },
+    {
+      "frame": "w10-wife-rain-night:63",
+      "scale": 0.6131933351399802,
+      "widthDp": 73.58320021679762,
+      "heightDp": 90.13942026557709,
+      "topDp": -40.13942026557709
+    }
+  ]
+}

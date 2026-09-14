@@ -344,6 +344,8 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
             val p=world.pet(who)
             val existing=rainViews[who]
             val pair=existing ?: (RainView(this) to layout(dp(160),dp(260),true))
+            // The effect and character must keep the same center even at screen edges.
+            pair.second.flags=pair.second.flags or WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
             val size=OrientationSnap.extent(dp(160).toFloat(),dp(260).toFloat(),angle)
             val lp=pair.second
             val w=size.first.toInt(); val h=size.second.toInt()

@@ -5,6 +5,17 @@ import org.junit.Test
 import kotlin.random.Random
 
 class WeatherRainTest {
+    @Test fun snowChoosesWarmClothesWithoutTemperatureAndHeatStillWins() {
+        val w=WeatherState();w.update(null,1000,12,kindOverride=WeatherKind.SNOW)
+        assertEquals(Outfit.COLD,w.outfit)
+        w.update(null,1000,12,deviceHot=true,kindOverride=WeatherKind.SNOW)
+        assertEquals(Outfit.HOT,w.outfit)
+        for(kind in WeatherKind.entries) {
+            w.update(null,1000,12,kindOverride=kind,tempOverride=27f)
+            assertEquals(if(kind==WeatherKind.SNOW) Outfit.COLD else Outfit.HOT,w.outfit)
+            assertEquals(kind in listOf(WeatherKind.RAIN,WeatherKind.STORM),w.raining)
+        }
+    }
     private fun reading(temp: Float,code: Int=0)=WeatherReading(1000,temp,code,0f)
     @Test fun temperatureUsesRealCelsiusWithHysteresis() {
         val w=WeatherState()

@@ -1,3 +1,15 @@
+# Version 0.10.0 verification — September 14, 2026
+
+- Debug APK built and signature verified, version code 12. 90 unit tests passed; lint has zero errors and 20 warnings.
+- All 1,024 runtime routes resolve to 910 calibrated frames across 33 atlases. Pixel/crop/hash checks passed; packaged PNG and CSV bytes match the verified assets.
+- Visually reviewed all 14 new animation contact sheets. Corrected painted backgrounds, uneven row cuts and skin measurements that included cream shirts. Reviewed sheet scale overrides are retained with the artwork.
+- Rain tests cover measured collision height, mirroring and gaps outside the canopy. Android edge-window alignment still requires physical verification.
+- APK SHA-256: `5a9432019866a5416f47423e24548c31ead7a2fa72dc07789b81e8903ecbf5c4`.
+- No connected phone or configured emulator; no installation, physical overlay or keyboard test. Live weather remains disabled.
+- See [release details and reproduction](VERSION-0.10.md).
+
+---
+
 # Version 0.9.1 verification — September 14, 2026
 
 - Debug APK build, 85 unit tests and lint passed (zero errors, 20 warnings).

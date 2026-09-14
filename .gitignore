@@ -17,3 +17,6 @@ docs/scale-audit/index.html
 docs/scale-audit/calibrated/
 docs/scale-audit/landmarks/
 tools/__pycache__/
+art/weather-v10/clean/
+art/weather-v10/layout.json
+docs/weather-v10/
