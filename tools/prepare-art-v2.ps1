@@ -60,3 +60,7 @@ if($Only -eq '' -or $Only -eq 'umbrellas') { Copy-Item (Join-Path $projectRoot '
 
 if($Only -eq "" -or $Only -eq "cooling") { [ChromaAtlas]::Run((Join-Path $projectRoot "art/v2/cooling-source.png"),(Join-Path $projectRoot "app/src/main/assets/art/cooling.png"),4,2,1536,1024) }
 if($Only -eq "" -or $Only -eq "cooling-props") { [ChromaAtlas]::Run((Join-Path $projectRoot "art/v2/cooling-props-source.png"),(Join-Path $projectRoot "app/src/main/assets/art/cooling-props.png"),2,3,1024,1536) }
+
+foreach($outfit in @('default','cold','hot','night')) {
+ if($Only -eq '' -or $Only -eq "rain-$outfit") { [ChromaAtlas]::Run((Join-Path $projectRoot "art/v2/rain-$outfit-source.png"),(Join-Path $projectRoot "app/src/main/assets/art/rain-$outfit.png"),4,6,1024,1536); & (Join-Path $PSScriptRoot "align-rain.ps1") -Outfit $outfit }
+}

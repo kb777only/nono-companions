@@ -6,4 +6,5 @@
  android:canRetrieveWindowContent="true"
  android:canPerformGestures="false"
  android:isAccessibilityTool="false"
+ android:settingsActivity="dev.nono.companions.MainActivity"
  android:description="@string/context_description" />

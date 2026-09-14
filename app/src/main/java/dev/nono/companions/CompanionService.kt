@@ -89,7 +89,7 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
                     if(started && screenOn) { handler.removeCallbacks(tick); handler.post(tick) }
                 }
                 Intent.ACTION_SCREEN_OFF -> { screenOn=false; tilt.stop(); handler.removeCallbacks(tick); world.held=null; gestureEpoch++; world.interrupt(now(),resetMotion=true); store.save(world); removeRain(); removeCanopies(); removeMenu(); removeSpeech(); removeProp(); views.values.forEach { it.visibility=View.GONE } }
-                Intent.ACTION_SCREEN_ON,Intent.ACTION_USER_PRESENT -> { screenOn=true; tilt.start(); world.resetClock(); handler.removeCallbacks(tick); handler.post(tick) }
+                Intent.ACTION_SCREEN_ON,Intent.ACTION_USER_PRESENT -> { screenOn=true; ContextService.refresh(); tilt.start(); world.resetClock(); handler.removeCallbacks(tick); handler.post(tick) }
             }
         }
     }
@@ -130,6 +130,7 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
         val filter=IntentFilter().apply { addAction(Intent.ACTION_SCREEN_OFF); addAction(Intent.ACTION_SCREEN_ON); addAction(Intent.ACTION_USER_PRESENT); addAction(Intent.ACTION_BATTERY_CHANGED) }
         if(Build.VERSION.SDK_INT>=33) registerReceiver(receiver,filter,RECEIVER_NOT_EXPORTED) else registerReceiver(receiver,filter)
         displays.registerDisplayListener(this,handler); started=true
+        ContextService.refresh()
         devPrefs.registerOnSharedPreferenceChangeListener(devListener)
         applyEnvironment(now()); applyTilt(actualGravity,actualReliable)
         screenOn=getSystemService(PowerManager::class.java).isInteractive
@@ -251,7 +252,7 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
         val inset=metrics.windowInsets.getInsetsIgnoringVisibility(WindowInsets.Type.systemBars() or WindowInsets.Type.displayCutout())
         val w=b.width()-inset.left-inset.right
         imeBottom=dev.keyboard?.let { if(it) (b.height()*.40f).toInt() else 0 } ?: keyboardSignals.bottom(b.height())
-        val keyboardVisible=dev.keyboard ?: (keyboardSignals.windowVisible ?: (imeBottom>0))
+        val keyboardVisible=dev.keyboard ?: keyboardSignals.visible
         val h=(b.height()-inset.top-maxOf(inset.bottom,imeBottom)).coerceAtLeast(1)
         usableForHeads=h>=dp(60)
         val pw=minOf(dp(72),w/3).coerceAtLeast(24); val ph=minOf(dp(104),h/3).coerceAtLeast(32)
@@ -289,7 +290,7 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
         Who.entries.forEach { who ->
             val p=world.pet(who)
             val existing=rainViews[who]
-            val pair=existing ?: (RainView(this,who,artwork.umbrellas) to layout(dp(160),dp(260),true))
+            val pair=existing ?: (RainView(this) to layout(dp(160),dp(260),true))
             val size=OrientationSnap.extent(dp(160).toFloat(),dp(260).toFloat(),angle)
             val lp=pair.second; lp.alpha=.30f
             val w=size.first.toInt(); val h=size.second.toInt()
@@ -297,27 +298,27 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
             val y=originY+(p.y+world.petHeight/2-h/2).toInt()
             val changed=lp.x!=x || lp.y!=y || lp.width!=w || lp.height!=h
             lp.x=x; lp.y=y; lp.width=w; lp.height=h
-            pair.first.update(p,time,angle)
+            pair.first.update(p,time,angle,umbrellaPose(world.weather.raining,world.pose(who,time).frame))
             if(existing==null) { rainViews[who]=pair; wm.addView(pair.first,lp) }
             else if(changed) wm.updateViewLayout(pair.first,lp)
         }
     }
     private fun removeRain() {
-        rainViews.values.forEach { it.first.particles.clear(); if(it.first.isAttachedToWindow) try { wm.removeView(it.first) } catch(_: Exception) {} }
+        rainViews.values.forEach { it.first.particles.clear(); try { wm.removeViewImmediate(it.first) } catch(_: Exception) {} }
         rainViews.clear()
     }
     private fun showCanopies() {
         if(world.keyboardOpen) { removeCanopies(); return }
         Who.entries.forEach { who ->
             val p=world.pet(who)
-            if(p.state!=State.PARACHUTING) {
-                canopies.remove(who)?.first?.let { if(it.isAttachedToWindow) wm.removeView(it) }
+            if(!canopyVisible(p,world.physics,world.width,world.height,world.petWidth,world.petHeight) || world.held==who) {
+                canopies.remove(who)?.first?.let { it.expire(); try { wm.removeViewImmediate(it) } catch(_: IllegalArgumentException) {} }
             } else {
                 val existing=canopies[who]
                 val pair=existing ?: (ParachuteView(this,artwork.parachutes,who) to layout(dp(96),dp(90),true))
                 val lp=pair.second
                 lp.alpha=if(world.weather.raining) .30f else .55f // Two overlapping pass-through canopies stay below Android’s .8 obscuring limit.
-                val angle=orientation.value(now()); pair.first.orientation(angle)
+                val angle=orientation.value(now()); pair.first.renew(now()); pair.first.orientation(angle)
                 val extent=OrientationSnap.extent(dp(96).toFloat(),dp(90).toFloat(),angle)
                 val w=extent.first.toInt(); val h=extent.second.toInt()
                 val radians=Math.toRadians(angle.toDouble())
@@ -333,7 +334,7 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
         }
     }
     private fun removeCanopies() {
-        canopies.values.forEach { if(it.first.isAttachedToWindow) try { wm.removeView(it.first) } catch(_: Exception) {} }
+        canopies.values.forEach { it.first.expire(); try { wm.removeViewImmediate(it.first) } catch(_: Exception) {} }
         canopies.clear()
     }
     private fun showSpeech() {

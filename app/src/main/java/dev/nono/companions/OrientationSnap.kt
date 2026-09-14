@@ -50,9 +50,10 @@ class KeyboardSignals {
     var insetBottom=0
     var windowTop: Int?=null
     var windowVisible: Boolean?=null
-    fun bottom(displayHeight: Int): Int = when(windowVisible) {
+    val visible get()=windowVisible==true || insetBottom>0
+    fun bottom(displayHeight: Int): Int = maxOf(insetBottom.coerceIn(0,displayHeight),when(windowVisible) {
         true -> (displayHeight-(windowTop ?: displayHeight)).coerceIn(0,displayHeight)
         false -> 0
         null -> insetBottom.coerceIn(0,displayHeight)
-    }
+    })
 }

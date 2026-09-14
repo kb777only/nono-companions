@@ -87,3 +87,10 @@ APK SHA-256: `0C164B23E79F9CCA763F54C757B27C97F9A293F1B9A6D80ED3D80C22E9CDBD23`.
 Debug build passed; 68 tests passed with zero failures/errors. Lint: zero errors, 20 warnings (13 localization warnings in the French developer UI, plus seven existing custom-view/RTL warnings). APK signing verified. No device/emulator UI test: phone disconnected. New tests cover independent overrides, persistence decoding, current Auto inputs, precise French decimal input, invalid values, weather/temperature independence, heat priority, orientation easing/gravity and keyboard/context mappings.
 
 APK SHA-256: `dbcef45ad2f9f9181f448fbc18711d5d8cd3bc02ef578fc2bae4b207b95f8bd2`.
+
+
+## 0.8.0 — 2026-09-14
+
+73 tests passed, zero failures/errors. Debug build and lint passed (zero errors, 19 warnings). APK signature verified; inspected packaged ContextService declaration/BIND_ACCESSIBILITY_SERVICE and its interactive-window/canRetrieveWindowContent metadata. All four packed rain atlases match workspace bytes; all 96 cells have nonempty RGBA content and transparent borders. Built-in generated artwork was visually inspected and rejected/corrected drafts excluded. No device/emulator test; the exact vendor service-list issue is not confirmed.
+
+APK SHA-256: `8ef112cbbbc2e9b53f1dd098b6913e3eaa9900a29f977cbd32eecc5e57b8fedc`.

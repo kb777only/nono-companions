@@ -10,9 +10,19 @@ class ParachuteView(context: Context, atlas: Bitmap, who: Who): View(context) {
     private val paint=Paint(Paint.ANTI_ALIAS_FLAG or Paint.FILTER_BITMAP_FLAG)
     private val source=Rect(0,who.ordinal*atlas.height/2,atlas.width/3,who.ordinal*atlas.height/2+atlas.height/4)
     private val destination=RectF()
+    private val lease=ArtLease()
+    private val expiration=Runnable { expire() }
+    fun renew(now: Long) {
+        lease.renew(now); visibility=VISIBLE
+        removeCallbacks(expiration); postDelayed(expiration,500); invalidate()
+    }
+    fun expire() { lease.clear(); visibility=INVISIBLE; invalidate() }
+    override fun onDetachedFromWindow() { removeCallbacks(expiration); lease.clear(); super.onDetachedFromWindow() }
     private var angle=0f
     fun orientation(degrees: Float) { if(angle!=degrees) { angle=degrees; invalidate() } }
     override fun onDraw(canvas: Canvas) {
+        canvas.drawColor(Color.TRANSPARENT,PorterDuff.Mode.CLEAR)
+        if(!lease.visible(android.os.SystemClock.elapsedRealtime())) return
         val w=96f*resources.displayMetrics.density; val h=90f*resources.displayMetrics.density
         canvas.save(); canvas.translate(width/2f,height/2f); canvas.rotate(angle); canvas.translate(-w/2,-h/2)
         val canopyHeight=h*.52f

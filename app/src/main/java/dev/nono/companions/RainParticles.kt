@@ -37,7 +37,7 @@ class RainParticles(private val random: Random=Random.Default) {
     }
     fun surface(x: Float,umbrella: Boolean): Float? {
         val dx=x-.5f
-        if(umbrella && abs(dx)<.75f) return -.46f+.40f*(dx/.75f).pow(2)
+        if(umbrella && abs(dx)<.48f) return .30f+.16f*(dx/.48f).pow(2)
         if(abs(dx)<.32f) return .23f-.21f*sqrt(1-(dx/.32f).pow(2))
         return if(x in .2f.. .8f) .55f else null
     }

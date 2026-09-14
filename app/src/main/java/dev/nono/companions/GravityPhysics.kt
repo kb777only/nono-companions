@@ -67,7 +67,8 @@ class GravityPhysics {
             if(p.y<0 || p.y>maxY) { hitSpeed=max(hitSpeed,abs(m.vy)); p.y=p.y.coerceIn(0f,maxY); m.vy=if(abs(m.vy)>ph*2) -m.vy*.12f else 0f }
         }
         m.grounded=supported(p,w,h,pw,ph) && abs(m.vx)+abs(m.vy)<ph*.6f
-        if(m.grounded) {
+        if(supported(p,w,h,pw,ph)) {
+            // Contact ends the parachute even while sliding along a tilted edge.
             m.fallSince=-1
             if(p.state==State.FALLING || p.state==State.PARACHUTING) {
                 p.state=State.RECOVERING; p.until=now+500; m.landedUntil=now+500

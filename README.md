@@ -1,13 +1,13 @@
 # NoNo Companions
 
-A private native Kotlin Android app for your two chibi companions, using the approved second concept sheet. Version 0.7.0 adds an in-app **Menu développeur** with independent Auto/Manual controls for weather, battery temperature, outdoor temperature, time, orientation, keyboard and app context. Manual previews work offline, with saved settings and a reset-to-Auto button. Existing heat reactions, fans, wardrobe, kisses, parachutes and keyboard peeking remain available. See [this update](docs/VERSION-0.7.md).
+A private native Kotlin Android app for your two chibi companions. Version 0.8.0 fixes canopy cleanup, hardens keyboard detection and adds Accessibility diagnostics. Rain now uses integrated character-and-umbrella poses for each outfit, with no standalone floating umbrella. The developer menu retains local Auto/Manual previews. See [this update](docs/VERSION-0.8.md).
 
 ## Install
 
 1. Download the APK from the [private GitHub release](https://github.com/kb777only/nono-companions/releases/latest) while signed into your GitHub account, then open it on each phone and allow installation from that source when Android asks. This is a debug-signed APK, suitable for private testing.
 2. Open **NoNo Companions**, choose **Allow companions over apps**, and grant Android's overlay permission.
 3. Return to the app and choose **Welcome our companions** once. Allow the service notification if desired; Android still provides its active-app controls.
-4. Optional: choose **Optional app & keyboard awareness**, read the explanation, and enable NoNo in Android Accessibility settings. This provides keyboard-window detection across apps; without it, avoidance depends on vendor overlay insets. After updating, re-enable this service if keyboard detection does not respond. Sideloaded-app restricted settings may require an additional explicit approval in Android App info before Accessibility can be enabled.
+4. Optional: choose **Détection automatique du clavier · Accessibilité**, read the explanation, and enable NoNo in Android Accessibility settings. This provides keyboard-window detection across apps; without it, avoidance depends on vendor overlay insets. After updating, re-enable this service if keyboard detection does not respond. Sideloaded-app restricted settings may require an additional explicit approval in Android App info before Accessibility can be enabled.
 5. Tap for a reaction. Hold still for about half a second to open the character’s menu; move beyond Android’s touch threshold to drag instead. Choose **Bisou** for a kiss when both are settled on the floor. Shared sequences begin autonomously after a quiet interval. There is no pause button, floating toolbar or routine hide control. Use Android's permission/service controls when needed.
 
 If HyperOS or Samsung stops the app, review the app's background/battery settings or reopen it. Android may suppress overlays on secure screens and stop the process; uninterrupted presence is not guaranteed. Do not disable platform safeguards to force the app onto protected screens.

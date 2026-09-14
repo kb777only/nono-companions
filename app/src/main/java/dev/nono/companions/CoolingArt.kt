@@ -16,12 +16,12 @@ class CoolingArt(private val atlas: Bitmap) {
         paint.color=Color.WHITE; paint.alpha=255
         canvas.drawBitmap(atlas,source,target,paint)
     }
-    fun draw(c: Canvas,who: Who,phase: CoolingPhase,time: Long,w: Float,h: Float,left: Boolean,hot: Boolean,raised: Boolean,elapsed: Long) {
+    fun draw(c: Canvas,who: Who,phase: CoolingPhase,time: Long,w: Float,h: Float,left: Boolean,hot: Boolean,raised: Boolean,elapsed: Long,rain: Boolean=false) {
         c.save()
         if(left) c.scale(-1f,1f,w/2,h/2)
         if(phase==CoolingPhase.FANNING) {
             c.save()
-            val x=w*(if(raised) .22f else if(who==Who.HUSBAND) .36f else .29f); val y=h*(if(raised) .43f else .47f)
+            val x=w*(if(rain) .76f else if(raised) .22f else if(who==Who.HUSBAND) .36f else .29f); val y=h*(if(rain) .64f else if(raised) .43f else .47f)
             c.rotate(sin(time/180.0).toFloat()*18f,x,y)
             cell(c,who,0,x-w*.21f,y-w*.28f,w*.42f,w*.42f)
             c.restore()
@@ -46,7 +46,7 @@ class CoolingArt(private val atlas: Bitmap) {
             for(i in 0..2) {
                 val t=((time+i*530)%1900)/1900f
                 val x=w*(if(i%2==0) .25f else .73f)
-                val y=h*(.22f+i*.035f+t*.10f)
+                val y=h*((if(rain) .44f else .22f)+i*.035f+t*.10f)
                 val r=w*.026f
                 paint.color=Color.rgb(100,195,242)
                 paint.alpha=(sin(t*Math.PI).coerceAtLeast(0.0)*225).toInt()

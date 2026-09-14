@@ -70,7 +70,7 @@ class KeyboardOrientationTest {
     @Test fun keyboardSourcesHandleFloatingBoundsAndRevocation() {
         val s=KeyboardSignals(); s.insetBottom=300; assertEquals(300,s.bottom(1000))
         s.windowVisible=true; s.windowTop=430; assertEquals(570,s.bottom(1000))
-        s.windowVisible=false; assertEquals(0,s.bottom(1000))
+        s.windowVisible=false; assertEquals(300,s.bottom(1000))
         s.windowVisible=null; assertEquals(300,s.bottom(1000))
         s.insetBottom=0; assertEquals(0,s.bottom(1000))
     }

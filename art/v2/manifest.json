@@ -260,5 +260,32 @@
     "thermalSignal": "ACTION_BATTERY_CHANGED EXTRA_TEMPERATURE / 10.0; battery Celsius, not CPU or skin",
     "threshold": "enter >43, exit <=42; overrides weather and night"
   },
-  "coldHoodCorrection": "All 12 husband cold poses now cream hoodie with hood up and no scarf. Wife unchanged."
+  "coldHoodCorrection": "All 12 husband cold poses now cream hoodie with hood up and no scarf. Wife unchanged.",
+  "rainIntegrated": {
+    "atlases": [
+      "rain-default.png",
+      "rain-cold.png",
+      "rain-hot.png",
+      "rain-night.png"
+    ],
+    "layout": "4 columns x 6 rows; husband top 12, wife bottom 12",
+    "poses": [
+      "idle",
+      "blink",
+      "walk A",
+      "walk B",
+      "eat",
+      "claw",
+      "rest",
+      "kiss",
+      "surprise",
+      "relaxed seated",
+      "reach",
+      "kneel"
+    ],
+    "rendering": "one combined character and held umbrella per pose, fitted inside existing character window; no standalone umbrella draw",
+    "flightPriority": "fall/land/parachute/peek override rain pose",
+    "totalPoses": 96
+  },
+  "retiredRuntimeUmbrella": "umbrellas.png no longer loaded; retained as historical art only"
 }
