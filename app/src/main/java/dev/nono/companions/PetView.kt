@@ -48,26 +48,12 @@ class AnimationPlayer {
     }
 }
 class Art(context: Context) {
-    val atlases = Array(2) { who -> Array(3) { sheet ->
-        val character=if(who==0) "husband" else "wife"
-        val kind=listOf("motion","social","personal")[sheet]
-        context.assets.open("art/$character-$kind.png").use { BitmapFactory.decodeStream(it) }
-    } }
-    val bounds=Array(2) { who -> Array(3) { sheet -> Array(12) { frame ->
-        val row=frame/4; val col=frame%4
-        val bitmap=atlases[who][sheet]; val cw=bitmap.width/4; val ch=bitmap.height/3
-        var left=cw; var top=ch; var right=0; var bottom=0
-        for(y in 0 until ch) for(x in 0 until cw) if(Color.alpha(bitmap.getPixel(col*cw+x,row*ch+y)) > 40) { left=minOf(left,x); right=maxOf(right,x); top=minOf(top,y); bottom=maxOf(bottom,y) }
-        if(right<=left) Rect(col*cw,row*ch,(col+1)*cw,(row+1)*ch) else Rect(col*cw+left,row*ch+top,col*cw+right+1,row*ch+bottom+1)
-    } } }
-    val idle=Array(2) { who -> context.assets.open("art/${if(who==0) "husband" else "wife"}-idle.png").use { BitmapFactory.decodeStream(it) } }
-    val cooling=context.assets.open("art/cooling.png").use { BitmapFactory.decodeStream(it) }
+    val geometry=context.assets.open("art/character-measures.csv").reader().use { CharacterGeometry(it) }
+    val characterBitmaps=geometry.measures.values.map { it.asset }.distinct().associateWith { name ->
+        context.assets.open("art/calibrated/$name.png").use { BitmapFactory.decodeStream(it) }
+    }
     val coolingProps=context.assets.open("art/cooling-props.png").use { BitmapFactory.decodeStream(it) }
-    val wardrobe=Array(3) { index -> context.assets.open("art/weather-${listOf("cold","hot","night")[index]}.png").use { BitmapFactory.decodeStream(it) } }
-    val rain=Array(4) { index -> context.assets.open("art/rain-${listOf("default","cold","hot","night")[index]}.png").use { BitmapFactory.decodeStream(it) } }
-    val peeking=context.assets.open("art/peeking.png").use { BitmapFactory.decodeStream(it) }
     val parachutes=context.assets.open("art/parachutes.png").use { BitmapFactory.decodeStream(it) }
-    val kiss=context.assets.open("art/kiss.png").use { BitmapFactory.decodeStream(it) }
     val menus=context.assets.open("art/menus.png").use { BitmapFactory.decodeStream(it) }
     val bubbles=context.assets.open("art/bubbles.png").use { BitmapFactory.decodeStream(it) }
     val props=context.assets.open("art/props.png").use { BitmapFactory.decodeStream(it) }
@@ -82,7 +68,7 @@ class PetView(context: Context, private val who: Who, private val art: Art) : Vi
     private var bodyHeight=104f*resources.displayMetrics.density
     private var angle=0f
     fun orientation(width: Float,height: Float,degrees: Float) {
-        if(bodyWidth!=width || bodyHeight!=height || angle!=degrees) { bodyWidth=width; bodyHeight=height; angle=degrees; invalidate() }
+        if(bodyWidth!=width || bodyHeight!=height || angle!=degrees) { bodyWidth=width; bodyHeight=height; angle=degrees; changed() }
     }
     private var hot=false
     private var coolingPhase=CoolingPhase.NONE
@@ -95,74 +81,53 @@ class PetView(context: Context, private val who: Who, private val art: Art) : Vi
     private var hearts=emptyList<KissHeart>()
     private var time=0L
     fun update(world: World, now: Long) {
-        if(hot || world.deviceHeat.hot) invalidate()
+        if(hot || world.deviceHeat.hot) changed()
         hot=world.deviceHeat.hot
         coolingPhase=world.cooling[who.ordinal].phase
         coolingElapsed=world.cooling[who.ordinal].elapsed(now)
         val hadHearts=hearts.isNotEmpty(); hearts=world.hearts.filter { it.who==who }; time=now
-        if(hadHearts || hearts.isNotEmpty()) invalidate()
-        if(raining!=world.weather.raining) { raining=world.weather.raining; invalidate() }
-        if(outfit!=world.weather.outfit) { outfit=world.weather.outfit; invalidate() }
+        if(hadHearts || hearts.isNotEmpty()) changed()
+        if(raining!=world.weather.raining) { raining=world.weather.raining; changed() }
+        if(outfit!=world.weather.outfit) { outfit=world.weather.outfit; changed() }
         val newFrame=player.frame(world.pose(who,now),now)
         val left=if(newFrame in 42..43) !world.pet(who).hideLeft else world.facesLeft(who)
-        if(newFrame!=frame || left!=facingLeft) { frame=newFrame; facingLeft=left; invalidate() }
+        if(newFrame!=frame || left!=facingLeft) { frame=newFrame; facingLeft=left; changed() }
     }
     fun nextFrameDelay(now: Long)=(player.nextFrameAt-now).coerceIn(40,1000)
-    override fun onDraw(canvas: Canvas) {
+    val overflow = object: View(context) {
+        override fun onDraw(canvas: Canvas) { drawLayer(canvas,width,height,true) }
+    }
+    private fun changed() { invalidate(); overflow.invalidate() }
+    private fun measure()=art.geometry.select(who,frame,outfit,raining)
+    private fun placement()=measure().placement(bodyHeight/104f,frame in 42..43)
+    fun rainSurface(): Pair<Float,Float> { val p=placement(); return (p.top+bodyHeight/2)/bodyHeight to p.width/bodyWidth/2 }
+    fun contentBounds(degrees: Float)=placement().bounds(degrees,facingLeft)
+    fun facePosition(): Pair<Float,Float> { val p=placement(); return (if(facingLeft) -p.faceX else p.faceX) to p.faceY }
+    override fun onDraw(canvas: Canvas) { drawLayer(canvas,width,height,false) }
+    private fun drawLayer(canvas: Canvas,viewportWidth: Int,viewportHeight: Int,outside: Boolean) {
         canvas.drawColor(Color.TRANSPARENT,PorterDuff.Mode.CLEAR)
-        canvas.save()
-        canvas.translate(width/2f,height/2f)
+        canvas.save(); canvas.translate(viewportWidth/2f,viewportHeight/2f)
+        if(outside) {
+            // Exclude precisely the screen-aligned touch window; no seam overlaps.
+            val core=OrientationSnap.extent(if(frame in 42..43) bodyHeight*72/104 else bodyWidth,if(frame in 42..43) bodyHeight*72/104 else bodyHeight,angle)
+            canvas.clipOutRect(-kotlin.math.ceil(core.first/2),-kotlin.math.ceil(core.second/2),kotlin.math.ceil(core.first/2),kotlin.math.ceil(core.second/2))
+        }
         canvas.rotate(angle)
-        if(frame in 42..43) {
-            val cw=art.peeking.width/2; val ch=art.peeking.height/2
-            kissSource.set((frame-42)*cw,who.ordinal*ch,(frame-41)*cw,(who.ordinal+1)*ch)
-            val w=38f*resources.displayMetrics.density; val h=44f*resources.displayMetrics.density
-            if(facingLeft) canvas.scale(-1f,1f)
-            destination.set(-w/2,-h/2,w/2,h/2)
-            canvas.drawBitmap(art.peeking,kissSource,destination,paint)
-            canvas.restore(); return
-        }
+        val m=measure(); val p=placement(); val bitmap=art.characterBitmaps.getValue(m.asset)
+        kissSource.set(m.x,m.y,m.x+m.width,m.y+m.height)
+        destination.set(p.left,p.top,p.left+p.width,p.top+p.height)
+        canvas.save(); if(facingLeft) canvas.scale(-1f,1f)
+        canvas.drawBitmap(bitmap,kissSource,destination,paint); canvas.restore()
+        if(frame in 42..43) { canvas.restore(); return }
         canvas.translate(-bodyWidth/2,-bodyHeight/2)
-        val sheet=frame/12; val cell=frame%12
         val rainPose=umbrellaPose(raining,frame)
-        val coolingFrame=frame in 44..47 && !rainPose
-        val dressed=outfit!=Outfit.DEFAULT && !coolingFrame
-        val bitmap=if(rainPose) art.rain[outfit.ordinal] else if(coolingFrame) art.cooling else if(dressed) art.wardrobe[outfit.ordinal-1] else if(frame>=48) art.idle[who.ordinal] else if(frame>=40) art.parachutes else if(frame>=36) art.kiss else art.atlases[who.ordinal][sheet]
-        if(rainPose) {
-            val cellIndex=rainFrame(frame)+who.ordinal*12; val cw=bitmap.width/4; val ch=bitmap.height/6
-            kissSource.set((cellIndex%4)*cw,(cellIndex/4)*ch,(cellIndex%4+1)*cw,(cellIndex/4+1)*ch)
-        }
-        else if(coolingFrame) {
-            val cw=bitmap.width/4; val ch=bitmap.height/2
-            kissSource.set((frame-44)*cw,who.ordinal*ch,(frame-43)*cw,(who.ordinal+1)*ch)
-        }
-        else if(dressed) {
-            val cellIndex=dressedFrame(frame)+who.ordinal*12; val cw=bitmap.width/4; val ch=bitmap.height/6
-            kissSource.set((cellIndex%4)*cw,(cellIndex/4)*ch,(cellIndex%4+1)*cw,(cellIndex/4+1)*ch)
-        }
-        else if(frame>=48) {
-            val index=frame-48; val cw=bitmap.width/4; val ch=bitmap.height/4
-            kissSource.set(index%4*cw,index/4*ch,(index%4+1)*cw,(index/4+1)*ch)
-        }
-        else if(frame>=40) kissSource.set((frame-39)*bitmap.width/3,who.ordinal*bitmap.height/2,(frame-38)*bitmap.width/3,(who.ordinal+1)*bitmap.height/2)
-        else if(frame>=36) kissSource.set((frame-36)*bitmap.width/4,who.ordinal*bitmap.height/2,(frame-35)*bitmap.width/4,(who.ordinal+1)*bitmap.height/2)
-        val source=if(rainPose || dressed || frame>=36) kissSource else art.bounds[who.ordinal][sheet][cell]
-        // Uniform scale uses original cell height, preserving seated/standing head scale.
-        val scale=if(rainPose) minOf(bodyWidth/ source.width(),bodyHeight/source.height()) else bodyHeight/(bitmap.height/(if(rainPose || dressed) 6f else if(frame>=48) 4f else if(frame>=36) 2f else 3f)) * if(who==Who.WIFE) .9f else .97f
-        val dw=source.width()*scale; val dh=source.height()*scale
-        val bottom=bodyHeight-2
-        canvas.save()
-        if(facingLeft) canvas.scale(-1f,1f,bodyWidth/2f,bodyHeight/2f)
-        paint.color=Color.WHITE
-        destination.set((bodyWidth-dw)/2,bottom-dh,(bodyWidth+dw)/2,bottom)
-        canvas.drawBitmap(bitmap,source,destination,paint)
-        canvas.restore()
-        coolingArt.draw(canvas,who,coolingPhase,time,bodyWidth,bodyHeight,facingLeft,hot,frame==45,coolingElapsed,rainPose)
+        coolingArt.draw(canvas,who,coolingPhase,time,bodyWidth,bodyHeight,facingLeft,hot,frame==45,coolingElapsed,rainPose,bodyWidth/2+facePosition().first,bodyHeight/2+facePosition().second)
         for(heart in hearts) {
             val progress=heart.progress(time)
             val size=bodyWidth*.12f
-            val x=heart.x*bodyWidth
-            val y=(if(rainPose) .34f+heart.y*.7f else heart.y)*bodyHeight-progress*bodyHeight*.12f
+            val face=facePosition()
+            val x=bodyWidth/2+face.first+(heart.x-.5f)*bodyWidth*.7f
+            val y=bodyHeight/2+face.second+(heart.y-.24f)*bodyHeight-progress*bodyHeight*.12f
             paint.alpha=((1-progress)*255).toInt()
             destination.set(x-size/2,y-size/2,x+size/2,y+size/2)
             canvas.drawBitmap(art.props,heartCell,destination,paint)

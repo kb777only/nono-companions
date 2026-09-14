@@ -64,6 +64,8 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
     private var nextEnvironment=0L
     private val rainViews=mutableMapOf<Who,Pair<RainView,WindowManager.LayoutParams>>()
     private val views=mutableMapOf<Who,PetView>()
+    private val overflowParams=mutableMapOf<Who,WindowManager.LayoutParams>()
+    private val displayCenters=mutableMapOf<Who,Pair<Float,Float>>()
     private val params=mutableMapOf<Who,WindowManager.LayoutParams>()
     private var menu: ActionMenu?=null
     private var menuParams: WindowManager.LayoutParams?=null
@@ -98,7 +100,7 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
                     nextEnvironment=0L
                     if(started && screenOn) { handler.removeCallbacks(tick); handler.post(tick) }
                 }
-                Intent.ACTION_SCREEN_OFF -> { screenOn=false; tilt.stop(); handler.removeCallbacks(tick); world.held=null; gestureEpoch++; world.interrupt(now(),resetMotion=true); store.save(world); removeRain(); removeCanopies(); removeMenu(); removeSpeech(); removeProp(); views.values.forEach { it.visibility=View.GONE } }
+                Intent.ACTION_SCREEN_OFF -> { screenOn=false; tilt.stop(); handler.removeCallbacks(tick); world.held=null; gestureEpoch++; world.interrupt(now(),resetMotion=true); store.save(world); removeRain(); removeCanopies(); removeMenu(); removeSpeech(); removeProp(); views.values.forEach { it.visibility=View.GONE; it.overflow.visibility=View.GONE } }
                 Intent.ACTION_SCREEN_ON,Intent.ACTION_USER_PRESENT -> { screenOn=true; ContextService.refresh(); tilt.start(); world.resetClock(); handler.removeCallbacks(tick); handler.post(tick) }
             }
         }
@@ -131,6 +133,9 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
                     if(next!=keyboardSignals.insetBottom) { keyboardSignals.insetBottom=next; handler.post { bounds() } }; insets
                 }
                 wm.addView(view,lp)
+                val extra=layout(dp(160),dp(240),true); extra.alpha=.05f
+                extra.flags=extra.flags or WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+                overflowParams[who]=extra; wm.addView(view.overflow,extra)
             }
             ContextService.keyboard?.let { keyboardSignals.windowVisible=it.first; keyboardSignals.windowTop=it.second }
             bounds()
@@ -151,7 +156,7 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
         WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL or WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN or (if(passThrough) WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE else 0),PixelFormat.TRANSLUCENT).apply {
         gravity=Gravity.TOP or Gravity.LEFT
         // Bubbles remain below Android's maximum obscuring opacity for pass-through touches.
-        if(passThrough) alpha=.75f
+        if(passThrough) alpha=.01f
         softInputMode=WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE
         // Coordinates are absolute; bounds() applies cutout/system insets exactly once.
         layoutInDisplayCutoutMode=WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS
@@ -162,9 +167,9 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
             if(!screenOn) return
             if(!Settings.canDrawOverlays(this@CompanionService)) { store.save(world); stopSelf(); return }
             val locked=getSystemService(KeyguardManager::class.java).isKeyguardLocked
-            if(locked) { world.held=null; gestureEpoch++; removeRain(); removeCanopies(); removeMenu(); tilt.stop(); views.values.forEach { it.visibility=View.GONE }; removeSpeech(); removeProp(); handler.postDelayed(this,2000); return }
+            if(locked) { world.held=null; gestureEpoch++; removeRain(); removeCanopies(); removeMenu(); tilt.stop(); views.values.forEach { it.visibility=View.GONE; it.overflow.visibility=View.GONE }; removeSpeech(); removeProp(); handler.postDelayed(this,2000); return }
             tilt.start()
-            views.values.forEach { it.visibility=if(usableForHeads) View.VISIBLE else View.GONE }
+            views.values.forEach { it.visibility=if(usableForHeads) View.VISIBLE else View.GONE; it.overflow.visibility=it.visibility }
             val time=now()
             if(dev.angle==null) orientation.sample(actualGravity,actualReliable,time)
             val angle=orientation.value(time)
@@ -180,6 +185,7 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
                 showProp(time)
                 showCanopies()
                 showRain(time,angle)
+                balancePassThrough()
             } catch(_: WindowManager.BadTokenException) { stopSelf(); return } catch(_: SecurityException) { stopSelf(); return } catch(_: IllegalArgumentException) { stopSelf(); return }
             if(time-savedAt > 60000) { store.save(world); savedAt=time }
             val falling=world.pets.any { !it.motion.grounded && it.state!=State.DRAGGED }
@@ -214,9 +220,8 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
                     if(epoch==gestureEpoch && gesture.move(dx,dy)) {
                         handler.removeCallbacks(hold); removeMenu(); world.held=null
                         world.command(Command.Drag(who,originalX+dx,originalY+dy),now())
-                        val p=world.pet(who); val lp=params.getValue(who); lp.x=originX+p.x.toInt(); lp.y=originY+p.y.toInt()
-                        try { wm.updateViewLayout(view,lp) } catch(_: Exception) { stopSelf() }
-                        view.update(world,now()); removeCanopies(); removeSpeech(); removeProp()
+                        try { updatePetWindow(world.pet(who),now(),orientation.value(now())) } catch(_: Exception) { stopSelf() }
+                        removeCanopies(); removeSpeech(); removeProp()
                     }; true
                 }
                 MotionEvent.ACTION_UP,MotionEvent.ACTION_CANCEL -> {
@@ -248,7 +253,7 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
     }
     private fun positionMenu() {
         val lp=menuParams ?: return; val p=world.pet(menuWho ?: return)
-        lp.x=originX+(p.x+world.petWidth/2-lp.width/2).toInt().coerceIn(0,(world.width.toInt()-lp.width).coerceAtLeast(0))
+        lp.x=originX+(face(p.who).first-lp.width/2).toInt().coerceIn(0,(world.width.toInt()-lp.width).coerceAtLeast(0))
         lp.y=originY+(p.y-lp.height).toInt().coerceIn(0,(world.height.toInt()-lp.height).coerceAtLeast(0))
     }
     private fun removeMenu() {
@@ -265,7 +270,8 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
         val keyboardVisible=dev.keyboard ?: keyboardSignals.visible
         val h=(b.height()-inset.top-maxOf(inset.bottom,imeBottom)).coerceAtLeast(1)
         usableForHeads=h>=dp(60)
-        val pw=minOf(dp(72),w/3).coerceAtLeast(24); val ph=minOf(dp(104),h/3).coerceAtLeast(32)
+        // Fold/IME changes move the companions; they must never change their scale.
+        val pw=dp(72); val ph=dp(104)
         val key="$w,$h,$pw,$ph,${inset.left},${inset.top},$keyboardVisible"
         if(!force && key==geometry) return
         gestureEpoch++; world.held=null; removeRain(); removeCanopies(); removeMenu(); geometry=key; originX=inset.left; originY=inset.top
@@ -283,16 +289,53 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
     private fun updatePetWindow(p: Pet,time: Long,angle: Float) {
         val lp=params.getValue(p.who); val view=views.getValue(p.who)
         val peek=p.state==State.PEEKING
-        val size=if(peek) OrientationSnap.extent(dp(38).toFloat(),dp(44).toFloat(),angle) else world.petWidth to world.petHeight
-        val w=size.first.toInt(); val h=size.second.toInt()
-        val x=originX+(if(peek) { if(p.hideLeft) 0 else (world.width-w).toInt() } else p.x.toInt()).coerceIn(0,(world.width.toInt()-w).coerceAtLeast(0))
-        val y=originY+(if(peek) world.peekTop(p.who,h.toFloat()) else p.y+(world.petHeight-h)/2).toInt().coerceIn(0,(world.height.toInt()-h).coerceAtLeast(0))
+        view.orientation(bodyWidth,bodyHeight,angle); view.update(world,time)
+        val unit=bodyHeight/104f
+        val size=if(peek) OrientationSnap.extent(72*unit,72*unit,angle) else world.petWidth to world.petHeight
+        fun even(v: Float)=2*kotlin.math.ceil(v/2).toInt()
+        val w=even(size.first); val h=even(size.second)
+        val ink=view.contentBounds(angle)
+        val cx=CharacterGeometry.visibleCenter(if(peek) { if(p.hideLeft) w/2f else world.width-w/2f } else p.x+world.petWidth/2,minOf(ink[0],-w/2f),maxOf(ink[2],w/2f),world.width)
+        val cy=CharacterGeometry.visibleCenter(if(peek) world.peekTop(p.who,h.toFloat())+h/2 else p.y+world.petHeight/2,minOf(ink[1],-h/2f),maxOf(ink[3],h/2f),world.height)
+        // One integer center for both surfaces avoids a fractional-pixel seam.
+        val centerX=kotlin.math.round(cx); val centerY=kotlin.math.round(cy)
+        displayCenters[p.who]=centerX to centerY
+        val x=originX+centerX.toInt()-w/2; val y=originY+centerY.toInt()-h/2
         val flags=if(world.keyboardOpen) lp.flags or WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE else lp.flags and WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE.inv()
-        val alpha=if(world.keyboardOpen) .55f else 1f
+        val alpha=if(world.keyboardOpen) { if(lp.flags and WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE!=0) lp.alpha else .01f } else 1f
         val changed=lp.x!=x || lp.y!=y || lp.width!=w || lp.height!=h || lp.flags!=flags || lp.alpha!=alpha
         lp.x=x; lp.y=y; lp.width=w; lp.height=h; lp.flags=flags; lp.alpha=alpha
-        view.orientation(bodyWidth,bodyHeight,angle); view.update(world,time)
         if(changed) wm.updateViewLayout(view,lp)
+        val extra=overflowParams.getValue(p.who)
+        val extent=OrientationSnap.extent(CharacterGeometry.OVERFLOW_WIDTH*unit,CharacterGeometry.OVERFLOW_HEIGHT*unit,angle)
+        val ew=even(extent.first); val eh=even(extent.second)
+        val ex=originX+centerX.toInt()-ew/2; val ey=originY+centerY.toInt()-eh/2
+        if(extra.x!=ex || extra.y!=ey || extra.width!=ew || extra.height!=eh) {
+            extra.x=ex; extra.y=ey; extra.width=ew; extra.height=eh; wm.updateViewLayout(view.overflow,extra)
+        }
+    }
+    private fun center(who: Who)=displayCenters[who] ?: (world.pet(who).x+world.petWidth/2 to world.pet(who).y+world.petHeight/2)
+    private fun face(who: Who): Pair<Float,Float> {
+        val f=views.getValue(who).facePosition(); val r=Math.toRadians(orientation.value(now()).toDouble())
+        val c=center(who)
+        return c.first+(f.first*kotlin.math.cos(r)-f.second*kotlin.math.sin(r)).toFloat() to c.second+(f.first*kotlin.math.sin(r)+f.second*kotlin.math.cos(r)).toFloat()
+    }
+    /** Conservative global opacity budget, including overlapping spouses and effects. */
+    private fun balancePassThrough() {
+        val layers=mutableListOf<Triple<View,WindowManager.LayoutParams,Float>>()
+        Who.entries.forEach { who ->
+            overflowParams[who]?.let { layers.add(Triple(views.getValue(who).overflow,it,.65f)) }
+            if(world.keyboardOpen) params[who]?.let { layers.add(Triple(views.getValue(who),it,.55f)) }
+        }
+        rainViews.values.forEach { layers.add(Triple(it.first,it.second,.30f)) }
+        canopies.values.forEach { layers.add(Triple(it.first,it.second,.55f)) }
+        speech?.let { v -> speechParams?.let { layers.add(Triple(v,it,.85f)) } }
+        propView?.let { v -> propParams?.let { layers.add(Triple(v,it,.75f)) } }
+        val alphas=OverlayOpacity.distribute(layers.map { it.third })
+        layers.forEachIndexed { index,(view,lp,_) ->
+            val alpha=alphas[index]
+            if(kotlin.math.abs(lp.alpha-alpha)>.001f) { lp.alpha=alpha; wm.updateViewLayout(view,lp) }
+        }
     }
 
     private fun showRain(time: Long,angle: Float) {
@@ -302,13 +345,13 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
             val existing=rainViews[who]
             val pair=existing ?: (RainView(this) to layout(dp(160),dp(260),true))
             val size=OrientationSnap.extent(dp(160).toFloat(),dp(260).toFloat(),angle)
-            val lp=pair.second; lp.alpha=.30f
+            val lp=pair.second
             val w=size.first.toInt(); val h=size.second.toInt()
-            val x=originX+(p.x+world.petWidth/2-w/2).toInt()
-            val y=originY+(p.y+world.petHeight/2-h/2).toInt()
+            val x=originX+(center(who).first-w/2).toInt()
+            val y=originY+(center(who).second-h/2).toInt()
             val changed=lp.x!=x || lp.y!=y || lp.width!=w || lp.height!=h
             lp.x=x; lp.y=y; lp.width=w; lp.height=h
-            pair.first.update(p,time,angle,umbrellaPose(world.weather.raining,world.pose(who,time).frame))
+            pair.first.update(p,time,angle,umbrellaPose(world.weather.raining,world.pose(who,time).frame),views.getValue(who).rainSurface())
             if(existing==null) { rainViews[who]=pair; wm.addView(pair.first,lp) }
             else if(changed) wm.updateViewLayout(pair.first,lp)
         }
@@ -327,14 +370,13 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
                 val existing=canopies[who]
                 val pair=existing ?: (ParachuteView(this,artwork.parachutes,who) to layout(dp(96),dp(90),true))
                 val lp=pair.second
-                lp.alpha=if(world.weather.raining) .30f else .55f // Two overlapping pass-through canopies stay below Android’s .8 obscuring limit.
                 val angle=orientation.value(now()); pair.first.renew(now()); pair.first.orientation(angle)
                 val extent=OrientationSnap.extent(dp(96).toFloat(),dp(90).toFloat(),angle)
                 val w=extent.first.toInt(); val h=extent.second.toInt()
                 val radians=Math.toRadians(angle.toDouble())
-                val distance=bodyHeight*.16f+dp(45)
-                val x=originX+(p.x+world.petWidth/2+kotlin.math.sin(radians)*distance-w/2).toInt().coerceIn(0,(world.width.toInt()-w).coerceAtLeast(0))
-                val y=originY+(p.y+world.petHeight/2-kotlin.math.cos(radians)*distance-h/2).toInt().coerceIn(0,(world.height.toInt()-h).coerceAtLeast(0))
+                val distance=-views.getValue(who).facePosition().second+dp(35)
+                val x=originX+(center(who).first+kotlin.math.sin(radians)*distance-w/2).toInt().coerceIn(0,(world.width.toInt()-w).coerceAtLeast(0))
+                val y=originY+(center(who).second-kotlin.math.cos(radians)*distance-h/2).toInt().coerceIn(0,(world.height.toInt()-h).coerceAtLeast(0))
                 val changed=lp.x!=x || lp.y!=y || lp.width!=w || lp.height!=h
                 lp.width=w; lp.height=h
                 lp.x=x; lp.y=y
@@ -360,9 +402,9 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
     }
     private fun positionSpeech() {
         val lp=speechParams ?: return; val p=world.pet(spoken?.who ?: return)
-        lp.x=originX+(p.x+world.petWidth/2-lp.width/2).toInt().coerceIn(0,(world.width.toInt()-lp.width).coerceAtLeast(0))
+        lp.x=originX+(face(p.who).first-lp.width/2).toInt().coerceIn(0,(world.width.toInt()-lp.width).coerceAtLeast(0))
         val bh=lp.height
-        lp.y=originY+(if(p.y>bh) p.y.toInt()-bh else (p.y+world.petHeight).toInt()).coerceIn(0,(world.height.toInt()-bh).coerceAtLeast(0))
+        lp.y=originY+(if(face(p.who).second>bh+dp(22)) face(p.who).second.toInt()-bh-dp(22) else face(p.who).second.toInt()+dp(22)).coerceIn(0,(world.height.toInt()-bh).coerceAtLeast(0))
     }
     private fun removeSpeech() { speech?.let { if(it.isAttachedToWindow) try { wm.removeView(it) } catch(_: Exception) {} }; speech=null; speechParams=null; spoken=null }
     private fun showProp(time: Long) {
@@ -372,10 +414,11 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
         val toLeft=world.facesLeft(prop.owner)
         val angle=orientation.value(time); val r=Math.toRadians(angle.toDouble())
         val extent=OrientationSnap.extent(dp(22).toFloat(),dp(22).toFloat(),angle)
-        val localX=bodyWidth*((if(toLeft) .28f else .65f)-.5f)
-        val localY=bodyHeight*((if(p.state==State.EATING) .36f else .56f)-.5f)
-        val targetX=originX+p.x+world.petWidth/2+(localX*kotlin.math.cos(r)-localY*kotlin.math.sin(r)).toFloat()-extent.first/2
-        val targetY=originY+p.y+world.petHeight/2+(localX*kotlin.math.sin(r)+localY*kotlin.math.cos(r)).toFloat()-extent.second/2
+        val faceLocal=views.getValue(prop.owner).facePosition()
+        val localX=faceLocal.first+bodyWidth*(if(toLeft) -.08f else .08f)
+        val localY=faceLocal.second+bodyHeight*(if(p.state==State.EATING) .08f else .25f)
+        val targetX=originX+center(prop.owner).first+(localX*kotlin.math.cos(r)-localY*kotlin.math.sin(r)).toFloat()-extent.first/2
+        val targetY=originY+center(prop.owner).second+(localX*kotlin.math.sin(r)+localY*kotlin.math.cos(r)).toFloat()-extent.second/2
         if(propView?.type!=prop.type) {
             removeProp(); val view=PropView(this,prop.type,artwork.props); val lp=layout(dp(22),dp(22),true)
             lp.x=targetX.toInt(); lp.y=targetY.toInt(); propView=view; propParams=lp; propOwner=prop.owner; propMovedAt=0
@@ -383,9 +426,7 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
         }
         val lp=propParams ?: return
         propView?.orientation(angle)
-        val propAlpha=if(world.weather.raining) .30f else .75f
-        val sizeChanged=lp.width!=extent.first.toInt() || lp.height!=extent.second.toInt() || lp.alpha!=propAlpha
-        lp.alpha=propAlpha
+        val sizeChanged=lp.width!=extent.first.toInt() || lp.height!=extent.second.toInt()
         lp.width=extent.first.toInt(); lp.height=extent.second.toInt()
         val scene=world.interaction
         propView?.setBitten(prop.type==PropType.COOKIE && scene!=null && (scene.stage>0 || time-scene.since>800))
@@ -406,7 +447,7 @@ class CompanionService : Service(), DisplayManager.DisplayListener {
     override fun onDestroy() {
         devPrefs.unregisterOnSharedPreferenceChangeListener(devListener)
         handler.removeCallbacksAndMessages(null); if(::tilt.isInitialized) tilt.stop(); if(::store.isInitialized) store.save(world)
-        removeRain(); removeCanopies(); removeMenu(); removeSpeech(); removeProp(); views.values.forEach { if(it.isAttachedToWindow) try { wm.removeView(it) } catch(_: Exception) {} }; views.clear()
+        removeRain(); removeCanopies(); removeMenu(); removeSpeech(); removeProp(); views.values.forEach { try { wm.removeViewImmediate(it.overflow) } catch(_: Exception) {}; if(it.isAttachedToWindow) try { wm.removeView(it) } catch(_: Exception) {} }; views.clear(); overflowParams.clear(); displayCenters.clear()
         if(started) { unregisterReceiver(receiver); displays.unregisterDisplayListener(this) }
         reference.clear(); super.onDestroy()
     }

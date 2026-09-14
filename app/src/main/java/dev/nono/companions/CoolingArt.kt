@@ -16,7 +16,7 @@ class CoolingArt(private val atlas: Bitmap) {
         paint.color=Color.WHITE; paint.alpha=255
         canvas.drawBitmap(atlas,source,target,paint)
     }
-    fun draw(c: Canvas,who: Who,phase: CoolingPhase,time: Long,w: Float,h: Float,left: Boolean,hot: Boolean,raised: Boolean,elapsed: Long,rain: Boolean=false) {
+    fun draw(c: Canvas,who: Who,phase: CoolingPhase,time: Long,w: Float,h: Float,left: Boolean,hot: Boolean,raised: Boolean,elapsed: Long,rain: Boolean=false,faceX: Float=w/2,faceY: Float=h*.25f) {
         c.save()
         if(left) c.scale(-1f,1f,w/2,h/2)
         if(phase==CoolingPhase.FANNING) {
@@ -45,8 +45,8 @@ class CoolingArt(private val atlas: Bitmap) {
             // Bounded local face droplets, staggered fades and downward motion, no allocations per drop.
             for(i in 0..2) {
                 val t=((time+i*530)%1900)/1900f
-                val x=w*(if(i%2==0) .25f else .73f)
-                val y=h*((if(rain) .44f else .22f)+i*.035f+t*.10f)
+                val x=faceX+w*(if(i%2==0) -.18f else .18f)
+                val y=faceY+h*(-.03f+i*.035f+t*.10f)
                 val r=w*.026f
                 paint.color=Color.rgb(100,195,242)
                 paint.alpha=(sin(t*Math.PI).coerceAtLeast(0.0)*225).toInt()

@@ -10,9 +10,10 @@ class RainView(context: Context): View(context) {
     private val paint=Paint(Paint.ANTI_ALIAS_FLAG or Paint.FILTER_BITMAP_FLAG)
     private var angle=0f; private var time=0L; private var umbrella=true
     private var lastX: Float?=null; private var lastY=0f
-    fun update(p: Pet,now: Long,degrees: Float,holdsUmbrella: Boolean) {
+    fun update(p: Pet,now: Long,degrees: Float,holdsUmbrella: Boolean,surface: Pair<Float,Float>) {
         angle=degrees; time=now
         umbrella=holdsUmbrella
+        particles.canopyTop=surface.first; particles.canopyRadius=surface.second
         val density=resources.displayMetrics.density
         val rawX=p.x-(lastX ?: p.x); val rawY=if(lastX==null) 0f else p.y-lastY
         val r=Math.toRadians(-degrees.toDouble())

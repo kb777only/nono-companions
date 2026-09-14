@@ -1,3 +1,5 @@
+> Historical v0.9.0 failure report. The v0.9.1 fixes and replacement verification are documented in [VERSION-0.9.1.md](VERSION-0.9.1.md) and [calibrated-verification.json](scale-audit/calibrated-verification.json). The old script is intentionally pinned to the old renderer.
+
 # Character scale audit — v0.9.0: FAIL
 
 Audit date: 2026-09-14. Application commit: 218493b. No app or artwork correction is included in this verification change.

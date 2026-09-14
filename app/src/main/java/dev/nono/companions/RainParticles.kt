@@ -8,6 +8,7 @@ data class WaterDrop(var x: Float,var y: Float,var vx: Float,var vy: Float,val b
 }
 /** Character-local coordinates, translated against movement so foot droplets remain behind. */
 class RainParticles(private val random: Random=Random.Default) {
+    var canopyTop=.30f; var canopyRadius=.48f
     val drops=mutableListOf<WaterDrop>()
     private var last=0L; private var spawn=0L; private var step=0L
     fun clear() { drops.clear(); last=0; spawn=0; step=0 }
@@ -16,7 +17,7 @@ class RainParticles(private val random: Random=Random.Default) {
         drops.forEach { it.x-=dx; it.y-=dy }
         drops.removeAll { now-it.born>=it.life || it.x !in -1f..2f || it.y>1.45f }
         if(now>=spawn && drops.size<56) {
-            repeat(2) { drops.add(WaterDrop(random.nextFloat()*1.5f-.25f,-.70f+random.nextFloat()*.12f,.02f,1.1f+random.nextFloat()*.4f,now,random.nextLong(1300,1900))) }
+            repeat(2) { drops.add(WaterDrop(random.nextFloat()*1.5f-.25f,minOf(-.70f,canopyTop-.3f)+random.nextFloat()*.12f,.02f,1.1f+random.nextFloat()*.4f,now,random.nextLong(1300,1900))) }
             spawn=now+90
         }
         if(walking && abs(dx)+abs(dy)>.001f && now>=step && drops.size<60) {
@@ -37,7 +38,7 @@ class RainParticles(private val random: Random=Random.Default) {
     }
     fun surface(x: Float,umbrella: Boolean): Float? {
         val dx=x-.5f
-        if(umbrella && abs(dx)<.48f) return .30f+.16f*(dx/.48f).pow(2)
+        if(umbrella && abs(dx)<canopyRadius) return canopyTop+.16f*(dx/canopyRadius).pow(2)
         if(abs(dx)<.32f) return .23f-.21f*sqrt(1-(dx/.32f).pow(2))
         return if(x in .2f.. .8f) .55f else null
     }

@@ -1,6 +1,6 @@
 # NoNo Companions
 
-A private native Kotlin Android app for your two chibi companions. Version 0.9.0 adds four personal idle antics per spouse, 32 new animation frames, and three coordinated shared idle scenes. French preview buttons are available in the developer menu. See [this update](docs/VERSION-0.9.md).
+A private native Kotlin Android app for your two chibi companions. Version 0.9.1 corrects character scale across all 296 character frames, removes clipping and neighbouring-frame fragments, and keeps scale fixed through outfit, keyboard and rotation changes. See [this update](docs/VERSION-0.9.1.md).
 
 ## Install
 

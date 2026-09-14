@@ -1,3 +1,14 @@
+# Version 0.9.1 verification — September 14, 2026
+
+- Debug APK build, 85 unit tests and lint passed (zero errors, 20 warnings).
+- All 1,024 runtime pose/outfit/rain routes use the 296 calibrated frames. Six densities, intermediate rotations, mirroring and display-edge placement checked.
+- Packaged PNG/CSV bytes match the verified files; all 296 crops have nonempty art and transparent margins. All 19 calibrated atlases visually reviewed.
+- APK SHA-256: `2b69dedbbd8526b23e45c1beed6e16fd5c88b17dc54d8eab0fed113dbb4bf31e`.
+- No connected phone or configured emulator: no installation, physical display, keyboard or overlay-touch test.
+- See [details and reproduction](VERSION-0.9.1.md).
+
+---
+
 # Version 0.5.1 verification — September 14, 2026
 
 - Debug build, 42 tests and lint passed; no test failures.
