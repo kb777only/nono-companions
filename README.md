@@ -1,6 +1,6 @@
 # NoNo Companions
 
-A private native Kotlin Android app for your two chibi companions. Version 0.10.0 aligns raindrop collisions with the visible umbrella and adds complete seasonal and umbrella animation sets for both spouses. See [this update](docs/VERSION-0.10.md).
+A private native Kotlin Android app for your two chibi companions. Version 0.11.0 replaces the weather artwork to match the original faces, clothing details and drawing style, with corrected anatomy and calibrated display size. See [this update](docs/VERSION-0.11.md).
 
 ## Install
 

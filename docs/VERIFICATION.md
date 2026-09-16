@@ -1,3 +1,15 @@
+# Version 0.11.0 verification — September 16, 2026
+
+- Debug APK built, version code 13. All 91 unit tests passed; lint reports zero errors and 20 warnings.
+- All 1,024 runtime routes resolve to 910 calibrated frames across 75 atlases. Pixel/crop/hash checks passed, and APK PNG/CSV bytes match the checked assets. Rejected w10 atlases are absent from the APK.
+- Regenerated 56 weather sheets from original art references. Reviewed generated outputs, corrected extra umbrella hands and inconsistent clothing, and inspected the packed standing comparison plus representative corrected action sheets.
+- Added a regression check that neutral poses across all weather sheets keep the original face height above the feet. Existing tests cover every route, density, intermediate rotation, mirroring, bounds and distinct seasonal frames. These checks do not certify perfect perceptual continuity across generated drawings.
+- APK SHA-256: `0db1cf75d51148bf1cb613892e44a64cf6530a12dd0fcf387fe058d27f63d605`.
+- No connected phone or configured emulator: no installation or on-device animation, overlay or keyboard test. Live weather remains disabled.
+- See [release details and reproduction](VERSION-0.11.md).
+
+---
+
 # Version 0.10.0 verification — September 14, 2026
 
 - Debug APK built and signature verified, version code 12. 90 unit tests passed; lint has zero errors and 20 warnings.

@@ -60,7 +60,20 @@ class CharacterGeometryTest {
             for(sequence in listOf(0..3,4..7,12..14,16..18,20..22,24..27,28..31,32..35,36..39,48..51,52..55,56..59,60..63)) {
                 val selected=sequence.map { g.select(who,it,outfit,rain) }
                 assertEquals(sequence.count(),selected.map { "${it.asset}:${it.index}" }.toSet().size)
-                if(rain || outfit!=Outfit.DEFAULT) assertTrue(selected.all { it.asset.startsWith("w10-") })
+                if(rain || outfit!=Outfit.DEFAULT) assertTrue(selected.all { it.asset.startsWith("w11-") })
+            }
+        }
+    }
+    @Test fun changingWeatherKeepsNeutralFaceAtOriginalHeightAboveFeet() {
+        val g=geometry()
+        for(who in Who.entries) {
+            val original=g.select(who,4,Outfit.DEFAULT,false).placement()
+            for(outfit in Outfit.entries) for(rain in listOf(false,true)) {
+                if(outfit==Outfit.DEFAULT && !rain) continue
+                for(frame in listOf(4,15,26,52)) {
+                    val pose=g.select(who,frame,outfit,rain).placement()
+                    assertEquals("$who $outfit rain=$rain frame=$frame",original.faceY,pose.faceY,.02f)
+                }
             }
         }
     }

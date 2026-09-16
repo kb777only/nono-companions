@@ -1,0 +1,16 @@
+{
+  "name": "wife-rain-night-extras",
+  "who": "wife",
+  "outfit": "night",
+  "rain": true,
+  "group": "extras",
+  "count": 20,
+  "rows": 5,
+  "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 20 separate full-body figures in a 4-column 5-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original dark muted plum button-up pyjamas with small pale lavender hearts and black slippers. Integrate the original muted plum purple umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x2560 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+  "refs": [
+    "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-extras-reference.png",
+    "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+    "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-night.png"
+  ],
+  "path": "C:\\Users\\pitot\\.codex\\generated_images\\01a09bfd-223c-77a0-b070-ad86032089c5\\exec-9061399a-7ce6-48f5-96fe-623eb51ea44a.png"
+}

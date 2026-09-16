@@ -19,4 +19,7 @@ docs/scale-audit/landmarks/
 tools/__pycache__/
 art/weather-v10/clean/
 art/weather-v10/layout.json
+art/weather-v11/clean/
+art/weather-v11/layout.json
+docs/weather-v11/
 docs/weather-v10/

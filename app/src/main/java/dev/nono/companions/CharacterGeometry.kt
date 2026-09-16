@@ -31,8 +31,8 @@ class CharacterGeometry(reader: Reader) {
         require(frame in 0..63)
         val pair=when {
             frame in 42..43 -> "peeking" to who.ordinal*2+frame-42
-            frame !in 40..47 && umbrellaPose(rain,frame) -> "w10-${who.name.lowercase()}-rain-${outfit.name.lowercase()}" to frame
-            frame !in 40..47 && outfit!=Outfit.DEFAULT -> "w10-${who.name.lowercase()}-${outfit.name.lowercase()}" to frame
+            frame !in 40..47 && umbrellaPose(rain,frame) -> "w11-${who.name.lowercase()}-rain-${outfit.name.lowercase()}-${weatherGroup(frame)}" to frame
+            frame !in 40..47 && outfit!=Outfit.DEFAULT -> "w11-${who.name.lowercase()}-${outfit.name.lowercase()}-${weatherGroup(frame)}" to frame
             umbrellaPose(rain,frame) -> "rain-${outfit.name.lowercase()}" to who.ordinal*12+rainFrame(frame)
             frame in 44..47 -> "cooling" to who.ordinal*4+frame-44
             outfit!=Outfit.DEFAULT -> "weather-${outfit.name.lowercase()}" to who.ordinal*12+dressedFrame(frame)
@@ -44,6 +44,7 @@ class CharacterGeometry(reader: Reader) {
         return measures.getValue("${pair.first}:${pair.second}")
     }
     companion object {
+        private fun weatherGroup(frame: Int)=when { frame<12 -> "motion"; frame<24 -> "social"; frame<36 -> "personal"; else -> "extras" }
         const val OVERFLOW_WIDTH=160f
         const val OVERFLOW_HEIGHT=240f
         /** Translate, never rescale, at screen edges. */

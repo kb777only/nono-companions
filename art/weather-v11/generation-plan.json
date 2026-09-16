@@ -1,0 +1,842 @@
+[
+  {
+    "name": "husband-cold-motion",
+    "who": "husband",
+    "outfit": "cold",
+    "rain": false,
+    "group": "motion",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to his original cream dinosaur hoodie with a plain hood UP, black trousers and detailed white sneakers; no scarf, no animal ears. No umbrella or other new props. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-motion-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/weather-cold.png"
+    ]
+  },
+  {
+    "name": "husband-cold-social",
+    "who": "husband",
+    "outfit": "cold",
+    "rain": false,
+    "group": "social",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to his original cream dinosaur hoodie with a plain hood UP, black trousers and detailed white sneakers; no scarf, no animal ears. No umbrella or other new props. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-social-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/weather-cold.png"
+    ]
+  },
+  {
+    "name": "husband-cold-personal",
+    "who": "husband",
+    "outfit": "cold",
+    "rain": false,
+    "group": "personal",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to his original cream dinosaur hoodie with a plain hood UP, black trousers and detailed white sneakers; no scarf, no animal ears. No umbrella or other new props. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-personal-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/weather-cold.png"
+    ]
+  },
+  {
+    "name": "husband-cold-extras",
+    "who": "husband",
+    "outfit": "cold",
+    "rain": false,
+    "group": "extras",
+    "count": 20,
+    "rows": 5,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 20 separate full-body figures in a 4-column 5-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to his original cream dinosaur hoodie with a plain hood UP, black trousers and detailed white sneakers; no scarf, no animal ears. No umbrella or other new props. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x2560 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-extras-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/weather-cold.png"
+    ]
+  },
+  {
+    "name": "husband-rain-cold-motion",
+    "who": "husband",
+    "outfit": "cold",
+    "rain": true,
+    "group": "motion",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to his original cream dinosaur hoodie with a plain hood UP, black trousers and detailed white sneakers; no scarf, no animal ears. Integrate the original muted sage green umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible. In last row falling and landing poses ONLY omit umbrella; preserve falling poses. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-motion-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-cold.png"
+    ]
+  },
+  {
+    "name": "husband-rain-cold-social",
+    "who": "husband",
+    "outfit": "cold",
+    "rain": true,
+    "group": "social",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to his original cream dinosaur hoodie with a plain hood UP, black trousers and detailed white sneakers; no scarf, no animal ears. Integrate the original muted sage green umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-social-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-cold.png"
+    ]
+  },
+  {
+    "name": "husband-rain-cold-personal",
+    "who": "husband",
+    "outfit": "cold",
+    "rain": true,
+    "group": "personal",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to his original cream dinosaur hoodie with a plain hood UP, black trousers and detailed white sneakers; no scarf, no animal ears. Integrate the original muted sage green umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-personal-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-cold.png"
+    ]
+  },
+  {
+    "name": "husband-rain-cold-extras",
+    "who": "husband",
+    "outfit": "cold",
+    "rain": true,
+    "group": "extras",
+    "count": 20,
+    "rows": 5,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 20 separate full-body figures in a 4-column 5-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to his original cream dinosaur hoodie with a plain hood UP, black trousers and detailed white sneakers; no scarf, no animal ears. Integrate the original muted sage green umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x2560 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-extras-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-cold.png"
+    ]
+  },
+  {
+    "name": "husband-hot-motion",
+    "who": "husband",
+    "outfit": "hot",
+    "rain": false,
+    "group": "motion",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to cream T-shirt with the original small green dinosaur emblem, black shorts, detailed white sneakers. No umbrella or other new props. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-motion-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/weather-hot.png"
+    ]
+  },
+  {
+    "name": "husband-hot-social",
+    "who": "husband",
+    "outfit": "hot",
+    "rain": false,
+    "group": "social",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to cream T-shirt with the original small green dinosaur emblem, black shorts, detailed white sneakers. No umbrella or other new props. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-social-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/weather-hot.png"
+    ]
+  },
+  {
+    "name": "husband-hot-personal",
+    "who": "husband",
+    "outfit": "hot",
+    "rain": false,
+    "group": "personal",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to cream T-shirt with the original small green dinosaur emblem, black shorts, detailed white sneakers. No umbrella or other new props. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-personal-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/weather-hot.png"
+    ]
+  },
+  {
+    "name": "husband-hot-extras",
+    "who": "husband",
+    "outfit": "hot",
+    "rain": false,
+    "group": "extras",
+    "count": 20,
+    "rows": 5,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 20 separate full-body figures in a 4-column 5-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to cream T-shirt with the original small green dinosaur emblem, black shorts, detailed white sneakers. No umbrella or other new props. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x2560 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-extras-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/weather-hot.png"
+    ]
+  },
+  {
+    "name": "husband-rain-hot-motion",
+    "who": "husband",
+    "outfit": "hot",
+    "rain": true,
+    "group": "motion",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to cream T-shirt with the original small green dinosaur emblem, black shorts, detailed white sneakers. Integrate the original muted sage green umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible. In last row falling and landing poses ONLY omit umbrella; preserve falling poses. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-motion-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-hot.png"
+    ]
+  },
+  {
+    "name": "husband-rain-hot-social",
+    "who": "husband",
+    "outfit": "hot",
+    "rain": true,
+    "group": "social",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to cream T-shirt with the original small green dinosaur emblem, black shorts, detailed white sneakers. Integrate the original muted sage green umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-social-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-hot.png"
+    ]
+  },
+  {
+    "name": "husband-rain-hot-personal",
+    "who": "husband",
+    "outfit": "hot",
+    "rain": true,
+    "group": "personal",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to cream T-shirt with the original small green dinosaur emblem, black shorts, detailed white sneakers. Integrate the original muted sage green umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-personal-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-hot.png"
+    ]
+  },
+  {
+    "name": "husband-rain-hot-extras",
+    "who": "husband",
+    "outfit": "hot",
+    "rain": true,
+    "group": "extras",
+    "count": 20,
+    "rows": 5,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 20 separate full-body figures in a 4-column 5-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to cream T-shirt with the original small green dinosaur emblem, black shorts, detailed white sneakers. Integrate the original muted sage green umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x2560 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-extras-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-hot.png"
+    ]
+  },
+  {
+    "name": "husband-night-motion",
+    "who": "husband",
+    "outfit": "night",
+    "rain": false,
+    "group": "motion",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to cream button-up pyjamas with small green dinosaur silhouettes and cream slippers, exactly like the older weather-night artwork. No umbrella or other new props. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-motion-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/weather-night.png"
+    ]
+  },
+  {
+    "name": "husband-night-social",
+    "who": "husband",
+    "outfit": "night",
+    "rain": false,
+    "group": "social",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to cream button-up pyjamas with small green dinosaur silhouettes and cream slippers, exactly like the older weather-night artwork. No umbrella or other new props. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-social-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/weather-night.png"
+    ]
+  },
+  {
+    "name": "husband-night-personal",
+    "who": "husband",
+    "outfit": "night",
+    "rain": false,
+    "group": "personal",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to cream button-up pyjamas with small green dinosaur silhouettes and cream slippers, exactly like the older weather-night artwork. No umbrella or other new props. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-personal-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/weather-night.png"
+    ]
+  },
+  {
+    "name": "husband-night-extras",
+    "who": "husband",
+    "outfit": "night",
+    "rain": false,
+    "group": "extras",
+    "count": 20,
+    "rows": 5,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 20 separate full-body figures in a 4-column 5-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to cream button-up pyjamas with small green dinosaur silhouettes and cream slippers, exactly like the older weather-night artwork. No umbrella or other new props. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x2560 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-extras-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/weather-night.png"
+    ]
+  },
+  {
+    "name": "husband-rain-night-motion",
+    "who": "husband",
+    "outfit": "night",
+    "rain": true,
+    "group": "motion",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to cream button-up pyjamas with small green dinosaur silhouettes and cream slippers, exactly like the older weather-night artwork. Integrate the original muted sage green umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible. In last row falling and landing poses ONLY omit umbrella; preserve falling poses. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-motion-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-night.png"
+    ]
+  },
+  {
+    "name": "husband-rain-night-social",
+    "who": "husband",
+    "outfit": "night",
+    "rain": true,
+    "group": "social",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to cream button-up pyjamas with small green dinosaur silhouettes and cream slippers, exactly like the older weather-night artwork. Integrate the original muted sage green umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-social-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-night.png"
+    ]
+  },
+  {
+    "name": "husband-rain-night-personal",
+    "who": "husband",
+    "outfit": "night",
+    "rain": true,
+    "group": "personal",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to cream button-up pyjamas with small green dinosaur silhouettes and cream slippers, exactly like the older weather-night artwork. Integrate the original muted sage green umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-personal-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-night.png"
+    ]
+  },
+  {
+    "name": "husband-rain-night-extras",
+    "who": "husband",
+    "outfit": "night",
+    "rain": true,
+    "group": "extras",
+    "count": 20,
+    "rows": 5,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 20 separate full-body figures in a 4-column 5-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to cream button-up pyjamas with small green dinosaur silhouettes and cream slippers, exactly like the older weather-night artwork. Integrate the original muted sage green umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x2560 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-extras-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-night.png"
+    ]
+  },
+  {
+    "name": "husband-rain-default-motion",
+    "who": "husband",
+    "outfit": "default",
+    "rain": true,
+    "group": "motion",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to the original cream dinosaur hoodie with hood down, black cargo trousers and detailed white sneakers. Integrate the original muted sage green umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible. In last row falling and landing poses ONLY omit umbrella; preserve falling poses. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-motion-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-default.png"
+    ]
+  },
+  {
+    "name": "husband-rain-default-social",
+    "who": "husband",
+    "outfit": "default",
+    "rain": true,
+    "group": "social",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to the original cream dinosaur hoodie with hood down, black cargo trousers and detailed white sneakers. Integrate the original muted sage green umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-social-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-default.png"
+    ]
+  },
+  {
+    "name": "husband-rain-default-personal",
+    "who": "husband",
+    "outfit": "default",
+    "rain": true,
+    "group": "personal",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to the original cream dinosaur hoodie with hood down, black cargo trousers and detailed white sneakers. Integrate the original muted sage green umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-personal-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-default.png"
+    ]
+  },
+  {
+    "name": "husband-rain-default-extras",
+    "who": "husband",
+    "outfit": "default",
+    "rain": true,
+    "group": "extras",
+    "count": 20,
+    "rows": 5,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 20 separate full-body figures in a 4-column 5-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult man: original receding temples, swept short brown hair, thin round black glasses, small moustache, POINTED DARK GOATEE and fine cheek stubble in EVERY expression, narrow angular nose and eyebrows. Facial hair must be as visible as in original sprites. Change ONLY wardrobe to the original cream dinosaur hoodie with hood down, black cargo trousers and detailed white sneakers. Integrate the original muted sage green umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x2560 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/husband-extras-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-default.png"
+    ]
+  },
+  {
+    "name": "wife-cold-motion",
+    "who": "wife",
+    "outfit": "cold",
+    "rain": false,
+    "group": "motion",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original muted dark plum winter jacket and lavender scarf, black trousers and chunky black buckled platform boots. No umbrella or other new props. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-motion-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/weather-cold.png"
+    ]
+  },
+  {
+    "name": "wife-cold-social",
+    "who": "wife",
+    "outfit": "cold",
+    "rain": false,
+    "group": "social",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original muted dark plum winter jacket and lavender scarf, black trousers and chunky black buckled platform boots. No umbrella or other new props. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-social-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/weather-cold.png"
+    ]
+  },
+  {
+    "name": "wife-cold-personal",
+    "who": "wife",
+    "outfit": "cold",
+    "rain": false,
+    "group": "personal",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original muted dark plum winter jacket and lavender scarf, black trousers and chunky black buckled platform boots. No umbrella or other new props. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-personal-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/weather-cold.png"
+    ]
+  },
+  {
+    "name": "wife-cold-extras",
+    "who": "wife",
+    "outfit": "cold",
+    "rain": false,
+    "group": "extras",
+    "count": 20,
+    "rows": 5,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 20 separate full-body figures in a 4-column 5-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original muted dark plum winter jacket and lavender scarf, black trousers and chunky black buckled platform boots. No umbrella or other new props. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x2560 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-extras-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/weather-cold.png"
+    ]
+  },
+  {
+    "name": "wife-rain-cold-motion",
+    "who": "wife",
+    "outfit": "cold",
+    "rain": true,
+    "group": "motion",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original muted dark plum winter jacket and lavender scarf, black trousers and chunky black buckled platform boots. Integrate the original muted plum purple umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible. In last row falling and landing poses ONLY omit umbrella; preserve falling poses. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-motion-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-cold.png"
+    ]
+  },
+  {
+    "name": "wife-rain-cold-social",
+    "who": "wife",
+    "outfit": "cold",
+    "rain": true,
+    "group": "social",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original muted dark plum winter jacket and lavender scarf, black trousers and chunky black buckled platform boots. Integrate the original muted plum purple umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-social-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-cold.png"
+    ]
+  },
+  {
+    "name": "wife-rain-cold-personal",
+    "who": "wife",
+    "outfit": "cold",
+    "rain": true,
+    "group": "personal",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original muted dark plum winter jacket and lavender scarf, black trousers and chunky black buckled platform boots. Integrate the original muted plum purple umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-personal-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-cold.png"
+    ]
+  },
+  {
+    "name": "wife-rain-cold-extras",
+    "who": "wife",
+    "outfit": "cold",
+    "rain": true,
+    "group": "extras",
+    "count": 20,
+    "rows": 5,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 20 separate full-body figures in a 4-column 5-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original muted dark plum winter jacket and lavender scarf, black trousers and chunky black buckled platform boots. Integrate the original muted plum purple umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x2560 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-extras-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-cold.png"
+    ]
+  },
+  {
+    "name": "wife-hot-motion",
+    "who": "wife",
+    "outfit": "hot",
+    "rain": false,
+    "group": "motion",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original black T-shirt with one small muted plum heart, muted plum shorts with drawstring, black low-top sneakers with white trim. No umbrella or other new props. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-motion-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/weather-hot.png"
+    ]
+  },
+  {
+    "name": "wife-hot-social",
+    "who": "wife",
+    "outfit": "hot",
+    "rain": false,
+    "group": "social",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original black T-shirt with one small muted plum heart, muted plum shorts with drawstring, black low-top sneakers with white trim. No umbrella or other new props. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-social-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/weather-hot.png"
+    ]
+  },
+  {
+    "name": "wife-hot-personal",
+    "who": "wife",
+    "outfit": "hot",
+    "rain": false,
+    "group": "personal",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original black T-shirt with one small muted plum heart, muted plum shorts with drawstring, black low-top sneakers with white trim. No umbrella or other new props. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-personal-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/weather-hot.png"
+    ]
+  },
+  {
+    "name": "wife-hot-extras",
+    "who": "wife",
+    "outfit": "hot",
+    "rain": false,
+    "group": "extras",
+    "count": 20,
+    "rows": 5,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 20 separate full-body figures in a 4-column 5-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original black T-shirt with one small muted plum heart, muted plum shorts with drawstring, black low-top sneakers with white trim. No umbrella or other new props. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x2560 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-extras-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/weather-hot.png"
+    ]
+  },
+  {
+    "name": "wife-rain-hot-motion",
+    "who": "wife",
+    "outfit": "hot",
+    "rain": true,
+    "group": "motion",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original black T-shirt with one small muted plum heart, muted plum shorts with drawstring, black low-top sneakers with white trim. Integrate the original muted plum purple umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible. In last row falling and landing poses ONLY omit umbrella; preserve falling poses. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-motion-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-hot.png"
+    ]
+  },
+  {
+    "name": "wife-rain-hot-social",
+    "who": "wife",
+    "outfit": "hot",
+    "rain": true,
+    "group": "social",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original black T-shirt with one small muted plum heart, muted plum shorts with drawstring, black low-top sneakers with white trim. Integrate the original muted plum purple umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-social-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-hot.png"
+    ]
+  },
+  {
+    "name": "wife-rain-hot-personal",
+    "who": "wife",
+    "outfit": "hot",
+    "rain": true,
+    "group": "personal",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original black T-shirt with one small muted plum heart, muted plum shorts with drawstring, black low-top sneakers with white trim. Integrate the original muted plum purple umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-personal-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-hot.png"
+    ]
+  },
+  {
+    "name": "wife-rain-hot-extras",
+    "who": "wife",
+    "outfit": "hot",
+    "rain": true,
+    "group": "extras",
+    "count": 20,
+    "rows": 5,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 20 separate full-body figures in a 4-column 5-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original black T-shirt with one small muted plum heart, muted plum shorts with drawstring, black low-top sneakers with white trim. Integrate the original muted plum purple umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x2560 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-extras-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-hot.png"
+    ]
+  },
+  {
+    "name": "wife-night-motion",
+    "who": "wife",
+    "outfit": "night",
+    "rain": false,
+    "group": "motion",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original dark muted plum button-up pyjamas with small pale lavender hearts and black slippers. No umbrella or other new props. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-motion-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/weather-night.png"
+    ]
+  },
+  {
+    "name": "wife-night-social",
+    "who": "wife",
+    "outfit": "night",
+    "rain": false,
+    "group": "social",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original dark muted plum button-up pyjamas with small pale lavender hearts and black slippers. No umbrella or other new props. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-social-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/weather-night.png"
+    ]
+  },
+  {
+    "name": "wife-night-personal",
+    "who": "wife",
+    "outfit": "night",
+    "rain": false,
+    "group": "personal",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original dark muted plum button-up pyjamas with small pale lavender hearts and black slippers. No umbrella or other new props. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-personal-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/weather-night.png"
+    ]
+  },
+  {
+    "name": "wife-night-extras",
+    "who": "wife",
+    "outfit": "night",
+    "rain": false,
+    "group": "extras",
+    "count": 20,
+    "rows": 5,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 20 separate full-body figures in a 4-column 5-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original dark muted plum button-up pyjamas with small pale lavender hearts and black slippers. No umbrella or other new props. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x2560 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-extras-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/weather-night.png"
+    ]
+  },
+  {
+    "name": "wife-rain-night-motion",
+    "who": "wife",
+    "outfit": "night",
+    "rain": true,
+    "group": "motion",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original dark muted plum button-up pyjamas with small pale lavender hearts and black slippers. Integrate the original muted plum purple umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible. In last row falling and landing poses ONLY omit umbrella; preserve falling poses. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-motion-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-night.png"
+    ]
+  },
+  {
+    "name": "wife-rain-night-social",
+    "who": "wife",
+    "outfit": "night",
+    "rain": true,
+    "group": "social",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original dark muted plum button-up pyjamas with small pale lavender hearts and black slippers. Integrate the original muted plum purple umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-social-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-night.png"
+    ]
+  },
+  {
+    "name": "wife-rain-night-personal",
+    "who": "wife",
+    "outfit": "night",
+    "rain": true,
+    "group": "personal",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original dark muted plum button-up pyjamas with small pale lavender hearts and black slippers. Integrate the original muted plum purple umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-personal-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-night.png"
+    ]
+  },
+  {
+    "name": "wife-rain-night-extras",
+    "who": "wife",
+    "outfit": "night",
+    "rain": true,
+    "group": "extras",
+    "count": 20,
+    "rows": 5,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 20 separate full-body figures in a 4-column 5-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original dark muted plum button-up pyjamas with small pale lavender hearts and black slippers. Integrate the original muted plum purple umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x2560 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-extras-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-night.png"
+    ]
+  },
+  {
+    "name": "wife-rain-default-motion",
+    "who": "wife",
+    "outfit": "default",
+    "rain": true,
+    "group": "motion",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original black tactical outfit, chest mesh panels, buckles, cargo trousers, chunky buckled platform boots. Integrate the original muted plum purple umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible. In last row falling and landing poses ONLY omit umbrella; preserve falling poses. Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-motion-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-default.png"
+    ]
+  },
+  {
+    "name": "wife-rain-default-social",
+    "who": "wife",
+    "outfit": "default",
+    "rain": true,
+    "group": "social",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original black tactical outfit, chest mesh panels, buckles, cargo trousers, chunky buckled platform boots. Integrate the original muted plum purple umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-social-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-default.png"
+    ]
+  },
+  {
+    "name": "wife-rain-default-personal",
+    "who": "wife",
+    "outfit": "default",
+    "rain": true,
+    "group": "personal",
+    "count": 12,
+    "rows": 3,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 12 separate full-body figures in a 4-column 3-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original black tactical outfit, chest mesh panels, buckles, cargo trousers, chunky buckled platform boots. Integrate the original muted plum purple umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x1536 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-personal-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-default.png"
+    ]
+  },
+  {
+    "name": "wife-rain-default-extras",
+    "who": "wife",
+    "outfit": "default",
+    "rain": true,
+    "group": "extras",
+    "count": 20,
+    "rows": 5,
+    "prompt": "Precise clothing edit for an EXISTING Android character, NOT a redesign. Image 1 is the authoritative original pose sheet to edit. Image 2 is the approved identity/style master. Image 3 is the original outfit/umbrella design reference only. Produce EXACTLY 20 separate full-body figures in a 4-column 5-row grid, EXACT SAME POSES, same expressions, facing directions and cell order as image 1. Adult wife: original very detailed layered shaggy dark-brown hair, original long flowing side locks and parted fringe, brown expressive almond eyes, original cheek contour and small nose stud. Preserve individual hair strands, eye shapes, face shape and original hair volume. Change ONLY wardrobe to her original black tactical outfit, chest mesh panels, buckles, cargo trousers, chunky buckled platform boots. Integrate the original muted plum purple umbrella in each figure, canopy directly above and near the head, pole visibly held or supported by shoulder so the original action remains legible.  Preserve the original illustration's detailed soft cel shading, fine warm dark outlines, face/body proportions, textured hair, warm skin tone, visible clothing seams, shoes and adult likeness. Do not simplify into tiny generic cartoon, toddler, flat vector, round baby face, emoji or toy. No changes to faces to suit the outfit. Preserve ALL animation phases, no substituting repetitive idle poses. Equal head size across cells; never shrink sitting figures. Give each complete figure generous gutters and outer margins; no overlap/cropping. No text, labels, grid lines, scenery or floor shadow. Background MUST be one perfectly uniform FLAT PURE CYAN RGB(0,255,255) #00FFFF for automated alpha extraction, including holes between arms/legs. NO checkerboard, gradient, glow, cyan rimlight or cyan clothing. Keep dark neutral clean antialiased edges, no coloured outline. Request 2048x2560 high-detail PNG. The exact original identity and render style take priority over ornamental additions.",
+    "refs": [
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/weather-v11/wife-extras-reference.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/art/approved-concept.png",
+      "C:/Users/pitot/Documents/NoNo-Phone-Prjcts/app/src/main/assets/art/rain-default.png"
+    ]
+  }
+]
